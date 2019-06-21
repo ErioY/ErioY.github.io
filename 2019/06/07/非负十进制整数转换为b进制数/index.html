@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: html | ErioY</title>
+  <title>非负十进制整数转换为b进制数 | ErioY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ErioY">
-<meta property="og:url" content="http://yoursite.com/tags/html/index.html">
+  <meta name="description" content="1.题目名称 将非负十进制整数n转换成b进制。（其中b=2~16）  2.算法构造 （1）递归： 十进制数对b进制取余，若b进制为1-9进制，将余数写入字符串；进制数为10-16时，将余数用相应的字符表示。然后利用递归模型返回十进制数和b进制的值，最后利用StringBuilder实现逆序输出字符串 递归模型：duigui(n,b)= duigui(n/b,b) n&amp;gt;=0 递归出口：n&amp;">
+<meta name="keywords" content="CSDN迁移">
+<meta property="og:type" content="article">
+<meta property="og:title" content="非负十进制整数转换为b进制数">
+<meta property="og:url" content="http://yoursite.com/2019/06/07/非负十进制整数转换为b进制数/index.html">
 <meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="1.题目名称 将非负十进制整数n转换成b进制。（其中b=2~16）  2.算法构造 （1）递归： 十进制数对b进制取余，若b进制为1-9进制，将余数写入字符串；进制数为10-16时，将余数用相应的字符表示。然后利用递归模型返回十进制数和b进制的值，最后利用StringBuilder实现逆序输出字符串 递归模型：duigui(n,b)= duigui(n/b,b) n&amp;gt;=0 递归出口：n&amp;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-21T08:43:25.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ErioY">
+<meta name="twitter:title" content="非负十进制整数转换为b进制数">
+<meta name="twitter:description" content="1.题目名称 将非负十进制整数n转换成b进制。（其中b=2~16）  2.算法构造 （1）递归： 十进制数对b进制取余，若b进制为1-9进制，将余数写入字符串；进制数为10-16时，将余数用相应的字符表示。然后利用递归模型返回十进制数和b进制的值，最后利用StringBuilder实现逆序输出字符串 递归模型：duigui(n,b)= duigui(n/b,b) n&amp;gt;=0 递归出口：n&amp;">
   
     <link rel="alternative" href="/atom.xml" title="ErioY" type="application/atom+xml">
   
@@ -150,60 +155,185 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-非负十进制整数转换为b进制数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/21/boke/" class="archive-article-date">
-  	<time datetime="2019-06-21T07:45:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/21/boke/">boke</a>
+    <h1 class="article-title" itemprop="name">
+      非负十进制整数转换为b进制数
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/06/07/非负十进制整数转换为b进制数/" class="archive-article-date">
+  	<time datetime="2019-06-07T08:22:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  <strong>1.题目名称</strong><br> 将非负十进制整数n转换成b进制。（其中b=2~16）</p>
+<p> <strong>2.算法构造</strong><br> <strong>（1）递归：</strong><br> 十进制数对b进制取余，若b进制为1-9进制，将余数写入字符串；进制数为10-16时，将余数用相应的字符表示。然后利用递归模型返回十进制数和b进制的值，最后利用StringBuilder实现逆序输出字符串<br> 递归模型：duigui(n,b)= duigui(n/b,b) n&gt;=0<br> 递归出口：n&lt;b<br> (其中为是十进制数，b为进制数)<br> <strong>（2）非递归：</strong><br> 当十进制数不为0时，十进制数对b进制取余，十进制数变为原来的十进制数/b进制。若b进制为1-9进制，将余数写入字符串；进制数为10-16时，将余数用相应的字符表示，最后利用StringBuilder实现逆序输出字符串</p>
+<p> <strong>5.经验归纳<br> 5.1遇到的问题</strong><br> &lt;1&gt;刚开始用的是数组，结果发现不用循环很难把字符赋给数组<br> &lt;2&gt;逆序输出那里考虑不周全<br> &lt;3&gt;用递归树或者递归栈描述调用过程<br> <strong>5.2心得体会</strong><br> 这次的基本要求没有什么难点，主要就是递归函数的建立，非递归比递归简单一些，就是在最后的逆序输出那里会遇到问题，上网查了一下，说是可以用StringBuffer来实现，所以基本上没什么大问题。对了~画出递归树或者递归栈的调用过程这里也是问题，第一次画，对这个概念不是很熟悉。</p>
+<p> <strong>附：源代码</strong><br> 1.Test0类（主方法）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">package interest;</span><br><span class="line"></span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Test0 </span><br><span class="line">&#123;</span><br><span class="line">	static int n;</span><br><span class="line">	static int b;</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">		Scanner sc=new Scanner(System.in);</span><br><span class="line">		TwoMethods t=new TwoMethods();</span><br><span class="line">		System.out.println(&quot;请输入一个非负整数：&quot;);</span><br><span class="line">		n=sc.nextInt();</span><br><span class="line">		while(true)</span><br><span class="line">		&#123;</span><br><span class="line">			if(n&lt;0)</span><br><span class="line">			&#123;</span><br><span class="line">				System.out.println(&quot;Error！请输入一个非负整数：&quot;);</span><br><span class="line">				n=sc.nextInt();</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">				break;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;请输入你想转换的进制（1-16）：&quot;);</span><br><span class="line">		b=sc.nextInt();</span><br><span class="line">		while(true)</span><br><span class="line">		&#123;</span><br><span class="line">			if(b&lt;1||b&gt;16)</span><br><span class="line">			&#123;</span><br><span class="line">				System.out.println(&quot;Error！请输入你想转换的进制（1-16）：&quot;);</span><br><span class="line">				b=sc.nextInt();</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">				break;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;你想使用哪种方法进行运算？1.递归  2.非递归（1/2）：&quot;);</span><br><span class="line">		int x=sc.nextInt();</span><br><span class="line">		switch(x)</span><br><span class="line">		&#123;</span><br><span class="line">		case 1:   //调用递归方法</span><br><span class="line">			t.digui(n,b);</span><br><span class="line">			break;</span><br><span class="line">		case 2:</span><br><span class="line">			t.feidigui(n,b);//调用非递归方法</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">		sc.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 2.两种方法实现转换：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">package interest;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class TwoMethods </span><br><span class="line">&#123;</span><br><span class="line">	static String a=&quot;&quot;;  //定义一个字符串，用来存储b进制</span><br><span class="line">	static int num;      //b进制数</span><br><span class="line">	public static void feidigui(int n,int b)  //非递归</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		while(n&gt;0)      //当十进制数不为0时</span><br><span class="line">		&#123;</span><br><span class="line">			num=n%b;   //十进制数对b进制取余</span><br><span class="line">			n=n/b;     //十进制数变为原来的十进制数/b进制</span><br><span class="line">			if(b&lt;10)  //若b进制为1-9进制</span><br><span class="line">			&#123;</span><br><span class="line">				a+=num;  //将余数写入字符串</span><br><span class="line">			&#125;</span><br><span class="line">			else   //进制数为10-16时</span><br><span class="line">			&#123;</span><br><span class="line">				a+=((char)(num-10)+&apos;A&apos;);  //将余数用相应的字符表示</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;用非递归方法计算的十进制转&quot;+b+&quot;进制的转换结果是：&quot;);</span><br><span class="line">		System.out.println(new StringBuilder(a).reverse().toString());  //利用StringBuilder实现逆序输出字符串</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void digui(int n,int b)   //递归</span><br><span class="line">	&#123;</span><br><span class="line">		if(n!=0)</span><br><span class="line">		&#123;</span><br><span class="line">			num=n%b;   //十进制数对b进制取余</span><br><span class="line"></span><br><span class="line">			if(b&lt;10)   //若b进制为1-9进制</span><br><span class="line">			&#123;</span><br><span class="line">				a+=num;  //将余数写入字符串</span><br><span class="line">			&#125;</span><br><span class="line">			else   //进制数为10-16时</span><br><span class="line">			&#123;</span><br><span class="line">				a+=((char)(num-10)+&apos;A&apos;); //将余数用相应的字符表示</span><br><span class="line">			&#125;</span><br><span class="line">			digui(n/b,b);  //利用递归模型返回十进制数和b进制的值</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">			&#123;</span><br><span class="line">			System.out.println(&quot;用递归方法计算的十进制转&quot;+b+&quot;进制的转换结果是：&quot;);</span><br><span class="line">			System.out.println(new StringBuilder(a).reverse().toString());  //利用StringBuilder实现逆序输出字符串</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSDN迁移</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/07/非负十进制整数转换为b进制数/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/06/07/冒泡排序/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          冒泡排序
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/05/27/简单的递归程序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">简单的递归程序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -226,9 +356,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

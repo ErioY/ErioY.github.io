@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: html | ErioY</title>
+  <title>简单的递归程序 | ErioY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ErioY">
-<meta property="og:url" content="http://yoursite.com/tags/html/index.html">
+  <meta name="description" content="1.题目名称 &amp;lt;1&amp;gt;赶鸭子问题：一个人赶着鸭子去每个村庄卖，每经过一个村子卖去所赶鸭子的一半又一只。这样他经过了七个村子后还剩两只鸭子，问他出发时共赶多少只鸭子？经过每个村子卖出多少只鸭子？ &amp;lt;2&amp;gt;角谷定理：输入一个自然数，若为偶数，则把它除以2，若为奇数，则把它乘以3加1。经过如此有限次运算后，总可以得到自然数值1。求经过多少次可得到自然数1。 如：输入22， 输出">
+<meta name="keywords" content="CSDN迁移">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单的递归程序">
+<meta property="og:url" content="http://yoursite.com/2019/05/27/简单的递归程序/index.html">
 <meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="1.题目名称 &amp;lt;1&amp;gt;赶鸭子问题：一个人赶着鸭子去每个村庄卖，每经过一个村子卖去所赶鸭子的一半又一只。这样他经过了七个村子后还剩两只鸭子，问他出发时共赶多少只鸭子？经过每个村子卖出多少只鸭子？ &amp;lt;2&amp;gt;角谷定理：输入一个自然数，若为偶数，则把它除以2，若为奇数，则把它乘以3加1。经过如此有限次运算后，总可以得到自然数值1。求经过多少次可得到自然数1。 如：输入22， 输出">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190527171624885.GIF">
+<meta property="og:updated_time" content="2019-06-21T08:43:26.337Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ErioY">
+<meta name="twitter:title" content="简单的递归程序">
+<meta name="twitter:description" content="1.题目名称 &amp;lt;1&amp;gt;赶鸭子问题：一个人赶着鸭子去每个村庄卖，每经过一个村子卖去所赶鸭子的一半又一只。这样他经过了七个村子后还剩两只鸭子，问他出发时共赶多少只鸭子？经过每个村子卖出多少只鸭子？ &amp;lt;2&amp;gt;角谷定理：输入一个自然数，若为偶数，则把它除以2，若为奇数，则把它乘以3加1。经过如此有限次运算后，总可以得到自然数值1。求经过多少次可得到自然数1。 如：输入22， 输出">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190527171624885.GIF">
   
     <link rel="alternative" href="/atom.xml" title="ErioY" type="application/atom+xml">
   
@@ -150,60 +157,191 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-简单的递归程序" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/21/boke/" class="archive-article-date">
-  	<time datetime="2019-06-21T07:45:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/21/boke/">boke</a>
+    <h1 class="article-title" itemprop="name">
+      简单的递归程序
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/05/27/简单的递归程序/" class="archive-article-date">
+  	<time datetime="2019-05-27T09:18:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>  <strong>1.题目名称</strong><br> &lt;1&gt;赶鸭子问题：一个人赶着鸭子去每个村庄卖，每经过一个村子卖去所赶鸭子的一半又一只。这样他经过了七个村子后还剩两只鸭子，问他出发时共赶多少只鸭子？经过每个村子卖出多少只鸭子？<br> &lt;2&gt;角谷定理：输入一个自然数，若为偶数，则把它除以2，若为奇数，则把它乘以3加1。经过如此有限次运算后，总可以得到自然数值1。求经过多少次可得到自然数1。<br> 如：输入22，<br> 输出 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1<br> STEP=16</p>
+<p> <strong>2.题目分析</strong><br> &lt;1&gt;赶鸭子问题：假设一共有sum只鸭子，而sum=one(n)，n表示村子数，每经过一个村子就卖出one(n)/2+1只鸭子，剩下的就是下一个村子的鸭子数，也就是one(n+1)，那么鸭子总数one(n)=(one(n)/2+1)+(one(n+1))，经过运算得出鸭子总数one(n)=(one(n+1)+1)_2；题目说这个人经过七个村子后还剩两只鸭子，也就是在第8个村子的时候还有两只鸭子，也就是one(8)=2<br> &lt;2&gt;角谷定理：这个题的递归出口是固定的，即当得到自然数值1的时候递归结束。假设经过了sum=one(x)次操作后得到自然数1，输入的自然数一共分为3种情况，第一种是x=1，这种情况很特殊，直接sum+1输出即可；第二种情况是x为偶数，按照题目要求，将这个数有限次除以2，也就是one(x/2)，并使sum递加；第三种情况是x为奇数，将这个数有限次乘以3再加1，也就是one(x_3+1)，并使sum递加</p>
+<p> <strong>3.算法构造</strong><br> <img src="https://img-blog.csdnimg.cn/20190527171624885.GIF" alt="在这里插入图片描述"><br> <strong>4.心得体会</strong><br> 递归问题主要还是数学思维，我觉得第一个题用递归方法偏难一点，但是算法构造出来实现就简单了，这两个题学C语言的时候有接触过，所以还有印象。这两道题相对以前的作业简单很多~</p>
+<p> <strong>附：源代码：</strong><br> <strong>&lt;1&gt;赶鸭子问题：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package DuckSale;</span><br><span class="line">public class 卖鸭子递归 </span><br><span class="line">&#123;</span><br><span class="line">	static int sum;</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">		int n=1;</span><br><span class="line">		int num;//每个村子卖出的鸭子数</span><br><span class="line">		int sum=one(n);   //刚开始的鸭子数,n个村子</span><br><span class="line">		System.out.println(&quot;刚开始有&quot;+sum+&quot;只鸭子&quot;);</span><br><span class="line">		for(int i=1;i&lt;8;i++)//循环输出经过每个村子卖出的鸭子数</span><br><span class="line">		&#123;</span><br><span class="line">			num=sum/2+1;</span><br><span class="line">			sum-=num;  //剩余鸭子数</span><br><span class="line">			System.out.println(&quot;经过第&quot;+i+&quot;个村子卖出了&quot;+num+&quot;只鸭子,还剩下&quot;+sum+&quot;只鸭子&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	public static int one(int n)</span><br><span class="line">	&#123;</span><br><span class="line">		if(n&lt;8)</span><br><span class="line">		&#123;</span><br><span class="line">			return 2*(one(n+1)+1);</span><br><span class="line">		&#125;</span><br><span class="line">		else if(n==8)</span><br><span class="line">		&#123;</span><br><span class="line">			return 2;</span><br><span class="line">		&#125;</span><br><span class="line">		return n;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>②非递归实现：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package DuckSale;</span><br><span class="line">public class 卖鸭子非递归</span><br><span class="line">&#123;</span><br><span class="line">	static int sum=2;//鸭子总数</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">		int num;</span><br><span class="line">		for(int i=1;i&lt;8;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			sum=(sum+1)*2;//循环计算出鸭子总数</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;一共有&quot;+sum+&quot;只鸭子&quot;);</span><br><span class="line">		for(int i=1;i&lt;8;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			num=sum/2+1;</span><br><span class="line">			sum-=num;</span><br><span class="line">			System.out.println(&quot;经过第&quot;+i+&quot;个村子卖了&quot;+num+&quot;只鸭子，还剩&quot;+sum+&quot;只鸭子&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;2&gt;角谷定理：<br> ①递归实现：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package JiaoGuTheory;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">public class 角谷定理递归 &#123;</span><br><span class="line">	static int sum=0; //计算次数</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">		Scanner sc=new Scanner(System.in);</span><br><span class="line">		System.out.print(&quot;请输入一个自然数：&quot;);</span><br><span class="line">		int x=sc.nextInt();</span><br><span class="line">		sc.close();</span><br><span class="line">		int sum=one(x);</span><br><span class="line">		System.out.println();</span><br><span class="line">		System.out.println(&quot;一共经过了&quot;+sum+&quot;次&quot;);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	public static int one(int x)</span><br><span class="line">	&#123;</span><br><span class="line">		if(x==1)   //输入的自然数为1</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.print(x+&quot; &quot;);</span><br><span class="line">			sum++;  </span><br><span class="line">		&#125;</span><br><span class="line">		else if(x%2==0)   //输入的自然数为偶数</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.print(x+&quot; &quot;);</span><br><span class="line">			one(x/2);//将这个数有限次除以2</span><br><span class="line">			sum++;</span><br><span class="line">		&#125;</span><br><span class="line">		else if(x%2!=0)   //输入的自然数为奇数</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.print(x+&quot; &quot;);</span><br><span class="line">			one(x*3+1); //将这个数有限次乘以3再加1</span><br><span class="line">			sum++;</span><br><span class="line">		&#125;</span><br><span class="line">		return sum;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>②非递归实现：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package JiaoGuTheory;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">public class 角谷定理非递归 &#123;</span><br><span class="line">	static int sum=0;</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">		Scanner sc=new Scanner(System.in);</span><br><span class="line">		System.out.print(&quot;请输入一个自然数：&quot;);</span><br><span class="line">		int x=sc.nextInt();</span><br><span class="line">		sc.close();</span><br><span class="line">		while(x&gt;=1)</span><br><span class="line">		&#123;</span><br><span class="line">			if(x==1)</span><br><span class="line">			&#123;</span><br><span class="line">				sum++;</span><br><span class="line">				System.out.println(x);</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">			else if(x%2==0)</span><br><span class="line">			&#123;</span><br><span class="line">				System.out.print(x+&quot; &quot;);</span><br><span class="line">				sum++;</span><br><span class="line">				x=x/2;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			else if(x%2!=0)</span><br><span class="line">			&#123;</span><br><span class="line">				System.out.print(x+&quot; &quot;);</span><br><span class="line">				sum++;</span><br><span class="line">				x=x*3+1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;一共经过了&quot;+sum+&quot;次&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSDN迁移</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/27/简单的递归程序/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/06/07/非负十进制整数转换为b进制数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          非负十进制整数转换为b进制数
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/05/10/Java模拟肯德基快餐店的收银系统/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java模拟肯德基快餐店的收银系统</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -226,9 +364,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
