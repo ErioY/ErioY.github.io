@@ -8,14 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>关于表格的一些基础知识~ | ErioY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="首先让我们认识一些表格标签12345678&amp;lt;table&amp;gt;  &amp;lt;!-- 定义表格（必不可少） --&amp;gt;&amp;lt;caption&amp;gt;  &amp;lt;!-- 表格标题（默认居中） --&amp;gt;&amp;lt;thead&amp;gt;  &amp;lt;!-- 表格表头 --&amp;gt;&amp;lt;tbody&amp;gt;  &amp;lt;!-- 表格正文（必不可少） --&amp;gt;&amp;lt;tfoot&amp;gt;  &amp;lt;!--">
+<meta name="keywords" content="html">
+<meta property="og:type" content="article">
 <meta property="og:title" content="关于表格的一些基础知识~">
 <meta property="og:url" content="http://yoursite.com/2019/07/01/关于表格的一些基础知识/index.html">
 <meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="首先让我们认识一些表格标签12345678&amp;lt;table&amp;gt;  &amp;lt;!-- 定义表格（必不可少） --&amp;gt;&amp;lt;caption&amp;gt;  &amp;lt;!-- 表格标题（默认居中） --&amp;gt;&amp;lt;thead&amp;gt;  &amp;lt;!-- 表格表头 --&amp;gt;&amp;lt;tbody&amp;gt;  &amp;lt;!-- 表格正文（必不可少） --&amp;gt;&amp;lt;tfoot&amp;gt;  &amp;lt;!--">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-01T02:22:18.115Z">
+<meta property="og:updated_time" content="2019-07-03T03:31:18.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于表格的一些基础知识~">
+<meta name="twitter:description" content="首先让我们认识一些表格标签12345678&amp;lt;table&amp;gt;  &amp;lt;!-- 定义表格（必不可少） --&amp;gt;&amp;lt;caption&amp;gt;  &amp;lt;!-- 表格标题（默认居中） --&amp;gt;&amp;lt;thead&amp;gt;  &amp;lt;!-- 表格表头 --&amp;gt;&amp;lt;tbody&amp;gt;  &amp;lt;!-- 表格正文（必不可少） --&amp;gt;&amp;lt;tfoot&amp;gt;  &amp;lt;!--">
   
     <link rel="alternative" href="/atom.xml" title="ErioY" type="application/atom+xml">
   
@@ -171,7 +175,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ul>
+<li><h5 id="首先让我们认识一些表格标签"><a href="#首先让我们认识一些表格标签" class="headerlink" title="首先让我们认识一些表格标签"></a>首先让我们认识一些表格标签</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span>  <span class="comment">&lt;!-- 定义表格（必不可少） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">caption</span>&gt;</span>  <span class="comment">&lt;!-- 表格标题（默认居中） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">thead</span>&gt;</span>  <span class="comment">&lt;!-- 表格表头 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tbody</span>&gt;</span>  <span class="comment">&lt;!-- 表格正文（必不可少） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tfoot</span>&gt;</span>  <span class="comment">&lt;!-- 表格页脚 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">th</span>&gt;</span>  <span class="comment">&lt;!-- 表头单元格（加粗黑体） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span>  <span class="comment">&lt;!-- 表格行 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span>  <span class="comment">&lt;!-- 表格单元格 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>举个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">caption</span>&gt;</span>我是表格的标题<span class="tag">&lt;/<span class="name">caption</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>我是第一列表头单元格<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>我是第二列表头单元格<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第一列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这是一张2行2列的表格，第一行是表头单元格，第二行是表格正文。在浏览器运行后会发现，不仅单元格间有间隙，表格内边距也有。为了解决这个问题，表格属性来啦<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ##### 表格属性</span><br><span class="line"></span><br><span class="line">  ```css</span><br><span class="line">  cellspacing    ------单元间间隙(用于table标签)</span><br><span class="line">  cellpadding    ------表格内边距(用于table标签)</span><br><span class="line">  colspan=&quot;2&quot;    ------横向合并单元格(用于td标签)，2代表两个单元格合并</span><br><span class="line">  rowspan=&quot;2&quot;    ------纵向合并单元格(用于td标签)</span><br><span class="line">  ```</span><br><span class="line"></span><br><span class="line">再试一下，在table标签里加入了cellspacing=&quot;0&quot;，cellpadding=&quot;0&quot;后就不存在这样的问题了</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><h5 id="表格样式：为表格和单元格设置border等样式，否则无法看到表格边框，除此外table的border-collapse样式，可以用来合并相邻单元格的边框"><a href="#表格样式：为表格和单元格设置border等样式，否则无法看到表格边框，除此外table的border-collapse样式，可以用来合并相邻单元格的边框" class="headerlink" title="表格样式：为表格和单元格设置border等样式，否则无法看到表格边框，除此外table的border-collapse样式，可以用来合并相邻单元格的边框"></a>表格样式：为表格和单元格设置border等样式，否则无法看到表格边框，除此外table的border-collapse样式，可以用来合并相邻单元格的边框</h5></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-collapse</span><span class="selector-pseudo">:collapse</span>;     <span class="comment">/* 用于table标签中，注：使用该样式时要把单元间间隙（cellsapcing）设为0 */</span></span><br></pre></td></tr></table></figure>
+
+<p>以上就是最简单的表格的制作啦~~</p>
+<h4 id="接下来再举一个小例子：（加上css样式和合并单元格）"><a href="#接下来再举一个小例子：（加上css样式和合并单元格）" class="headerlink" title="接下来再举一个小例子：（加上css样式和合并单元格）"></a>接下来再举一个小例子：（加上css样式和合并单元格）</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>简单的表格制作<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        table,td,th&#123;</span><br><span class="line"><span class="css">            <span class="selector-tag">border</span><span class="selector-pseudo">:1px</span> <span class="selector-tag">black</span> <span class="selector-tag">solid</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line">        table&#123;</span><br><span class="line"><span class="css">            <span class="selector-tag">border-collapse</span><span class="selector-pseudo">:collapse</span>;<span class="comment">/*合并相邻的单元格边框*/</span></span></span><br><span class="line">        &#125;</span><br><span class="line">        td,th&#123;</span><br><span class="line"><span class="css">            <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">height</span><span class="selector-pseudo">:30px</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;  <span class="comment">/*所有文字居中*/</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">cellspancing</span>=<span class="string">"0"</span> <span class="attr">cellpadding</span>=<span class="string">"0"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--第一行的第一列和第二列合并--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">colspan</span>=<span class="string">"2"</span>&gt;</span>第一行第一列表头单元格<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--&lt;th&gt;第一行第二列表头单元格&lt;/th&gt;*/--&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--第二行的第一列和第三行的第一列合并--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">"2"</span>&gt;</span>我是第二行第一列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第二行第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--第二行的第一列和第三行的第一列合并--&gt;</span></span><br><span class="line">                <span class="comment">&lt;!--&lt;td&gt;我是第三行第一列&lt;/td&gt;--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>我是第三行第二列<span class="tag">&lt;/<span class="name">td</span>&gt;</span>            	</span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="最后来说一下table表格的缺点"><a href="#最后来说一下table表格的缺点" class="headerlink" title="最后来说一下table表格的缺点~"></a>最后来说一下table表格的缺点~</h5></li>
+</ul>
+<ol>
+<li>太深的嵌套，如table&gt;tbody&gt;tr&gt;td&gt;h3，会导致搜索引擎读取困难，而且，最直接的损失就是大大增加了代码量</li>
+<li>灵活性差，比如要将tr设置border等属性，是不行的，得通过td</li>
+<li>代码臃肿，当在table中套用table的时候，阅读代码会显得异常混乱</li>
+<li>混乱的colspan与rowspan，用来布局时，频繁使用他们会造成整个文档顺序混乱</li>
+<li>table需要多次计算才能确定好其在渲染树中节点的属性，通常要花3倍于同等元素的时间</li>
+<li>不够语义，无论是计算机还是阅读代码的人在阅读时都觉得非常困难</li>
+</ol>
+
       
 
       
@@ -200,6 +232,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -401,7 +444,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">CSDN迁移</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -410,6 +453,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">opration</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">CSDN迁移</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
             
             <div class="clearfix"></div>
