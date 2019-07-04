@@ -9,14 +9,14 @@
   <title>非负十进制整数转换为b进制数 | ErioY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1.题目名称 将非负十进制整数n转换成b进制。（其中b=2~16）  2.算法构造 （1）递归： 十进制数对b进制取余，若b进制为1-9进制，将余数写入字符串；进制数为10-16时，将余数用相应的字符表示。然后利用递归模型返回十进制数和b进制的值，最后利用StringBuilder实现逆序输出字符串 递归模型：duigui(n,b)= duigui(n/b,b) n&amp;gt;=0 递归出口：n&amp;">
-<meta name="keywords" content="CSDN迁移">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="非负十进制整数转换为b进制数">
 <meta property="og:url" content="http://yoursite.com/2019/06/07/非负十进制整数转换为b进制数/index.html">
 <meta property="og:site_name" content="ErioY">
 <meta property="og:description" content="1.题目名称 将非负十进制整数n转换成b进制。（其中b=2~16）  2.算法构造 （1）递归： 十进制数对b进制取余，若b进制为1-9进制，将余数写入字符串；进制数为10-16时，将余数用相应的字符表示。然后利用递归模型返回十进制数和b进制的值，最后利用StringBuilder实现逆序输出字符串 递归模型：duigui(n,b)= duigui(n/b,b) n&amp;gt;=0 递归出口：n&amp;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-21T08:43:25.284Z">
+<meta property="og:updated_time" content="2019-07-03T03:39:20.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="非负十进制整数转换为b进制数">
 <meta name="twitter:description" content="1.题目名称 将非负十进制整数n转换成b进制。（其中b=2~16）  2.算法构造 （1）递归： 十进制数对b进制取余，若b进制为1-9进制，将余数写入字符串；进制数为10-16时，将余数用相应的字符表示。然后利用递归模型返回十进制数和b进制的值，最后利用StringBuilder实现逆序输出字符串 递归模型：duigui(n,b)= duigui(n/b,b) n&amp;gt;=0 递归出口：n&amp;">
@@ -185,7 +185,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">package interest;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class TwoMethods </span><br><span class="line">&#123;</span><br><span class="line">	static String a=&quot;&quot;;  //定义一个字符串，用来存储b进制</span><br><span class="line">	static int num;      //b进制数</span><br><span class="line">	public static void feidigui(int n,int b)  //非递归</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		while(n&gt;0)      //当十进制数不为0时</span><br><span class="line">		&#123;</span><br><span class="line">			num=n%b;   //十进制数对b进制取余</span><br><span class="line">			n=n/b;     //十进制数变为原来的十进制数/b进制</span><br><span class="line">			if(b&lt;10)  //若b进制为1-9进制</span><br><span class="line">			&#123;</span><br><span class="line">				a+=num;  //将余数写入字符串</span><br><span class="line">			&#125;</span><br><span class="line">			else   //进制数为10-16时</span><br><span class="line">			&#123;</span><br><span class="line">				a+=((char)(num-10)+&apos;A&apos;);  //将余数用相应的字符表示</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;用非递归方法计算的十进制转&quot;+b+&quot;进制的转换结果是：&quot;);</span><br><span class="line">		System.out.println(new StringBuilder(a).reverse().toString());  //利用StringBuilder实现逆序输出字符串</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void digui(int n,int b)   //递归</span><br><span class="line">	&#123;</span><br><span class="line">		if(n!=0)</span><br><span class="line">		&#123;</span><br><span class="line">			num=n%b;   //十进制数对b进制取余</span><br><span class="line"></span><br><span class="line">			if(b&lt;10)   //若b进制为1-9进制</span><br><span class="line">			&#123;</span><br><span class="line">				a+=num;  //将余数写入字符串</span><br><span class="line">			&#125;</span><br><span class="line">			else   //进制数为10-16时</span><br><span class="line">			&#123;</span><br><span class="line">				a+=((char)(num-10)+&apos;A&apos;); //将余数用相应的字符表示</span><br><span class="line">			&#125;</span><br><span class="line">			digui(n/b,b);  //利用递归模型返回十进制数和b进制的值</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">			&#123;</span><br><span class="line">			System.out.println(&quot;用递归方法计算的十进制转&quot;+b+&quot;进制的转换结果是：&quot;);</span><br><span class="line">			System.out.println(new StringBuilder(a).reverse().toString());  //利用StringBuilder实现逆序输出字符串</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-
       
 
       
@@ -219,7 +218,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSDN迁移</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -438,11 +437,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">CSDN迁移</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color4">C语言</a>
               </li>
             
             <div class="clearfix"></div>
@@ -505,7 +504,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">我要一步一步往上爬~</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">祝自己优秀  果断  勇敢  一尘不染~</div>
   	  	
     	</section>
     

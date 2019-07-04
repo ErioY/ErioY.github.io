@@ -9,7 +9,7 @@
   <title>Java模拟肯德基快餐店的收银系统 | ErioY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1.题目名称 模拟肯德基快餐店的收银系统 要求：结合设计模式（2种以上）至少实现系统的以下功能： 1.正常餐品结算和找零。 2.基本套餐结算和找零。 3.使用优惠劵购买餐品结算和找零。 4.可在一定时间段参与店内活动（自行设计或参考官网信息）。 5.模拟打印小票的功能（写到文件中）。  2.算法构造 这个系统需要用到两种设计模式，分别是工厂方法模式和抽象工厂模式。 &amp;lt;1&amp;gt;工厂方法模">
-<meta name="keywords" content="CSDN迁移">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java模拟肯德基快餐店的收银系统">
 <meta property="og:url" content="http://yoursite.com/2019/05/10/Java模拟肯德基快餐店的收银系统/index.html">
@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190510205415228.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDY5NzQ3NQ==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190510205502460.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDY5NzQ3NQ==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190510205546916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDY5NzQ3NQ==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-06-21T08:43:28.828Z">
+<meta property="og:updated_time" content="2019-07-03T03:38:36.496Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java模拟肯德基快餐店的收银系统">
 <meta name="twitter:description" content="1.题目名称 模拟肯德基快餐店的收银系统 要求：结合设计模式（2种以上）至少实现系统的以下功能： 1.正常餐品结算和找零。 2.基本套餐结算和找零。 3.使用优惠劵购买餐品结算和找零。 4.可在一定时间段参与店内活动（自行设计或参考官网信息）。 5.模拟打印小票的功能（写到文件中）。  2.算法构造 这个系统需要用到两种设计模式，分别是工厂方法模式和抽象工厂模式。 &amp;lt;1&amp;gt;工厂方法模">
@@ -245,7 +245,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package inter.KFC;</span><br><span class="line">import java.util.*;</span><br><span class="line">import java.text.*;    //获取当前系统时间</span><br><span class="line"></span><br><span class="line">public class MainApp &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">    	Date date=new Date();</span><br><span class="line">    	DateFormat fullFormat=DateFormat.getDateInstance(DateFormat.FULL);</span><br><span class="line">    	System.out.println(&quot;当前日期：&quot;+fullFormat.format(date));</span><br><span class="line">        //引用菜单类</span><br><span class="line">        MainMenu mainmenu=new MainMenu();</span><br><span class="line">        mainmenu.menu();</span><br><span class="line">        mainmenu.other();</span><br><span class="line">        mainmenu.paint();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-
       
 
       
@@ -279,7 +278,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">CSDN迁移</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -359,8 +358,8 @@
     </a>
   
   
-    <a href="/2019/05/01/--------三种简单的程序设计模式实例/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">--------三种简单的程序设计模式实例</div>
+    <a href="/2019/05/01/三种简单的程序设计模式实例/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">三种简单的程序设计模式实例</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -498,11 +497,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">CSDN迁移</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color4">C语言</a>
               </li>
             
             <div class="clearfix"></div>
@@ -565,7 +564,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">我要一步一步往上爬~</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">祝自己优秀  果断  勇敢  一尘不染~</div>
   	  	
     	</section>
     
