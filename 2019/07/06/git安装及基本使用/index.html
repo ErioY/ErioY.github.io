@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/5 | ErioY</title>
+  <title>git安装及基本使用 | ErioY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ErioY">
-<meta property="og:url" content="http://yoursite.com/archives/2019/05/index.html">
+  <meta name="description" content="准备工作 下载git   注册github   将git和github连接起来   获取ssh秘钥 id_rsa.pub   github里，找到settings，填入秘钥  正式开始 1、确定git和github已经连接  12git initgit remote add origin 仓库地址   2、本地文件推到github上   将新建的文件添加到git的缓存区  1234添加具体名称文件">
+<meta name="keywords" content="operation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git安装及基本使用">
+<meta property="og:url" content="http://yoursite.com/2019/07/06/git安装及基本使用/index.html">
 <meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="准备工作 下载git   注册github   将git和github连接起来   获取ssh秘钥 id_rsa.pub   github里，找到settings，填入秘钥  正式开始 1、确定git和github已经连接  12git initgit remote add origin 仓库地址   2、本地文件推到github上   将新建的文件添加到git的缓存区  1234添加具体名称文件">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-05T16:03:14.142Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ErioY">
+<meta name="twitter:title" content="git安装及基本使用">
+<meta name="twitter:description" content="准备工作 下载git   注册github   将git和github连接起来   获取ssh秘钥 id_rsa.pub   github里，找到settings，填入秘钥  正式开始 1、确定git和github已经连接  12git initgit remote add origin 仓库地址   2、本地文件推到github上   将新建的文件添加到git的缓存区  1234添加具体名称文件">
   
     <link rel="alternative" href="/atom.xml" title="ErioY" type="application/atom+xml">
   
@@ -150,136 +155,230 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-git安装及基本使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git安装及基本使用
+    </h1>
+  
+
+        
+        <a href="/2019/07/06/git安装及基本使用/" class="archive-article-date">
+  	<time datetime="2019-07-05T16:01:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h6><blockquote>
+<p>下载git</p>
+</blockquote>
+<blockquote>
+<p>注册github</p>
+</blockquote>
+<blockquote>
+<p>将git和github连接起来<br>   获取ssh秘钥 id_rsa.pub<br>   github里，找到settings，填入秘钥</p>
+</blockquote>
+<h6 id="正式开始"><a href="#正式开始" class="headerlink" title="正式开始"></a>正式开始</h6><blockquote>
+<p>1、确定git和github已经连接</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin 仓库地址</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2、本地文件推到github上</p>
+</blockquote>
+<ul>
+<li>将新建的文件添加到git的缓存区</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">添加具体名称文件</span><br><span class="line">git add  index.html</span><br><span class="line">添加全部文件</span><br><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>给提交的文件添加描述</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &apos;demo&apos;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>汇总到总分支上</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>退出</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>文件推到远程仓库</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">git push origin master</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输入用户名(如果设置了SSH密匙的话就不用输入密码了)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入OpenSSH：输入密码</span><br></pre></td></tr></table></figure>
+
+<p>==如果出现错误==</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br></pre></td></tr></table></figure>
+
+<h6 id="一般在push的时候会出现错误"><a href="#一般在push的时候会出现错误" class="headerlink" title="一般在push的时候会出现错误"></a>一般在push的时候会出现错误</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hint: not have locally. This is usually caused by another repository pushing</span><br><span class="line">hint: to the same ref. You may want to first integrate the remote changes</span><br><span class="line">hint: (e.g., &apos;git pull ...&apos;) before pushing again.</span><br><span class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</span><br></pre></td></tr></table></figure>
+
+<h6 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h6><ol>
+<li>先执行git pull origin master</li>
+<li>在执行git push origin master<br>==这个时候又可能出现错误==</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: refusing to merge unrelated histories</span><br></pre></td></tr></table></figure>
+
+<p>不用慌，我在网上搜好多方法，都说使用如下指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories </span><br><span class="line">git pull --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
+
+<p>但是输入这些指令之后会跳出来另外一个界面然后从新pull就行了</p>
+<h6 id="我的解决方法"><a href="#我的解决方法" class="headerlink" title="我的解决方法"></a>我的解决方法</h6><p>重新在原文件下Git Brush Here<br>然后重新开始就可以解决</p>
+<h6 id="无论使用git-pull-出不出现错误"><a href="#无论使用git-pull-出不出现错误" class="headerlink" title="无论使用git pull 出不出现错误"></a>无论使用git pull 出不出现错误</h6><h2 id="只要出现"><a href="#只要出现" class="headerlink" title="只要出现"></a>只要出现</h2><h5 id="刷新github文件就推过来了"><a href="#刷新github文件就推过来了" class="headerlink" title="刷新github文件就推过来了"></a>刷新github文件就推过来了</h5><h4 id="学习相关git的操作"><a href="#学习相关git的操作" class="headerlink" title="学习相关git的操作"></a>学习相关git的操作</h4><p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">git的学习 廖雪峰的官方网站</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/27/简单的递归程序/" class="archive-article-date">
-  	<time datetime="2019-05-27T09:18:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/27/简单的递归程序/">简单的递归程序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">operation</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/06/git安装及基本使用/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/10/Java模拟肯德基快餐店的收银系统/" class="archive-article-date">
-  	<time datetime="2019-05-10T13:17:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-10</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/04/内联块和浮动问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">内联块和浮动问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/10/Java模拟肯德基快餐店的收银系统/">Java模拟肯德基快餐店的收银系统</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/01/三种简单的程序设计模式实例/" class="archive-article-date">
-  	<time datetime="2019-04-30T16:09:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/01/三种简单的程序设计模式实例/">三种简单的程序设计模式实例</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -302,8 +401,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
