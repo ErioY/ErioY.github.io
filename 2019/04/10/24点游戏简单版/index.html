@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="●题目名称 24点游戏（经典的纸牌益智游戏）  ●题目分析 随机生成4个代表扑克牌牌面的数字字母，程序自动列出所有可能算出24的表达式，可以利用穷举法列出4个数字加减乘除的各种可能性，包括括号的算法，并且要利用循环控制计算范围，防止出现重复的表达式。  ●算法构造 &amp;lt;1&amp;gt;利用随机函数生成4个随机数 &amp;lt;2&amp;gt;将4个数所有可能的顺序列举，并调用计算函数 &amp;lt;3&amp;gt;循环">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="24点游戏简单版">
+<meta property="og:url" content="http://yoursite.com/2019/04/10/24点游戏简单版/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="●题目名称 24点游戏（经典的纸牌益智游戏）  ●题目分析 随机生成4个代表扑克牌牌面的数字字母，程序自动列出所有可能算出24的表达式，可以利用穷举法列出4个数字加减乘除的各种可能性，包括括号的算法，并且要利用循环控制计算范围，防止出现重复的表达式。  ●算法构造 &amp;lt;1&amp;gt;利用随机函数生成4个随机数 &amp;lt;2&amp;gt;将4个数所有可能的顺序列举，并调用计算函数 &amp;lt;3&amp;gt;循环">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-03T03:22:18.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="24点游戏简单版">
+<meta name="twitter:description" content="●题目名称 24点游戏（经典的纸牌益智游戏）  ●题目分析 随机生成4个代表扑克牌牌面的数字字母，程序自动列出所有可能算出24的表达式，可以利用穷举法列出4个数字加减乘除的各种可能性，包括括号的算法，并且要利用循环控制计算范围，防止出现重复的表达式。  ●算法构造 &amp;lt;1&amp;gt;利用随机函数生成4个随机数 &amp;lt;2&amp;gt;将4个数所有可能的顺序列举，并调用计算函数 &amp;lt;3&amp;gt;循环">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/10/24点游戏简单版/">
+
+
+
+
+
+  <title>24点游戏简单版 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/24点游戏简单版/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ErioY">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">24点游戏简单版</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-10T18:12:58+08:00">
+                2019-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>  <strong>●题目名称</strong><br> 24点游戏（经典的纸牌益智游戏）</p>
+<p> <strong>●题目分析</strong><br> 随机生成4个代表扑克牌牌面的数字字母，程序自动列出所有可能算出24的表达式，可以利用穷举法列出4个数字加减乘除的各种可能性，包括括号的算法，并且要利用循环控制计算范围，防止出现重复的表达式。</p>
+<p> <strong>●算法构造</strong><br> &lt;1&gt;利用随机函数生成4个随机数<br> &lt;2&gt;将4个数所有可能的顺序列举，并调用计算函数<br> &lt;3&gt;循环调用使4个数字分别进行两两运算，并将表达式储存在一个数组中<br> &lt;4&gt;将3个运算符的顺序进行调整，调用加减乘除运算操作函数计算并输出</p>
+<p> <strong>●算法实现</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt; </span><br><span class="line">#include&lt;stdlib.h&gt; </span><br><span class="line">#include&lt;time.h&gt; </span><br><span class="line">#define N 10    //定义四个数的取值最大为10</span><br><span class="line"></span><br><span class="line">double operate(double a,double b,char ch)   //加减乘除运算操作函数 </span><br><span class="line">&#123; </span><br><span class="line">  if(ch==&apos;+&apos;) </span><br><span class="line">      return a+b; </span><br><span class="line">  else if(ch==&apos;-&apos;) </span><br><span class="line">	  return a-b; </span><br><span class="line">  else if(ch==&apos;/&apos;) </span><br><span class="line">      return a/b; </span><br><span class="line">  else if(ch==&apos;*&apos;) </span><br><span class="line">	  return a*b; </span><br><span class="line">  else </span><br><span class="line">	  return 0; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">int precede(char a,char b)  //判断优先级函数 </span><br><span class="line">&#123; </span><br><span class="line">   if(a==&apos;+&apos;||a==&apos;-&apos;) </span><br><span class="line">   &#123; </span><br><span class="line">     if(b==&apos;*&apos;||b==&apos;/&apos;) </span><br><span class="line">		 return 1; </span><br><span class="line">	 if(b==&apos;+&apos;||b==&apos;-&apos;) </span><br><span class="line">		 return 0; </span><br><span class="line">   &#125; </span><br><span class="line">   if(a==&apos;*&apos;||a==&apos;/&apos;) </span><br><span class="line">	   return 0; </span><br><span class="line">   return 0; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int check(double A,double B,double C,double D) </span><br><span class="line">&#123;  </span><br><span class="line">  int i,j,k; </span><br><span class="line">  char d[4]=&#123;&apos;+&apos;,&apos;-&apos;,&apos;*&apos;,&apos;/&apos;&#125;;   //数组储存运算符</span><br><span class="line">  double a[N],b[N][N],c[N][N][N]; </span><br><span class="line">  for(i=0;i&lt;4;i++)              //循环调用使A,B进行运算操作,d[]为运算符,运算结果存到a[]中</span><br><span class="line">	  a[i]=operate(A,B,d[i]); </span><br><span class="line">  for(i=0;i&lt;4;i++) </span><br><span class="line">	  for(j=0;j&lt;4;j++) </span><br><span class="line">		  b[i][j]=operate(a[i],C,d[j]);   //A,B运算的结果和C运算，结果存到b[][]中</span><br><span class="line">	  for(i=0;i&lt;4;i++) </span><br><span class="line">		  for(j=0;j&lt;4;j++) </span><br><span class="line">			  for(k=0;k&lt;4;k++)         //循环防止重复</span><br><span class="line">				  c[i][j][k]=operate(b[i][j],D,d[k]);  //A,B,C运算的结果和D运算，结果存到c[][][]中</span><br><span class="line">			  for(i=0;i&lt;4;i++) </span><br><span class="line">				  for(j=0;j&lt;4;j++) </span><br><span class="line">					  for(k=0;k&lt;4;k++) </span><br><span class="line">					  &#123; </span><br><span class="line">						  if(c[i][j][k]==24.0)     //判断四个数运算结果是否为24</span><br><span class="line">							  return 1; </span><br><span class="line">					  &#125; </span><br><span class="line">					  return 0; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void SHOW(double A,double B,double C,double D) //输出函数，运算过程与check()函数相同</span><br><span class="line">&#123;  </span><br><span class="line">  int i,j,k; </span><br><span class="line">  char d[4]=&#123;&apos;+&apos;,&apos;-&apos;,&apos;*&apos;,&apos;/&apos;&#125;; </span><br><span class="line">  double a[N],b[N][N],c[N][N][N]; </span><br><span class="line">  for(i=0;i&lt;4;i++) </span><br><span class="line">	  a[i]=operate(A,B,d[i]); </span><br><span class="line">  for(i=0;i&lt;4;i++) </span><br><span class="line">	  for(j=0;j&lt;4;j++) </span><br><span class="line">		  b[i][j]=operate(a[i],C,d[j]);</span><br><span class="line">	  for(i=0;i&lt;4;i++) </span><br><span class="line">		  for(j=0;j&lt;4;j++) </span><br><span class="line">			  for(k=0;k&lt;4;k++)               //防止重复</span><br><span class="line">				  c[i][j][k]=operate(b[i][j],D,d[k]); </span><br><span class="line">			  for(i=0;i&lt;4;i++) </span><br><span class="line">				  for(j=0;j&lt;4;j++) </span><br><span class="line">					  for(k=0;k&lt;4;k++) </span><br><span class="line">					  &#123; </span><br><span class="line">						  if(c[i][j][k]==24.0) //判断四个数运算结果是否为24</span><br><span class="line">						  &#123;  </span><br><span class="line">							  if(precede(d[i],d[j])) //调用判断优先级函数，判断第一、第二个运算符可能出现的情况</span><br><span class="line">							  &#123; </span><br><span class="line">								  printf(&quot;(%.0f%c%.0f)%c%.0f%c%.0f=24&quot;,A,d[i],B,d[j],C,d[k],D); //(AB)CD</span><br><span class="line">								  printf(&quot;\n&quot;); </span><br><span class="line">							  &#125; </span><br><span class="line">							  else if(precede(d[j],d[k])) //调用判断优先级函数，判断第二、第三个运算符可能出现的情况</span><br><span class="line">							  &#123; </span><br><span class="line">								  printf(&quot;(%.0f%c%.0f%c%.0f)%c%.0f=24&quot;,A,d[i],B,d[j],C,d[k],D); </span><br><span class="line">								  printf(&quot;\n&quot;); </span><br><span class="line">							  &#125; </span><br><span class="line">							  else                       //调用判断优先级函数，判断第一、第三个运算符可能出现的情况 </span><br><span class="line">							  &#123; </span><br><span class="line">								  printf(&quot;%.0f%c%.0f%c%.0f%c%.0f=24&quot;,A,d[i],B,d[j],C,d[k],D); </span><br><span class="line">								  printf(&quot;\n&quot;); </span><br><span class="line">							  &#125; </span><br><span class="line">						  &#125; </span><br><span class="line">					  &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void game_24() </span><br><span class="line">&#123; </span><br><span class="line">  double A=0,B=0,C=0,D=0; </span><br><span class="line">  char j; </span><br><span class="line">  char d[4]=&#123;&apos;+&apos;,&apos;-&apos;,&apos;*&apos;,&apos;/&apos;&#125;; </span><br><span class="line">  srand((unsigned)time(NULL)); </span><br><span class="line">  while(1)               </span><br><span class="line">  &#123; </span><br><span class="line">	  while((A==0||B==0)||(C==0||D==0)) //当A,B,C,D不为0时，4个随机数赋值给A,B,C,D</span><br><span class="line">	  &#123; </span><br><span class="line">		  A=rand()%10*1.0; </span><br><span class="line">		  B=rand()%10*1.0; </span><br><span class="line">		  C=rand()%10*1.0; </span><br><span class="line">		  D=rand()%10*1.0; </span><br><span class="line">	  &#125; </span><br><span class="line">	  if((check(A,B,C,D)||check(B,C,A,D))||(check(C,B,D,A)||check(D,A,B,C))) </span><br><span class="line">		  break; </span><br><span class="line">	  else </span><br><span class="line">	  &#123; </span><br><span class="line">		  A=0; </span><br><span class="line">		  B=0; </span><br><span class="line">		  C=0; </span><br><span class="line">		  D=0; </span><br><span class="line">	  &#125; </span><br><span class="line">  &#125; </span><br><span class="line">  printf(&quot;随机生成四个数为：&quot;);</span><br><span class="line">  printf(&quot;%.0f %.0f %.0f %.0f\n&quot;,A,B,C,D);   </span><br><span class="line">  printf(&quot;是否要看答案(y/n):&quot;); </span><br><span class="line">  while(1) </span><br><span class="line">  &#123; </span><br><span class="line">     scanf(&quot;%s&quot;,&amp;j); </span><br><span class="line">     if(j==&apos;y&apos;||j==&apos;Y&apos;) </span><br><span class="line">	 &#123;  </span><br><span class="line">		 SHOW(A,B,C,D);  //将24种可能列举，并调用函数计算并输出结果</span><br><span class="line">		 SHOW(A,B,D,C); </span><br><span class="line">   	     SHOW(A,D,B,C); </span><br><span class="line">		 SHOW(A,D,C,B); </span><br><span class="line">		 SHOW(A,C,B,D); </span><br><span class="line">		 SHOW(A,C,D,B); </span><br><span class="line">		 SHOW(B,A,C,D); </span><br><span class="line">		 SHOW(B,A,D,C); </span><br><span class="line">		 SHOW(B,C,A,D); </span><br><span class="line">		 SHOW(B,C,D,A); </span><br><span class="line">		 SHOW(B,D,A,C); </span><br><span class="line">		 SHOW(B,D,C,A); </span><br><span class="line">		 SHOW(C,A,B,D); </span><br><span class="line">		 SHOW(C,A,D,B); </span><br><span class="line">		 SHOW(C,B,A,D); </span><br><span class="line">		 SHOW(C,B,D,A); </span><br><span class="line">		 SHOW(C,D,A,B); </span><br><span class="line">		 SHOW(C,D,B,A); </span><br><span class="line">		 SHOW(D,A,B,C); </span><br><span class="line">		 SHOW(D,A,C,B); </span><br><span class="line">		 SHOW(D,B,A,C); </span><br><span class="line">		 SHOW(D,B,C,A); </span><br><span class="line">		 SHOW(D,C,A,B); </span><br><span class="line">		 SHOW(D,C,B,A); </span><br><span class="line">		 break; </span><br><span class="line">	 &#125; </span><br><span class="line">	 else </span><br><span class="line">		 printf(&quot;是否要看答案(y/n):&quot;); </span><br><span class="line">  &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void menu() </span><br><span class="line">&#123; </span><br><span class="line">	int i; </span><br><span class="line">	while(1) </span><br><span class="line">	&#123; </span><br><span class="line">		system(&quot;cls&quot;); </span><br><span class="line">		printf(&quot;* * * * * * * * * * * * * * * * * * * * * * * * * *\n&quot;); </span><br><span class="line">		printf(&quot;*                                                 *\n&quot;); </span><br><span class="line">		printf(&quot;*                   智力游戏24点                  *\n&quot;); </span><br><span class="line">		printf(&quot;*                                                 *\n&quot;); </span><br><span class="line">		printf(&quot;*             1.开始游戏.                         *\n&quot;); </span><br><span class="line">		printf(&quot;*             2.退出游戏.                         *\n&quot;); </span><br><span class="line">		printf(&quot;*                                                 *\n&quot;); </span><br><span class="line">		printf(&quot;* * * * * * * * * * * * * * * * * * * * * * * * * *\n&quot;); </span><br><span class="line">		printf(&quot;你准备好了吗？\n&quot;); </span><br><span class="line">		printf(&quot;输入你的选择:&quot;); </span><br><span class="line">		scanf(&quot;%d&quot;,&amp;i); </span><br><span class="line">		if(i==3) </span><br><span class="line">			break; </span><br><span class="line">		switch(i) </span><br><span class="line">		&#123; </span><br><span class="line">		case 1: </span><br><span class="line">			game_24();   //开始游戏</span><br><span class="line">			system(&quot;PAUSE&quot;); </span><br><span class="line">			break; </span><br><span class="line">		default: </span><br><span class="line">			printf(&quot;error input!\n&quot;); </span><br><span class="line">			system(&quot;PAUSE&quot;); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;  </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void main() </span><br><span class="line">&#123; </span><br><span class="line">  menu(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> ●经验归纳</p>
+<p> ●●遇到的问题<br> &lt;1&gt;在防止重复问题上有点迷茫，已解决<br> &lt;2&gt;对数据结构栈不够清楚，未写提高要求</p>
+<p> ●●心得体会<br> 感觉自己对数据结构栈的知识点很薄弱，需要加强。而且在解决基本要求时考虑的不够全面，刚开始没有考虑到防止重复的问题，还有出现过进入无限循环的问题，好在均已解决，但是随机函数生成4个数字的时候，4个数字可能会出现重复的情况，我在网上找了一下，有不重复的随机函数代码，在这里不赘述了。<br> 个人认为这个代码还可以优化<del>~</del></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/03/基于文件的C语言学生信息管理系统/" rel="next" title="基于文件的C语言学生信息管理系统">
+                <i class="fa fa-chevron-left"></i> 基于文件的C语言学生信息管理系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/17/Java创建RPG游戏角色/" rel="prev" title="Java创建RPG游戏角色">
+                Java创建RPG游戏角色 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ErioY</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ErioY</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
