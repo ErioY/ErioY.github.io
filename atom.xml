@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-13T03:41:19.753Z</updated>
+  <updated>2019-07-13T03:59:29.196Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WEB前端布局和HTML5新标签</title>
+    <link href="http://yoursite.com/2019/07/13/WEB%E5%89%8D%E7%AB%AF%E5%B8%83%E5%B1%80%E5%92%8CHTML5%E6%96%B0%E6%A0%87%E7%AD%BE/"/>
+    <id>http://yoursite.com/2019/07/13/WEB前端布局和HTML5新标签/</id>
+    <published>2019-07-13T03:57:13.000Z</published>
+    <updated>2019-07-13T03:59:29.196Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;做一个页面布局&quot;&gt;&lt;a href=&quot;#做一个页面布局&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+  </entry>
   
   <entry>
     <title>WEB前端样式的初始化和css样式的补充</title>
