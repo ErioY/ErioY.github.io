@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-14T01:57:08.515Z</updated>
+  <updated>2019-07-14T04:10:35.180Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WEB前端form表单</title>
+    <link href="http://yoursite.com/2019/07/14/WEB%E5%89%8D%E7%AB%AFform%E8%A1%A8%E5%8D%95/"/>
+    <id>http://yoursite.com/2019/07/14/WEB前端form表单/</id>
+    <published>2019-07-14T04:07:58.000Z</published>
+    <updated>2019-07-14T04:10:35.180Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;input属性&quot;&gt;&lt;a href=&quot;#input属性&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+  </entry>
   
   <entry>
     <title>WEB前端定位和居中</title>
@@ -481,32 +506,6 @@
         
           &lt;p&gt;  &lt;strong&gt;1.题目名称&lt;/strong&gt;&lt;br&gt; 计算两个数的最大公约数&lt;/p&gt;
 &lt;p&gt; &lt;strong&gt;2.题目分析&lt;/strong&gt;&lt;br&gt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>三天打鱼两天晒网</title>
-    <link href="http://yoursite.com/2019/03/01/%E2%80%9C%E4%B8%89%E5%A4%A9%E6%89%93%E9%B1%BC%E4%B8%A4%E5%A4%A9%E6%99%92%E7%BD%91%E2%80%9D/"/>
-    <id>http://yoursite.com/2019/03/01/“三天打鱼两天晒网”/</id>
-    <published>2019-03-01T14:21:29.000Z</published>
-    <updated>2019-07-03T03:39:46.414Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;  ♦ 题目：&lt;br&gt; 三天打鱼两天晒网&lt;/p&gt;
-&lt;p&gt; ♦问题：&lt;br&gt; 某人从2010年1月1日起开始“三天打鱼两天晒网”，问这个人在以后的某一天中是“打鱼”还是“晒网”。&lt;/p&gt;
-&lt;p&gt; ♦ 要求：&lt;br&gt;
         
       
     
