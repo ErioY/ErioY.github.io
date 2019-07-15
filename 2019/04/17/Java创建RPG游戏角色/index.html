@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="◆题目名称 创建RPG游戏角色  ◆题目分析 该程序需要用到有关类与对象的知识点，所以不能使用C语言来编写代码，这里我选择Java语言。本题目要求的游戏角色应有以下属性：名字、性别、种族、职业、力量、敏捷、体力、智力、智慧、生命值和魔法值。本题目要求力量、敏捷、体力、智力和智慧要求是随机值（利用随机数函数来取得随机数），但是五项属性的总和应该是100，并且应该和职业相关。例如狂战士的体力和力量">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java创建RPG游戏角色">
+<meta property="og:url" content="http://yoursite.com/2019/04/17/Java创建RPG游戏角色/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="◆题目名称 创建RPG游戏角色  ◆题目分析 该程序需要用到有关类与对象的知识点，所以不能使用C语言来编写代码，这里我选择Java语言。本题目要求的游戏角色应有以下属性：名字、性别、种族、职业、力量、敏捷、体力、智力、智慧、生命值和魔法值。本题目要求力量、敏捷、体力、智力和智慧要求是随机值（利用随机数函数来取得随机数），但是五项属性的总和应该是100，并且应该和职业相关。例如狂战士的体力和力量">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190417163502315.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDY5NzQ3NQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190417163558887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDY5NzQ3NQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019041716363833.png">
+<meta property="og:updated_time" content="2019-07-03T03:38:04.618Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java创建RPG游戏角色">
+<meta name="twitter:description" content="◆题目名称 创建RPG游戏角色  ◆题目分析 该程序需要用到有关类与对象的知识点，所以不能使用C语言来编写代码，这里我选择Java语言。本题目要求的游戏角色应有以下属性：名字、性别、种族、职业、力量、敏捷、体力、智力、智慧、生命值和魔法值。本题目要求力量、敏捷、体力、智力和智慧要求是随机值（利用随机数函数来取得随机数），但是五项属性的总和应该是100，并且应该和职业相关。例如狂战士的体力和力量">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190417163502315.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDY5NzQ3NQ==,size_16,color_FFFFFF,t_70">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/17/Java创建RPG游戏角色/">
+
+
+
+
+
+  <title>Java创建RPG游戏角色 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/Java创建RPG游戏角色/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java创建RPG游戏角色</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-17T16:39:30+08:00">
+                2019-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>  <strong>◆题目名称</strong><br> 创建RPG游戏角色</p>
+<p> <strong>◆题目分析</strong><br> 该程序需要用到有关类与对象的知识点，所以不能使用C语言来编写代码，这里我选择Java语言。本题目要求的游戏角色应有以下属性：名字、性别、种族、职业、力量、敏捷、体力、智力、智慧、生命值和魔法值。本题目要求力量、敏捷、体力、智力和智慧要求是随机值（利用随机数函数来取得随机数），但是五项属性的总和应该是100，并且应该和职业相关。例如狂战士的体力和力量就要比较高，而巫师需要较高的智力，而祭司则需要较高的智慧。各职业初始属性的大致比例应遵从下表：<br> 职业/属性 力量 敏捷 体力 智力 智慧<br> 狂战士 40 20 30 5 5<br> 圣骑士 25 15 30 20 10<br> 刺客 20 35 20 15 10<br> 猎手 15 40 15 10 20<br> 祭司 15 20 15 35 15<br> 巫师 10 20 10 20 40<br> 例如，前面示意图中的祭司的初始属性，大致满足该比例，但是应该是随机的。然后利用属性值计算生命值和魔法值。<br> 最后向用户显示该角色的所有信息，将用户创建角色的相关信息写入文件保存。</p>
+<p> <strong>◆算法构造</strong><br> &lt;1&gt;玩家选择1，则进入游戏；选择2，可以查看游戏规则；选择3，则游戏结束。<br> &lt;2&gt;选择1：玩家先输入角色姓名、性别、种族以及职业，根据种族和职业的限制表判断玩家是否可以使用该职业，若不能则重新选择职业；<br> &lt;3&gt;利用随机函数分别生成力量、敏捷、体力、智力和智慧五项属性，并将五项属性的总和控制在100，并且属性值和职业相关。可以由(int)(X+Math.random()_10-5)可以得到符合条件的属性值，其中X表示表1中的属性限定值，并计算生命值和魔法值：生命值=体力_20、魔法值=（智力+智慧）*10；<br> &lt;4&gt;打印所有的信息并向用户显示出来；<br> &lt;5&gt;将用户创建角色的相关信息写入txt文件保存。</p>
+<p> <strong>◆算法实现</strong><br> 写入文件代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public void REFile(int occ) throws IOException&#123;  //throws IOException:异常处理</span><br><span class="line">		 FileWriter writer=new FileWriter(&quot;message.txt&quot;,true);//存入信息，不会将以前的信息覆盖			</span><br><span class="line">			try &#123;</span><br><span class="line">				writer.write(&quot;姓名: &quot;+n+&quot;\t&quot;);  //&quot;\t&quot;表示空格</span><br><span class="line">				writer.write(&quot;性别 : &quot;+s+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;种族 : &quot;+ra+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;职业 : &quot;+occ+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;力量 : &quot;+strength+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;敏捷 : &quot;+smart+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;体力 : &quot;+body+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;智力 : &quot;+talent+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;智慧 : &quot;+wisdom+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;生命值: &quot;+life+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;魔法值: &quot;+magic+&quot;\r\n&quot;);//&quot;\r\n&quot;表示空行</span><br><span class="line">				writer.flush();</span><br><span class="line">				writer.close();  //关闭文件</span><br><span class="line">				</span><br><span class="line">			&#125; catch (IOException e) &#123;</span><br><span class="line">				// TODO Auto-generated catch block</span><br><span class="line">				e.printStackTrace();	</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(&quot;创建成功！&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>◆调试及运行结果<br> ◆◆调试结果</strong><br> <img src="https://img-blog.csdnimg.cn/20190417163502315.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDY5NzQ3NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> <strong>◆运行结果</strong><br> <img src="https://img-blog.csdnimg.cn/20190417163558887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDY5NzQ3NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> <strong>◆◆文件保存情况</strong><br> <img src="https://img-blog.csdnimg.cn/2019041716363833.png" alt="在这里插入图片描述"><br> <strong>◆经验归纳<br> ◆◆遇到的问题</strong><br> &lt;1&gt;对于Java中的类和对象用的还不是很熟练(还在努力学习中)<br> &lt;2&gt;Java引用写入文件方法出问题(已解决)<br> &lt;3&gt;Java写入文件方法内部出现异常(已解决)<br> &lt;4&gt;IO流未声明(已解决)<br> <strong>◆◆心得体会</strong><br> 用Java写这个程序，让我查了不少有关Java的知识点。在类与对象那块还不太熟悉，其中，有一些知识点是值得记录的：<br> ①访问另一个类中的某个方法：Start g=new Start();g.start();<br> ②对象引用：Random r=new Random();r.n=name;<br> ③随机函数生成某个值：strength=(int)(40+Math.random()*10-5)(40是限制条件)<br> ④调用写入文件方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try &#123;        </span><br><span class="line">	REFile(occ);</span><br><span class="line">&#125;catch (IOException e) &#123;</span><br><span class="line">	// TODO Auto-generated catch block</span><br><span class="line">	e.printStackTrace();</span><br></pre></td></tr></table></figure>
+
+<p> 在百度文库查找资料的时候我发现可以将这个代码优化，即编为小游戏的形式，我打算找时间写一下。</p>
+<p> <strong>附：源代码(部分代码参考百度文库)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br></pre></td><td class="code"><pre><span class="line">package game;</span><br><span class="line">import java.io.*;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">import java.io.FileWriter;</span><br><span class="line">public class First &#123;</span><br><span class="line">	public static void main(String[] args)&#123;   //菜单</span><br><span class="line">		System.out.println(&quot;这是一个RPG游戏&quot;);</span><br><span class="line">		System.out.println(&quot;1.开始游戏&quot;);</span><br><span class="line">		System.out.println(&quot;2.游戏规则&quot;);</span><br><span class="line">		System.out.println(&quot;3.结束游戏&quot;);</span><br><span class="line">		System.out.print(&quot;请输入您想进行的操作：(1-3)&quot;);</span><br><span class="line">		Scanner x=new Scanner(System.in);</span><br><span class="line">		int num=x.nextInt();    </span><br><span class="line">		switch(num)&#123;</span><br><span class="line">		case 1:</span><br><span class="line">			Start g=new Start();</span><br><span class="line">			g.start();      //访问Start类中的start方法开始创建角色</span><br><span class="line">			break;</span><br><span class="line">		case 2:</span><br><span class="line">			Rule r=new Rule();</span><br><span class="line">			r.rule();     //访问Rule类中的rule方法查看规则</span><br><span class="line">			break;</span><br><span class="line">		default:</span><br><span class="line">			System.out.println(&quot;游戏结束!&quot;);</span><br><span class="line">			System.exit(0);  //游戏结束标识</span><br><span class="line">		&#125;		</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//开始游戏</span><br><span class="line">class Start&#123;</span><br><span class="line">	int occ=0;</span><br><span class="line">	String name;</span><br><span class="line">	public void start()&#123;</span><br><span class="line">		System.out.print(&quot;请输入您游戏角色的姓名：&quot;);</span><br><span class="line">		Scanner a=new Scanner(System.in);</span><br><span class="line">		String name=a.next();</span><br><span class="line">		System.out.print(&quot;请选择您游戏角色的性别：(男或女)&quot;);</span><br><span class="line">		Scanner b=new Scanner(System.in);</span><br><span class="line">		String sex=b.next();</span><br><span class="line">		System.out.print(&quot;请选择您游戏角色的种族：(1.人类,2.精灵,3.兽人,4.矮人,5.元素)&quot;);</span><br><span class="line">		Scanner c=new Scanner(System.in);</span><br><span class="line">		int race=c.nextInt();</span><br><span class="line">		switch(race)&#123;  //职业选择</span><br><span class="line">		case 1:   //种族为人类</span><br><span class="line">			while(true)&#123;</span><br><span class="line">				System.out.print(&quot;请选择您的职业：(1.狂战士,2.圣骑士,3.刺客,4.猎手,5.祭司,6.巫师)&quot;);  </span><br><span class="line">				Scanner d=new Scanner(System.in);</span><br><span class="line">				occ=d.nextInt();</span><br><span class="line">				if(occ&gt;=1&amp;&amp;occ&lt;=6)&#123;      //验证输入正确性，正确则跳出循环，否则输出提示。</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">				else</span><br><span class="line">					System.out.println(&quot;请输入1-6之间的数字选择职业！！&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			break;</span><br><span class="line">		case 2:   //种族为精灵</span><br><span class="line">			while(true)&#123;</span><br><span class="line">				System.out.print(&quot;请选择您的职业：(1.狂战士,2.圣骑士,3.刺客,4.猎手,5.祭司,6.巫师)&quot;);  </span><br><span class="line">				Scanner d=new Scanner(System.in);</span><br><span class="line">				occ=d.nextInt();</span><br><span class="line">				if(occ&gt;=3&amp;&amp;occ&lt;=6)&#123;      //验证输入正确性，正确则跳出循环，否则输出提示。</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">				else</span><br><span class="line">					System.out.println(&quot;请输入3-6之间的数字选择职业！！&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			break;			</span><br><span class="line">		case 3:   //种族为兽人</span><br><span class="line">			while(true)&#123;</span><br><span class="line">				System.out.print(&quot;请选择您的职业：(1.狂战士,2.圣骑士,3.刺客,4.猎手,5.祭司,6.巫师)&quot;);  </span><br><span class="line">				Scanner d=new Scanner(System.in);</span><br><span class="line">				occ=d.nextInt();</span><br><span class="line">				if(occ==1||occ==4||occ==5)&#123;      //验证输入正确性，正确则跳出循环，否则输出提示。</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">				else</span><br><span class="line">					System.out.println(&quot;请输入1,4,5这三个数字任意一个选择职业！！&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			break;			</span><br><span class="line">		case 4:   //种族为矮人</span><br><span class="line">			while(true)&#123;</span><br><span class="line">				System.out.print(&quot;请选择您的职业：(1.狂战士,2.圣骑士,3.刺客,4.猎手,5.祭司,6.巫师)&quot;);  </span><br><span class="line">				Scanner d=new Scanner(System.in);</span><br><span class="line">				occ=d.nextInt();</span><br><span class="line">				if(occ==1||occ==2||occ==5)&#123;      //验证输入正确性，正确则跳出循环，否则输出提示。</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">				else</span><br><span class="line">					System.out.println(&quot;请输入1,2,5这三个数字任意一个选择职业！！&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			break;				</span><br><span class="line">		case 5:   //种族为元素</span><br><span class="line">			while(true)&#123;</span><br><span class="line">				System.out.print(&quot;请选择您的职业：(1.狂战士,2.圣骑士,3.刺客,4.猎手,5.祭司,6.巫师)&quot;);  </span><br><span class="line">				Scanner d=new Scanner(System.in);</span><br><span class="line">				occ=d.nextInt();</span><br><span class="line">				if(occ==5||occ==6)&#123;      //验证输入正确性，正确则跳出循环，否则输出提示。</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">				else</span><br><span class="line">					System.out.println(&quot;请输入5-6之间的数字选择职业！！&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			break;	</span><br><span class="line">		&#125;</span><br><span class="line">		Random r=new Random();</span><br><span class="line">		r.n=name;    //将姓名、性别、种族对象引用到Random类中</span><br><span class="line">		r.s=sex;</span><br><span class="line">		r.ra=race;</span><br><span class="line">		r.random(occ);//将职业传递到Random类的random方法中</span><br><span class="line">		</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">//</span><br><span class="line">class Random&#123;</span><br><span class="line">	String n;</span><br><span class="line">	String s;</span><br><span class="line">	int ra;</span><br><span class="line">	int strength=0;   //力量</span><br><span class="line">	int smart=0;      //敏捷</span><br><span class="line">	int body=0;       //体力</span><br><span class="line">	int talent=0;     //智力</span><br><span class="line">	int wisdom=0;     //智慧</span><br><span class="line">	int life=0;       //生命值</span><br><span class="line">	int magic=0;      //魔法值</span><br><span class="line">	public void random(int occ)&#123;   //随机函数生成各个值</span><br><span class="line">		System.out.println(occ);</span><br><span class="line">		if(occ==1)</span><br><span class="line">		&#123;</span><br><span class="line">			strength=(int)(40+Math.random()*10-5);//随机函数生成符合题目条件的各个值</span><br><span class="line">			smart=(int)(20+Math.random()*10-5);</span><br><span class="line">			body=(int)(30+Math.random()*10-5);</span><br><span class="line">			talent=(int)(5+Math.random()*10-5);</span><br><span class="line">			wisdom=100-strength-smart-body-talent;</span><br><span class="line">		&#125;</span><br><span class="line">		else if(occ==2)&#123;</span><br><span class="line">			strength=(int)(25+Math.random()*10-5);</span><br><span class="line">			smart=(int)(15+Math.random()*10-5);</span><br><span class="line">			body=(int)(30+Math.random()*10-5);</span><br><span class="line">			talent=(int)(20+Math.random()*10-5);</span><br><span class="line">			wisdom=100-strength-smart-body-talent;</span><br><span class="line">		&#125;</span><br><span class="line">		else if(occ==3)&#123;</span><br><span class="line">			strength=(int)(20+Math.random()*10-5);</span><br><span class="line">			smart=(int)(35+Math.random()*10-5);</span><br><span class="line">			body=(int)(20+Math.random()*10-5);</span><br><span class="line">			talent=(int)(15+Math.random()*10-5);</span><br><span class="line">			wisdom=100-strength-smart-body-talent;		</span><br><span class="line">		&#125;</span><br><span class="line">		else if(occ==4)&#123;</span><br><span class="line">			strength=(int)(15+Math.random()*10-5);</span><br><span class="line">			smart=(int)(40+Math.random()*10-5);</span><br><span class="line">			body=(int)(15+Math.random()*10-5);</span><br><span class="line">			talent=(int)(10+Math.random()*10-5);</span><br><span class="line">			wisdom=100-strength-smart-body-talent;		</span><br><span class="line">		&#125;</span><br><span class="line">		else if(occ==5)&#123;</span><br><span class="line">			strength=(int)(15+Math.random()*10-5);</span><br><span class="line">			smart=(int)(20+Math.random()*10-5);</span><br><span class="line">			body=(int)(15+Math.random()*10-5);</span><br><span class="line">			talent=(int)(35+Math.random()*10-5);</span><br><span class="line">			wisdom=100-strength-smart-body-talent;		</span><br><span class="line">		&#125;</span><br><span class="line">		else if(occ==6)&#123;</span><br><span class="line">			strength=(int)(10+Math.random()*10-5);</span><br><span class="line">			smart=(int)(20+Math.random()*10-5);</span><br><span class="line">			body=(int)(10+Math.random()*10-5);</span><br><span class="line">			talent=(int)(20+Math.random()*10-5);</span><br><span class="line">			wisdom=100-strength-smart-body-talent;			</span><br><span class="line">		&#125;</span><br><span class="line">		life=body*20;   //计算生命值和魔法值</span><br><span class="line">		magic=(talent+wisdom)*10;		</span><br><span class="line">		print(occ);  //调用打印方法</span><br><span class="line">		try &#123;        //调用写入文件方法</span><br><span class="line">			REFile(occ);</span><br><span class="line">		&#125;catch (IOException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	//打印</span><br><span class="line">	public void print(int occ)&#123; </span><br><span class="line">		System.out.println(&quot;* * * * * * * * * * * * *&quot;);</span><br><span class="line">		System.out.println(&quot;*    姓名：&quot;+n+&quot;         *&quot;);</span><br><span class="line">		System.out.println(&quot;*    性别：&quot;+s+&quot;         *&quot;);</span><br><span class="line">		System.out.println(&quot;*    种族：&quot;+ra+&quot;        *&quot;);</span><br><span class="line">		System.out.println(&quot;*    职业：&quot;+occ+&quot;       *&quot;);</span><br><span class="line">		System.out.println(&quot;*    力量：&quot;+strength+&quot;  *&quot;);</span><br><span class="line">		System.out.println(&quot;*    敏捷：&quot;+smart+&quot;     *&quot;);</span><br><span class="line">		System.out.println(&quot;*    体力：&quot;+body+&quot;      *&quot;);</span><br><span class="line">		System.out.println(&quot;*    智力：&quot;+talent+&quot;    *&quot;);</span><br><span class="line">		System.out.println(&quot;*    智慧：&quot;+wisdom+&quot;    *&quot;);</span><br><span class="line">		System.out.println(&quot;*    生命值：&quot;+life+&quot;     *&quot;);</span><br><span class="line">		System.out.println(&quot;*    魔法值：&quot;+magic+&quot;    *&quot;);</span><br><span class="line">		System.out.println(&quot;* * * * * * * * * * * * *&quot;);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	//写入文件</span><br><span class="line">	public void REFile(int occ) throws IOException&#123;  //throws IOException:异常处理</span><br><span class="line">		 FileWriter writer=new FileWriter(&quot;message.txt&quot;,true);//存入信息，不会将以前的信息覆盖			</span><br><span class="line">			try &#123;</span><br><span class="line">				writer.write(&quot;姓名: &quot;+n+&quot;\t&quot;);  //&quot;\t&quot;表示空格</span><br><span class="line">				writer.write(&quot;性别 : &quot;+s+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;种族 : &quot;+ra+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;职业 : &quot;+occ+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;力量 : &quot;+strength+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;敏捷 : &quot;+smart+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;体力 : &quot;+body+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;智力 : &quot;+talent+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;智慧 : &quot;+wisdom+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;生命值: &quot;+life+&quot;\t&quot;);</span><br><span class="line">				writer.write(&quot;魔法值: &quot;+magic+&quot;\r\n&quot;);//&quot;\r\n&quot;表示空行</span><br><span class="line">				writer.flush();</span><br><span class="line">				writer.close();  //关闭文件</span><br><span class="line">				</span><br><span class="line">			&#125; catch (IOException e) &#123;</span><br><span class="line">				// TODO Auto-generated catch block</span><br><span class="line">				e.printStackTrace();	</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(&quot;创建成功！&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">//游戏规则</span><br><span class="line">class Rule&#123;</span><br><span class="line">	public void rule()&#123; </span><br><span class="line">		System.out.println(&quot;很多职业会限制某些种族选择,种族和职业的限制情况如下：(下表均为不允许)&quot;);</span><br><span class="line">		System.out.println(&quot;┎---------------------------------------------┒&quot;);</span><br><span class="line">		System.out.println(&quot;│         种   类                   职   业                                │&quot;);</span><br><span class="line">		System.out.println(&quot;│          精灵               狂战士、圣骑士                       │&quot;);</span><br><span class="line">		System.out.println(&quot;│          兽人               圣骑士、刺客、巫师                │&quot;);</span><br><span class="line">		System.out.println(&quot;│          矮人               刺客、猎手、巫师                   │&quot;);</span><br><span class="line">		System.out.println(&quot;│          元素               狂战士、圣骑士、刺客、猎手  │&quot;);</span><br><span class="line">		System.out.println(&quot;┖---------------------------------------------┚&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/10/24点游戏简单版/" rel="next" title="24点游戏简单版">
+                <i class="fa fa-chevron-left"></i> 24点游戏简单版
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/01/三种简单的程序设计模式实例/" rel="prev" title="三种简单的程序设计模式实例">
+                三种简单的程序设计模式实例 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

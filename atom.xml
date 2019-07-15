@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-14T04:10:35.180Z</updated>
+  <updated>2019-07-15T12:46:39.750Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chousisi</title>
+    <link href="http://yoursite.com/2019/07/15/chousisi/"/>
+    <id>http://yoursite.com/2019/07/15/chousisi/</id>
+    <published>2019-07-15T12:46:39.000Z</published>
+    <updated>2019-07-15T12:46:39.750Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>WEB前端form表单</title>
@@ -209,6 +231,47 @@
         
           &lt;ul&gt;
 &lt;li&gt;&lt;h5 id=&quot;首先让我们认识一些表格标签&quot;&gt;&lt;a href=&quot;#首先让我们认识一些表格标签&quot; class=&quot;headerlink&quot; title=&quot;首先让我们认识一些表格标签&quot;&gt;&lt;/a&gt;首先让我们认识一些表格标签&lt;/h5&gt;&lt;figure
+        
+      
+    
+    </summary>
+    
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript</title>
+    <link href="http://yoursite.com/2019/06/25/javascript/"/>
+    <id>http://yoursite.com/2019/06/25/javascript/</id>
+    <published>2019-06-25T01:55:12.000Z</published>
+    <updated>2019-07-15T12:49:39.389Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html和css知识点</title>
+    <link href="http://yoursite.com/2019/06/21/html%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>http://yoursite.com/2019/06/21/html知识点/</id>
+    <published>2019-06-21T09:59:17.899Z</published>
+    <updated>2019-07-15T12:49:04.233Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;HTML部分知识点总结&quot;&gt;&lt;a href=&quot;#HTML部分知识点总结&quot; class=&quot;headerlink&quot; title=&quot;HTML部分知识点总结&quot;&gt;&lt;/a&gt;&lt;strong&gt;HTML部分知识点总结&lt;/strong&gt;&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4
         
       
     
@@ -438,81 +501,6 @@
     
     
       <category term="C语言" scheme="http://yoursite.com/tags/C%E8%AF%AD%E8%A8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>求N个数的最大公约数和最小公倍数&amp;&amp;Hankson问题</title>
-    <link href="http://yoursite.com/2019/03/21/%E6%B1%82N%E4%B8%AA%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E5%92%8C%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0&amp;&amp;Hankson%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2019/03/21/求N个数的最大公约数和最小公倍数&amp;&amp;Hankson问题/</id>
-    <published>2019-03-21T14:43:20.000Z</published>
-    <updated>2019-07-03T03:45:11.369Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;  &lt;strong&gt;● 题目名称&lt;/strong&gt;&lt;br&gt; &amp;lt;1&amp;gt;求N个数的最大公约数和最小公倍数&lt;br&gt; &amp;lt;2&amp;gt;计算出Hankson的“逆问题”的答案&lt;/p&gt;
-&lt;p&gt; &lt;strong&gt;● 题目分析&lt;/strong&gt;&lt;br&gt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用JAVA编写奇数累加和猜数字小游戏代码（包含JAVA产生随机数）</title>
-    <link href="http://yoursite.com/2019/03/10/%E7%94%A8JAVA%E7%BC%96%E5%86%99%E5%A5%87%E6%95%B0%E7%B4%AF%E5%8A%A0%E5%92%8C%E7%8C%9C%E6%95%B0%E5%AD%97%E5%B0%8F%E6%B8%B8%E6%88%8F%E4%BB%A3%E7%A0%81%EF%BC%88%E5%8C%85%E5%90%ABJAVA%E4%BA%A7%E7%94%9F%E9%9A%8F%E6%9C%BA%E6%95%B0%EF%BC%89/"/>
-    <id>http://yoursite.com/2019/03/10/用JAVA编写奇数累加和猜数字小游戏代码（包含JAVA产生随机数）/</id>
-    <published>2019-03-10T02:32:01.000Z</published>
-    <updated>2019-07-03T03:46:20.688Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;  &lt;strong&gt;1.题目名称：&lt;/strong&gt;&lt;br&gt; 奇数累加、猜数字小游戏&lt;/p&gt;
-&lt;p&gt; &lt;strong&gt;2.题目要求：&lt;/strong&gt;&lt;br&gt; 求自然数1-99的所有奇数累加的和；&lt;br&gt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>四种方法计算两个数的最大公约数</title>
-    <link href="http://yoursite.com/2019/03/08/%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%97%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0~~~/"/>
-    <id>http://yoursite.com/2019/03/08/四种方法计算两个数的最大公约数~~~/</id>
-    <published>2019-03-08T06:42:00.000Z</published>
-    <updated>2019-07-03T03:46:02.215Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;  &lt;strong&gt;1.题目名称&lt;/strong&gt;&lt;br&gt; 计算两个数的最大公约数&lt;/p&gt;
-&lt;p&gt; &lt;strong&gt;2.题目分析&lt;/strong&gt;&lt;br&gt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
     
   </entry>
   
