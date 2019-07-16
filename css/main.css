@@ -1745,7 +1745,7 @@ pre .javascript .function {
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
-  transition: 1.4s all linear;
+  transition: 1.4s all;
 }
 # 头像旋转事件,
 .site-author-image:hover {
@@ -1834,7 +1834,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #91390a;
+  background: #18c3ff;
 }
 .links-of-blogroll {
   font-size: 13px;
