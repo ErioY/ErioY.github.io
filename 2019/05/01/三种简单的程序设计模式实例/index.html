@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="1.题目名称 (1)简单工厂模式 使用简单工厂模式模拟女娲（Nvwa）造人（Person），如果传入参数M，则返回一个Man对象，如果传入参数W，则返回一个Woman对象，请实现该场景。现需要增加一个新的Robot类，如果传入参数R，则返回一个Robot对象，对代码进行修改并注意女娲的变化。 (2)工厂方法模式 海尔工厂(Haier)生产海尔空调(HaierAirCondition)，美的工厂">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三种简单的程序设计模式实例">
+<meta property="og:url" content="http://yoursite.com/2019/05/01/三种简单的程序设计模式实例/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="1.题目名称 (1)简单工厂模式 使用简单工厂模式模拟女娲（Nvwa）造人（Person），如果传入参数M，则返回一个Man对象，如果传入参数W，则返回一个Woman对象，请实现该场景。现需要增加一个新的Robot类，如果传入参数R，则返回一个Robot对象，对代码进行修改并注意女娲的变化。 (2)工厂方法模式 海尔工厂(Haier)生产海尔空调(HaierAirCondition)，美的工厂">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430234846261.GIF">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430235012546.GIF">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190430235127104.GIF">
+<meta property="og:updated_time" content="2019-07-03T03:45:30.836Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="三种简单的程序设计模式实例">
+<meta name="twitter:description" content="1.题目名称 (1)简单工厂模式 使用简单工厂模式模拟女娲（Nvwa）造人（Person），如果传入参数M，则返回一个Man对象，如果传入参数W，则返回一个Woman对象，请实现该场景。现需要增加一个新的Robot类，如果传入参数R，则返回一个Robot对象，对代码进行修改并注意女娲的变化。 (2)工厂方法模式 海尔工厂(Haier)生产海尔空调(HaierAirCondition)，美的工厂">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190430234846261.GIF">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/01/三种简单的程序设计模式实例/">
+
+
+
+
+
+  <title>三种简单的程序设计模式实例 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/01/三种简单的程序设计模式实例/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">三种简单的程序设计模式实例</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-01T00:09:42+08:00">
+                2019-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>  <strong>1.题目名称<br> (1)简单工厂模式</strong><br> 使用简单工厂模式模拟女娲（Nvwa）造人（Person），如果传入参数M，则返回一个Man对象，如果传入参数W，则返回一个Woman对象，请实现该场景。现需要增加一个新的Robot类，如果传入参数R，则返回一个Robot对象，对代码进行修改并注意女娲的变化。<br> <strong>(2)工厂方法模式</strong><br> 海尔工厂(Haier)生产海尔空调(HaierAirCondition)，美的工厂(Midea)生产美的空调(MideaAirCondition) 。使用工厂方法模式描述该场景，绘制类图并编程实现。(3)抽象工厂模式<br> 电脑配件生产工厂生产内存、CPU等硬件设备，这些内存、CPU的品牌、型号并不一定相同，根据下面的“产品等级结构-产品族”示意图，使用抽象工厂模式实现电脑配件生产过程并绘制相应的类图，绘制类图并编程实现。</p>
+<p> <strong>2.题目分析<br> (1)简单工厂模式</strong><br> 简单工厂模式(Simple Factory Pattern)：又称为静态工厂方法(Static Factory Method)模式，它属于类创建型模式。在简单工厂模式中，可以根据参数的不同返回不同类的实例。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。<br> <strong>&lt;1&gt;工厂角色</strong>(Nvwa)：实现所有实例的内部逻辑；<br> <strong>&lt;2&gt;抽象产品角色</strong>(Person)：所有对象的父类，负责描述所有实例共有的公共接口；<br> <strong>&lt;3&gt;具体产品角色</strong>(Man,Woman,Robot)：简单工厂模式的创建目标，所有创建的对象都是充当这个角色的某个具体类的实现；<br> <strong>&lt;4&gt;XML配置文件</strong>(XMLUtilNvwa,Simple.xml)：将参数保存在XML等格式的配置文件中，修改时无须修改任何Java源代码。</p>
+<p> <strong>(2)工厂方法模式</strong><br> 工厂方法模式(Factory Method Pattern)简称工厂模式，也叫虚拟构造器(Virtual Constructor)模式或者多态工厂(Polymorphic Factory)模式，它属于类创建型模式。在工厂方法模式中，工厂父类负责定义创建产品对象的公共接口，而工厂子类则负责生成具体的产品对象，这样做的目的是将产品类的实例化操作延迟到工厂子类中完成，即通过工厂子类来确定究竟应该实例化哪一个具体产品类。<br> <strong>&lt;1&gt;抽象产品</strong>(KongTiao)：产品对象同一的基类，或者是同一的接口；<br> <strong>&lt;2&gt;具体产品</strong>(Haier,Midea)：各个不同的实例对象类；<br> <strong>&lt;3&gt;抽象工厂</strong>(KongTiaoFactory)：所有的子类工厂类的基类，或是同一的接口；<br> <strong>&lt;4&gt;具体工厂</strong>(HaierFactory,MideaFactory)：负责每个不同的产品对象的实际创建；<br> <strong>&lt;5&gt;XML配置文件</strong>(XMLUtil,FactoryMethod.xml)：将参数保存在XML等格式的配置文件中，修改时无须修改任何Java源代码。</p>
+<p> <strong>(3)抽象工厂模式</strong><br> 抽象工厂模式(Abstract Factory Pattern)：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们具体的类。抽象工厂模式又称为Kit模式，属于对象创建型模式。<br> 产品等级结构：即产品的继承结构，例如一个抽象类是电视机，其子类有海尔电视机、海信电视机、TCL电视机，则抽象电视机与具体品牌的电视机之间构成了一个产品等级结构，抽象电视机是父类，而具体品牌的电视机是其子类。<br> 产品族：指由同一个工厂生产的，位于不同产品等级结构中的一组产品，例如海尔电器工厂生产的海尔电视机、海尔电冰箱，海尔电视机位于电视机产品等级结构中，海尔电冰箱位于电冰箱产品等级结构中。<br> <strong>&lt;1&gt;抽象工厂</strong>(ComputerFactory)：模式的核心，通常是接口或抽象类，其他的具体工厂类必须实现这个接口或继承这个抽象类；<br> <strong>&lt;2&gt;具体工厂</strong>(macFactory,pcFactory)：直接在客户端的调用下创建产品的实例；<br> <strong>&lt;3&gt;抽象产品</strong>(CPU,RAM)：工厂模式所创建的对象的父类，或他们共同的接口；<br> <strong>&lt;4&gt;具体产品</strong>(pcCPU,macCPU,pcRAM,macRAM)：抽象工厂模式所创建的任何产品对象都是某一个具体产品类的实例。<br> <strong>&lt;5&gt;XML配置文件</strong>(XMLUtil,AbstractFactory.xml)：将参数保存在XML等格式的配置文件中，修改时无须修改任何Java源代码</p>
+<p> <strong>3.类图设计<br> (1)简单工厂模式：</strong><br> <img src="https://img-blog.csdnimg.cn/20190430234846261.GIF" alt="在这里插入图片描述"><br> <strong>(2)工厂方法模式：</strong><br> <img src="https://img-blog.csdnimg.cn/20190430235012546.GIF" alt="在这里插入图片描述"><br> <strong>(3)抽象工厂模式：</strong><br> <img src="https://img-blog.csdnimg.cn/20190430235127104.GIF" alt="在这里插入图片描述"></p>
+<p> <strong>4.经验归纳<br> 4.1遇到的问题</strong><br> &lt;1&gt;对三种模式都不太熟悉，花费的时间较多<br> &lt;2&gt;不懂如何解析xml文档<br> &lt;3&gt;eclipse版本问题导致XMLUtil代码有错误，但可以运行<br> <strong>4.2心得体会</strong><br> 第一次编写程序设计模式的代码，刚开始觉得无从下手。对三种模式不熟悉，导致花费了较多的时间，所以一直在查资料。特别实在xml文档那块，我一直没搞懂为什么要写文档而不直接用输入输出流，结果发现是将参数保存在XML的配置文件中，这样修改参数的时候就没有必要修改任何Java源代码。但是这块还是挺薄弱的，写代码的时候也不能独立完成，还需要参考老师给的代码。第一个简单工厂模式挺简单的，第三个比较难（我觉得），所以要多练习抽象工厂模式的习题<del>~</del></p>
+<p> <strong>附：源代码<br> (1)简单工厂模式<br> &lt;1&gt;抽象产品角色(父类):Person</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">package Nvwa;</span><br><span class="line"></span><br><span class="line">public interface Person&#123;</span><br><span class="line">	public void make();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;2&gt;工厂角色(实现内部逻辑):Nvwa</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package Nvwa;</span><br><span class="line"></span><br><span class="line">public class Nvwa &#123;</span><br><span class="line">	public static Person producePerson(String sex) throws Exception</span><br><span class="line">	&#123;</span><br><span class="line">		if(sex.equalsIgnoreCase(&quot;M&quot;))  //选择&apos;M&apos;</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(&quot;造了一个男人！&quot;);</span><br><span class="line">			return new Man();  //返回参数</span><br><span class="line">		&#125;</span><br><span class="line">		else if(sex.equalsIgnoreCase(&quot;W&quot;))//选择&apos;W&apos;</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(&quot;造了一个女人！&quot;);</span><br><span class="line">			return new Woman();</span><br><span class="line">		&#125;</span><br><span class="line">		else if(sex.equalsIgnoreCase(&quot;R&quot;))//选择&apos;R&apos;</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(&quot;造了一个机器人！&quot;);</span><br><span class="line">			return new Robet();</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			throw new Exception(&quot;对不起，女娲正在忙，没空造人！&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;3&gt;具体产品角色(实现类):Man,Woman,Robet:<br> Man:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package Nvwa;</span><br><span class="line"></span><br><span class="line">public class Man implements Person&#123;</span><br><span class="line">	public void make()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;女娲正在造男人...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>Woman:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package Nvwa;</span><br><span class="line"></span><br><span class="line">public class Woman implements Person&#123;</span><br><span class="line">	public void make()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;女娲正在造女人...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>Robot:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package Nvwa;</span><br><span class="line"></span><br><span class="line">public class Robet implements Person&#123;</span><br><span class="line">	public void make()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;女娲正在造机器人...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;4&gt;XML配置文件(方便修改参数):XMLUtilNvwa,Simple.xml</strong><br> <strong>XMLUtilNvwa：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">XMLUtilNvwa：</span><br><span class="line">package Nvwa;</span><br><span class="line">import javax.xml.parsers.*;</span><br><span class="line">import org.w3c.dom.*;</span><br><span class="line">//import org.xml.sax.SAXException;</span><br><span class="line">import java.io.*;</span><br><span class="line">public class XMLUtilNvwa &#123;</span><br><span class="line">	   //该方法用于从XML配置文件中提取名称，并返回该名称</span><br><span class="line">		public static String getSexName()</span><br><span class="line">		&#123;</span><br><span class="line">			try</span><br><span class="line">			&#123;</span><br><span class="line">				//创建文档对象</span><br><span class="line">				DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();</span><br><span class="line">				DocumentBuilder builder = dFactory.newDocumentBuilder();</span><br><span class="line">				Document doc;							</span><br><span class="line">				doc = builder.parse(new File(&quot;Simple.xml&quot;)); </span><br><span class="line">			</span><br><span class="line">				//获取包含名称的文本节点</span><br><span class="line">				NodeList nl = doc.getElementsByTagName(&quot;sexName&quot;);</span><br><span class="line">	            Node classNode=nl.item(0).getFirstChild();</span><br><span class="line">	            String sexName=classNode.getNodeValue().trim();</span><br><span class="line">	            return sexName;</span><br><span class="line">	           &#125;   </span><br><span class="line">	           	catch(Exception e)</span><br><span class="line">	           	&#123;</span><br><span class="line">	           		e.printStackTrace();</span><br><span class="line">	           		return null;</span><br><span class="line">	           	&#125;</span><br><span class="line">			&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>Simple.xml:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot;?&gt;</span><br><span class="line">&lt;config&gt;</span><br><span class="line">	&lt;sexName&gt;M&lt;/sexName&gt;</span><br><span class="line">&lt;/config&gt;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;6&gt;客户端：Client</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package Nvwa;</span><br><span class="line"></span><br><span class="line">public class Client &#123;</span><br><span class="line">	public static void main(String args[])</span><br><span class="line">	&#123;</span><br><span class="line">         try</span><br><span class="line">         &#123;</span><br><span class="line">         	Person pe;</span><br><span class="line">         	String sexName=XMLUtilNvwa.getSexName();</span><br><span class="line">         	pe=Nvwa.producePerson(sexName);</span><br><span class="line">         	pe.make();</span><br><span class="line">         &#125;</span><br><span class="line">         catch(Exception e)</span><br><span class="line">         &#123;</span><br><span class="line">         	System.out.println(e.getMessage());</span><br><span class="line">         &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>(2)工厂方法模式<br> &lt;1&gt;抽象产品：KongTiao</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">package FactoryMethod;</span><br><span class="line"></span><br><span class="line">public interface KongTiao &#123;</span><br><span class="line">	public void make();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;2&gt;具体产品：Haier,Midea<br> Haier：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package FactoryMethod;</span><br><span class="line"></span><br><span class="line">public class Haier implements KongTiao&#123;</span><br><span class="line">	public void make()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;海尔空调正在使用...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>Midea：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package FactoryMethod;</span><br><span class="line"></span><br><span class="line">public class Midea implements KongTiao&#123;</span><br><span class="line">	public void make()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;美的空调正在使用...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;3&gt;抽象工厂：KongTiaoFactory</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">package FactoryMethod;</span><br><span class="line"></span><br><span class="line">public interface KongTiaoFactory &#123;</span><br><span class="line">	public KongTiao produceKT();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;4&gt;具体工厂：HaierFactory,MideaFactory<br> HaierFactory：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">package FactoryMethod;</span><br><span class="line"></span><br><span class="line">public class HaierFactory implements KongTiaoFactory&#123;</span><br><span class="line">	public KongTiao produceKT()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;---海尔工厂正在生产海尔空调 &quot;);</span><br><span class="line">		return new Haier();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>MideaFactory：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package FactoryMethod;</span><br><span class="line"></span><br><span class="line">public class MideaFactory implements KongTiaoFactory&#123;</span><br><span class="line">	public KongTiao produceKT()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;---美的工厂正在生产美的空调 &quot;);</span><br><span class="line">		return new Midea();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;5&gt;XML配置文件：XMLUtil,FactoryMethod.xml<br> XMLUtil：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">package FactoryMethod;</span><br><span class="line"></span><br><span class="line">import javax.xml.parsers.*;</span><br><span class="line">import org.w3c.dom.*;</span><br><span class="line">import java.io.*;</span><br><span class="line">public class XMLUtil &#123;</span><br><span class="line">	//该方法用于从XML配置文件中提取具体类类名，并返回一个实例对象</span><br><span class="line">		public static Object getBean()</span><br><span class="line">		&#123;</span><br><span class="line">			try</span><br><span class="line">			&#123;</span><br><span class="line">				//创建文档对象</span><br><span class="line">				DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();</span><br><span class="line">				DocumentBuilder builder = dFactory.newDocumentBuilder();</span><br><span class="line">				Document doc;							</span><br><span class="line">				doc = builder.parse(new File(&quot;FactoryMethod.xml&quot;)); </span><br><span class="line">			</span><br><span class="line">				//获取包含类名的文本节点</span><br><span class="line">				NodeList nl = doc.getElementsByTagName(&quot;className&quot;);</span><br><span class="line">	            Node classNode=nl.item(0).getFirstChild();</span><br><span class="line">	            String cName=classNode.getNodeValue();</span><br><span class="line">	            </span><br><span class="line">	            //通过类名生成实例对象并将其返回</span><br><span class="line">	            Class c=Class.forName(cName);</span><br><span class="line">		  	    Object obj=c.newInstance();</span><br><span class="line">	            return obj;</span><br><span class="line">	           &#125;   </span><br><span class="line">	           	catch(Exception e)</span><br><span class="line">	           	&#123;</span><br><span class="line">	           		e.printStackTrace();</span><br><span class="line">	           		return null;</span><br><span class="line">	           	&#125;</span><br><span class="line">			&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>FactoryMethod.xml：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot;?&gt;</span><br><span class="line">&lt;config&gt;</span><br><span class="line">	&lt;className&gt;FactoryMethod.HaierFactory&lt;/className&gt;</span><br><span class="line">&lt;/config&gt;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;6&gt;客户端：Client</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package FactoryMethod;</span><br><span class="line"></span><br><span class="line">public class Client &#123;</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;</span><br><span class="line">		try&#123;</span><br><span class="line">			KongTiao kt;</span><br><span class="line">			KongTiaoFactory fa;</span><br><span class="line">			fa=(KongTiaoFactory)XMLUtil.getBean();</span><br><span class="line">			kt=fa.produceKT();</span><br><span class="line">			kt.make();</span><br><span class="line">		&#125;catch(Exception e)</span><br><span class="line">         &#123;</span><br><span class="line">         	System.out.println(e.getMessage());</span><br><span class="line">         &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>(3)抽象工厂模式<br> &lt;1&gt;抽象工厂：ComputerFactory</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">package AbstractFactory;</span><br><span class="line"></span><br><span class="line">public interface ComputerFactory &#123;	</span><br><span class="line">	public CPU produceCPU();</span><br><span class="line">	public RAM produceRAM();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;2&gt;具体工厂：macFactory,pcFactory<br> macFactory：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package AbstractFactory;</span><br><span class="line"></span><br><span class="line">public class macFactory implements ComputerFactory&#123;</span><br><span class="line">	</span><br><span class="line">	//生产macCPU</span><br><span class="line">	public CPU produceCPU()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;生产了macCPU...&quot;);</span><br><span class="line">		//CPU macCPU;</span><br><span class="line">		return new macCPU();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//生产macRAM</span><br><span class="line">	public RAM produceRAM()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;生产了macRAM...&quot;);</span><br><span class="line">		return new macRAM();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>pcFactory：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package AbstractFactory;</span><br><span class="line"></span><br><span class="line">public class pcCPU implements CPU&#123;</span><br><span class="line">	public void make()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;pcCPU&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;3&gt;抽象产品：CPU,RAM<br> CPU：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">package AbstractFactory;</span><br><span class="line"></span><br><span class="line">public interface CPU &#123;</span><br><span class="line">	public void make();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>RAM：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">package AbstractFactory;</span><br><span class="line"></span><br><span class="line">public interface RAM &#123;</span><br><span class="line">	public void make();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;4&gt;具体产品：pcCPU,macCPU,pcRAM,macRAM<br> pcCPU：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package AbstractFactory;</span><br><span class="line"></span><br><span class="line">public class pcCPU implements CPU&#123;</span><br><span class="line">	public void make()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;pcCPU&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>macCPU：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package AbstractFactory;</span><br><span class="line"></span><br><span class="line">public class macCPU implements CPU&#123;</span><br><span class="line">	public void make()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;macCPU&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>pcRAM：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package AbstractFactory;</span><br><span class="line"></span><br><span class="line">public class pcRAM implements RAM&#123;</span><br><span class="line">	public void make()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;pcRAM&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>macRAM：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">package AbstractFactory;</span><br><span class="line"></span><br><span class="line">public class macRAM implements RAM&#123;</span><br><span class="line">	public void make()</span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(&quot;macRAM&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;5&gt;XML配置文件：XMLUtil,AbstractFactory.xml<br> XMLUtil：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">package AbstractFactory;</span><br><span class="line"></span><br><span class="line">import javax.xml.parsers.*;</span><br><span class="line">import org.w3c.dom.*;</span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">public class XMLUtil &#123;</span><br><span class="line">//该方法用于从XML配置文件中提取具体类类名，并返回一个实例对象</span><br><span class="line">	public static Object getBean()</span><br><span class="line">	&#123;</span><br><span class="line">		try</span><br><span class="line">		&#123;</span><br><span class="line">			//创建文档对象</span><br><span class="line">			DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();</span><br><span class="line">			DocumentBuilder builder = dFactory.newDocumentBuilder();</span><br><span class="line">			Document doc;							</span><br><span class="line">			doc = builder.parse(new File(&quot;AbstractFactory.xml&quot;)); </span><br><span class="line">			</span><br><span class="line">			//获取包含类名的文本节点</span><br><span class="line">			NodeList nl = doc.getElementsByTagName(&quot;className&quot;);</span><br><span class="line">	        Node classNode=nl.item(0).getFirstChild();</span><br><span class="line">	        String cName=classNode.getNodeValue();</span><br><span class="line">	            </span><br><span class="line">	        //通过类名生成实例对象并将其返回</span><br><span class="line">	        Class c=Class.forName(cName);</span><br><span class="line">		  	Object obj=c.newInstance();</span><br><span class="line">	        return obj;</span><br><span class="line">	        &#125;catch(Exception e)</span><br><span class="line">	        &#123;</span><br><span class="line">	        	e.printStackTrace();</span><br><span class="line">	           	return null;</span><br><span class="line">	           	&#125;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>AbstractFactory.xml：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot;?&gt;</span><br><span class="line">&lt;config&gt;</span><br><span class="line">	&lt;className&gt;AbstractFactory.macFactory&lt;/className&gt;</span><br><span class="line">&lt;/config&gt;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>&lt;6&gt;客户端：Client</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package AbstractFactory;</span><br><span class="line"></span><br><span class="line">public class Client &#123;</span><br><span class="line">	public static void main(String[] args)</span><br><span class="line">	&#123;		</span><br><span class="line">		try</span><br><span class="line">		&#123;</span><br><span class="line">			ComputerFactory fac;</span><br><span class="line">			CPU cpu;</span><br><span class="line">			RAM ram;</span><br><span class="line">			fac=(ComputerFactory)XMLUtil.getBean();</span><br><span class="line">			cpu=fac.produceCPU();</span><br><span class="line">			cpu.make();</span><br><span class="line">			ram=fac.produceRAM();</span><br><span class="line">			ram.make();</span><br><span class="line">		&#125;</span><br><span class="line">		catch(Exception e)</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(e.getMessage());</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/17/Java创建RPG游戏角色/" rel="next" title="Java创建RPG游戏角色">
+                <i class="fa fa-chevron-left"></i> Java创建RPG游戏角色
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/10/Java模拟肯德基快餐店的收银系统/" rel="prev" title="Java模拟肯德基快餐店的收银系统">
+                Java模拟肯德基快餐店的收银系统 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">34.4k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

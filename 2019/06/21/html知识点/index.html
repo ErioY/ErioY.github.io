@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="HTML部分知识点总结 块元素（将内容分块显示）：特立独行，不在一行中显示    eg：h1,h2,…,h6,p,blockquote . 块元素在内容前后分别有一个默认的换行内联元素（显示在所在的段落中）：随波逐流   eg：q,a,em   link：利用外部样式表为本页面增加样式（不再需要style）  eg：新建一个lounge.css文件1&amp;lt;link type=&quot;test/css&quot;">
+<meta name="keywords" content="html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html和css知识点">
+<meta property="og:url" content="http://yoursite.com/2019/06/21/html知识点/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="HTML部分知识点总结 块元素（将内容分块显示）：特立独行，不在一行中显示    eg：h1,h2,…,h6,p,blockquote . 块元素在内容前后分别有一个默认的换行内联元素（显示在所在的段落中）：随波逐流   eg：q,a,em   link：利用外部样式表为本页面增加样式（不再需要style）  eg：新建一个lounge.css文件1&amp;lt;link type=&quot;test/css&quot;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-15T12:49:04.233Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html和css知识点">
+<meta name="twitter:description" content="HTML部分知识点总结 块元素（将内容分块显示）：特立独行，不在一行中显示    eg：h1,h2,…,h6,p,blockquote . 块元素在内容前后分别有一个默认的换行内联元素（显示在所在的段落中）：随波逐流   eg：q,a,em   link：利用外部样式表为本页面增加样式（不再需要style）  eg：新建一个lounge.css文件1&amp;lt;link type=&quot;test/css&quot;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/21/html知识点/">
+
+
+
+
+
+  <title>html和css知识点 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/html知识点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">html和css知识点</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-21T17:59:17+08:00">
+                2019-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  803
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HTML部分知识点总结"><a href="#HTML部分知识点总结" class="headerlink" title="HTML部分知识点总结"></a><strong>HTML部分知识点总结</strong></h1><ul>
+<li><h4 id="块元素（将内容分块显示）：特立独行，不在一行中显示-eg：h1-h2-…-h6-p-blockquote-块元素在内容前后分别有一个默认的换行"><a href="#块元素（将内容分块显示）：特立独行，不在一行中显示-eg：h1-h2-…-h6-p-blockquote-块元素在内容前后分别有一个默认的换行" class="headerlink" title="块元素（将内容分块显示）：特立独行，不在一行中显示    eg：h1,h2,…,h6,p,blockquote . 块元素在内容前后分别有一个默认的换行"></a>块元素（将内容分块显示）：特立独行，不在一行中显示    eg：h1,h2,…,h6,p,blockquote . 块元素在内容前后分别有一个默认的换行</h4><h4 id="内联元素（显示在所在的段落中）：随波逐流-eg：q-a-em"><a href="#内联元素（显示在所在的段落中）：随波逐流-eg：q-a-em" class="headerlink" title="内联元素（显示在所在的段落中）：随波逐流   eg：q,a,em"></a>内联元素（显示在所在的段落中）：随波逐流   eg：q,a,em</h4></li>
+</ul>
+<ul>
+<li><h4 id="link：利用外部样式表为本页面增加样式（不再需要style）-eg：新建一个lounge-css文件"><a href="#link：利用外部样式表为本页面增加样式（不再需要style）-eg：新建一个lounge-css文件" class="headerlink" title="link：利用外部样式表为本页面增加样式（不再需要style）  eg：新建一个lounge.css文件"></a>link：利用外部样式表为本页面增加样式（不再需要style）  eg：新建一个lounge.css文件</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">type</span>=<span class="string">"test/css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"lounge.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><h4 id="em-：斜体；strong：加粗；b：加粗（强调文本）"><a href="#em-：斜体；strong：加粗；b：加粗（强调文本）" class="headerlink" title="em ：斜体；strong：加粗；b：加粗（强调文本）"></a>em ：斜体；strong：加粗；b：加粗（强调文本）</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">em</span>&gt;</span>我是一个斜体标签<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="q：短引用（段落中的引用）；blockquote：长引用（引用独立的文字）"><a href="#q：短引用（段落中的引用）；blockquote：长引用（引用独立的文字）" class="headerlink" title="q：短引用（段落中的引用）；blockquote：长引用（引用独立的文字）"></a>q：短引用（段落中的引用）；blockquote：长引用（引用独立的文字）</h4></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q</span>&gt;</span>千里之行，始于足下<span class="tag">&lt;<span class="name">\q</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span>我是一个长引用<span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="br：换行"><a href="#br：换行" class="headerlink" title="br：换行"></a>br：换行</h4></li>
+<li><h4 id="code：显示计算机程序代码"><a href="#code：显示计算机程序代码" class="headerlink" title="code：显示计算机程序代码"></a>code：显示计算机程序代码</h4></li>
+<li><h4 id="li：列表元素；ol：有序列表；ul：无序列表（不与p标签写在一起，都是块元素）"><a href="#li：列表元素；ol：有序列表；ul：无序列表（不与p标签写在一起，都是块元素）" class="headerlink" title="li：列表元素；ol：有序列表；ul：无序列表（不与p标签写在一起，都是块元素）"></a>li：列表元素；ol：有序列表；ul：无序列表（不与p标签写在一起，都是块元素）</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Walla, WA<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Magic city, ID<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Bountiful, UT<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Last chance, CO<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="StarBuzzCoffee-com是域名（范围大）；www-StarBuzzCoffee-com是网站名（范围小）"><a href="#StarBuzzCoffee-com是域名（范围大）；www-StarBuzzCoffee-com是网站名（范围小）" class="headerlink" title="StarBuzzCoffee.com是域名（范围大）；www.StarBuzzCoffee.com是网站名（范围小）"></a>StarBuzzCoffee.com是域名（范围大）；<a href="http://www.StarBuzzCoffee.com是网站名（范围小）" target="_blank" rel="noopener">www.StarBuzzCoffee.com是网站名（范围小）</a></h4></li>
+<li><h4 id="链接页面的方式：a-相对路径：只能链接同一网站的页面-b-URL：通常用来链接其他网站"><a href="#链接页面的方式：a-相对路径：只能链接同一网站的页面-b-URL：通常用来链接其他网站" class="headerlink" title="链接页面的方式：a.相对路径：只能链接同一网站的页面    b.URL：通常用来链接其他网站"></a>链接页面的方式：a.相对路径：只能链接同一网站的页面    b.URL：通常用来链接其他网站</h4></li>
+<li><h4 id="为链接增加标题以便访问：a-herf-””-title-””-当鼠标移到链接上，停留一秒，就可以看到这个工具提示"><a href="#为链接增加标题以便访问：a-herf-””-title-””-当鼠标移到链接上，停留一秒，就可以看到这个工具提示" class="headerlink" title="为链接增加标题以便访问：a herf=”” title=””     当鼠标移到链接上，停留一秒，就可以看到这个工具提示"></a>为链接增加标题以便访问：a herf=”” <u><em>title=””</em></u>     当鼠标移到链接上，停留一秒，就可以看到这个工具提示</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Read the <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://wickedlysmart.com/buzz"</span> <span class="attr">title</span>=<span class="string">"Read all about caffeine on the Buzz"</span>&gt;</span>Caffeine Buzz<span class="tag">&lt;/<span class="name">a</span>&gt;</span>.</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="使用id属性为超链接a创建目标"><a href="#使用id属性为超链接a创建目标" class="headerlink" title="使用id属性为超链接a创建目标"></a>使用id属性为超链接a创建目标</h4></li>
+<li><h4 id="用id链接到元素：要链接到页面中的一个特定目标，只需在链接最后加一个-，再加上目标标志符"><a href="#用id链接到元素：要链接到页面中的一个特定目标，只需在链接最后加一个-，再加上目标标志符" class="headerlink" title="用id链接到元素：要链接到页面中的一个特定目标，只需在链接最后加一个#，再加上目标标志符"></a>用id链接到元素：要链接到页面中的一个特定目标，只需在链接最后加一个#，再加上目标标志符</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"index.html#chai"</span>&gt;</span>See Chai Tea<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="使用target打开新窗口"><a href="#使用target打开新窗口" class="headerlink" title="使用target打开新窗口"></a>使用target打开新窗口</h4></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">href</span>=<span class="string">"http://wickedlysmart.com/buzz"</span> <span class="attr">title</span>=<span class="string">"Read all about caffeine on the Buzz"</span>&gt;</span>Caffeine Buzz<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="调整图像大小：width和height"><a href="#调整图像大小：width和height" class="headerlink" title="调整图像大小：width和height"></a>调整图像大小：width和height</h4><p>src：引入和替代</p>
+<p>href：引用和链接</p>
+<p>alt：当图片无法识别时的提示</p>
+<p>title：鼠标点击图片时的提示</p>
+<p>target=”_black”：在新窗口打开新页面</p>
+<p>target=”_self”：在原来的窗口打开页面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../images/red.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"200"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="W3C验证工具：http-validator-w3-org"><a href="#W3C验证工具：http-validator-w3-org" class="headerlink" title="W3C验证工具：http://validator.w3.org"></a>W3C验证工具：<a href="http://validator.w3.org" target="_blank" rel="noopener">http://validator.w3.org</a></h4></li>
+<li><p>绝对路径：相对于计算机的路径</p>
+</li>
+<li><p>相对路径：一般使用</p>
+</li>
+<li><p>背景定位常用指令：水平方向Left center right；垂直方向top center bottom</p>
+</li>
+</ul>
+<h1 id="css知识点汇总"><a href="#css知识点汇总" class="headerlink" title="css知识点汇总"></a><strong>css知识点汇总</strong></h1><h3 id="注：在CSS中，不需要给元素两边加尖括号-lt-gt-，所有元素都叫做选择器"><a href="#注：在CSS中，不需要给元素两边加尖括号-lt-gt-，所有元素都叫做选择器" class="headerlink" title="注：在CSS中，不需要给元素两边加尖括号&lt;&gt;，所有元素都叫做选择器"></a><em>注：在CSS中，不需要给元素两边加尖括号&lt;&gt;，所有元素都叫做选择器</em></h3><ul>
+<li><h4 id="把css放入html："><a href="#把css放入html：" class="headerlink" title="把css放入html："></a>把css放入html：</h4><p>在head元素中增加开始和结束style标记，css规则要放在style里</p>
+</li>
+<li><h4 id="margin-left-margin-right：左右外边距，占页面的20"><a href="#margin-left-margin-right：左右外边距，占页面的20" class="headerlink" title="margin-left, margin-right：左右外边距，占页面的20%"></a>margin-left, margin-right：左右外边距，占页面的20%</h4></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">margin-left</span>: 20%;</span><br><span class="line"><span class="selector-tag">margin-right</span>: 20%;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="border：定义页面主体周围的边框-虚线：dotted，实线：solid，颜色为黑色"><a href="#border：定义页面主体周围的边框-虚线：dotted，实线：solid，颜色为黑色" class="headerlink" title="border：定义页面主体周围的边框   虚线：dotted，实线：solid，颜色为黑色"></a>border：定义页面主体周围的边框   虚线：dotted，实线：solid，颜色为黑色</h4></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border</span>: 2<span class="selector-tag">px</span> <span class="selector-tag">dotted</span> <span class="selector-tag">black</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="padding：在页面主体周围创建一些内边距"><a href="#padding：在页面主体周围创建一些内边距" class="headerlink" title="padding：在页面主体周围创建一些内边距"></a>padding：在页面主体周围创建一些内边距</h4></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">padding</span><span class="selector-pseudo">:10px</span> 10<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 10<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="font-family：定义文本使用的字体"><a href="#font-family：定义文本使用的字体" class="headerlink" title="font-family：定义文本使用的字体"></a>font-family：定义文本使用的字体</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">font-family</span>: <span class="selector-tag">sans-serif</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="color：设置文字颜色"><a href="#color：设置文字颜色" class="headerlink" title="color：设置文字颜色"></a>color：设置文字颜色</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">color</span><span class="selector-pseudo">:red</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="border-bottom：加下划线-eg：在h1标题下加下划线"><a href="#border-bottom：加下划线-eg：在h1标题下加下划线" class="headerlink" title="border-bottom：加下划线    eg：在h1标题下加下划线"></a>border-bottom：加下划线    eg：在h1标题下加下划线</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">            <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid black;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="盒子模型-内容-内填充-外边距-边框"><a href="#盒子模型-内容-内填充-外边距-边框" class="headerlink" title="盒子模型=内容+内填充+外边距+边框"></a>盒子模型=内容+内填充+外边距+边框</h4></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/21/hello-world/" rel="next" title="The Operation Of Hexo">
+                <i class="fa fa-chevron-left"></i> The Operation Of Hexo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/25/javascript/" rel="prev" title="javascript">
+                javascript <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML部分知识点总结"><span class="nav-number">1.</span> <span class="nav-text">HTML部分知识点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#块元素（将内容分块显示）：特立独行，不在一行中显示-eg：h1-h2-…-h6-p-blockquote-块元素在内容前后分别有一个默认的换行"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">块元素（将内容分块显示）：特立独行，不在一行中显示    eg：h1,h2,…,h6,p,blockquote . 块元素在内容前后分别有一个默认的换行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内联元素（显示在所在的段落中）：随波逐流-eg：q-a-em"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">内联元素（显示在所在的段落中）：随波逐流   eg：q,a,em</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#link：利用外部样式表为本页面增加样式（不再需要style）-eg：新建一个lounge-css文件"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">link：利用外部样式表为本页面增加样式（不再需要style）  eg：新建一个lounge.css文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#em-：斜体；strong：加粗；b：加粗（强调文本）"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">em ：斜体；strong：加粗；b：加粗（强调文本）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#q：短引用（段落中的引用）；blockquote：长引用（引用独立的文字）"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">q：短引用（段落中的引用）；blockquote：长引用（引用独立的文字）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#br：换行"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">br：换行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#code：显示计算机程序代码"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">code：显示计算机程序代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#li：列表元素；ol：有序列表；ul：无序列表（不与p标签写在一起，都是块元素）"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">li：列表元素；ol：有序列表；ul：无序列表（不与p标签写在一起，都是块元素）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StarBuzzCoffee-com是域名（范围大）；www-StarBuzzCoffee-com是网站名（范围小）"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">StarBuzzCoffee.com是域名（范围大）；www.StarBuzzCoffee.com是网站名（范围小）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链接页面的方式：a-相对路径：只能链接同一网站的页面-b-URL：通常用来链接其他网站"><span class="nav-number">1.0.0.10.</span> <span class="nav-text">链接页面的方式：a.相对路径：只能链接同一网站的页面    b.URL：通常用来链接其他网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为链接增加标题以便访问：a-herf-””-title-””-当鼠标移到链接上，停留一秒，就可以看到这个工具提示"><span class="nav-number">1.0.0.11.</span> <span class="nav-text">为链接增加标题以便访问：a herf=”” title=””     当鼠标移到链接上，停留一秒，就可以看到这个工具提示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用id属性为超链接a创建目标"><span class="nav-number">1.0.0.12.</span> <span class="nav-text">使用id属性为超链接a创建目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用id链接到元素：要链接到页面中的一个特定目标，只需在链接最后加一个-，再加上目标标志符"><span class="nav-number">1.0.0.13.</span> <span class="nav-text">用id链接到元素：要链接到页面中的一个特定目标，只需在链接最后加一个#，再加上目标标志符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用target打开新窗口"><span class="nav-number">1.0.0.14.</span> <span class="nav-text">使用target打开新窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调整图像大小：width和height"><span class="nav-number">1.0.0.15.</span> <span class="nav-text">调整图像大小：width和height</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#W3C验证工具：http-validator-w3-org"><span class="nav-number">1.0.0.16.</span> <span class="nav-text">W3C验证工具：http://validator.w3.org</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#css知识点汇总"><span class="nav-number">2.</span> <span class="nav-text">css知识点汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注：在CSS中，不需要给元素两边加尖括号-lt-gt-，所有元素都叫做选择器"><span class="nav-number">2.0.1.</span> <span class="nav-text">注：在CSS中，不需要给元素两边加尖括号&lt;&gt;，所有元素都叫做选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#把css放入html："><span class="nav-number">2.0.1.1.</span> <span class="nav-text">把css放入html：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#margin-left-margin-right：左右外边距，占页面的20"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">margin-left, margin-right：左右外边距，占页面的20%</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border：定义页面主体周围的边框-虚线：dotted，实线：solid，颜色为黑色"><span class="nav-number">2.0.1.3.</span> <span class="nav-text">border：定义页面主体周围的边框   虚线：dotted，实线：solid，颜色为黑色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#padding：在页面主体周围创建一些内边距"><span class="nav-number">2.0.1.4.</span> <span class="nav-text">padding：在页面主体周围创建一些内边距</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#font-family：定义文本使用的字体"><span class="nav-number">2.0.1.5.</span> <span class="nav-text">font-family：定义文本使用的字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#color：设置文字颜色"><span class="nav-number">2.0.1.6.</span> <span class="nav-text">color：设置文字颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-bottom：加下划线-eg：在h1标题下加下划线"><span class="nav-number">2.0.1.7.</span> <span class="nav-text">border-bottom：加下划线    eg：在h1标题下加下划线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#盒子模型-内容-内填充-外边距-边框"><span class="nav-number">2.0.1.8.</span> <span class="nav-text">盒子模型=内容+内填充+外边距+边框</span></a></li></ol></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">34.4k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+
