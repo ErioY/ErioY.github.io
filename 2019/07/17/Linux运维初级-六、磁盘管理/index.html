@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="六、磁盘管理   磁盘基础知识 (1) 概念：使用一片或多片带有磁性的铝合金制的盘片构成的外部存储介质 (2) 物理结构 ​    A. 盘体 ​    B. 磁头 ​    C. 马达驱动 ​    D. 缓存 ​    E. SATA3接口 ​    F. 电路板 (3) 逻辑结构 ​    A. 磁道：同心圆 ​    B. 扇区 ​    C. 柱面 (4) 硬盘参数 ​    A. 容量">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux运维初级--- 六、磁盘管理">
+<meta property="og:url" content="http://yoursite.com/2019/07/17/Linux运维初级-六、磁盘管理/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="六、磁盘管理   磁盘基础知识 (1) 概念：使用一片或多片带有磁性的铝合金制的盘片构成的外部存储介质 (2) 物理结构 ​    A. 盘体 ​    B. 磁头 ​    C. 马达驱动 ​    D. 缓存 ​    E. SATA3接口 ​    F. 电路板 (3) 逻辑结构 ​    A. 磁道：同心圆 ​    B. 扇区 ​    C. 柱面 (4) 硬盘参数 ​    A. 容量">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-17T10:24:10.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux运维初级--- 六、磁盘管理">
+<meta name="twitter:description" content="六、磁盘管理   磁盘基础知识 (1) 概念：使用一片或多片带有磁性的铝合金制的盘片构成的外部存储介质 (2) 物理结构 ​    A. 盘体 ​    B. 磁头 ​    C. 马达驱动 ​    D. 缓存 ​    E. SATA3接口 ​    F. 电路板 (3) 逻辑结构 ​    A. 磁道：同心圆 ​    B. 扇区 ​    C. 柱面 (4) 硬盘参数 ​    A. 容量">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/17/Linux运维初级-六、磁盘管理/">
+
+
+
+
+
+  <title>Linux运维初级--- 六、磁盘管理 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/Linux运维初级-六、磁盘管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux运维初级--- 六、磁盘管理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-17T11:32:43+08:00">
+                2019-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="5">六、磁盘管理</font></center>
+
+<ol>
+<li><p><strong>磁盘基础知识</strong></p>
+<p>(1) 概念：使用一片或多片带有磁性的铝合金制的盘片构成的外部存储介质</p>
+<p>(2) 物理结构</p>
+<p>​    A. 盘体</p>
+<p>​    B. 磁头</p>
+<p>​    C. 马达驱动</p>
+<p>​    D. 缓存</p>
+<p>​    E. SATA3接口</p>
+<p>​    F. 电路板</p>
+<p>(3) 逻辑结构</p>
+<p>​    A. 磁道：同心圆</p>
+<p>​    B. 扇区</p>
+<p>​    C. 柱面</p>
+<p>(4) 硬盘参数</p>
+<p>​    A. 容量：1-4TB</p>
+<p>​    B. 转速：7200转/分   5400RPM</p>
+<p>​    C. 缓存：64MB-256MB</p>
+<p>​    D. 接口：SATA3   /   SCSI</p>
+<p>(5) 分区</p>
+<p>​    A. 主分区：系统启动区</p>
+<p>​    B. 扩展分区</p>
+<p>​    C. 逻辑分区：基于扩展分区继续划分</p>
+</li>
+<li><p><strong>分区模式</strong></p>
+<p>(1) MBR（主引导记录区模式）</p>
+<p>​    A. 组成</p>
+<p>​        (a) MBR位于磁盘第0磁道第0柱面第1扇区</p>
+<p>​        (b) MBR总容量：446B</p>
+<p>​        (c) 磁盘分区表（DPT）：64B</p>
+<p>​        (d) 最后有2B（55  AA）为分区结束标志</p>
+<p>​        (e) MBR所占扇区为512B</p>
+<p>​    B. 作用：MBR包含硬盘一系列参数和一段引导程序，引导程序是检查分区表是否正确并且在系统硬件完成自检后引导具有激活标志的分区上的操作系统（C盘），并将控制权交给启动程序</p>
+<p>​    C. MBR分区原则</p>
+<p>​        (a) 主分区+扩展分区最多4个</p>
+<p>​        (b) 扩展分区最多1个</p>
+<p>​        (c) 扩展分区基础上再次划分逻辑分区</p>
+<p>​        (d) 扩展分区不能格式化</p>
+<p>​        (e) 一般会划分3个主分区+1个扩展分区</p>
+<p>​        (f) 主分区（P）  扩展分区（E）  逻辑分区（L）</p>
+<p>​        (g) 推荐剩余一些自由空间以方便分区空间扩容</p>
+<p>(2) GPT</p>
+<p>​    A. 产生原因</p>
+<p>​        (a) MBR分区格式最大支持2.2TB硬盘</p>
+<p>​        (b) 没有备份机制，若分区表损坏则会丢失整个硬盘内容</p>
+<p>​        (c) MBR存储空间较小，只有446B，无法存储叫多功能数据</p>
+<p>​    B. 方法</p>
+<p>​        (a) 使用LBA（逻辑地址区块）的结构存储分区信息</p>
+<p>​        (b) 共可分为68个LBA块，前34个LBA存储分区信息，后43个LBA块存储备份信息</p>
+<p>​    C. GPT分区格式不再区分主分区及扩展分区，共可分128个主分区</p>
+<p>​    D. GPT分区格式与MDR分区格式不兼容，不能混合使用</p>
+</li>
+<li><p><strong>文件系统</strong></p>
+<p>(1) 意义：若空白硬盘相当于一张白纸，分区就是对其进行“裁切”，对分区进行方格划分就是对其进行建立文件系统，即格式化</p>
+<p>(2) 常见文件系统格式：ext2  ext3  ext4  xfs  msdos</p>
+<p>(3) ext2文件系统</p>
+<p>​    A. 组成：</p>
+<p>​        (a) super block  （超级块）</p>
+<p>​        (b) inode       （索引块）</p>
+<p>​        (c) block         （数据块）</p>
+<p>​    B. 超级块：又称为硬盘地图，记录文件系统的整体信息，如：inode/block块的总量、使用量、空间块量、文件系统格式等相关信息</p>
+<p>​    C. inode块：记录文件属性，一个文件占用一个inode块，并且记录文件数据所在的block块的地址，默认为128B</p>
+<p>​    D. block ：存储文件数据，大小为1KB  2KB  4KB，大文件会占用多个数据块</p>
+<p>​    E. 装入方式：将文件的数据块链式的不连续的装入硬盘中</p>
+<p>​    F. ext2文件系统支持</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Block大小</th>
+<th>1KB</th>
+<th>2KB</th>
+<th>4KB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>最大单一文件限制</td>
+<td>16GB</td>
+<td>256GB</td>
+<td>2TB</td>
+</tr>
+<tr>
+<td>最大文件系统总容量</td>
+<td>2TB</td>
+<td>8TB</td>
+<td>16TB</td>
+</tr>
+</tbody></table>
+<p>​    (4) Centos7系统默认文件系统为xfs</p>
+<p>​    (5) <strong>df命令：</strong></p>
+<p>​        A. 格式：df   参数  目录/文件名</p>
+<p>​        B. 作用：列出文件系统的磁盘使用量</p>
+<p>​        C. 参数：</p>
+<p>​            (a) -a ：列出所有文件系统</p>
+<p>​            (b) -h ：以容量理解的方式列出信息（GB  MB  KB）</p>
+<p>​        D. 常见：df   -ah</p>
+<p>​    (6) <strong>du命令：</strong></p>
+<p>​        A. 格式：du   -参数   文件或目录名</p>
+<p>​        B. 作用：查看文件或目录占用硬盘容量</p>
+<p>​        C. 参数：</p>
+<p>​            (a) -a ：列出所有文件与目录信息</p>
+<p>​            (b) -h ：以容易理解的方式列出信息（GB  MB  KB）</p>
+<p>​            (c) -s ：列出总量</p>
+<p>​        D. 注意：df命令检测速度较快</p>
+<ol start="4">
+<li><p><strong>硬件设备命名原则</strong></p>
+<p>(1) 硬盘</p>
+<p>​    A. 以sd开头后跟a-p表示16块硬盘编号，即sd[a-p]</p>
+<p>​    B. 在MBR分区格式中由于主分区+扩展分区最多4个，则编号为1-4，第一个逻辑分区从5开始编号，即使主分区编号未使用，逻辑分区也不能使用</p>
+<p>​    C. 硬盘名称格式：sd[a-p]数字</p>
+<p>​    D. 例：sda1   第一块硬盘的第1个主分区</p>
+<p>​                sdb5    第二块硬盘的第1个逻辑分区</p>
+<p>​    E. 例：PPELL</p>
+<p>​        (a) P:sda1</p>
+<p>​        (b) P:sda2</p>
+<p>​        (c) E:sda3</p>
+<p>​        (d) L:sda5</p>
+<p>​        (e) L:sda6</p>
+<p>​    F. 模式：</p>
+<p>​        (a) PE</p>
+<p>​        (b) PPE</p>
+<p>​        (c) PPPE</p>
+<p>​        (d) PPPP</p>
+<p>(2) 光驱：/dev/sr0</p>
+<p>(3) 鼠标：/dev/mouse</p>
+<p>(4) 打印机：/dev/lp[1-15]</p>
+</li>
+<li><p><strong>添加新硬盘</strong></p>
+<p>(1) 方法：关闭系统-&gt;编辑虚拟机设置-&gt;添加-&gt;硬盘-&gt;磁盘类型：SCSI（推荐）-&gt;创建新的虚拟磁盘-&gt;磁盘大小：20GB，存储为单个文件-&gt;默认名称-&gt;完成</p>
+<p>(2) 注意：添加的新硬盘必须在关机情况下进行，必须保证新硬盘文件名不能重名</p>
+</li>
+<li><p><strong>硬盘分区</strong></p>
+<p>(1) 检测硬盘分区的类型</p>
+<p>​    A. 格式：parted  设备名   print</p>
+<p>​    B. 例：parted  /dev/sda   print</p>
+<p>​    C. 查看Prtition Table:msdos，分区表类型，若为msdos说明使用的为MBR分区格式，就不能使用GPT分区格式命令进行继续分区，否则已有数据会丢失</p>
+<p>(2)  fdisk分区</p>
+<p>​    A. 规划：规划分区个数、容量、类型</p>
+<p>​    B. 注意：fdisk为MBR分区格式命令</p>
+<p>​    C. 分区功能</p>
+</li>
+</ol>
+<p>​            (a) n：新建分区</p>
+<p>​            (b) p：查看分区列表</p>
+<p>​            (c) d：删除分区</p>
+<p>​            (d) w：保存分区并退出</p>
+<p>​            (e) m：查看帮助</p>
+<p>​            (f) l ：查看可分区的类型</p>
+<p>​        D. 过程：</p>
+<p>​            (a) 分析：</p>
+<p>​                ◆ 目标：dev/sdc</p>
+<p>​                ◆ 个数：3个分区</p>
+<p>​                ◆ 类型：2P   1E   1L</p>
+<p>​                ◆ 容量：5G   5G  剩余</p>
+<p>​            (b)<strong>fdisk  /dev/sdc</strong></p>
+<p>​                ◆ command ：输入分区命令为n（新建）</p>
+<p>​                ◆ partition type ：分区类型，p（主分区），e（扩展分区），l（逻辑分区）</p>
+<p>​                ◆ partition  number ：分区编号，回车默认</p>
+<p>​                ◆ First  Sector ：起始扇区编号，回车默认</p>
+<p>​                ◆ last  sector ：终止扇区编号，输入：+5G，回车</p>
+<p>​                ◆ 剩余同上</p>
+<p>​                ◆ 输入p查看分区列表，输入w保存同步磁盘并退出</p>
+<p>​        E. 删除分区</p>
+<p>​            (a) 分区向导中输入d</p>
+<p>​            (b) 正向新建分区，反向删除分区</p>
+<p>​        F. 注意：若无法查看分区结果列表，则表示分区信息还未写入内核（常见情况），输入“partprobe”命令进行手动将分区信息同步到内核，再不行就重启</p>
+<p>​    (2) <strong>lsblk命令</strong></p>
+<p>​        A. 格式：lsblk   -参数   /dev/sd?</p>
+<p>​        B. 作用：查看磁盘分区信息</p>
+<p>​    (3) <strong>blkid命令</strong></p>
+<p>​        A. 格式：blkid   -参数   /dev/sd?</p>
+<p>​        B. 作用：查看磁盘ID信息</p>
+<p>​        C. 常用：blkid</p>
+<p>​    (4) <strong>gdisk分区</strong></p>
+<p>​        A. 注意：对于同一硬盘，fdisk和gdisk不能混用</p>
+<p>​        B. 格式：gdisk   /dev/sd?</p>
+<p>​        C. 过程：</p>
+<p>​            (a) gdisk   /dev/sdd</p>
+<p>​            (b) partition  table  scan ：扫描分区类型是否已存在</p>
+<p>​            (c) Command(? for help) ：新建（n） 删除（d）  查看列表（p）  保存（w）</p>
+<p>​            (d) partirion number(1-128, default 1)：设置分区编号，回车即可</p>
+<p>​            (e) First sector：设置起始扇区值，默认，回车即可</p>
+<p>​            (f) Last sector：设置终止扇区值，输入分区容量，如：+5G</p>
+<p>​            (g) Hex code or GUID(L to show code,Enter = 8300)  ：设置分区文件系统的ID，回车即可</p>
+<ol start="7">
+<li><p><strong>格式化</strong></p>
+<p>(1) 意义：对分区或其他设备建立文件系统</p>
+<p>(2) 查看分区命令及类型：输入mkfs后2次tab键</p>
+<p>(3) <strong>mkfs.xfs命令：</strong></p>
+<p>​    A. 格式：mkfs.xfs   -参数   设备名</p>
+<p>​    B. 作用：对磁盘分区或文件进行xfs类型格式化</p>
+<p>​    C. 参数：</p>
+<p>​        (a) -f ：强制格式化，已有文件系统需要使用此参数</p>
+<p>​        (b) -b ：后跟上block容量，范围512B-64KB，注意，Linux限制为4KB</p>
+<p>​    D. 例：对/dev/sdc  进行xfs格式化</p>
+<p>​            mkfs.xfs     /dev/sdc1</p>
+<p>​            mkfs.xfs     /dev/sdc2</p>
+<p>(4) <strong>mkfs.ext4命令：</strong></p>
+<p>​    A. 格式：mkfs.ext4   -参数  设备名</p>
+<p>​    B. 参数：-b ：设定block大小，如：1KB  2KB  3KB  4KB</p>
+</li>
+<li><p><strong>挂载</strong></p>
+<p>(1) 意义：建立文件目录，通过设置该目录与分区的关系，以进入分区 </p>
+<p>(2) 挂载点：进入分区的目录称为挂载点</p>
+<p>(3) 挂载前的注意事项</p>
+<p>​    A. 单一文件系统不应该被重复挂载在不同的挂载点（目录）中</p>
+<p>​    B. 单一目录不应该重复挂载多个文件系统</p>
+<p>​    C. 作为挂载点的目录，应为空目录，否则原有数据会隐藏</p>
+<p>(4) <strong>mount目录</strong></p>
+</li>
+</ol>
+<p>​        A. 格式：mount   -参数  设备名  挂载点目录</p>
+<p>​        B. 作用：将分区挂载挂载到指定文件目录上</p>
+<p>​        C. 参数：</p>
+<p>​            (a) -a ：按照挂载配置文件/etc/fstab对未挂载的设备全部进行挂载</p>
+<p>​            (b) -t ：指定文件系统，不常用，一般系统会自动判断文件系统类型</p>
+<p>​        D. 例：建立挂载目录，挂载/dev/sdc的分区</p>
+<p>​            mkdir   /mnt/m1  /mnt/m2  /mnt/m5  /mnt/m6</p>
+<p>​            mount  /dev/sdc1  /mnt/m1</p>
+<p>​            mount  /dev/sdc2  /mnt/m2</p>
+<p>​            mount  /dev/sdc5  /mnt/m5</p>
+<p>​            mount  /dev/sdc6  /mnt/m6</p>
+<p>​        E. 挂载光盘</p>
+<p>​            (a) 光盘名称：/dev/sr0 或 /dev/cdrom</p>
+<p>​            (b) 方法：mount   /dev//sr0  /media</p>
+<p>​            (c) 注意：光盘为只读属性，只能以只读方式挂载</p>
+<ol start="9">
+<li><p><strong>卸载</strong></p>
+<p>(1) mount命令：</p>
+<p>​    A. 格式：umount  -参数   设备名称或挂载点目录名</p>
+<p>​    B. 作用：卸载设备</p>
+<p>​    C. 参数：</p>
+<p>​        (a) -f ：强制卸载</p>
+<p>​        (b) -l ：立刻卸载文件系统，比-f还强</p>
+<p>​        (c) -n ：不更新/etc/mtab情况下卸载</p>
+<p>​    D. 例：卸载/dev/sdc</p>
+<p>​            umount  /dev/sdc1 </p>
+<p>​            umount  /dev/sdc1</p>
+<p>​            umount  /mnt/m5</p>
+<p>​            umount  /mnt/m6</p>
+<p>​    E. 注意：卸载时应cd离开挂载点目录，否则文件系统忙，无法卸载</p>
+</li>
+<li><p><strong>开机挂载</strong></p>
+<p>(1) 产生原因：手动挂载后系统重启会自动卸载，应设置开机挂载使其永久生效</p>
+<p>(2) 配置文件：/etc/fstab</p>
+<p>(3) 配置文件分析</p>
+<p>​    A. 共6列</p>
+<p>​    B. 内容：</p>
+<p>​            设备名  挂载点目录  文件系统   defaults  0 0</p>
+<p>​            /dev/sdc1  /mnt/m1     xfs      defaults  0 0 </p>
+<p>​    C. defaults ：文件系统参数为默认</p>
+<p>​    D. 0 ：是否备份</p>
+<p>​    E. 0 ：开机是否用fsck进行扇区检查，但xfs文件系统不支持则为0</p>
+<p>(4) fstab配置完毕后使用：mount   -a  完成检测 再重启</p>
+<p>(5) 使用lsblk命令查看是否开机挂载成功</p>
+<p>(6) 注意：</p>
+<p>​        A. 根目录/ 是必须挂载的，而且一定要先于其他mount point被挂载</p>
+<p>​        B. 其他mount point必须为已建立的目录，可任意指定，但一定要遵守必须的系统目录架构原则（FHS）</p>
+<p>​        C. 配置完毕后必须使用mount  -a检测，否则系统启动失败</p>
+</li>
+<li><p><strong>挂载大文件</strong></p>
+<p>(1) 产生原因：由于无自由分区空间，需要添加新分区时，可以对某个已存在的分区的剩余空间制作一个大文件，对其进行格式化挂载当做一个新的分区使用，从而实现不添加新的硬件而增加新分区</p>
+<p>(2) 步骤：制作大文件-&gt;格式化-&gt;开机挂载</p>
+<p>(3) 方法：例：对/dev/sdc6的剩余空间制作3G大文件进行挂载</p>
+<p>​    A. cd   /mnt/m6</p>
+<p>​    B. df   /mnt/m6</p>
+<p>​    C. dd  if=dev/zero  of=/mnt/m6/loopdisk  bs=1G count=3</p>
+<p>​            （制作3G的大文件）</p>
+<p>​    D. start  /mnt/m6/loopdisk   （查看文件属性）</p>
+<p>​    E. mkfs.xfs  -f  loopdisk  （格式化）</p>
+<p>​    F. mkdir  /mnt/loopdev  （建立大文件挂载点目录）</p>
+<p>​    G. mount  -o  loop  /mnt/m6/loopdisk  /mnt/loopdev</p>
+<p>​            （挂载大文件，需要加  -o  loop  参数）</p>
+<p>​    H. 开机挂载设置</p>
+<p>​        (a) vim  /etc/fstab</p>
+<p>​        (b) 插入如下内容：</p>
+<p>​                /mnt/m6/loopdisk  /mnt/loopdev   xfs   defaults  0  0</p>
+<p>​        (c) 保存退出</p>
+<p>​        (d) mount   -a   （进行检测）</p>
+<p>​        (e) reboot   （重启）</p>
+</li>
+<li><p><strong>增加swap交换分区</strong></p>
+<p>(1) 过程</p>
+<p>​    A. 成新划分一个分区</p>
+<p>​    B. 格式化分区</p>
+<p>​    C.  启用新的swap</p>
+<p>​    D. 查看系统信息</p>
+<p>​    E. 开机挂载</p>
+<p>(2) 例：对/dev/sdb 新建2G分区空间，对其格式化并生效为swap 空间</p>
+<p>​    A. fdisk     /dev/sdb</p>
+<p>​    B. mkswap   /dev/sdb6</p>
+<p>​    C. swapon    /dev/sdb6</p>
+<p>​    D. free   -h</p>
+<p>​    E. vim  /etc/fstab   ，输入以下内容：</p>
+<p>​        /dev/sdb6   swap   swap    defaults    0    0</p>
+<p>​    F. mount     -a</p>
+<p>​    G. reboot     （重启）</p>
+<p>​    H. free    -h    （检测）</p>
+</li>
+</ol>
+<p>13.<strong>制作大文件生成swap</strong></p>
+<p>​    (1) 过程</p>
+<p>​        A. 查看分区</p>
+<p>​        B. 制作大文件</p>
+<p>​        C. 格式化</p>
+<p>​        D. 开机挂载</p>
+<p>​        E. 查看swap信息</p>
+<p>​    (2) 方法</p>
+<p>​        A. cd    /mnt/m5</p>
+<p>​        B. dd   if=/dev/zero     of=swaploop    bs=512MB    count=1</p>
+<p>​        C. mkswap    /mnt/m5/swaploop    （格式化为虚拟内存）</p>
+<p>​        D. swapon    /mnt/m5/swaploop    （生效）</p>
+<p>​        E. vim    /etc/fstab    ，插入如下内容：</p>
+<p>​            /mnt/m5/swaploop    swap    swap    defaults    0    0</p>
+<p>​        F. mount    -a</p>
+<p>​        G. reboot</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/17/Linux运维初级-五、用户账户及权限/" rel="next" title="Linux运维初级--- 五、用户账户及权限">
+                <i class="fa fa-chevron-left"></i> Linux运维初级--- 五、用户账户及权限
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/17/Linux运维初级-七、RAID-与-LVM/" rel="prev" title="Linux运维初级--- 七、RAID 与 LVM">
+                Linux运维初级--- 七、RAID 与 LVM <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">46.4k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

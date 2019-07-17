@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="七、RAID 与 LVM   RAID (1) RAID : Redundant   Array    of    Independent    Disks，磁盘冗余阵列 (2) RAID意义：通过增肌多个硬盘，形成独立的硬盘组，将数据划分成多份，分散存储，以提高硬盘读写效率 (3) RAID本质：防止硬盘物理损坏及增加存储设备吞吐量 (4) 分类： ​    A. RAID0 ​">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux运维初级--- 七、RAID 与 LVM">
+<meta property="og:url" content="http://yoursite.com/2019/07/17/Linux运维初级-七、RAID-与-LVM/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="七、RAID 与 LVM   RAID (1) RAID : Redundant   Array    of    Independent    Disks，磁盘冗余阵列 (2) RAID意义：通过增肌多个硬盘，形成独立的硬盘组，将数据划分成多份，分散存储，以提高硬盘读写效率 (3) RAID本质：防止硬盘物理损坏及增加存储设备吞吐量 (4) 分类： ​    A. RAID0 ​">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563347480702.png">
+<meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563348005237.png">
+<meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563348660963.png">
+<meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563349041574.png">
+<meta property="og:updated_time" content="2019-07-17T10:25:48.864Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux运维初级--- 七、RAID 与 LVM">
+<meta name="twitter:description" content="七、RAID 与 LVM   RAID (1) RAID : Redundant   Array    of    Independent    Disks，磁盘冗余阵列 (2) RAID意义：通过增肌多个硬盘，形成独立的硬盘组，将数据划分成多份，分散存储，以提高硬盘读写效率 (3) RAID本质：防止硬盘物理损坏及增加存储设备吞吐量 (4) 分类： ​    A. RAID0 ​">
+<meta name="twitter:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563347480702.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/17/Linux运维初级-七、RAID-与-LVM/">
+
+
+
+
+
+  <title>Linux运维初级--- 七、RAID 与 LVM | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/Linux运维初级-七、RAID-与-LVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux运维初级--- 七、RAID 与 LVM</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-17T14:53:02+08:00">
+                2019-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  881
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="5">七、RAID 与 LVM</font></center>
+
+<ol>
+<li><p><strong>RAID</strong></p>
+<p>(1) RAID : Redundant   Array    of    Independent    Disks，磁盘冗余阵列</p>
+<p>(2) RAID意义：通过增肌多个硬盘，形成独立的硬盘组，将数据划分成多份，分散存储，以提高硬盘读写效率</p>
+<p>(3) RAID本质：防止硬盘物理损坏及增加存储设备吞吐量</p>
+<p>(4) 分类：</p>
+<p>​    A. RAID0</p>
+<p>​        (a) 意义：原理：把<font color="red">至少2块硬盘</font>通过硬件或软件方式<font color="red">串联</font>，组成一个大的卷组，并将数据依次写入到各个硬盘中</p>
+<p>​        (b) 优点：数据同步传输，读取/写入分开，性能大大提升</p>
+<p>​        (c) 缺点：若任意一块硬盘故障会导致整个系统的数据损坏，无备份冗余能力、错误修复能力</p>
+<p>​        (d) 总结：使用率100%，至少2块硬盘才能使用，优点是快，提升磁盘的读写速度，缺点是不安全</p>
+<p>​        (e) 结构图：</p>
+<p>​        <img src="C:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563347480702.png" alt="1563347480702"></p>
+<p>​    B. RAID1：</p>
+<p>​        (a) 产生原因：若生产环境对硬盘的读写速度没有较大要求，但希望增加数据安全性时可使用RAID1</p>
+<p>​        (b) 原理：将<font color="red">至少2块硬盘并联起来</font>，写入数据时，同时写入，多个硬盘内容相同</p>
+<p>​        (c) 本质：多个硬盘的镜像备份</p>
+<p>​        (d) 优点：备份冗余数据，安全性大大提升</p>
+<p>​        (e) 缺点： 硬盘利用率下降</p>
+<p>​        (f) 总结：本质是镜像，使用两块磁盘，一式两份的方式，支持容错，冗余，数据安全不丢失，缺点是速度不快，使用率50%，成本较大</p>
+<p>​        (g) 结构图：</p>
+<p>​        <img src="C:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563348005237.png" alt="1563348005237"></p>
+<p>​    C. RAID5:</p>
+<p>​        (a) 产生原因：兼顾“读写速度”、“数据安全”、“成本”的一种折中方式</p>
+<p>​        (b) 原理：<font color="red">需至少3块硬盘</font>，将数据分块存储到不同硬盘中，硬盘中必须存储其他一个硬盘的parity（奇偶校验信息）</p>
+<p>​        (c) 优点：兼顾性能，通过“奇偶校验”替代“镜像备份”</p>
+<p>​        (d) 缺点：硬盘数据安全性较低</p>
+<p>​        (e) 总结：使用率(n-1)/n*容量，磁盘坏了会立即补上，数据会恢复</p>
+<p>​        (f) 结构图：</p>
+<p>​        <img src="C:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563348660963.png" alt="1563348660963"></p>
+<p>​    D.RAID10：（<font color="red">主流</font>）</p>
+<p>​        (a) 原理：<font color="red">至少需要4块硬盘</font>，先制作两两的RAID1阵列，以保证安全性，在两两制作RAID0，以提高读写速度</p>
+<p>​        (b) 本质：RAID1+RAID0的组合</p>
+<p>​        (c) 优点：兼具速度和安全性</p>
+<p>​        (d) 缺点：成本较高</p>
+<p>​        (e) 结构图：</p>
+<p>​        <img src="C:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563349041574.png" alt="1563349041574"></p>
+<p><strong>(5) mdadm命令：</strong></p>
+<p>​    A. 过程：</p>
+<p>​        (a) 关机添加4个新硬盘</p>
+<p>​        (b) mdadm命令建立RAID10</p>
+<p>​        (c) 格式化</p>
+<p>​        (d) 建立挂载目录</p>
+<p>​        (e) 挂载</p>
+<p>​        (f) 开机挂载</p>
+<p>​        (g) 查看信息</p>
+<p>​    B. mdadm命令格式：</p>
+<p>​        mdadm   -参数         &lt;RAID  设备名&gt;        [模式]        [成员设备名称]</p>
+<p>​    C. 作用：建立或管理RAID</p>
+<p>​    D. 参数：</p>
+<p>​        (a) -a ：检测设备名称</p>
+<p>​        (b) -C ：创建RAID</p>
+<p>​        (c) -v ：显示过程</p>
+<p>​        (d) -l ：指定RAID级别</p>
+<p>​        (e) -n ：指定硬盘数量</p>
+<p>​        (f) -f ：模拟设备损坏</p>
+<p>​        (g) -D ：查看详细信息</p>
+<p>​        (h) -r ：移除设备</p>
+<p>​        (i) -Q ：查看摘要</p>
+<p>​        (j) -S ：停止RAID磁盘阵列</p>
+<p>​    E. 例：<font color="gree"><strong>添加4块硬盘，创建RAID10</strong></font></p>
+<p>​        (a) 创建RAID10： mdadm    -Cv    /dev/md0    -a    yes    -n    4    -l    10    /dev/sdb    /dev/sdc    /dev/sdd    /dev/sde</p>
+<p>​            -Cv ：创建RAID并显示过程</p>
+<p>​            -a  yes ：检测创建设备名</p>
+<p>​            -n    4  ：4块硬盘参与建立</p>
+<p>​            -l   10  ：RAID级别为10</p>
+<p>​        (b) 格式化：mkfs.xfs     /dev/md0</p>
+<p>​        (c) 建立挂载目录：mkdir     /mnt/raiddev</p>
+<p>​        (d) 挂载：mount     /dev/md0     /mnt/raiddev</p>
+<p>​        (e) 开机挂载设置：vim    /etc/fstab</p>
+<p>​            增加行：            /dev/md0    /mnt/raiddev    xfs    defaults    0    0</p>
+<p>​        (f) 开机挂载检测：mount        -a</p>
+<p>​        (g) 查看RAID10信息：mdadm        -D        /dev/md0</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/17/Linux运维初级-六、磁盘管理/" rel="next" title="Linux运维初级--- 六、磁盘管理">
+                <i class="fa fa-chevron-left"></i> Linux运维初级--- 六、磁盘管理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">46.4k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

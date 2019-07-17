@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="三、用户账户及权限   用户账户及身份 (1) UUID值 ​    A. 作用：User Identification，系统为每一个账户都分配了一个        唯一的编号（身份证号），具有唯一性，账户的权限来源        于    UUID值 ​    B. 分类： ​        (a) 超级管理员root：0 ​        (b) 系统用户UUID：1-999，系统为每一个服务">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux运维初级--- 五、用户账户及权限">
+<meta property="og:url" content="http://yoursite.com/2019/07/17/Linux运维初级-五、用户账户及权限/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="三、用户账户及权限   用户账户及身份 (1) UUID值 ​    A. 作用：User Identification，系统为每一个账户都分配了一个        唯一的编号（身份证号），具有唯一性，账户的权限来源        于    UUID值 ​    B. 分类： ​        (a) 超级管理员root：0 ​        (b) 系统用户UUID：1-999，系统为每一个服务">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-17T10:20:55.384Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux运维初级--- 五、用户账户及权限">
+<meta name="twitter:description" content="三、用户账户及权限   用户账户及身份 (1) UUID值 ​    A. 作用：User Identification，系统为每一个账户都分配了一个        唯一的编号（身份证号），具有唯一性，账户的权限来源        于    UUID值 ​    B. 分类： ​        (a) 超级管理员root：0 ​        (b) 系统用户UUID：1-999，系统为每一个服务">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/17/Linux运维初级-五、用户账户及权限/">
+
+
+
+
+
+  <title>Linux运维初级--- 五、用户账户及权限 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/Linux运维初级-五、用户账户及权限/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux运维初级--- 五、用户账户及权限</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-17T11:30:12+08:00">
+                2019-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="5">三、用户账户及权限</font></center>
+
+<ol>
+<li><p><strong>用户账户及身份</strong></p>
+<p>(1) UUID值</p>
+<p>​    A. 作用：User Identification，系统为每一个账户都分配了一个        唯一的编号（身份证号），具有唯一性，账户的权限来源        于    UUID值</p>
+<p>​    B. 分类：</p>
+<p>​        (a) 超级管理员root：0</p>
+<p>​        (b) 系统用户UUID：1-999，系统为每一个服务都分配一个账户，防止某个服务程序出现漏洞，从而被黑客提权至整个服务器，每个服务程序都由一个账户负责，控制破坏范围</p>
+<p>​        (c) 普通账户：从1000开始，由root创建，用于日常维护</p>
+<p>​    C. 特点：</p>
+<p>​        (a) UUID值不能相同</p>
+<p>​        (b) 系统账户即使某些UUID值未使用，也不能分配给普通账户</p>
+<p>​    D. id命令：</p>
+<p>​        (a) 作用：查看账户的UUID值</p>
+<p>​        (b) 格式：UUID  账户名</p>
+<p>(2) 账户及工作组的创建</p>
+<p>​    A. 意义：为了方便管理数据，引入了系统-&gt;工作组-&gt;账户-&gt;权限的概念，相当于企业-&gt;部门-&gt;员工-&gt;权限</p>
+<p>​    B. <strong>useradd命令：</strong></p>
+<p>​        (a) 作用：创建账户</p>
+<p>​        (b) 格式：useradd   -参数   账户名 </p>
+<p>​        (c) 参数：</p>
+<p>​            ◆ -d ：指定用户的家目录（默认为：/home/用户名称）</p>
+<p>​            ◆ -e ：账户到期时间，格式为：YYYY-MM-DD</p>
+<p>​            ◆ -u ：指定该用户账户的UID值</p>
+<p>​            ◆ -g ：指定一个初始的用户基本组（必须已存在）</p>
+<p>​            ◆ -G ：指定一个或多个扩展用户组</p>
+<p>​        (d) 例：</p>
+<p>​            useradd  test3  -e  2019-7-15  -u  3000  -g  test</p>
+<p>​        （设置test3账户，到期时间为2019-7-15，指定该账户UID值为3000，指定用户基本组为test）</p>
+<p>​    C. <strong>userdel命令：</strong></p>
+<p>​        (a) 作用：删除账户</p>
+<p>​        (b) 格式：userdel  -参数  账户名</p>
+<p>​        (c) 参数</p>
+<p>​            ◆ -f ：强制删除</p>
+<p>​            ◆ -r ：同时删除账户及用户家目录</p>
+<p>​    D. <strong>groupadd命令：</strong></p>
+<p>​        (a) 作用：创建工作组</p>
+<p>​        (b) 格式：group  -参数  工作组名称</p>
+<p>​        (c) 参数：-g ，指定工作组的gid编号</p>
+<p>​    E. <strong>groupdel命令：</strong></p>
+<p>​        (a) 作用：删除工作组</p>
+<p>​        (b) 格式：groupdel  工作组名</p>
+<p>​        (c) 注意：工作组中包含有账户时，不能删除，可以通过删除账户一并删除工作组</p>
+<p>(3) 账户及工作组的修改</p>
+<p>​    A. <strong>usermod命令：</strong></p>
+<p>​        (a) 作用：修改账户信息参数</p>
+<p>​        (b) 格式：usermod  -参数  账户名</p>
+<p>​        (c) 参数：</p>
+<p>​            ◆ -u ：修改用户uid</p>
+<p>​            ◆ –g ：变更用户组</p>
+<p>​    B. <strong>passwd命令：</strong></p>
+<p>​        (a) 作用：给账户设置密码</p>
+<p>​        (b) 格式：passwd  -参数  账户名</p>
+<p>​        (c) 参数：</p>
+<p>​            ◆ -l ：锁定用户，禁止登录</p>
+<p>​            ◆ -u ：解除锁定，允许用户登录</p>
+<p>​            ◆ -d ：允许用户可以用空格密码登录系统</p>
+<p>​            ◆ -e ：强制用户在下次登录时修改密码</p>
+</li>
+<li><p><strong>文件权限及归属</strong></p>
+<p>（1）文件权限</p>
+<p>​    A. 可读：r</p>
+<p>​    B. 可写：w</p>
+<p>​    C. 可执行：x</p>
+<p>（2）目录权限</p>
+<p>​    A. 可读：r ，可以查看目录中的文件列表 </p>
+<p>​    B. 可写：w ，可对目录中的文件进行操作</p>
+<p>​    C. 可执行：x  ，可打开目录</p>
+<p>（3）文件归属</p>
+<p>​    A. 所有者</p>
+<p>​    B. 所属组</p>
+<p>​    C. 其他用户</p>
+<p>（4）文件权限数字化</p>
+<p>​    A. 数字组成：r（4）  w（2）  x（1）</p>
+<p>​    B. 表示类别</p>
+<p>​        (a) rwx：完整权，7</p>
+<p>​        (b) rw- :  6</p>
+<p>​        (c) r-x :  5</p>
+<p>​        (d) r– :  4</p>
+<p>​        (e) -wx :  3</p>
+<p>​        (f) -w- :  2</p>
+<p>​        (g) –x  ：1</p>
+<p>​        (h) —  ： 0</p>
+<p>​    C. 例：</p>
+<p>​        764：rwxrw-r–         642:  rw-r—w-     153 :  –xr-x-wx</p>
+<p>​        rwxrw-r– : 764         rw–w–wx : 623     rw-r–r– :  644</p>
+<p>（5）执行ls -l （ll）显示信息意义</p>
+<p>​        如：-rw-r–r–. 1 root root 1950  6 jun 13 01:00  initial-setup-ks.cfg </p>
+<p>​        A. -rw-r–r–. ：普通文件（-） 权限（rw-r–r–） 开启SELinux(.)</p>
+<p>​        B. 1 : 文件字节数</p>
+<p>​        C.  root root： 所属账户  所属工作组 </p>
+<p>​        D. 1950 ：文件占用容量</p>
+<p>​        E. 6 jun 13 01:00 ：文件修改时间</p>
+<p>​        F. initial-setup-ks.cfg：文件名</p>
+<p>（6）<strong>chmod命令：</strong></p>
+<p>​        A. 作用：修改文件权限信息</p>
+<p>​        B. 格式：chmod  参数   权限   文件或目录名</p>
+<p>​        C. 例： chmod  777  h1.cfg</p>
+<p>（7）<strong>chown命令：</strong></p>
+<p>​        A. 作用：修改文件所属账户及工作组</p>
+<p>​        B. 格式：chown  参数   所有者：所属组   文件或目录名</p>
+<p>​        C. 例： chown  mk1:mk1   h2.cfg</p>
+</li>
+<li><p><strong>文件隐藏属性</strong></p>
+<p>（1）文件隐藏权限：文件拥有一般权限还拥有隐藏权限，当文件权限足够但无法删除时，考虑是否有隐藏权限</p>
+<p>（2）<strong>chattr命令：</strong></p>
+<p>​    A. 作用：查看设置文件的隐藏权限</p>
+<p>​    B. 格式：chattr   -参数   文件名</p>
+<p>​    C. 参数：</p>
+<p>​        ◆ i: 无法修改文件（目录中不能新建和删除）</p>
+<p>​        ◆ a: 仅允许追加内容，不可以覆盖、删除</p>
+<p>​        ◆ s:  文件变更后同步到硬盘</p>
+<p>​        ◆ S:  从硬盘中彻底删除，不可恢复（0填充文件所在存储区）</p>
+<p>（3）<strong>lsattr命令：</strong></p>
+<p>​    A. 作用：查看文件的隐藏权限属性</p>
+<p>​    B. 格式：lsattr   -参数   文件名</p>
+<p>​    C. 例：</p>
+<p>​            touch  h3.cfg</p>
+<p>​            chattr  +a   h3.cfg （+a   增加a隐藏权限）</p>
+<p>​            rm -f  h3.cfg      （无法删除）</p>
+<p>​            lsattr   h3.cfg</p>
+<p>​            chattr    -a    h3.cfg   （-a  去掉a隐藏权限）</p>
+<p>​            rm  -f  h3.cfg</p>
+</li>
+<li><p><strong>账户切换</strong></p>
+<p>(1) 切换原则</p>
+<p>​    A. Root账户可任意切换到其他普通账户，不需要密码</p>
+<p>​    B. 普通账户切换到root账户必须输入密码</p>
+<p>​    C. 账户切换并不是注销，只是同时登录</p>
+<p>(2) <strong>su命令：</strong></p>
+<p>​    A. 格式：su   -参数   账户名</p>
+<p>​    B. 作用： 切换账户</p>
+<p>​    C. 常用：  su  -   账户名，减号表示创建新的环境变量信息</p>
+<p>​    D. 注意：尽量减少使用su命令，因为可能暴露root密码</p>
+<p>(3) <strong>sudo命令：</strong></p>
+<p>​    A. 作用：临时赋予普通账户权限，完成原本root完成的任务</p>
+<p>​    B. 格式：sudo  -参数   命令名称</p>
+<p>​    C 参数：</p>
+<p>​        ◆ -h: 列出帮助信息</p>
+<p>​        ◆ -l : 列出当前用户可执行命令</p>
+<p>​        ◆ -u (用户名UID值)：使用指定的用户身份执行命令</p>
+<p>​        ◆ -k: 清空密码的有效时间，下次执行sudo时需要再次密码验证</p>
+<p>​    D. sudo功能总结</p>
+<p>​        ◆ 限制用户执行指定的命令</p>
+<p>​        ◆ 记录用户执行的每一条命令</p>
+<p>​        ◆ 验证密码后5分钟内不需再次输入密码</p>
+<p>​        ◆ Sudo必须通过编译配置文件才能使用：visudo</p>
+<p>​    E. 赋予普通账户临时权限</p>
+<p>​        ◆ useradd  fox      新建账户</p>
+<p>​        ◆ passwd   fox     设置密码</p>
+<p>​        ◆ su  -  fox        切换账户</p>
+<p>​        ◆ cd  /root</p>
+<p>​        ◆ su   -  root</p>
+<p>​        ◆ visudo  </p>
+<p>​        ◆ 点击shfit + :  后输入set   nu  查看行号</p>
+<p>​        ◆ 定位第98行</p>
+<p>​        ◆ 点击i键添加    fox   ALL=(ALL)   ALL</p>
+<p>​        （谁可以使用   允许使用的主机=（以谁的身份） 可以执行的命令列表）</p>
+<p>​        ◆ 点击shfit +: 输入wq保存退出</p>
+<p>​        ◆ su   -  fox</p>
+<p>​        ◆ sudo   cd  /root</p>
+<p>​        ◆ 输入fox账户密码</p>
+<p>​        ◆ sudo   cat   /etc/passwd    完美执行</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/17/Linux运维初级-四、文件系统命令/" rel="next" title="Linux运维初级--- 四、文件系统命令">
+                <i class="fa fa-chevron-left"></i> Linux运维初级--- 四、文件系统命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/17/Linux运维初级-六、磁盘管理/" rel="prev" title="Linux运维初级--- 六、磁盘管理">
+                Linux运维初级--- 六、磁盘管理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">46.4k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

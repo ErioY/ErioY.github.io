@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="命令提示符的意义 （1）[root@localhost   ~]  ​     A.   root:表示当前登录账户名称 ​     B.   @：表示分隔符 ​     C.   localhost：表示主机名 ​     D.   ：表示此位置是当前工作路径，相当于/root （2）#：表示以root账户登录，$：表示以普通用户登录  常见命令 （1）命令书写格式：命令名称 + 空格 + 参">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux运维初级--- 三、常用Linux命令">
+<meta property="og:url" content="http://yoursite.com/2019/07/17/Linux运维初级-三、常用Linux命令/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="命令提示符的意义 （1）[root@localhost   ~]  ​     A.   root:表示当前登录账户名称 ​     B.   @：表示分隔符 ​     C.   localhost：表示主机名 ​     D.   ：表示此位置是当前工作路径，相当于/root （2）#：表示以root账户登录，$：表示以普通用户登录  常见命令 （1）命令书写格式：命令名称 + 空格 + 参">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-17T06:48:21.097Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux运维初级--- 三、常用Linux命令">
+<meta name="twitter:description" content="命令提示符的意义 （1）[root@localhost   ~]  ​     A.   root:表示当前登录账户名称 ​     B.   @：表示分隔符 ​     C.   localhost：表示主机名 ​     D.   ：表示此位置是当前工作路径，相当于/root （2）#：表示以root账户登录，$：表示以普通用户登录  常见命令 （1）命令书写格式：命令名称 + 空格 + 参">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/17/Linux运维初级-三、常用Linux命令/">
+
+
+
+
+
+  <title>Linux运维初级--- 三、常用Linux命令 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/Linux运维初级-三、常用Linux命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux运维初级--- 三、常用Linux命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-17T11:27:35+08:00">
+                2019-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li><p><strong>命令提示符的意义</strong></p>
+<p>（1）[root@localhost   ~] </p>
+<p>​     A.   root:表示当前登录账户名称</p>
+<p>​     B.   @：表示分隔符</p>
+<p>​     C.   localhost：表示主机名</p>
+<p>​     D.   <del>：<font size="3">表示此位置是当前工作路径，</font></del>相当于/root</p>
+<p>（2）#：表示以root账户登录，$：表示以普通用户登录</p>
+</li>
+<li><p><strong>常见命令</strong></p>
+<p>（1）命令书写格式：命令名称 + 空格 + 参数 + 空格 + 目标</p>
+<p>（2）参数：</p>
+<p>​     A.长格式（全称）：–参数</p>
+<p>​     B.短格式：-参数</p>
+<p>​     C.例：man   –help</p>
+<p>​                man   -h</p>
+<p><strong>（3）目录查看命令</strong></p>
+<pre><code>A.格式：pwd
+
+B.作用：查看当前工作目录的绝对路径</code></pre><p><strong>（4）目录切换命令：</strong></p>
+<pre><code> A.格式：cd  路径
+
+B.作用：切换工作目录
+
+ C.路径：</code></pre><p>​            (a) 绝对路径：从/开始向下遍历</p>
+<p>​            (b) 相对路径：从当前工作目录开始向下遍历（不包含当前工作目录）</p>
+<p>​        D.特殊路径</p>
+<pre><code>(a) cd   / ：切换根目录
+
+(b) cd   .. ：返回上级目录
+
+(c) cd   ~ ：切换root家目录
+
+(d) cd   /root：同上
+
+(e) cd   /home/普通账户名 ：切换普通账户的家目录</code></pre><p><strong>（5）目录浏览命令：</strong></p>
+<pre><code>A.格式：ls   -参数
+
+B.作用：查看目录中的内容
+
+C.参数：</code></pre><p>​             (a) -a  ：查看隐藏文件（以点开头的为隐藏文件）</p>
+<p>​             (b) -l  ：查看目录中的详细信息</p>
+<p>​            (c) -d  ：查看当前目录</p>
+<pre><code>D.注意：</code></pre><p>​            (a) 翻页查看：ls    |   more</p>
+<p>​            (b) 查看目录内的详细信息（等同于ll命令）：ls   -l</p>
+<p>​            (c) 查看当前目录的详细信息：ls   -dl</p>
+<pre><code>E. ls命令查看的颜色意义：</code></pre><p>​            (a) 白色：表示普通文件</p>
+<p>​            (b) 蓝色：表示目录</p>
+<p>​            (c) 红色：压缩文件</p>
+<p>​            (d) 黄色：设备文件</p>
+<p>​            (e) 绿色：链接文件</p>
+<p>​                    演示： cd   /dev</p>
+<p>​                               cd    /</p>
+<p>​                               Ls</p>
+<p><strong>（6）date命令：</strong></p>
+<p>​    A. 格式：date   [选项]   [“+显示时间格式”]</p>
+<p>​    B. 注意：按照指定格式显示日期时间</p>
+<p>​    C. 参数：</p>
+<p>​        (a) -s  ：设定系统的日期时间</p>
+<p>​        (b) -d  ：显示指定描述的日期时间（几天前/后）</p>
+<p>​    D. 日期格式：</p>
+<p>​        (a) %Y  ：显示完整的年份</p>
+<p>​        (b) %m  ：显示月份</p>
+<p>​        (c) %d   ：显示日（1-31）</p>
+<p>​        (d) %a   ：星期几</p>
+<p>​        (e) %j    ：一年中的第几天（1-366）</p>
+<p>​        (f) 例：显示年月日：date   “+%Y-%m-%d”</p>
+<p>​                                           date   “+%j”  （数字越大，文件越新）</p>
+<p>​                                           date    “+%Y-%m-%d  %a”</p>
+<p>​    E. 时间格式：</p>
+<p>​        (a) %H ：小时（00-23）</p>
+<p>​        (b) %M ：分钟（00-59）</p>
+<p>​        (c) %S ：秒（00-60）</p>
+<p>​        (d) %t ：相当于tab键（4个空格）</p>
+<p>​        (e) 例：date  “+%H:%M:%S”</p>
+<p>​                   date  “+%Y-%m-%d%t%H:%M:%S”</p>
+<p>​    F. 其它：</p>
+<p>​        (a) %p ：显示本地AM或PM（上午或下午）</p>
+<p>​        (b) %Z ：显示时区</p>
+<p>​        (c) %j ：一般用于备份文件或日志文件，增加此参数，数字越大，文件越新</p>
+</li>
+</ol>
+<p>​        G.   date    -s   “2020-9-5     18:35:40”   设置系统新的日期时间    </p>
+<p>​        H.   date    -d   “+2 day”   “+Y-%m-%d”     设置系统的日期为2天后  （减号为几天以前）</p>
+<p><strong>（7）cal命令：</strong></p>
+<p>​        A. 格式：  cal   -参数</p>
+<p>​        B. 作用：显示日历</p>
+<p>​        C. 例：</p>
+<p>​            (a) cal   显示本月</p>
+<p>​            (b) cal  -2019   显示全年的日历</p>
+<p><strong>（8）echo命令：</strong></p>
+<p>​        A. 格式：echo    -参数</p>
+<p>​        B. 作用：将字符串输出到屏幕或文件中，显示变量的值</p>
+<p>​        C. 例：echo    “HELLO”</p>
+<p>​                    echo    “hello”   &gt;   文件名</p>
+<p><strong>（9）history命令：</strong></p>
+<p>​        A. 格式：history     -参数</p>
+<p>​        B. 作用：显示命令历史记录</p>
+<p>​        C. 配置文件：/etc/profile</p>
+<p>​        D. 默认记录1000条历史命令</p>
+<p>​        E. 修改历史命令记录条数：</p>
+<p>​            (a) vim   /etc/profile</p>
+<p>​            (b) HISTSIZE=1000   将1000改为指定数字</p>
+<p>​            (c) reboot   重启</p>
+<p>​        F. 清空历史命令记录：history   -c</p>
+<ol start="3">
+<li><strong>系统检测命令</strong></li>
+</ol>
+<p><strong>（1）ps命令：</strong></p>
+<p>​    A.格式：ps    -参数</p>
+<p>​    B.作用：显示进程的参数</p>
+<p>​    C.参数：</p>
+<p>​        (a) -a：显示所有进程</p>
+<p>​        (b) -u：用户及其他详细信息</p>
+<p>​        (c) -x：显示没有控制终端的进程</p>
+<p>​    D.常用：ps   -au</p>
+<p>​    E.注意：只要关注%CPU（cpu占用率）及%MEM（内存使用率）</p>
+<p><strong>（2）top命令：</strong></p>
+<p>​    A.作用：动态检测系统的活动与负载，相当于强化版的“任务管理器”</p>
+<p>​    B.top命令显示的表头解释：</p>
+<p>​        (a) 第一行：</p>
+<p>​            ◆ 系统时间</p>
+<p>​            ◆ 运行时间</p>
+<p>​            ◆ 登录的终端数</p>
+<p>​            ◆ 系统负载：1分、5分、15分钟平均值（三个值越小，系统负载越低）</p>
+<p>​        (c) 第二行：进程总数、运行进程数、睡眠数、停止数、僵死数</p>
+<p>​        (d) 第三行：</p>
+<p>​            ◆ 用户资源占用百分比</p>
+<p>​            ◆ 系统内核占用资源百分比</p>
+<p>​            ◆ 改变过优先级的进程资源百分比</p>
+<p>​            ◆ 空闲的资源百分比等</p>
+<p>​        (e) 第四行：</p>
+<p>​            ◆ 物理内存总量</p>
+<p>​            ◆ 内存使用量</p>
+<p>​            ◆ 内存空闲量</p>
+<p>​            ◆ 作为内核缓存的内存量</p>
+<p>​        (f) 第五行：</p>
+<p>​            ◆ 虚拟内存量</p>
+<p>​            ◆ 虚拟内存使用量</p>
+<p>​            ◆ 虚拟内存空闲量</p>
+<p>​            ◆ 已被提前加载的内存量</p>
+<p>​    D. 点击q键退出</p>
+<p><strong>（3）ifconfig命令：</strong></p>
+<p>​    A.作用：查看本机网卡信息</p>
+<p>​    B.信息：</p>
+<p>​        (a) ens32为本机物理网卡</p>
+<p>​        (b) inet：本机IP</p>
+<p>​        (c) netmask：本机子网掩码</p>
+<p>​        (d) RX：发送数据包个数</p>
+<p>​        (e) TX：接收数据包个数</p>
+<p><strong>（4）uname命令：</strong></p>
+<p>​    A.格式：uname   -a</p>
+<p>​    B.作用：显示系统的版本信息</p>
+<p><strong>（5）free命令：</strong></p>
+<p>​    A.格式：free    -h</p>
+<p>​    B.作用：显示内存及虚拟内存的容量、剩余量等信息</p>
+<p><strong>（6）who命令：</strong></p>
+<p>​    A.作用：显示系统登录信息</p>
+<p>​    B.信息：</p>
+<p>​        (a) 账户</p>
+<p>​        (b) 方式</p>
+<p>​            ◆ :0   表示图形化界面</p>
+<p>​            ◆ tty2  命令行界面</p>
+<p>​            ◆ pts/0 远程登录界面</p>
+<p>​        (c） 日期时间</p>
+<p><strong>（7）last命令：</strong>显示系统登录或退出的详细信息，是强化版的who</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/17/Linux运维初级-二、Linux的安装与部署/" rel="next" title="Linux运维初级--- 二、Linux的安装与部署">
+                <i class="fa fa-chevron-left"></i> Linux运维初级--- 二、Linux的安装与部署
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/17/Linux运维初级-四、文件系统命令/" rel="prev" title="Linux运维初级--- 四、文件系统命令">
+                Linux运维初级--- 四、文件系统命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">46.4k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+
