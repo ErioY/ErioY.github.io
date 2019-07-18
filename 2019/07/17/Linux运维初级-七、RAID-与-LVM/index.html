@@ -137,7 +137,7 @@
 <meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563348005237.png">
 <meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563348660963.png">
 <meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563349041574.png">
-<meta property="og:updated_time" content="2019-07-17T10:25:48.864Z">
+<meta property="og:updated_time" content="2019-07-18T02:23:40.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux运维初级--- 七、RAID 与 LVM">
 <meta name="twitter:description" content="七、RAID 与 LVM   RAID (1) RAID : Redundant   Array    of    Independent    Disks，磁盘冗余阵列 (2) RAID意义：通过增肌多个硬盘，形成独立的硬盘组，将数据划分成多份，分散存储，以提高硬盘读写效率 (3) RAID本质：防止硬盘物理损坏及增加存储设备吞吐量 (4) 分类： ​    A. RAID0 ​">
@@ -273,7 +273,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  881
+                  1.4k
                 </span>
               
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  3
+                  5
                 </span>
               
             </div>
@@ -487,6 +487,39 @@
 <p>​            增加行：            /dev/md0    /mnt/raiddev    xfs    defaults    0    0</p>
 <p>​        (f) 开机挂载检测：mount        -a</p>
 <p>​        (g) 查看RAID10信息：mdadm        -D        /dev/md0</p>
+<p>​    F. 模拟硬盘损坏的处理流程</p>
+<p>​        (a) 模拟损坏：mdadm    /dev/md0    -f    /dev/sdb</p>
+<p>​        (b) 查看信息：mdadm    -D    /dev/md0</p>
+<p>​        (c) 关机，添加新硬盘</p>
+<p>​        (d) 卸载RAID：umount    /dev/md0</p>
+<p>​        (e) RAID补上新硬盘：mdadm    /dev/md0    -a    /dev/sdf</p>
+<p>​        (f) 重启：reboot</p>
+<p>​        (g) 查看信息：mdadm    -D    /dev/md0</p>
+<p>​        (h) 注意：添加新硬盘时必须先卸载</p>
+<p>​    G. 停止RAID</p>
+<p>​        (a) 注意：在实际工作中，停止RAID前必须备份其中数据，否则数据会全部丢失</p>
+<p>​        (b) 过程：</p>
+<p>​            ◆ 卸载设备：umount    /dev/md0    </p>
+<p>​            ◆ 删除开机挂载配置文件中RAID的记录</p>
+<p>​            ◆ 停止RAID：mdadm    -S    /dev/md</p>
+<p>​    H. RAID 10备份盘功能</p>
+<p>​        (a) 产生原因：在RAID1中，某块硬盘损坏，在手工修复成功前另一块硬盘也同时损坏，则整个数据会全部丢失</p>
+<p>​        (b) 原理：在RAID10中再添加一块硬盘，作为备份盘，一旦某硬盘损坏，会自动修复</p>
+<p>​        (c) <font color="orange">RAID共需5块硬盘（4个数据盘，1个备份盘）</font></p>
+<p>​        (d) 方法：</p>
+<p>​            ◆ 新建RAID10+备份盘：mdadm    -Cv    /dev/md1    -a    yes    -n    4    -l    10    -x    1    /dev/sdb    /dev/sdc    /dev/sdd    /dev/sde    /dev/sdf</p>
+<p>​            （-x    1 ：表示备份盘，1块硬盘）</p>
+<p>​            （一般最后一块硬盘/dev/sdf 为备份盘，习惯放置在最后）</p>
+<p>​            ◆ 查看信息摘要：mdadm    -D    /dev/md1</p>
+<p>​            ◆ 模拟某硬盘损坏：mdadm    /dev/md1    -f    /dev/sdb</p>
+<p>​            ◆ 重启系统：reboot</p>
+<p>​            ◆  再次查看信息摘要：mdadm    -D    /dev/md1  ，备份盘/dev/sdf已替换故障硬盘</p>
+</li>
+<li><p><strong>LVM</strong>（逻辑卷管理器）</p>
+<p>(1) 产生原因：由于硬盘分区并设置为RAID后，对其空间调整并不容易，此时用户随着实际的需求变化而动态调整硬盘分区大小时受到限制，无灵活性</p>
+<p>(2) LVM作用：允许用户动态调整磁盘空间大小</p>
+<p>(3) 原理：LVM是在磁盘分区与文件系统之间添加逻辑层，以提供一个抽象的卷组，使管理者可以忽略底层磁盘布局，从而实现对分区的灵活动态调整</p>
+<p>(4) </p>
 </li>
 </ol>
 
@@ -692,7 +725,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">46.4k</span>
+    <span title="Site words total count">46.9k</span>
   
 </div>
 
