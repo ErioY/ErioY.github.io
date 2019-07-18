@@ -137,7 +137,9 @@
 <meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563348005237.png">
 <meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563348660963.png">
 <meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563349041574.png">
-<meta property="og:updated_time" content="2019-07-18T02:23:40.059Z">
+<meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563416999528.png">
+<meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563418291015.png">
+<meta property="og:updated_time" content="2019-07-18T03:41:13.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux运维初级--- 七、RAID 与 LVM">
 <meta name="twitter:description" content="七、RAID 与 LVM   RAID (1) RAID : Redundant   Array    of    Independent    Disks，磁盘冗余阵列 (2) RAID意义：通过增肌多个硬盘，形成独立的硬盘组，将数据划分成多份，分散存储，以提高硬盘读写效率 (3) RAID本质：防止硬盘物理损坏及增加存储设备吞吐量 (4) 分类： ​    A. RAID0 ​">
@@ -375,7 +377,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.4k
+                  1.9k
                 </span>
               
 
@@ -391,7 +393,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  5
+                  7
                 </span>
               
             </div>
@@ -519,7 +521,51 @@
 <p>(1) 产生原因：由于硬盘分区并设置为RAID后，对其空间调整并不容易，此时用户随着实际的需求变化而动态调整硬盘分区大小时受到限制，无灵活性</p>
 <p>(2) LVM作用：允许用户动态调整磁盘空间大小</p>
 <p>(3) 原理：LVM是在磁盘分区与文件系统之间添加逻辑层，以提供一个抽象的卷组，使管理者可以忽略底层磁盘布局，从而实现对分区的灵活动态调整</p>
-<p>(4) </p>
+<p>(4) 分析：</p>
+<p>​    A. 图：</p>
+<p>​    <img src="C:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563416999528.png" alt="1563416999528"></p>
+<p>​    B. 物理卷（PV, Physical Volume）：整个硬盘或分区</p>
+<p>​    C. 卷组（VG, Volume Group）：由一个或多个物理卷（PV）组成的整体</p>
+<p>​    D. 逻辑卷（LV, Logical Volume）：从卷组（VG）切割出的空间，用于创建文件系统，大小由PE的个数决定</p>
+<p>​    E. 基本单元（PE, Physical Extent）：默认为4MB的基本块</p>
+<p>(5) 基本命令：</p>
+<p>​    <img src="C:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563418291015.png" alt="1563418291015"></p>
+<p>(6) 硬盘支持LVM的流程：</p>
+<p>​    A. 将新硬盘支持物理卷技术</p>
+<p>​    B. 创建卷组，将新硬盘加入卷组</p>
+<p>​    C. 根据需求切割出指定容量的逻辑卷</p>
+<p>​    D. 格式化逻辑卷</p>
+<p>​    E. 创建挂载目录</p>
+<p>​    F. 添加开机挂载信息</p>
+<p>​    G. 挂载测试</p>
+<p>​    H. 重启系统</p>
+<p>(7) 例：<font color="gree">在虚拟机中添加2块新硬盘，创建物理卷及卷组，划分出150MB空间的逻辑卷并格式化挂载使用</font></p>
+<p>​    A. 新建物理卷：pvcreate    /dev/sdb    /dev/sdc    </p>
+<p>​    B. 新建卷组：vgcreate    /dev/vg1    /dev/sdb    /dev/sdc</p>
+<p>​    C. 查看卷组信息：vgdisplay    /dev/vg1</p>
+<p>​    D. 切割150MB逻辑卷：lvcreate    -n    lv1    -L    150MB    /dev/vg1</p>
+<p>​        (a) -n ：新建逻辑卷</p>
+<p>​        (b) -L：逻辑卷的容量，单位为数据量（K  M  G）</p>
+<p>​    E. 查看逻辑卷信息：lvdisplay    /dev/vg1/lv1</p>
+<p>​    F. 格式化逻辑卷：mkfs.xfs    /dev/vg1/lv1    </p>
+<p>​    G. 建立挂载点：mkdir    /mnt/lvdev</p>
+<p>​    H. 编辑开机挂载文件：vim    /etc/fstab        增加下列记录：</p>
+<p>​                            /dev/vg1/lv1    /mnt/lvdev    xfs    defaults    0    0</p>
+<p>​    I. 挂载测试：mount    -a</p>
+<p>(8) 例：添加2块新硬盘，建立卷组，划分出200MB空间的逻辑卷并格式化挂载使用</p>
+<p>​    A. pvcreate    /dev/sdd    /dev/sde</p>
+<p>​    B. vgcreate    /dev/vg2    /dev/sdd    /dev/sde</p>
+<p>​    C. vgdisplay    /dev/vg2</p>
+<p>​    D. lvcreate    -n    lv2    -l    50    /dev/vg2</p>
+<p>​        (a) lv2的路径：/dev/vg2/lv2</p>
+<p>​        (b) <font color="red">-l ：表示以PE物理卷基本存储单位4MB为单位划分，给出4MB的倍数，50表示PE个数（50*4MB）</font></p>
+<p>​    E. lvdisplay    /dev/vg2/lv2</p>
+<p>​    F. mkfs.xfs    /dev/vg2/lv2    </p>
+<p>​    G. mkdir    /mnt/lvdev2</p>
+<p>​    H. vim    /etc/fstab        增加下列记录：</p>
+<p>​        /dev/vg2/lv2    /mnt/lvdev2    xfs    defaults    0    0</p>
+<p>​    I. mount    -a</p>
+<p>(9) 逻辑卷扩容</p>
 </li>
 </ol>
 
@@ -725,7 +771,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">46.9k</span>
+    <span title="Site words total count">47.4k</span>
   
 </div>
 
