@@ -139,7 +139,7 @@
 <meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563349041574.png">
 <meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563416999528.png">
 <meta property="og:image" content="c:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563418291015.png">
-<meta property="og:updated_time" content="2019-07-18T03:41:13.305Z">
+<meta property="og:updated_time" content="2019-07-18T08:28:22.592Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux运维初级--- 七、RAID 与 LVM">
 <meta name="twitter:description" content="七、RAID 与 LVM   RAID (1) RAID : Redundant   Array    of    Independent    Disks，磁盘冗余阵列 (2) RAID意义：通过增肌多个硬盘，形成独立的硬盘组，将数据划分成多份，分散存储，以提高硬盘读写效率 (3) RAID本质：防止硬盘物理损坏及增加存储设备吞吐量 (4) 分类： ​    A. RAID0 ​">
@@ -377,7 +377,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.9k
+                  3k
                 </span>
               
 
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  7
+                  12
                 </span>
               
             </div>
@@ -565,7 +565,116 @@
 <p>​    H. vim    /etc/fstab        增加下列记录：</p>
 <p>​        /dev/vg2/lv2    /mnt/lvdev2    xfs    defaults    0    0</p>
 <p>​    I. mount    -a</p>
-<p>(9) 逻辑卷扩容</p>
+<p><strong>(9) 逻辑卷扩容</strong></p>
+<p>​    A. 作用：根据实际需要扩大逻辑卷的存储容量</p>
+<p>​    B. 过程：</p>
+<p>​        (a) 卸载逻辑卷</p>
+<p>​        (b) 扩容逻辑卷</p>
+<p>​        (c) 再次格式化</p>
+<p>​        (d) 挂载</p>
+<p>​        (e) 查看信息</p>
+<p>​    C. <font color="gree">例1：对上例lv1逻辑卷扩容到495MB</font></p>
+<p>​        (a) 卸载：umount    /dev/vg1/lv1</p>
+<p>​        (b) 查看卷组容量是否足够：vgdisplay    /dev/vg1</p>
+<p>​        (c) 扩容：lvextend    -L    495MB    /dev/vg1/lv1</p>
+<p>​        (d) 再次格式化：mkfs.xfs    -f    /dev/vg1/lv1</p>
+<p>​        (e) 挂载：mount    /dev/vg1/lv1    /mnt/lvdev</p>
+<p>​        (f) 查看逻辑卷信息：lvdisplay    /dev/vg1/lv1</p>
+<p>​    D. <font color="gree">例2：对上例lv2逻辑卷扩容到800MB</font></p>
+<p>​        (a) umount    /dev/vg2/lv2</p>
+<p>​        (b) vgdisplay    /dev/vg2</p>
+<p>​        (c) lvextend    -l    200    /dev/vg2/lv2</p>
+<p>​        (d) mkfs.xfs    -f    /dev/vg2/lv2</p>
+<p>​        (e) mount    -a</p>
+<p>​        (f) lvdisplay    /dev/vg2/lv2</p>
+<p>​    E. 注意</p>
+<p>​        (a) 扩容或缩容之前必须先卸载设备</p>
+<p>​        (b) 扩容后的逻辑卷必须格式化，否则挂载后显示逻辑卷容量不变</p>
+<p><strong>(10) 逻辑卷缩容</strong></p>
+<p>​    A. 注意</p>
+<p>​        (a) 逻辑卷缩容相对扩容来说会有数据丢失的风险，则缩容之前应备份数据</p>
+<p>​        (b) 对逻辑卷缩容之前应对逻辑卷进行数据完整性检查，以保证数据正确性、完整性</p>
+<p>​        (c) 逻辑卷缩容之前必须卸载设备</p>
+<p>​    B. 过程</p>
+<p>​        (a) 查看逻辑卷使用量及剩余量</p>
+<p>​        (b) 卸载设备</p>
+<p>​        (c) 逻辑卷数据完整性检查</p>
+<p>​        (d) 缩容逻辑卷</p>
+<p>​        (e) 格式化逻辑卷</p>
+<p>​        (f) 挂载逻辑卷</p>
+<p>​        (g) 查看逻辑卷信息</p>
+<p>​    C. <font color="gree">例：将上列lv1逻辑卷缩容到320MB</font></p>
+<p>​        (a) 查看lv使用量：df    -h    /dev/vg1/lv1</p>
+<p>​        (b) 卸载设备：umount    /dev/vg1/lv1</p>
+<p>​        (c) 对lv进行完整性检查：xfs_repair    -n    /dev/vg1/lv1</p>
+<p>​        (d) 缩容：lvreduce    -L    320MB    /dev/vg1/lv1   ，输入y确认</p>
+<p>​        (e) 再次格式化：mkfs.xfs    -f    /dev/vg1/lv1</p>
+<p>​        (f) 挂载：mount    /dev/vg1/lv1    /mnt/lvdev</p>
+<p>​        (g) 查看lv信息：lvdisplay    /dev/vg1/lv1</p>
+<p>​    D. <font color="gree">例2：将上例lv2逻辑卷缩容到440MB</font></p>
+<p>​        (a) df    -h    /dev/vg2/lv2</p>
+<p>​        (b) umount    /dev/vg2/lv2</p>
+<p>​        (c) xfs_repair    -n    /dev/vg2/lv2</p>
+<p>​        (d) lvreduce    -l    110    /dev/vg2/lv2    ，输入y确认</p>
+<p>​        (e) mkfs.xfs    -f    /dev/vg2/lv2</p>
+<p>​        (f) mount    -a</p>
+<p>​        (g) lvdisplay    /dev/vg2/lv2</p>
+<p><strong>(11) 删除LVM</strong></p>
+<p>​    A. <font color="red">删除顺序：逻辑卷-&gt;卷组-&gt;物理卷</font></p>
+<p>​    B. 注意：</p>
+<p>​        (a) 删除时，上述顺序不能反向</p>
+<p>​        (b) 删除时，需要输入“y”来确认操作</p>
+<p>​        (c) 删除时，备份卷一同被删除</p>
+<p>​        (d) 删除之前必须先备份数据</p>
+<p>​    C. 过程</p>
+<p>​        (a) 卸载设备</p>
+<p>​        (b) 删除开机挂载记录信息</p>
+<p>​        (c) 删除逻辑卷</p>
+<p>​        (d) 删除卷组</p>
+<p>​        (e) 删除物理卷（去掉硬盘的物理卷技术支持）</p>
+<p>​        (f) 查看卷信息是否还存在</p>
+<p>​    D. <font color="gree">例1：删除上例 lv1、 vg1  及物理卷技术</font></p>
+<p>​        (a) 卸载设备：umount    /dev/vg1/lv1</p>
+<p>​        (b) 删除lv1开机挂载记录：vim    /etc/fstab    删除其记录项</p>
+<p>​        (c) 删除<strong>逻辑卷</strong>：<strong>lvremove</strong>    /dev/vg1/lv1    ，输入y确认</p>
+<p>​        (d) 删除<strong>卷组</strong>：<strong>vgremove</strong>    /dev/vg1</p>
+<p>​        (e) 删除<strong>物理卷</strong>：<strong>pvremove</strong>    /dev/sdb    /dev/sdc</p>
+<p>​        (f) 查看信息：lvdisplay    vgdisplay    pvdisplay  （分别执行）</p>
+<p>​    E.  <font color="gree">例2：删除上例 lv2、vg2及物理卷技术</font></p>
+<p>​        (a) umount    /dev/vg2/lv2</p>
+<p>​        (b) vim    /etc/fstab</p>
+<p>​        (c) lvremove    /dev/vg2/lv2    ，输入y确定</p>
+<p>​        (d) vgremove    /dev/vg2</p>
+<p>​        (e) premove    /dev/sdd    /dev/sde </p>
+<p><strong>(12) 逻辑卷快照功能</strong></p>
+<p>​    A. 作用：类似于虚拟机软件的“快照”，可以通过快照还原点进行还原，起到备份功能</p>
+<p>​    B. 注意：</p>
+<p>​        (a) 快照卷的容量必须等于逻辑卷的容量</p>
+<p>​        (b) 快照卷只能恢复一次，恢复后会自动删除</p>
+<p>​    C. 过程：</p>
+<p>​        (a) 查看卷组剩余容量是否足够</p>
+<p>​        (b) 查看被制作快照的逻辑卷容量</p>
+<p>​        (c) 制作快照卷</p>
+<p>​        (d) 查看快照卷</p>
+<p>​        (e) 测试恢复快照卷</p>
+<p>​    D. <font color="gree">例：创建 lv 逻辑卷，制作快照卷</font></p>
+<p>​        (a) 创建物理卷：pvcreate    /dev/sdb</p>
+<p>​        (b) 创建卷组：vgcreate    /dev/vg</p>
+<p>​        (c) 创建逻辑卷：lvcreate    -n    /dev/vg/lv    -L    200MB    /dev/vg</p>
+<p>​        (d) 格式化：mkfs.xfs    /dev/vg/lv</p>
+<p>​        (e) 建立挂载点：mkdir    /mnt/lvdev</p>
+<p>​        (f) 挂载：mount    /dev/vg/lv    /mnt/lvdev</p>
+<p>​        (g) 添加点文件：touch    t1.txt</p>
+<p>​        (h) 制作 lv 的快照卷：lvcreate    -L    200MB    -s    -n    SNAP    /dev/vg/lv</p>
+<p>​        (i) 进入逻辑卷：cd    /mnt/lvdev</p>
+<p>​        (j) 新建大文件：dd    if=/dev/zero    of=loop    count=1    bs=10M</p>
+<p>​        (k) 浏览文件：ls</p>
+<p>​        (l) 退出挂载点：cd    /</p>
+<p>​        (m) 卸载设备：umount    /mnt/lvdev</p>
+<p>​        (n) 快照卷恢复：lvconvert    –merge    /dev/vg/SNAP</p>
+<p>​        (o) 挂载设备：mount    /dev/vg/lv    /mnt/lvdev</p>
+<p>​        (p) 进入逻辑卷查看文件是否存在：cd    /mnt/lvdev</p>
+<p>​                                                                    ls</p>
 </li>
 </ol>
 
@@ -607,6 +716,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/18/Linux运维初级-八、VIM程序编辑器/" rel="prev" title="Linux运维初级-八、VIM程序编辑器">
+                Linux运维初级-八、VIM程序编辑器 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -676,7 +789,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -771,7 +884,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">47.4k</span>
+    <span title="Site words total count">58.5k</span>
   
 </div>
 

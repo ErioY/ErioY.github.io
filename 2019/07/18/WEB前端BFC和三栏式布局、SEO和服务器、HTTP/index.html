@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="BFC(Block fomatting context)   “块级格式化上下文”。是一个独立的渲染区域，它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 Box是CSS布局的对象和基本单位，一个页面是由很多个Box组成的。元素的类型和display属性，决定了这个Box的类型。 不同类型的Box，会参与不同的Formatting Context(一个决定如何渲">
+<meta name="keywords" content="html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WEB前端BFC和三栏式布局、SEO和服务器、HTTP">
+<meta property="og:url" content="http://yoursite.com/2019/07/18/WEB前端BFC和三栏式布局、SEO和服务器、HTTP/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="BFC(Block fomatting context)   “块级格式化上下文”。是一个独立的渲染区域，它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 Box是CSS布局的对象和基本单位，一个页面是由很多个Box组成的。元素的类型和display属性，决定了这个Box的类型。 不同类型的Box，会参与不同的Formatting Context(一个决定如何渲">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-18T13:22:27.416Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WEB前端BFC和三栏式布局、SEO和服务器、HTTP">
+<meta name="twitter:description" content="BFC(Block fomatting context)   “块级格式化上下文”。是一个独立的渲染区域，它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 Box是CSS布局的对象和基本单位，一个页面是由很多个Box组成的。元素的类型和display属性，决定了这个Box的类型。 不同类型的Box，会参与不同的Formatting Context(一个决定如何渲">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/18/WEB前端BFC和三栏式布局、SEO和服务器、HTTP/">
+
+
+
+
+
+  <title>WEB前端BFC和三栏式布局、SEO和服务器、HTTP | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/18/WEB前端BFC和三栏式布局、SEO和服务器、HTTP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">WEB前端BFC和三栏式布局、SEO和服务器、HTTP</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-18T20:41:08+08:00">
+                2019-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  4.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  15
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><h4 id="BFC-Block-fomatting-context"><a href="#BFC-Block-fomatting-context" class="headerlink" title="BFC(Block fomatting context)"></a>BFC(Block fomatting context)</h4></li>
+</ul>
+<ol>
+<li>“块级格式化上下文”。是一个独立的渲染区域，它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</li>
+<li>Box是CSS布局的对象和基本单位，一个页面是由很多个Box组成的。元素的类型和display属性，决定了这个Box的类型。</li>
+<li>不同类型的Box，会参与不同的Formatting Context(一个决定如何渲染文档的容器)，因此Box内的元素会以不同的方式渲染。让我们看看有哪些盒子：<ul>
+<li>block-level box:display 属性为 block, list-item, table 的元素，会生成 block-level box。并且会参与 block fomatting context；(简称BFC)</li>
+<li>inline-level box:display 属性为 inline, inline-block, inline-table 的元素，会生成 inline-level box。并且会参与 inline formatting context；(简称IFC)</li>
+</ul>
+</li>
+<li>Formatting context 是 W3C CSS2.1 规范中的一个概念。它是页面中的一块渲染区域，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。</li>
+<li>BFC布局规则：<ul>
+<li>内部的Box会在垂直方向，一个接一个地放置。</li>
+<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠</li>
+<li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
+<li>BFC的区域不会与float box重叠。</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+<li>计算BFC的高度时，浮动元素也参与计算</li>
+</ul>
+</li>
+<li>哪些元素会变成BFC区域<ul>
+<li>根元素</li>
+<li>float属性不为none</li>
+<li>position属性值为absolute或fixed</li>
+<li>display属性为inline-block, table-cell, table-caption, flex, inline-flex</li>
+<li>overflow属性不为visible</li>
+</ul>
+</li>
+<li>BFC的用法：<ul>
+<li>自适应两栏布局：左栏定宽左浮动，右栏不定宽overflow:hidden;(设置成BFC)</li>
+<li>清除内部浮动：父元素设置overflow:hidden;(设置成BFC)，既之前我们用来清除浮动的方法之一</li>
+<li>防止垂直 margin 重叠：其中一个元素外套一个div并设置overflow:hidden;(设置成BFC)</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><h4 id="三栏式布局"><a href="#三栏式布局" class="headerlink" title="三栏式布局"></a>三栏式布局</h4></li>
+</ul>
+<ol>
+<li>三栏式布局是一种，两边盒子固定宽度，中间盒子自适应的布局</li>
+<li>圣杯布局和双飞翼布局<ul>
+<li>父元素包含左中右三个盒子，分别左浮动，中间元素宽度100%<font color="gree">(必须为第一个渲染)</font></li>
+<li>用margin-left的负值将两边盒子拉上去和中间盒子同行(左边-100%，右边-右盒子宽度)</li>
+<li>给父元素上清除浮动</li>
+<li>父元素用左右padding为左右盒子留位置并用<strong>相对定位</strong>将左右元素移动到正确的位置上(圣杯)</li>
+<li>给中间元素设置子元素，并给其左右margin为左右盒子留位置(双飞翼)</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><h4 id="转义和框架标签"><a href="#转义和框架标签" class="headerlink" title="转义和框架标签"></a>转义和框架标签</h4></li>
+</ul>
+<ol>
+<li><p>HTML的转义字符，网上可以找到转义字符的表(<a href="http://tool.oschina.net/commons?type=2" target="_blank" rel="noopener">http://tool.oschina.net/commons?type=2</a>)</p>
+<ul>
+<li>通过&amp;XXXX的格式生成一个转义字符</li>
+<li><strong>原因是有部分字符无法直接在html里直接生成</strong>，如：空格 、&amp;符号、大于号&gt;、小于号&lt;、©符号等</li>
+</ul>
+<p><font color="green"><strong>做个练习~</strong></font></p>
+<p>在页面中生成下面的句子：</p>
+<p>​    在页面里输入一个&lt;br /&gt;就可以实现换行了</p>
+<p>​    在页面里输入&amp;nbsp;就可以实现空格&nbsp;效果了</p>
+<p>​    在页面里输入&amp;copy;就可以实现&copy;符号了</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>在页面里输入&amp;lt;br /&amp;gt;就可以实现换行了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>在页面里输入&amp;amp;nbsp;就可以实现空格效果了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>在页面里输入&amp;amp;copy;就可以实现©符号了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>iframe：框架标签(在当前页面显示多个网页)</p>
+<ul>
+<li>scrolling：是否有滚动条，值为yes(有)/no(无)，默认为auto(需要的时候出现)</li>
+<li>frameBorder：是否有边框，值为正整数，默认为1，值为0时无边框</li>
+<li>align：对齐方式</li>
+<li>src：嵌套页面地址</li>
+<li>width/height：嵌套页面区域的宽高</li>
+<li>name：配合a的target属性值等于iframe的name，可以让a在超链接的跳转打开页面时在iframe区域打开</li>
+<li>优点：解决加载缓慢的第三方内容图标和广告等的加载问题；iframe无刷新文件上传；iframe跨域通信</li>
+<li>缺点：iframe会阻塞主页面的onload事件；无法被一些搜索引擎索引到；页面会增加服务器的http请求；会产生很多页面，不容易管理。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><h4 id="雪碧图和引入样式表"><a href="#雪碧图和引入样式表" class="headerlink" title="雪碧图和引入样式表"></a>雪碧图和引入样式表</h4></li>
+</ul>
+<ol>
+<li><p>sprites(雪碧图)原理</p>
+<ul>
+<li>首先把网页中一些背景图片整合到一张图片文件中(png格式)</li>
+<li>用”background-image”引入图片；”background- repeat”禁止平铺；”background-position”精确定位背景</li>
+<li>优点：减少网页的http请求次数，并防止切换图片出现的闪白；减少图片的字节数，解决图片命名上的困扰(对一张集合的图片上命名就可以了，不用对每一个小图片进行命名)；更换风格方便，只需要在一张或少张图片上修改图片的颜色或样式，整个网页的风格就可以改变</li>
+<li>缺点：在宽屏，高分辨率的屏幕下的自适应页面，雪碧图如果不够宽，容易出现背景断裂；在开发的时候，需要通过photoshop或其他工具测量计算每一个背景单元的精确位置在维护的时候比较麻烦，如果页面背景有少许改动，一般就要修改整张合并的图片</li>
+</ul>
+</li>
+<li><p>@import：引入css样式表</p>
+<ul>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import url(CSS文件路径地址); //语法</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS</p>
+</li>
+<li><p>页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载</p>
+</li>
+<li><p>import是CSS2.1提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><h4 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h4><ol>
+<li>搜索引擎工作原理：<ul>
+<li>搜索引擎网站的数据库存储着海量的关键词，每个关键词对应着很多网址，收集这些数据的程序称之为“搜索引擎蜘蛛”或“网络爬虫”。</li>
+<li>“爬虫”每天在互联网上分析提炼，找到对用户有用关键词便存入数据库；垃圾或重复信息就舍弃。</li>
+<li>用户输入关键词时，搜索引擎就能检索出与关键字相关的网址。关键词又对应多个网址，就出现了排序的问题，与关键词最吻合的网址就会排在前面。</li>
+<li>并不是所有语言“爬虫”都能看懂。flash和js它便看不懂，即使关键字再贴切也没用。而网站内容是它的语言(SEO)，它便能看懂。</li>
+</ul>
+</li>
+<li>SEO简介<ul>
+<li>Search English Optimization，搜索引擎优化。自从有了搜索引擎，SEO便诞生了。</li>
+<li>SEO就是为了提升我们的网页在搜索引擎自然搜索结果中的收录数量以及排序位置而做的优化行为。</li>
+<li>白帽SEO起到改良和规范网站设计的作用，使网站对搜索引擎和用户更加友好，网站也能从搜索引擎中获取合理的流量，这是搜索引擎鼓励和支持的。</li>
+<li>黑帽SEO利用和放大搜索引擎政策缺陷来获取更多用户的访问量，大多是欺骗搜索引擎，这是搜索引擎公司是不支持与鼓励的。</li>
+<li>白帽SEO怎么做：对网站的标题、关键字、描述精心设置，反映网站的定位，让搜索引擎明白网站是做什么的；网站内容优化：内容与关键字的对应，增加关键字的密度；在网站上合理设置Robot.txt文件(保障网络安全与网站隐私，里面规定了哪些不予许“爬虫”搜索)；生成针对搜索引擎友好的网站地图；增加外部链接，到各个网站上宣传；</li>
+</ul>
+</li>
+<li>前端SEO：通过网站的结构布局设计和网页代码优化，使前端页面既能让浏览器用户能够看懂，也能让“爬虫”看懂。<ul>
+<li>网站结构布局优化：尽量简单、开门见山，提倡扁平化结构。建立的网站结构层次越少，越容易被“爬虫”抓取；<ul>
+<li>控制首页链接数量：链接太少会使“爬虫”缺乏往下爬的“桥”，影响收录数量；链接太多，影响用户体验，降低了网站首页权重，效果也不好。尽量让“爬虫”最多跳转3次，就能到达网站内的任何一个内页。</li>
+<li>导航优化，尽量采用文字，如果用图片代码一定要添加“alt”和“title”属性(图片未能正常显示时用户也能看到提示)。另外每个网页上应该加上面包屑导航(如新闻&gt;某新闻)</li>
+<li>网站的结构：头部——logo及主导航，以及用户的信息；页面主体——一边面包屑导航及正文；一边放热门文章及相关文章，这些相关链接增强了页面相关性，也增强页面的权重；页面底部——版权信息和友情链接；分页写法——“首页 1 2 3 4 5 下拉框”，这样“爬虫”能直接跳转，下拉框直接选择页面；而“首页 下一页 尾页”的写法，当分页数量特别多时，“爬虫”需要经过很多次往下爬，才能抓取，超时容易放弃。</li>
+<li>控制页面的大小，减少http请求，提高网站的加载速度。页面最好不要超过100k，太大页面加载速度慢。当速度很慢时，用户体验不好，留不住访客，并且一旦超时，“爬虫”也会离开。</li>
+</ul>
+</li>
+<li>网页代码优化：除了精简代码外还要有以下设置<ul>
+<li>meta keywords标签：关键词，列举出几个页面的重要关键字即可，切记过分堆砌；meta description标签：网页描述，需要高度概括网页内容，切记不能太长，过分堆砌关键词，每个页面也要有所不同。</li>
+<li>title标签，强调重点，把重要的关键词放在前面且不要重复出现，每个页面的title标题中不要设置相同的内容；body的标签：代码语义化，适当的位置使用适当的标签。让阅读源码者和“爬虫”都一目了然。比如：h1-h6 是用于标题类的，nav标签是用来设置页面主导航的等。</li>
+<li>a标签：页内链接要加 “title” 属性说明，让访客和 “爬虫” 知道。外部链接，则需要加上 el=”nofollow” 属性, 告诉 “爬虫” 不要爬，否则它就不会再回来了；br标签：只用于文本内容的换行；img应使用 “alt” 和”title”属性加以说明</li>
+<li>正文标题要用h1标签：“爬虫”认为它最重要，副标题用h2标签, 而其它地方不应该随便乱用 h 标题标签；表格标签用caption</li>
+<li>strong和em标签：需要强调时使用。strong在搜索引擎中会得到高度重视，它突出关键词表现重要的内容，em强调效果仅次于strong。b和i标签: 只是显示效果，在SEO中不会起任何效果。</li>
+<li>文本缩进不要使用特殊符号，应使用CSS进行设置；版权符号不要使用特殊符号，可以直接使用输入法中的版权符号©；对于不想显示的文字内容，应当设置z-index或设置到浏览器显示器之外。搜索引擎会过滤掉display:none中的内容。</li>
+<li>巧妙布局，将重要内容的代码放在前面，前面的内容被认为是最重要的，优先让“爬虫”读取，进行内容关键词抓取。</li>
+<li>少使用iframe框架,因为“爬虫”一般不会读取其中的内容；重要内容不要用JS输出，因为“爬虫”不认识；js代码如果是操作DOM操作，应尽量放在body结束标签之前，html所有标签之后。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><h4 id="Server-Browser技术"><a href="#Server-Browser技术" class="headerlink" title="Server-Browser技术"></a>Server-Browser技术</h4></li>
+</ul>
+<ol>
+<li>WEB的三要素：直接打开的html文件并没有经过WEB的三要素，正式项目时需要安装环境<ul>
+<li>Server(服务器)</li>
+<li>Client(客户端)/Browser(浏览器)</li>
+<li>HTTP(传输通信)/HTTPS(加密传输)</li>
+</ul>
+</li>
+<li>客户端技术：HTML/CSS/JS和图片等，储存于服务器，供客户端申请下载，在服务器看来他们只是二进制的字符，服务器不会对这些内容做任何处理</li>
+<li>服务器端技术：JSP/PHP/ASP.NET，储存于服务器，供客户端进行请求，但返回客户端之前，其中的代码会在服务器端获得执行，得到的结果是纯的静态数据，发送给客户端。</li>
+<li>服务器(Server)：是网络环境中的高性能计算机，它侦听网络上的其他客户机提交的服务请求，并提供相应的服务，如”域名解析”、”文件下载”、”网页浏览”、”邮件收发”等等。<ul>
+<li>要求：高可用性、高速运算、高带宽、高可靠性、强大的数据吞吐能力。</li>
+<li>Client-Server模型(C/S模型)：如QQ客户端</li>
+<li>Brouser-Server模型(B/S模型)：如谷歌浏览器</li>
+<li>随着H5和前端的发展，B/S会部分取代C/S，因为只需要在服务器端更新就可以立即使用最新版</li>
+</ul>
+</li>
+<li>硬件服务器：按大小可以分为工作站、小型机、中型机、大型机、超级计算机。</li>
+<li>软件服务器：不论是超级计算机、小型服务器、还是PC机，为了向客户端提供服务，必须安装能够监听特定端口，并接受客户端请求的应用程序–服务器应用程序。根据能投提供的服务的不同，服务器应用程序包括：<ul>
+<li>DNS服务器：把域名解析为计算机的IP地址</li>
+<li>Web服务器：提供Web页面服务</li>
+<li>数据库服务器：提供数据的永久储存和高效查询</li>
+<li>FTP服务器：文件上传和下载服务</li>
+<li>SMTP/POP3服务器：邮件收发服务</li>
+<li>SSH服务器：远程登录服务</li>
+<li>Samba服务器：文件和打印机共享服务</li>
+</ul>
+</li>
+<li>如何访问服务器：客户端访问网络上的一台服务器，必须提供如下信息——访问协议：类似两个人通话必须先确定所说的语言；主机地址：服务器的域名或IP地址；端口号：一台计算机上可能提供多种服务，不同服务使用不同端口；除此之外，有的服务还可能需要客户端提供用户名/密码、资源路径，请求参数等。</li>
+</ol>
+<ul>
+<li><h4 id="配置服务器环境"><a href="#配置服务器环境" class="headerlink" title="配置服务器环境"></a>配置服务器环境</h4></li>
+</ul>
+<ol>
+<li>AMP–集成了Apache, PHP5, 和MySQL</li>
+<li>浏览器服务器文件localhost/文件.txt，这种方式和用路径在浏览器上打开的方式是不同的，前者是在服务器上</li>
+<li>很多东西必须在服务器上运行，如cookie和ajax等</li>
+</ol>
+<ul>
+<li><h4 id="超文本传输协议-HTTP，HyperText-Transfer-Protocol"><a href="#超文本传输协议-HTTP，HyperText-Transfer-Protocol" class="headerlink" title="超文本传输协议(HTTP，HyperText Transfer Protocol)"></a>超文本传输协议(HTTP，HyperText Transfer Protocol)</h4></li>
+</ul>
+<ol>
+<li>HTTP协议是互联网应用最为广泛的一种网络协议。设计它的最初目的是为了提供一种发布和接收HTML页面的方法。</li>
+<li>只要上网就要用到它，比如我们登录百度页面就要使用HTTP请求百度页面的数据，同时要遵守HTTP协议的语法和规则。</li>
+<li>HTTP是两台电脑(服务器和客户端)之间的通讯，客户端发起请求(通常是用域名)，服务器响应请求(发送页面数据)。</li>
+<li>下面是客户端和服务器在发起HTTP协议时的详细过程：<ul>
+<li>第一步，先建立服务器和客户端的TCP的握手。</li>
+<li>第二步，客户端向服务器发出文本数据，如：<br>POST //发送请求的方法；index.html //请求的页面；HTTP/1.1 //HTTP的版本</li>
+<li>还有请求的报头和它的值如：<br>HOST: <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> //域名；Connection: //服务器发送数据后的链接状态；User_agent: Mozilla/4.0 //浏览器；Accept-language: zh-CN //语言</li>
+<li>以及报体(get请求不需要报体)，如：Name=unknow&amp;age=22 //内容</li>
+<li>第三步，服务器响应结果：HTTP/1.1 //HTTP的版本；200 ok //状态码和文本描述</li>
+<li>以及响应的报头和它的值如：<br>Server: Apache-Coyote/1.1 //域名；Last-Modified: Thu， 24 Nov 2011 12::22:00 GMT //最后修改时间；Content_Type: text/html;charset=GB18030 //使用的字符集；Content-Language: zh-CN//语言；Content-Length: 23980 //内容大小；Date: Fri, 25 Nov 2011 07:22:02 GMT //时间</li>
+<li>最后空一行之后是它的报体(html页面)：<html>……</html></li>
+</ul>
+</li>
+<li>HTTP详解：<a href="https://www.cnblogs.com/EricaMIN1987_IT/p/3837436.html" target="_blank" rel="noopener">https://www.cnblogs.com/EricaMIN1987_IT/p/3837436.html</a></li>
+</ol>
+<ul>
+<li><h4 id="上传一个网站"><a href="#上传一个网站" class="headerlink" title="上传一个网站"></a>上传一个网站</h4></li>
+</ul>
+<ol>
+<li>我们需要一个网上的服务器(需要花钱租用，比如西部数码、阿里云、腾讯云等等)</li>
+<li>准备一个网站项目，并用FTP软件将它上传到该服务器上</li>
+<li>在FTP软件的快速连接里输入服务器的地址，并通过用户名和密码连接到服务器上，然后上传你的项目</li>
+<li>准备一个自己的域名，并将其绑在我们的服务器上，这样在互联网上打开该域名就会自动打开项目中的index.html了</li>
+<li><font color="red"><strong>个人网站也是需要备案的</strong></font>，这里是个人网站详细的<a href="https://jingyan.baidu.com/article/5bbb5a1b3bbd1213eaa1797e.html" target="_blank" rel="noopener">备案过程</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/18/Linux运维初级-八、VIM程序编辑器/" rel="next" title="Linux运维初级-八、VIM程序编辑器">
+                <i class="fa fa-chevron-left"></i> Linux运维初级-八、VIM程序编辑器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/18/WEB前端CSS3选择器和常用样式/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#BFC-Block-fomatting-context"><span class="nav-number">1.</span> <span class="nav-text">BFC(Block fomatting context)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三栏式布局"><span class="nav-number">2.</span> <span class="nav-text">三栏式布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转义和框架标签"><span class="nav-number">3.</span> <span class="nav-text">转义和框架标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#雪碧图和引入样式表"><span class="nav-number">4.</span> <span class="nav-text">雪碧图和引入样式表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SEO"><span class="nav-number">5.</span> <span class="nav-text">SEO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Server-Browser技术"><span class="nav-number">6.</span> <span class="nav-text">Server-Browser技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置服务器环境"><span class="nav-number">7.</span> <span class="nav-text">配置服务器环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#超文本传输协议-HTTP，HyperText-Transfer-Protocol"><span class="nav-number">8.</span> <span class="nav-text">超文本传输协议(HTTP，HyperText Transfer Protocol)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#上传一个网站"><span class="nav-number">9.</span> <span class="nav-text">上传一个网站</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">58.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+
