@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="js,">
 
 
 
@@ -125,17 +125,18 @@
 
 
 
-<meta name="description" content="1copyright: true">
+<meta name="description" content="数组(Array)   声明一个数组的变量： 12var arr1 = [];  //字面量写法ar arr2 = new Array();  //构造函数实例化写法  注意：第一种写法等号右边就可以认为是字面量，字面量就是可以通过该值来判断它的类型；构造函数会在后面详细说明  数组是数据仓库，可以放任意多个任意数据类型的数据，甚至是其他数组；数据之间用”,”分隔；数组也是对象的一种，属性len">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js数组和循环">
 <meta property="og:url" content="http://yoursite.com/2019/07/20/js数组和循环/index.html">
 <meta property="og:site_name" content="ErioY">
-<meta property="og:description" content="1copyright: true">
+<meta property="og:description" content="数组(Array)   声明一个数组的变量： 12var arr1 = [];  //字面量写法ar arr2 = new Array();  //构造函数实例化写法  注意：第一种写法等号右边就可以认为是字面量，字面量就是可以通过该值来判断它的类型；构造函数会在后面详细说明  数组是数据仓库，可以放任意多个任意数据类型的数据，甚至是其他数组；数据之间用”,”分隔；数组也是对象的一种，属性len">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-20T01:10:45.012Z">
+<meta property="og:updated_time" content="2019-07-20T03:08:25.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js数组和循环">
-<meta name="twitter:description" content="1copyright: true">
+<meta name="twitter:description" content="数组(Array)   声明一个数组的变量： 12var arr1 = [];  //字面量写法ar arr2 = new Array();  //构造函数实例化写法  注意：第一种写法等号右边就可以认为是字面量，字面量就是可以通过该值来判断它的类型；构造函数会在后面详细说明  数组是数据仓库，可以放任意多个任意数据类型的数据，甚至是其他数组；数据之间用”,”分隔；数组也是对象的一种，属性len">
 
 
 
@@ -351,11 +352,26 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/20/js数组和循环/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/20/js数组和循环/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
           
 
           
@@ -369,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2
+                  1.1k
                 </span>
               
 
@@ -385,7 +401,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  4
                 </span>
               
             </div>
@@ -406,7 +422,90 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copyright: true</span><br></pre></td></tr></table></figure>
+        <ul>
+<li><h4 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h4></li>
+</ul>
+<ol>
+<li><p><font color="orange">声明一个数组的变量：</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [];  <span class="comment">//字面量写法</span></span><br><span class="line">ar arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>();  <span class="comment">//构造函数实例化写法</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：第一种写法等号右边就可以认为是字面量，字面量就是可以通过该值来判断它的类型；构造函数会在后面详细说明</p>
+</li>
+<li><p>数组是数据仓库，可以放任意多个任意数据类型的数据，甚至是其他数组；数据之间用”,”分隔；数组也是对象的一种，属性length为数组数据的数量，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">"第一个数据"</span>,<span class="string">"第二个数据"</span>,<span class="string">"第三个数据"</span>]; <span class="comment">//可以通过arr[下标]来获取对应位置的数据</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：js中(包括数组)，在计数的时候都是从0开始，所以arr[0]==&gt;”第一个数据”</p>
+</li>
+<li><p><font color="orange">数组的添加和修改方法：</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.push(<span class="string">"第四个数据"</span>);  <span class="comment">//从数组最后添加新数据("第四个数据")</span></span><br><span class="line">arr[<span class="number">0</span>] = <span class="string">"第零个数据"</span>;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<ul>
+<li><h4 id="类数组-伪数组"><a href="#类数组-伪数组" class="headerlink" title="类数组(伪数组)"></a>类数组(伪数组)</h4></li>
+</ul>
+<ol>
+<li><p><font color="orange"><strong>用标签名来获取元素</strong>：</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">""</span>);</span><br></pre></td></tr></table></figure>
+
+<p>注意：<strong>该方法获得的不是一个元素</strong>，因此不能直接拿来操作，<strong>可以用数组的[下标]来拿到你想操作的对象</strong></p>
+<p><font color="green">例~  获取p元素：</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oP = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>)[<span class="number">0</span>];	<span class="comment">//获取p元素</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>它不是数组，却和数组很像，是类数组(也叫伪数组)的一种，<font color="orange"><strong>伪数组可以被转化成数组</strong></font>，语法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.slice.call()  <span class="comment">//把类数组放在括号里并用变量接收数组结果</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>该方法(<code>document.getElementByTagName</code>)与<code>document.getElementById</code>的区别：</p>
+<ul>
+<li><code>document.getElementById</code>：<ul>
+<li><font color="red">前面必须是<code>document</code></font>；</li>
+<li>获取的只有一个元素(id在同一个页面中也是<strong>唯一</strong>的)；</li>
+<li>无法选中动态创建的元素(如通过<code>innerHTML</code>生成的标签)</li>
+</ul>
+</li>
+<li><code>document.getElementsByTagName</code><ul>
+<li><font color="red">前面可以是另一个元素</font>；</li>
+<li><code>ByTagName</code>获取的可能是多个(无论是一个和多个都会变成类数组)，需要加上[]和数字或者遍历(既循环)来控制；</li>
+<li><code>ByTagName</code>可以选中动态创建的元素</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>另外特殊标签选取：在页面中<strong>唯一的标签</strong>如body、title：可以用<code>document.body</code>和<code>document.title</code>获取到该元素。<font color="blue">注意：虽然<code>html</code>也是唯一标签，但是必须通过<code>document.documentElement</code>才能获取</font></p>
+</li>
+</ol>
+<hr>
+<ul>
+<li><h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4></li>
+</ul>
+<ol>
+<li><p>当我们需要重复执行某些代码或连续执行的代码有数字在变化时，就可以使用循环，语法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(;;)&#123;反复执行的代码块......&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：()里用两个;将其分成3个部分，第一个部分是初始变量，第二个为判断条件(为真就会继续循环)，第三个为变量的变化</p>
+</li>
+<li><p><font color="orange"><strong>循环经常被用做给数组或类数组遍历</strong></font>，如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aDiv = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"div"</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;aDiv.length;i++)&#123;</span><br><span class="line">    aDiv[i]......  <span class="comment">//aDiv的每个数据执行某代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color="green">注意：不要漏写[]，否则就变成让数组或类数组执行某代码了</font></p>
+</li>
+<li><p><font color="gree">例~我们先用for循环和<code>body.innerHTML</code>属性为body添加100个按钮，并一点一点增加数量</font>，你会发现下面写法会使电脑速度越来越慢</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.innerHTML += <span class="string">"&lt;input type='button' value='按钮'/&gt;"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>原因就是循环去修改DOM树的做法在数量过多时太耗性能，可以<font color="purple"><strong>先循环将要添加的字符串预先连接后保存到str变量里，再一次修改DOM树就可以了</strong></font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">""</span>;  <span class="comment">//用字面量的写法创建一个空字符串</span></span><br><span class="line">str += <span class="string">"&lt;input type='button' value='按钮'/&gt;"</span>; <span class="comment">//在循环中反复拼接字符串</span></span><br><span class="line"><span class="built_in">document</span>.body.innerHTML =str;  <span class="comment">//最后一次性将字符串添加到body里</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JavaScript的for循环如果要遍历一个嵌套的数组，需要用两次for循环来遍历数据，执行第一个for时变量需小于<code>arr.length</code>，而执行第二个for时变量则需要小于<code>arr[i].length</code>，最后输出arr[i][j]：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;  <span class="comment">//第一次遍历出的arr[i]也都是数组，因此开启第二个循环</span></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;arr[i].length;j++)&#123;  <span class="comment">//遍历arr[i]，将其中的数据都遍历出来</span></span><br><span class="line">      arr[i][j]......</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">注意：多个并列的for循环可以用相同的变量i，但是循环的嵌套就必须要换变量名了(如上面的j)</font></p>
+</li>
+</ol>
+<hr>
+<p><font size="5" color="gree">练习：</font></p>
+<p>​    <font size="4">1. </font></p>
+
       
     </div>
     
@@ -420,6 +519,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
       
 
       
@@ -439,6 +544,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/20/js流程控制、JSON和this/" rel="prev" title="js流程控制、JSON和this">
+                js流程控制、JSON和this <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -468,6 +577,16 @@
           
 
   
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
 
 
 
@@ -490,8 +609,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -508,7 +636,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -576,6 +704,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组-Array"><span class="nav-number">1.</span> <span class="nav-text">数组(Array)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类数组-伪数组"><span class="nav-number">2.</span> <span class="nav-text">类数组(伪数组)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环"><span class="nav-number">3.</span> <span class="nav-text">循环</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -603,7 +747,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">63.3k</span>
+    <span title="Site words total count">64.4k</span>
   
 </div>
 
@@ -622,6 +766,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -745,6 +909,26 @@
 
   
 
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/07/20/js数组和循环/';
+          this.page.identifier = '2019/07/20/js数组和循环/';
+          this.page.title = 'js数组和循环';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
 
   
 

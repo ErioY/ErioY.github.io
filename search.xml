@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[js流程控制、JSON和this]]></title>
+    <url>%2F2019%2F07%2F20%2Fjs%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E3%80%81JSON%E5%92%8Cthis%2F</url>
+    <content type="text"><![CDATA[1copyright: true]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[js数组和循环]]></title>
     <url>%2F2019%2F07%2F20%2Fjs%E6%95%B0%E7%BB%84%E5%92%8C%E5%BE%AA%E7%8E%AF%2F</url>
-    <content type="text"><![CDATA[1copyright: true]]></content>
+    <content type="text"><![CDATA[数组(Array) 声明一个数组的变量： 12var arr1 = []; //字面量写法ar arr2 = new Array(); //构造函数实例化写法 注意：第一种写法等号右边就可以认为是字面量，字面量就是可以通过该值来判断它的类型；构造函数会在后面详细说明 数组是数据仓库，可以放任意多个任意数据类型的数据，甚至是其他数组；数据之间用”,”分隔；数组也是对象的一种，属性length为数组数据的数量，如： 1var arr = ["第一个数据","第二个数据","第三个数据"]; //可以通过arr[下标]来获取对应位置的数据 注意：js中(包括数组)，在计数的时候都是从0开始，所以arr[0]==&gt;”第一个数据” 数组的添加和修改方法： 12arr.push("第四个数据"); //从数组最后添加新数据("第四个数据")arr[0] = "第零个数据"; 类数组(伪数组) 用标签名来获取元素： 1document.getElementsByTagName(""); 注意：该方法获得的不是一个元素，因此不能直接拿来操作，可以用数组的[下标]来拿到你想操作的对象 例~ 获取p元素： 1var oP = document.getElementsByTagName("p")[0]; //获取p元素 它不是数组，却和数组很像，是类数组(也叫伪数组)的一种，伪数组可以被转化成数组，语法： 1Array.prototype.slice.call() //把类数组放在括号里并用变量接收数组结果 该方法(document.getElementByTagName)与document.getElementById的区别： document.getElementById： 前面必须是document； 获取的只有一个元素(id在同一个页面中也是唯一的)； 无法选中动态创建的元素(如通过innerHTML生成的标签) document.getElementsByTagName 前面可以是另一个元素； ByTagName获取的可能是多个(无论是一个和多个都会变成类数组)，需要加上[]和数字或者遍历(既循环)来控制； ByTagName可以选中动态创建的元素 另外特殊标签选取：在页面中唯一的标签如body、title：可以用document.body和document.title获取到该元素。注意：虽然html也是唯一标签，但是必须通过document.documentElement才能获取 循环 当我们需要重复执行某些代码或连续执行的代码有数字在变化时，就可以使用循环，语法： 1for(;;)&#123;反复执行的代码块......&#125; 注意：()里用两个;将其分成3个部分，第一个部分是初始变量，第二个为判断条件(为真就会继续循环)，第三个为变量的变化 循环经常被用做给数组或类数组遍历，如 1234var aDiv = document.getElementsByTagName("div");for(var i=0;i&lt;aDiv.length;i++)&#123; aDiv[i]...... //aDiv的每个数据执行某代码&#125; 注意：不要漏写[]，否则就变成让数组或类数组执行某代码了 例~我们先用for循环和body.innerHTML属性为body添加100个按钮，并一点一点增加数量，你会发现下面写法会使电脑速度越来越慢 1document.body.innerHTML += "&lt;input type='button' value='按钮'/&gt;"; 原因就是循环去修改DOM树的做法在数量过多时太耗性能，可以先循环将要添加的字符串预先连接后保存到str变量里，再一次修改DOM树就可以了 123var str = ""; //用字面量的写法创建一个空字符串str += "&lt;input type='button' value='按钮'/&gt;"; //在循环中反复拼接字符串document.body.innerHTML =str; //最后一次性将字符串添加到body里 JavaScript的for循环如果要遍历一个嵌套的数组，需要用两次for循环来遍历数据，执行第一个for时变量需小于arr.length，而执行第二个for时变量则需要小于arr[i].length，最后输出arr[i][j]： 123456var arr = [[1,2,3],[4,5,6],[7,8,9]];for(var i=0;i&lt;arr.length;i++)&#123; //第一次遍历出的arr[i]也都是数组，因此开启第二个循环 for(var j=0;j&lt;arr[i].length;j++)&#123; //遍历arr[i]，将其中的数据都遍历出来 arr[i][j]...... &#125;&#125; 注意：多个并列的for循环可以用相同的变量i，但是循环的嵌套就必须要换变量名了(如上面的j) 练习： ​ 1.]]></content>
+      <tags>
+        <tag>js</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[js数据类型和判断]]></title>
