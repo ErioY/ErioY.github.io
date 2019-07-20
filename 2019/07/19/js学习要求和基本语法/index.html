@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="js,">
 
 
 
@@ -125,17 +125,18 @@
 
 
 
-<meta name="description" content="1copyright: true">
+<meta name="description" content="js的组成   尽管ECMAscript是一个重要的标准,但它并不是JavaScript的唯一的部分，当然，也不是唯一被标准化的部分。  实际上，一个完整的JavaScript实现是由一下3个不同的部分组成的。  核心(ECMAScript) 文档对象模型(DOM) 浏览器对象模型(BOM)  DOM和BOM就是前文说到的浏览器大战而产生的拥有大量不兼容的地方    js是什么   简单来说，J">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js学习要求和基本语法">
 <meta property="og:url" content="http://yoursite.com/2019/07/19/js学习要求和基本语法/index.html">
 <meta property="og:site_name" content="ErioY">
-<meta property="og:description" content="1copyright: true">
+<meta property="og:description" content="js的组成   尽管ECMAscript是一个重要的标准,但它并不是JavaScript的唯一的部分，当然，也不是唯一被标准化的部分。  实际上，一个完整的JavaScript实现是由一下3个不同的部分组成的。  核心(ECMAScript) 文档对象模型(DOM) 浏览器对象模型(BOM)  DOM和BOM就是前文说到的浏览器大战而产生的拥有大量不兼容的地方    js是什么   简单来说，J">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-19T01:18:00.130Z">
+<meta property="og:updated_time" content="2019-07-19T14:53:23.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js学习要求和基本语法">
-<meta name="twitter:description" content="1copyright: true">
+<meta name="twitter:description" content="js的组成   尽管ECMAscript是一个重要的标准,但它并不是JavaScript的唯一的部分，当然，也不是唯一被标准化的部分。  实际上，一个完整的JavaScript实现是由一下3个不同的部分组成的。  核心(ECMAScript) 文档对象模型(DOM) 浏览器对象模型(BOM)  DOM和BOM就是前文说到的浏览器大战而产生的拥有大量不兼容的地方    js是什么   简单来说，J">
 
 
 
@@ -369,7 +370,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2
+                  1.3k
                 </span>
               
 
@@ -385,7 +386,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  4
                 </span>
               
             </div>
@@ -406,7 +407,101 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copyright: true</span><br></pre></td></tr></table></figure>
+        <ul>
+<li><h4 id="js的组成"><a href="#js的组成" class="headerlink" title="js的组成"></a>js的组成</h4></li>
+</ul>
+<ol>
+<li><p>尽管ECMAscript是一个重要的标准,但它并不是JavaScript的唯一的部分，当然，也不是唯一被标准化的部分。</p>
+</li>
+<li><p>实际上，一个完整的JavaScript实现是由一下3个不同的部分组成的。</p>
+<ul>
+<li>核心(ECMAScript)</li>
+<li>文档对象模型(DOM)</li>
+<li>浏览器对象模型(BOM)</li>
+</ul>
+<p>DOM和BOM就是前文说到的浏览器大战而产生的拥有大量不兼容的地方</p>
+</li>
+</ol>
+<ul>
+<li><h4 id="js是什么"><a href="#js是什么" class="headerlink" title="js是什么"></a>js是什么</h4></li>
+</ul>
+<ol>
+<li>简单来说，JavaScript是一种可以用来给网页增加交互性的编程语言。也常被称为”脚本语言”。</li>
+<li>学习它有很多用途和好处：<ul>
+<li>所有主流浏览器都支持JavaScript</li>
+<li>基本所有的网页都会用到JavaScript</li>
+<li>可以让网页呈现各种动态效果</li>
+<li>不需要安装环境(浏览器都支持)，有文本编辑器就可以编写JavaScript代码</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><h4 id="js的学习要求"><a href="#js的学习要求" class="headerlink" title="js的学习要求"></a>js的学习要求</h4></li>
+</ul>
+<ol>
+<li>非必要条件：数学功底，英文功底，其他程序语言的基础</li>
+<li>必要条件：HTML+CSS2基础好，尤其CSS2的样式使用要求灵活</li>
+<li>主观条件：多去网上看，多思考别人的方法，多练习实现效果。如何布局，如何设置脚本</li>
+<li>例如让一个元素移出我们的视线的方法，而我们往往必须想到在当前条件下哪种是最优的选择：<ul>
+<li>设置透明度opacity为0</li>
+<li>用visibility或display隐藏元素</li>
+<li>用position和偏移值定位出可视区</li>
+<li>width \ height设置为0，并溢出隐藏</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><h4 id="js引入html和输出"><a href="#js引入html和输出" class="headerlink" title="js引入html和输出"></a>js引入html和输出</h4></li>
+</ul>
+<ol>
+<li><p>html中的js代码必须放在script标签里面，script标签可以放在页面中head和body标签中。</p>
+<p>一行结束就被认定为语句的结束，通常在结尾加上一个分号”;”来表示语句的结束；</p>
+<p>“hello world!”是一串字符串，“//”是单行注释</p>
+<p>&lt;/script&gt;这里结束JavaScript，并告诉浏览器后面的代码是html代码了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    document.write(&quot;hello world!&quot;); //获得文档窗口并在其中写入&quot;Hello, world!&quot;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意：每行结尾的分号可有可无，好的代码编写习惯是加入分号，这会增进代码的性能，因为这样解析器就不必再花时间推测应该在哪里插入分号了。</p>
+</li>
+<li><p>我们需要让多个html页面共享一个脚本时就把脚本保存到外部文件中。外部文件扩展名是.js。使用时在&lt;script&gt; 标签的src属性中设置该文件的路径。如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"myScript.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><font color="green">注意：外部JavaScript文件中不能出现&lt;script&gt;标签(标签都是html语言)</font></p>
+</li>
+<li><p>输出数据方式除了<code>document.write</code>外还有下面两个方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"hello world"</span>);  <span class="comment">//弹出一个确认框，里面显示"hello world"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello world"</span>); <span class="comment">//在控制台打印"hello world"</span></span><br></pre></td></tr></table></figure>
+
+<p><font color="green">注意：控制台里输出的字符串和其他数据的颜色不同。</font></p>
+</li>
+</ol>
+<ul>
+<li><h4 id="js语法特征"><a href="#js语法特征" class="headerlink" title="js语法特征"></a>js语法特征</h4></li>
+</ul>
+<ol>
+<li><p>注释与Java，C相同，支持单行注释 //；与多行注释/<em>…</em>/</p>
+</li>
+<li><p>变量是用于存储信息的容器，JavaScript区分大小写，a和A是两个不同的变量</p>
+</li>
+<li><p>js的变量是弱类型的，定义变量只用var运算符，可以将它初始化为任意值，也可以随时改变变量所存数据的类型，可以用“,”将多个变量定义在一个var中，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color = <span class="string">"red"</span>; <span class="comment">//声明了一个字符串类型变量，但不需要声明其类型</span></span><br><span class="line">color = <span class="number">16</span>;  <span class="comment">//弱类型语言，在这里将color的值从字符串改成了数字</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">25</span>; <span class="comment">//等号"="叫做赋值操作，意思是将等号右侧的值赋给左侧</span></span><br><span class="line"><span class="keyword">var</span> visible = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">"5"</span>, b = <span class="number">5</span>; <span class="comment">//一个var声明了2个变量</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：由于js引擎会在出错时自动停止，因此我们可以将上面alert输出方法逐行放置，如果alert未执行，说明上面的代码有错误。初学者应养成随时写随时测试的习惯，以防做完一堆代码都是不能用的。</p>
+</li>
+</ol>
+<ul>
+<li><h4 id="js变量的命名规则"><a href="#js变量的命名规则" class="headerlink" title="js变量的命名规则"></a>js变量的命名规则</h4></li>
+</ul>
+<ol>
+<li>没人天天叫毕加索的全名，js里也可以用一个名字储存数据，将事件加在名字上可以大大减少代码量</li>
+<li>变量的命名规则：变量必须以字母开头；虽然变量也能以$和_符号开头(不过不推荐这么做)；变量名称也对大小写敏感(a和A是不同的变量)。</li>
+<li>变量使用var关键字声明：var 名字 = ，后面可以是数字，字符串或者一个对象等等</li>
+<li>好的代码编写习惯是总是用var声明变量的，并且始终存放相同类型的值，常用的命名规则：<ul>
+<li>Camel标记法：首字母是小写的，接下来的单词都以大写字母开头。</li>
+<li>Pascal标记法：首字母是大写的，接下来的单词都以大写字母开头。</li>
+<li>匈牙利标记法：在以Pascal标记法命名的变量前附加一个小写字母说明该变量的类型。如比较常用的:<br><strong>i表示整数；s表示字符串；b代表boolean值；o代表对象；a代表数组或集合</strong></li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     
@@ -420,6 +515,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
       
 
       
@@ -439,6 +540,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/19/js事件函数和属性操作/" rel="prev" title="js事件函数和属性操作">
+                js事件函数和属性操作 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -490,8 +595,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -508,7 +622,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -576,6 +690,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#js的组成"><span class="nav-number">1.</span> <span class="nav-text">js的组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js是什么"><span class="nav-number">2.</span> <span class="nav-text">js是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js的学习要求"><span class="nav-number">3.</span> <span class="nav-text">js的学习要求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js引入html和输出"><span class="nav-number">4.</span> <span class="nav-text">js引入html和输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js语法特征"><span class="nav-number">5.</span> <span class="nav-text">js语法特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js变量的命名规则"><span class="nav-number">6.</span> <span class="nav-text">js变量的命名规则</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -603,7 +733,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.4k</span>
+    <span title="Site words total count">63.3k</span>
   
 </div>
 
