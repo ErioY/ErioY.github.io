@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="数据类型转换   布尔值类型: Boolean(value)把值转换成Boolean型 Boolean方法和之前的Number方法和String方法进行数值类型转换时，都将创建一个新值，存放由原始值直接转换成的值。 在进行比较时，也会得到一个布尔值，如&amp;gt;、&amp;lt;、或都会让字符串和数字的比较结果正确显示，但两个字符串不行(因为字符串是没有固定大小的原始类型)，如：’10’&amp;gt;9和’10">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js布尔值和自定义属性">
+<meta property="og:url" content="http://yoursite.com/2019/07/21/js布尔值和自定义属性/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="数据类型转换   布尔值类型: Boolean(value)把值转换成Boolean型 Boolean方法和之前的Number方法和String方法进行数值类型转换时，都将创建一个新值，存放由原始值直接转换成的值。 在进行比较时，也会得到一个布尔值，如&amp;gt;、&amp;lt;、或都会让字符串和数字的比较结果正确显示，但两个字符串不行(因为字符串是没有固定大小的原始类型)，如：’10’&amp;gt;9和’10">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-21T13:40:34.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js布尔值和自定义属性">
+<meta name="twitter:description" content="数据类型转换   布尔值类型: Boolean(value)把值转换成Boolean型 Boolean方法和之前的Number方法和String方法进行数值类型转换时，都将创建一个新值，存放由原始值直接转换成的值。 在进行比较时，也会得到一个布尔值，如&amp;gt;、&amp;lt;、或都会让字符串和数字的比较结果正确显示，但两个字符串不行(因为字符串是没有固定大小的原始类型)，如：’10’&amp;gt;9和’10">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/21/js布尔值和自定义属性/">
+
+
+
+
+
+  <title>js布尔值和自定义属性 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/21/js布尔值和自定义属性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js布尔值和自定义属性</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-21T13:38:37+08:00">
+                2019-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/21/js布尔值和自定义属性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/21/js布尔值和自定义属性/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><h4 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h4></li>
+</ul>
+<ol>
+<li><font color="orange"><strong>布尔值类型:</strong></font><ul>
+<li><code>Boolean(value)</code>把值转换成Boolean型</li>
+<li>Boolean方法和之前的Number方法和String方法进行数值类型转换时，都将创建一个新值，存放由原始值直接转换成的值。</li>
+<li>在进行比较时，也会得到一个布尔值，如&gt;、&lt;、或都会让字符串和数字的比较结果正确显示，<font color="red">但两个字符串不行(因为字符串是没有固定大小的原始类型)</font>，如：’10’&gt;9和’10’&gt;’9’，前者为true后者为false，字符串之间的比较是从左向右一位一位的比较unicode编码大小</li>
+<li>!取反，布尔值的隐形转换方法，取反之前若转换布尔值为真，则取反后的结果一定是布尔值且为假</li>
+<li><strong>==</strong>如果两边<strong>数值相同</strong>(即使不同类型，如：’2’和2(，就相等，在判断前将两边转换成了数字</li>
+<li><strong>===</strong>会判断<strong>类型</strong>，<font size="4">类型不同即使数值相同也返回false</font></li>
+</ul>
+</li>
+<li><font color="orange"><strong>布尔值转换规则：</strong></font><ul>
+<li>数据类型–<strong>数字</strong>：<strong>除了NaN和0都是真</strong></li>
+<li>数据类型–<strong>字符串</strong>：<strong>所有非空字符串都是真</strong></li>
+<li>数据类型–<strong>布尔值</strong>：<strong>true和false</strong></li>
+<li>数据类型–对象(<strong>函数</strong>)：<strong>true</strong></li>
+<li>数据类型–对象(<strong>element</strong>)：能找到的就是true，找不到的是false(找不到的就是null)；</li>
+<li><strong>数据类型–对象([]和{})：true</strong></li>
+<li>数据类型–对象(<strong>null</strong>) ：<strong>false</strong></li>
+<li>数据类型–未定义(<strong>undefined</strong>)：<strong>false</strong></li>
+</ul>
+</li>
+<li><font color="orange"><strong>比较：</strong></font>比较会在判断前==将两边转换成数字==然后比较其值，<font color="red"><strong>但是有几种情况比较特殊</strong></font><ul>
+<li>如果两边有<code>null</code>和<code>undefined</code>时，不会发生转换数字的，因此null和undefined只与自己和对方相等</li>
+<li>由于字符串没有固定大小，因此转数字会变成NaN，所以它也不会发生数字类型转换，而是从左向右一位一位的比较unicode编码大小</li>
+<li>由于对象转换数字也是NaN，因此如果两边都为对象的时候也不会发生数字类型转换，而是按照对象在内存中的地址比较，地址相同既相等，否则不等</li>
+</ul>
+</li>
+</ol>
+<p><font color="green"><strong>数据类型转换的注意事项：</strong></font></p>
+<ol>
+<li><p>不要用<code>new Number()/Boolean()/String()</code>等构造函数实例化的方式去创建包装对象，因为这样创建出来的是object类型</p>
+</li>
+<li><p>判断Array使用Array.isArray(arr)</p>
+</li>
+<li><p>判断null请使用myVar === null</p>
+</li>
+<li><p>number对象(非变量(调用toString()报SyntaxError：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">123.toString(); // 报SyntaxError</span><br><span class="line">//遇到这种情况，要特殊处理一下：</span><br><span class="line">123..toString(); // &apos;123&apos;, 注意是两个点！</span><br><span class="line">(123).toString(); // &apos;123&apos;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>自定义属性：</p>
+<ol>
+<li><p>人为给元素上定义本来不存在的属性就是自定义属性，自定义属性一般根据语义去取名，语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.自定义属性 = 123;</span><br></pre></td></tr></table></figure>
+
+<p>注意：自定义属性的操作如同原本属性一样</p>
+</li>
+<li><p>可以为元素添加任意数量的自定义属性，它是js向html添加值的方式之一</p>
+</li>
+<li><p>使用范例：索引值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var i=0;i&lt;n;i++)&#123;</span><br><span class="line">    元素[i].index = i;  //为每一个对象建立&quot;匹配&quot;/&quot;对应&quot;关系</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：后面循环几乎都会用到索引值</p>
+</li>
+<li><p>循环中的问题，如果在循环时绑定事件函数，循环是在页面刷新时执行的，而函数执行时循环已经结束，这时i的值已经变成最后一个数字，在函数内使用就是出现问题。</p>
+</li>
+<li><p>解决方法就是使用自定义属性，将i的值在循环时保存下来，在函数内部需要的时候使用该自定义属性</p>
+</li>
+</ol>
+<p>练习：</p>
+<ol>
+<li><p>如何让’10’&gt;’9’正确的比较出大小，试着用多种方法来实现</p>
+</li>
+<li><p>看下面代码说出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(2==true);</span><br><span class="line">console.log(null==0);</span><br><span class="line">console.log(&quot;123&quot;==&quot;0123&quot;);</span><br><span class="line">console.log([]==[]);</span><br><span class="line">console.log([]==![]);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>做3个按钮，起始value为0，每次点击时对应按钮的value值+1</p>
+</li>
+<li><p>在上题的基础上增加一个数组[“A”,”B”,”C”,”D”]，要求每个按钮在点击时，让其value值显示为数组数据的循环(A-&gt;B-&gt;C-&gt;D-&gt;A循环)</p>
+</li>
+<li><p>在点击按钮(3个)时用索引值把arr(3个)里的数据输入到p(3个)标签里</p>
+</li>
+<li><p>写一个img标签并将其图片信息和图片数量等进行布局；按照图片数量动态生成按钮，并写个数组保存图片信息；设置active的样式为红色背景白色字体，第一个按钮的class=”active”，并在点击其他按钮时切换active；尽量使用函数去把代码合并，并在点击按钮时用索引值的一一对应来做当图片切换时同步切换图片信息和图片的数量</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/20/Markdown语法/" rel="next" title="（转）Markdown语法">
+                <i class="fa fa-chevron-left"></i> （转）Markdown语法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/22/Linux运维初级-九、软件下载及安装/" rel="prev" title="Linux运维初级-九、软件下载及安装">
+                Linux运维初级-九、软件下载及安装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型转换"><span class="nav-number">1.</span> <span class="nav-text">数据类型转换</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">73.2k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/07/21/js布尔值和自定义属性/';
+          this.page.identifier = '2019/07/21/js布尔值和自定义属性/';
+          this.page.title = 'js布尔值和自定义属性';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

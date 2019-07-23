@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="数据类型详解   未定义：undefined，如 var n ; 就是一种状态，通常指出错了，出现的情况： 当变量定义但未赋值时，该变量的值被格式化为undefined； 对一个没有声明的变量调用typeof时，返回值也是undefined； 当函数无明确返回值时，返回值也是undefiend   空对象：null，如 var n = null; 不存在的object，通常是人为设置的空 虽然n">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数据类型详解和数据类型转换">
+<meta property="og:url" content="http://yoursite.com/2019/07/20/js数据类型详解和数据类型转换/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="数据类型详解   未定义：undefined，如 var n ; 就是一种状态，通常指出错了，出现的情况： 当变量定义但未赋值时，该变量的值被格式化为undefined； 对一个没有声明的变量调用typeof时，返回值也是undefined； 当函数无明确返回值时，返回值也是undefiend   空对象：null，如 var n = null; 不存在的object，通常是人为设置的空 虽然n">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-21T13:28:15.909Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js数据类型详解和数据类型转换">
+<meta name="twitter:description" content="数据类型详解   未定义：undefined，如 var n ; 就是一种状态，通常指出错了，出现的情况： 当变量定义但未赋值时，该变量的值被格式化为undefined； 对一个没有声明的变量调用typeof时，返回值也是undefined； 当函数无明确返回值时，返回值也是undefiend   空对象：null，如 var n = null; 不存在的object，通常是人为设置的空 虽然n">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/20/js数据类型详解和数据类型转换/">
+
+
+
+
+
+  <title>js数据类型详解和数据类型转换 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/20/js数据类型详解和数据类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js数据类型详解和数据类型转换</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-20T23:38:40+08:00">
+                2019-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/20/js数据类型详解和数据类型转换/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/20/js数据类型详解和数据类型转换/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><h4 id="数据类型详解"><a href="#数据类型详解" class="headerlink" title="数据类型详解"></a>数据类型详解</h4></li>
+</ul>
+<ol>
+<li><strong>未定义：<code>undefined</code></strong>，如 <code>var n</code> ; 就是一种状态，通常指出错了，出现的情况：<ul>
+<li>当变量定义但未赋值时，该变量的值被格式化为<code>undefined</code>；</li>
+<li>对一个没有声明的变量调用<code>typeof</code>时，返回值也是<code>undefined</code>；</li>
+<li>当函数无明确返回值时，返回值也是<code>undefiend</code></li>
+</ul>
+</li>
+<li><strong>空对象：<code>null</code></strong><code>，如 var n = null</code>; 不存在的<code>object</code>，通常是人为设置的空<ul>
+<li>虽然<code>null</code>判断类型为对象，但是它不能添加自定义属性</li>
+<li>表示尚未存在的对象，如果函数要返回对象，那么找不到该对象时，返回的值通常是<code>null</code></li>
+</ul>
+</li>
+<li><strong>字符串类型：<code>string</code></strong>，如 <code>var s =&quot;nihao&quot;</code>; 由零或多个 16位 Unicode 字符组成的字符序列<ul>
+<li><code>string</code>是唯一没有固定大小的原始类型，字符串的字面量声明可以由双引号””或单引号’’组成</li>
+<li><code>length</code>属性：输出字符串的长度，空格也算长度</li>
+<li><code>charAt()</code>方法：输出()里下标处的字符（在最新的js版本中支持使用数组的[]来获取下标处的字符，s[i]）</li>
+</ul>
+</li>
+<li><strong>布尔值：<code>boolean</code></strong>，如 <code>var b = true;</code> 只有<code>true</code>和<code>false</code>两个值。在if判断的条件和for循环的两个;之间都是布尔值，这些需要布尔值的地方会自动被转换</li>
+<li><strong>数字类型：<code>number</code></strong>，如 <code>var i = 100;</code> 不区分整形和浮点，<code>number</code>可以表示32位的整数，也可以表示64位的浮点数。</li>
+<li><strong>对象类型：<code>object</code></strong>（包括<code>Array</code>、<code>Function</code>、<code>Date</code>、<code>Json</code>等），如 <code>var obj1 = {};</code><ul>
+<li>对象（<code>object</code>）是js的基本数据类型之一。它是一种复合值：把多个值（原始值或者其他对象）聚合在一起，并通过名字（key）访问这些值。</li>
+<li>对象也可看做是属性的无序集合，每个属性都是一个名/值对。属性名是字符串，因此我们可以把对象看成是从字符串到值的映射</li>
+<li><code>object</code>可以像我们页面元素一样<font color="orange"><strong>添加自定义属性</strong></font>，如：<code>obj.abc = 123;</code> 或 <code>obj={&quot;abc&quot; : 123};</code></li>
+<li>我们之前获取元素通过点操作（<code>obj .name</code>）和通过中括号操作（<code>obj[&quot;name&quot;]</code>）同样适用于所有对象</li>
+<li>当一个函数被一个对象所拥有，那么该函数也被称为方法，同时该函数被调用时内部的this指向会指向该对象</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ul>
+<li><h4 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h4></li>
+</ul>
+<ol>
+<li><p>如页面元素的<code>block</code>、<code>inline</code>这些类型，当我们需要相应的类型时就要进行数据类型转换</p>
+</li>
+<li><p><strong>在JavaScript中，boolean值，数字和字符串的原始值都是伪对象</strong>，这意味着它们实际上具有属性和方法，如：”blue”.length;</p>
+</li>
+<li><p><strong>转换字符串类型</strong>：</p>
+<ul>
+<li><p>三种值类型（字符串、数组和布尔值）都具有<font color="green"><strong><code>toString</code>方法，可以将自身转换为字符串</strong></font>，如Number的<code>toString</code>方法:</p>
+<p><font color="red">注意：null和undefined没有toString方法</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iNum = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(iNum.toString());  <span class="comment">//输出字符串"10"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="green"><strong><code>String()</code>强制类型转换</strong></font>与<code>toString()</code>方法的唯一不同之处在于，<font color="red">对null或undefined值强制类型转换可以生成字符串而不引发错误</font>，如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="literal">null</span>.toString();   <span class="comment">//错误</span></span><br><span class="line"><span class="keyword">var</span> s2 = <span class="built_in">String</span>(<span class="literal">null</span>);      <span class="comment">//得到"null"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与上面强制类型转换（即显形转换）对应的<font color="green"><strong>字符串的隐形转换+（字符串连字符）</strong></font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"100"</span>; </span><br><span class="line">alert(s + <span class="number">100</span>) ; <span class="comment">//输出"100100"</span></span><br><span class="line">alert(<span class="literal">null</span> + <span class="string">"1"</span>);		<span class="comment">//将数字1本身转换为字符串</span></span><br></pre></td></tr></table></figure>
+
+<p><font color="red">注意：由于+是字符串连接符，因此我们要做数字相加时，必须保证加号两边的都是数字</font></p>
+</li>
+</ul>
+</li>
+<li><p><strong>转换数字类型</strong>：</p>
+<ul>
+<li><p><font color="green"><strong><code>Number()</code>方法，尽可能的将传入的值整体转换成数字。</strong></font>其转换规则为：</p>
+<ul>
+<li>数据类型–字符串：””（空）和” “（空格）都会转换成0；数字字符串会转换成对应数字；<font color="blue">非数字字符串转换成<code>NaN</code>（not a number），NaN != NaN</font></li>
+<li>数据类型–布尔值：true和false会变成1和0</li>
+<li>数据类型–空对象：null会被变成0</li>
+<li>数据类型–对象(函数、json和其他对象)：NaN</li>
+<li>数据类型–未定义：undefined（未定义）会变成NaN</li>
+<li>数据类型–数组：如果为空转换成0；只有一个数据（字符串、null或undefined）时字符串会根据之前的规则一样去转，<strong>空、null和undefined会转换成0</strong>；有多个数据时转成NaN</li>
+</ul>
+<p>使用方法如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"100"</span>;</span><br><span class="line">alert（<span class="built_in">Number</span>（s）+<span class="number">100</span>）;  <span class="comment">//输出结果为数字200</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">null</span>));	<span class="comment">//输出结果是0</span></span><br><span class="line">cnsole.log(<span class="built_in">Number</span>(<span class="literal">undefined</span>));	<span class="comment">//输出结果是NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"100px"</span><span class="number">-1</span>));	<span class="comment">//输出结果为NaN</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Number</code>不合适的地方：当一个字符串是<code>var b = &quot;100px&quot;</code>，会变成NaN，因此转换字符串时Number用的比较少，而一般用下面两个方法</p>
+</li>
+<li><p><font color="green"><strong><code>parseInt()</code>：将字符串转换成整数</strong></font>，转换规则为：</p>
+<ul>
+<li><p><strong>会从左到右依次判断每个字符，碰到非数字后会将前面的数字输出(会认识一些特殊符号，如+-空格)</strong></p>
+</li>
+<li><p>若数据不是字符串会返回NaN</p>
+</li>
+<li><p>只会保留整数，小数点和其后面的部分会被舍去</p>
+</li>
+<li><p>最好写成<code>parseInt(b,10)</code>，后面代表10进制</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="string">"fff"</span>;</span><br><span class="line"><span class="comment">/* 将16进制数转换为十进制数 */</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(i,<span class="number">16</span>));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><font color="green"><strong><code>parseFloat()</code>：与<code>parseInt</code>一样，但是会保留第1个小数点后面的数字</strong></font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i1  = <span class="string">"10"</span>;</span><br><span class="line"><span class="keyword">var</span> i2 = <span class="string">"10.01"</span>;</span><br><span class="line"><span class="keyword">var</span> i3 = <span class="string">"100px"</span>;</span><br><span class="line"><span class="comment">//字符串转数字的强制类型转换</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(i3));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(i2));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>除上面的强制类型转换方法，<font color="orange"><strong>+(正号)、-(负号)、-、*、/、%、++、–</strong></font>也会让数字字符串和数字字符串或数字的运算结果变成数字类型，既<font color="orange"><strong>数字类型的隐形转换</strong></font><br>注意：+在两边有字符串时会变成字符串的隐性转换，但是作为正号或者两边没有字符串时，也是数字类型的隐形转换</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">"10"</span>;</span><br><span class="line"><span class="comment">/* 表示a加正c，也就是把字符串10转换为数字10 */</span></span><br><span class="line"><span class="built_in">console</span>.log(a+ +c);		<span class="comment">//输出结果为数字20</span></span><br><span class="line"><span class="built_in">console</span>(<span class="string">"100px"</span><span class="number">-1</span>);		<span class="comment">//输出结果为NaN，跟number方法一样</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>无论是哪种转换方法，<font color="red">转换数字失败就会返回NaN，NaN（not a number）它是转换数字类型转换失败的产物，但依然变成了number类型</font>，它一旦出现代表你的代码进行了非法的操作</p>
+</li>
+<li><p><font size="4">NaN转换布尔类型为false，它与它本身不相等（而其他所有类型与自己都相等）</font></p>
+</li>
+<li><p><code>isNaN():is not a number</code>，用来判断一个<strong>number类型</strong>是不是非数字，不是数字返回true，是数字则返回false。若判断的值不是number类型，会找Number判断，如果转换后的结果是NaN则返回true</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><font size="5" color="gree">练习：</font></p>
+<p><font size="4">1. 做一个input输入框和按钮，判断输入值是不是都是由数字字符组成的字符串，当判断的结果是数字时，再弹出是不是整数</font></p>
+<p>​    a. HTML部分：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"btn1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">id</span>=<span class="string">"btn2"</span> <span class="attr">value</span>=<span class="string">"确定"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    b. JS部分：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oBtn1 = <span class="built_in">document</span>.getElementById(<span class="string">"btn1"</span>);</span><br><span class="line"><span class="keyword">var</span> oBtn2 = <span class="built_in">document</span>.getElementById(<span class="string">"btn2"</span>);</span><br><span class="line">oBtn2.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// if(parseFloat(oBtn1.value)== oBtn1.value)</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Number</span>(oBtn1.value) == <span class="built_in">Number</span>(oBtn1.value))</span><br><span class="line">    &#123;</span><br><span class="line">        alert(<span class="string">"是数字字符组成的字符串"</span>);</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">parseInt</span>(oBtn1.value) == oBtn1.value)&#123;</span><br><span class="line">           alert(<span class="string">"是整数"</span>);</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">else</span>&#123;</span><br><span class="line">           alert(<span class="string">"不是整数"</span>);</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">         alert(<span class="string">"不是数字字符组成的字符串"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font size="4">2. 看下面题，说出结果：</font></p>
+<p>1 + “23”;         结果：123</p>
+<p>null * 0;         结果：0</p>
+<p>true + “ “;         结果：true空格</p>
+<p>true * “ “;         结果：0</p>
+<p>undefined + 0;     结果：NaN</p>
+<p>20 + -“20”;             结果：0</p>
+<p>20 + +”20”            结果：40</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/20/js流程控制、JSON和this/" rel="next" title="js流程控制、JSON和this">
+                <i class="fa fa-chevron-left"></i> js流程控制、JSON和this
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/20/Markdown语法/" rel="prev" title="（转）Markdown语法">
+                （转）Markdown语法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型详解"><span class="nav-number">1.</span> <span class="nav-text">数据类型详解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型转换"><span class="nav-number">2.</span> <span class="nav-text">数据类型转换</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">73.2k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/07/20/js数据类型详解和数据类型转换/';
+          this.page.identifier = '2019/07/20/js数据类型详解和数据类型转换/';
+          this.page.title = 'js数据类型详解和数据类型转换';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

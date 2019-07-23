@@ -125,15 +125,18 @@
 
 
 
+<meta name="description" content="流程控制语句   流程控制就是程序代码执行顺序：顺序结构：按照书写顺序来执行，是程序中最基本的流程结构；循环：[do ]while/for[ in]；判断：if/switch  while的循环和for循环的写法区别： 1234567891011121314var i=0;   //while方法while(i&amp;lt;3)&amp;#123;    alert(i);     i++;&amp;#125;">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js流程控制、JSON和this">
 <meta property="og:url" content="http://yoursite.com/2019/07/20/js流程控制、JSON和this/index.html">
 <meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="流程控制语句   流程控制就是程序代码执行顺序：顺序结构：按照书写顺序来执行，是程序中最基本的流程结构；循环：[do ]while/for[ in]；判断：if/switch  while的循环和for循环的写法区别： 1234567891011121314var i=0;   //while方法while(i&amp;lt;3)&amp;#123;    alert(i);     i++;&amp;#125;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-20T06:47:39.091Z">
+<meta property="og:updated_time" content="2019-07-21T02:21:21.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js流程控制、JSON和this">
+<meta name="twitter:description" content="流程控制语句   流程控制就是程序代码执行顺序：顺序结构：按照书写顺序来执行，是程序中最基本的流程结构；循环：[do ]while/for[ in]；判断：if/switch  while的循环和for循环的写法区别： 1234567891011121314var i=0;   //while方法while(i&amp;lt;3)&amp;#123;    alert(i);     i++;&amp;#125;">
 
 
 
@@ -382,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0
+                  1.2k
                 </span>
               
 
@@ -398,7 +401,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  4
                 </span>
               
             </div>
@@ -419,7 +422,81 @@
       
 
       
-        
+        <ul>
+<li><h4 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h4></li>
+</ul>
+<ol>
+<li><p>流程控制就是程序代码执行顺序：顺序结构：按照书写顺序来执行，是程序中最基本的流程结构；循环：<code>[do ]while/for[ in]</code>；判断：<code>if/switch</code></p>
+</li>
+<li><p><code>while</code>的循环和<code>for</code>循环的写法区别：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;   <span class="comment">//while方法</span></span><br><span class="line"><span class="keyword">while</span>(i&lt;<span class="number">3</span>)&#123;</span><br><span class="line">    alert(i); </span><br><span class="line">    i++;</span><br><span class="line">&#125;   </span><br><span class="line"><span class="keyword">var</span> i=<span class="number">0</span>;  <span class="comment">//do while方法</span></span><br><span class="line"><span class="keyword">do</span>&#123;  <span class="comment">//先执行do里的在判断，因此至少会执行一次</span></span><br><span class="line">   alert(i); </span><br><span class="line">   i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(i&lt;<span class="number">3</span>)</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;  <span class="comment">//for方法</span></span><br><span class="line">    alert(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>switch</code>判断和<code>if</code>判断的写法区别：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(str)&#123;   <span class="comment">//switch方法</span></span><br><span class="line">	<span class="keyword">case</span> <span class="string">"js"</span>: <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"html"</span>: <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>: alert(str);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(str==<span class="string">"js"</span>)&#123;  <span class="comment">//if方法</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(str==<span class="string">"html"</span>)&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    alert(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关键字：<code>case</code> (判断变量的值)；<code>break</code>(跳出，上面判断成功后不再继续判断后续)、 <code>default</code>(否则，上面判断都未通过时执行)；<code>continue</code>(跳过)例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">4</span>)&#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125; <span class="comment">//当i为4的时候跳出该循环，若用continue则是跳过后续代码，继续循环</span></span><br><span class="line">    alert(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<ul>
+<li><strong><code>JSON</code>对象</strong></li>
+</ul>
+<ol>
+<li><p><code>JSON</code>是JavaScript Object Notation的缩写：它被发明之前一直是用XML来传递数据，一种纯文本格式，本身不复杂，但加上各种规范以后变得非常复杂。</p>
+</li>
+<li><p>道格拉斯·克罗克福特(Douglas Crockford)在2002年发明了JSON这种超轻量级的数据交换格式。它基于ECMAScript的一个子集，采用完全独立的文本格式，但是也使用了类似于C语言家族的习惯(包括C、C++、C#、Java、JavaScript、Perl、Python等)，这些特性使JSON成了理想的数据交换语言。易于阅读和编写，同时也易于机器解析和生成，并能提升网络传输速率。由于JSON非常简单，很快风靡Web世界。</p>
+</li>
+<li><p>json的语法：<code>key==&gt;value</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json = &#123;</span><br><span class="line">    <span class="string">"name"</span> : <span class="string">"cromwell"</span>, </span><br><span class="line">    <span class="string">"say"</span> : <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">          alert(<span class="string">"hello"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>“:”前面是属性名，后面可以是任何数据格式(例子中是字符串和函数)，<font color="red"><code>json.name</code>可输出该属性的值，<code>json.say()</code>可调用该函数，</font>非常方便。注意：定义的属性名称在严格模式下必须使用””，兼容性和安全性好；<code>json[]</code>调用数据的时候和对象的属性写法相同既：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">json[<span class="string">"name"</span>];  <span class="comment">//获取json属性name的值</span></span><br><span class="line">json.name = <span class="string">"新值"</span>; <span class="comment">//可以用来改写json的name属性的值，赋值</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用<code>json</code>可以包括数组，数组也可以包括<code>json</code>，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[&#123;<span class="string">"name"</span>:<span class="string">"abc"</span>,<span class="string">"age"</span>:<span class="number">20</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"bcd"</span>,<span class="string">"age"</span>:<span class="number">30</span>&#125;]; <span class="comment">//数组嵌套json</span></span><br><span class="line"><span class="keyword">var</span> json = &#123;<span class="string">"a"</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="string">"b"</span>:[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]&#125;;  		<span class="comment">//json嵌套数组</span></span><br></pre></td></tr></table></figure>
+
+<p>这时我们如果想拿到<code>name</code>的值”abc”就要写成<code>arr[0].name</code>了</p>
+</li>
+<li><p><strong>for in循环</strong>：<font color="orange">我们获取一下json的length发现json没有长度，因此无法使用for循环遍历json</font>。for循环里使用数字i作为循环的变量对应下标，而for in循环则使用<code>attr</code>就是属性名称来对应j<code>son</code>的属性名：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> json)&#123;</span><br><span class="line">       alert(attr+<span class="string">":"</span>+json[attr])</span><br><span class="line">   &#125;;</span><br><span class="line"><span class="comment">//window和document就是两个带有很多属性的对象，我们可以输出一下看看</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<p>   <font color="red">注意：数组用<code>for</code>和<code>for in</code>都可以遍历，用for in时属性名称就是下标；嵌套式的json和数组需要for in和for循环配合来遍历</font></p>
+<hr>
+<ul>
+<li><h4 id="this是什么？"><a href="#this是什么？" class="headerlink" title="this是什么？"></a>this是什么？</h4></li>
+</ul>
+<ol>
+<li><p>全局对象的<code>this</code>，是一个比较特殊的存在。<strong>全局环境中的<code>this</code>，指向window</strong>。</p>
+</li>
+<li><p>在函数<code>(fn1)</code>内部的this分成三种情况：</p>
+<ul>
+<li><p>直接调用：<strong><code>fn1()</code></strong>，其内部的<code>this</code>会指向<code>undefined</code>。但是在默认非严格模式中，当<code>this</code>指向<code>undefined</code>时，它会被自动指向全局对象既window</p>
+</li>
+<li><p>事件调用：<strong><code>obj.事件=fn1</code></strong>，<font color="gree">内部的this指向调用函数的该对象</font></p>
+</li>
+<li><p>调用某对象拥有的函数：<strong><code>obj.fn1()</code></strong>，那么该函数在调用时，<font color="gree">内部的this指向该对象</font>，该写法也称为函数表达式，写法如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;&#125; <span class="comment">//函数声明</span></span><br><span class="line"><span class="keyword">var</span> fn1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125;  <span class="comment">//函数表达式</span></span><br><span class="line">obj.fn1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125;  <span class="comment">//函数表达式</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<p>​    <font size="4">1. 把<code>JSON</code>嵌套式的数组和<code>JSON</code>遍历出来</font></p>
+<p>​        JS部分：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组嵌套json   </span></span><br><span class="line"><span class="keyword">var</span> arr = [&#123;</span><br><span class="line">        <span class="string">"a"</span> : <span class="number">1</span>,</span><br><span class="line">        <span class="string">"b"</span> : <span class="number">2</span>,</span><br><span class="line">        <span class="string">"c"</span> : <span class="number">3</span></span><br><span class="line">    &#125;,&#123;</span><br><span class="line">        <span class="string">"d"</span> : <span class="number">4</span>,</span><br><span class="line">        <span class="string">"e"</span> : <span class="number">5</span>,</span><br><span class="line">    &#125;];</span><br><span class="line"><span class="comment">//json嵌套数组</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">        <span class="string">"arr1"</span> : [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>],</span><br><span class="line">        <span class="string">"arr2"</span> : [<span class="string">"d"</span>,<span class="string">"e"</span>]</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//先遍历数组，再</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> arr[i])&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(arr[i][attr]);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> obj)&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;obj[attr].length;i++)&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(attr+ <span class="string">":"</span> + obj[attr][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>​    <font size="4">2. 创建一个全局属性(<code>var a = &quot;tw&quot;</code>)，创建一个对象(<code>obj</code>)即其属性(<code>obj.a = &quot;to&quot;</code>)和方法(<code>obj.saya = function(){console.log(this.a)}</code>)，说出调用该方法时<code>this</code>是谁</font></p>
+<p>​        JS部分：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -458,6 +535,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/20/js数据类型详解和数据类型转换/" rel="prev" title="js数据类型详解和数据类型转换">
+                js数据类型详解和数据类型转换 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -519,8 +600,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -537,7 +627,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -605,6 +695,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#流程控制语句"><span class="nav-number">1.</span> <span class="nav-text">流程控制语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this是什么？"><span class="nav-number">2.</span> <span class="nav-text">this是什么？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -632,7 +738,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">64.9k</span>
+    <span title="Site words total count">73.2k</span>
   
 </div>
 

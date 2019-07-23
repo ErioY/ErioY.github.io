@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="九、软件下载及安装   安装方式 (1) 原码安装 ​    A. 原理：软件编写者或厂商编写放出的原始代码文本文件 ​    B. 方式：解压缩Tarball文件，并且安装前需要进行检测操作系统、设定编辑环境参数、编译、设置等工作再进行安装 ​    C. 特点：软件安装自由，可以制定相关功能，但操作量大，麻烦，对安装人员的技术要求较高 (2) RPM安装 ​    A. RPM ：Red">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux运维初级-九、软件下载及安装">
+<meta property="og:url" content="http://yoursite.com/2019/07/22/Linux运维初级-九、软件下载及安装/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="九、软件下载及安装   安装方式 (1) 原码安装 ​    A. 原理：软件编写者或厂商编写放出的原始代码文本文件 ​    B. 方式：解压缩Tarball文件，并且安装前需要进行检测操作系统、设定编辑环境参数、编译、设置等工作再进行安装 ​    C. 特点：软件安装自由，可以制定相关功能，但操作量大，麻烦，对安装人员的技术要求较高 (2) RPM安装 ​    A. RPM ：Red">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-23T02:25:26.175Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux运维初级-九、软件下载及安装">
+<meta name="twitter:description" content="九、软件下载及安装   安装方式 (1) 原码安装 ​    A. 原理：软件编写者或厂商编写放出的原始代码文本文件 ​    B. 方式：解压缩Tarball文件，并且安装前需要进行检测操作系统、设定编辑环境参数、编译、设置等工作再进行安装 ​    C. 特点：软件安装自由，可以制定相关功能，但操作量大，麻烦，对安装人员的技术要求较高 (2) RPM安装 ​    A. RPM ：Red">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/22/Linux运维初级-九、软件下载及安装/">
+
+
+
+
+
+  <title>Linux运维初级-九、软件下载及安装 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/22/Linux运维初级-九、软件下载及安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux运维初级-九、软件下载及安装</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-22T14:50:27+08:00">
+                2019-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/22/Linux运维初级-九、软件下载及安装/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/22/Linux运维初级-九、软件下载及安装/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="5">九、软件下载及安装</font></center>
+
+<ol>
+<li><p><strong>安装方式</strong></p>
+<p>(1) 原码安装</p>
+<p>​    A. 原理：软件编写者或厂商编写放出的原始代码文本文件</p>
+<p>​    B. 方式：解压缩Tarball文件，并且安装前需要进行检测操作系统、设定编辑环境参数、编译、设置等工作再进行安装</p>
+<p>​    C. 特点：软件安装自由，可以制定相关功能，但操作量大，麻烦，对安装人员的技术要求较高</p>
+<p>(2) RPM安装</p>
+<p>​    A. RPM ：Red    Hat    Package    Manager （红帽软件管理器）</p>
+<p>​    B. 原理：软件发布者在他自己的系统中编译好用户所需的软件，再进行发布交由用户使用，由于软件制作者使用的硬件和使用者是一样的，则省略的原码的相关步骤</p>
+<p>​    C. 特点：简化安装步骤，但必须设置好软件安装的依赖性</p>
+<p>(3) YUM安装</p>
+<p>​    A. 原理：将RPM安装的软件及依赖软件的相关信息组成数据库存储在网络服务器中，用户安装软件时会首先查询该服务器的数据库，将安装软件及依赖软件一同打包下载</p>
+<p>​    B. 特点：软件安装简单，但无法自定义软件</p>
+</li>
+<li><p><strong>RPM软件安装</strong></p>
+<p>(1) 过程</p>
+<p>​    A. 读取RPM包头中的数据，进行查询软件依赖性</p>
+<p>​    B. 依赖性若满足则安装软件</p>
+<p>​    C. 若不满足则安装失败</p>
+<p>(2) 要求</p>
+<p>​    A. 软件编译打包的环境必须与用户使用的环境相同</p>
+<p>​    B. 软件安装依赖性必须满足</p>
+<p>​    C. 卸载软件时最底层软件不能先卸载，否则系统会出错</p>
+<p>(3) RPM文件</p>
+<p>​    A. RPM文件：扩展名为*.rpm，已经编译可以直接安装，但不能修改其中参数，不能重新编译</p>
+<p>​    B. SRPM文件：扩展名为*.src.rpm，未编译的原码文件，不可以直接执行，但可以根据当前环境和需求进行参数修改</p>
+<p>​    C. RPM软件包的名称解释</p>
+<p>​        (a) 例：<code>python-iniparse    -0.4    -9    .el7.x86_64.rpm</code></p>
+<p>​        (b) <code>python-inipars</code>e ：软件名称</p>
+<p>​        (c) <code>-0.4</code> ：版本号</p>
+<p>​        (d) <code>-9</code> ：编译次数</p>
+<p>​        (e) <code>.el7.x86_64.rpm</code> ：适用的平台</p>
+<p>​        (f) 注意：</p>
+<p>​            ◆ <code>x86_64</code> ：64位平台</p>
+<p>​            ◆ <code>i386</code> ：32位平台</p>
+<p>​            ◆ <code>noarch</code> ：通用平台，64位及32位都可使用</p>
+<p>(4)<font color="orange"> <strong>RPM软件安装命令</strong></font></p>
+<p>​    A. 格式：rpm    -参数    软件名称.rpm</p>
+<p>​    B. 参数：</p>
+<p>​        (a) -i ：安装软件</p>
+<p>​        (b) -v ：查看安装信息</p>
+<p>​        (c) -h ：显示安装进度</p>
+<p>​        (d) –nodeps ：发生安装依赖时，强制安装，但可能安装后的软件无法使用</p>
+<p>​        (e) –force ：安装时提示已安装，则覆盖安装</p>
+<p>​        (f) -q ：查询软件是否安装</p>
+<p>​    C. 例：手动安装gcc软件：<strong>（非常麻烦）</strong></p>
+<p>​        (a) 新建待安装软件包目录：mkdir    ~/gcc</p>
+<p>​        (b) 挂载光盘：<code>mount    /dev/sr0    /media</code></p>
+<p>​        (c) 进入软件包目录：<code>cd    /media/Packages</code></p>
+<p>​        (d) 拷贝7个依赖软件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cp    mpfr-3.1.1-4.el7.x86_64.rpm     ~/gcc</span><br><span class="line">cp    libmpc-1.0.1-3.el7.x86_64.rpm     ~/gcc</span><br><span class="line">cp    kernel-headers-3.10.0-693.el7.x86_64.rpm   ~/gcc</span><br><span class="line">cp    glibc-headers-2.17-196.el7.x86_64.rpm      ~/gcc</span><br><span class="line">cp    glibc-devel-2.17-196.el7.x86_64.rpm        ~/gcc</span><br><span class="line">cp    cpp-4.8.5-16.el7.x86_64.rpm     ~/gcc</span><br><span class="line">cp    gcc-4.8.5-16.el7.x86_64.rpm     ~/gcc</span><br></pre></td></tr></table></figure>
+
+<p>​        (e) <code>cd    ~/gcc</code></p>
+<p>​        (f) 按下列顺序安装软件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rpm  -ivh   mpfr-3.1.1-4.el7.x86_64.rpm</span><br><span class="line">rpm  -ivh   libmpc-1.0.1-3.el7.x86_64.rpm</span><br><span class="line">rpm  -ivh   kernel-headers-3.10.0-693.el7.x86_64.rpm</span><br><span class="line">rpm  -ivh   glibc-headers-2.17-196.el7.x86_64.rpm</span><br><span class="line">rpm  -ivh   glibc-devel-2.17-196.el7.x86_64.rpm</span><br><span class="line">rpm  -ivh   cpp-4.8.5-16.el7.x86_64.rpm</span><br><span class="line">rpm  -ivh   gcc-4.8.5-16.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
+
+<p>​            (g) 检测gcc ：<code>rpm    -q    gcc</code></p>
+<p>(5) RPM软件卸载</p>
+<p>​    A. 格式：<code>rpm    -e    软件名.rpm</code></p>
+<p>​    B. 注意：</p>
+<p>​        (a) 软件安装时有依赖性，卸载时依然有依赖性，应从最上层软件开始卸载，否则会出现问题</p>
+<p>​        (b) 若强行卸载则会破坏rpm的软件数据库，从而导致系统异常</p>
+<p>​        (c) 修复rpm数据库的方式：<code>rpm    --rebuilddb</code></p>
+</li>
+<li><p><strong>YUM软件安装</strong></p>
+<p>(1) YUM原理：Linux系统将软件编译好之后放到服务器中，并将该软件的依赖关系记录成表格也存储到服务器中，用户下载软件时会将该软件的信息下载到本地并与RPM数据库作比对，分析依赖软件的状态，一次性打包下载所有软件</p>
+<p>(2) YUM仓库：记录软件依赖性等信息的数据库</p>
+<p>(3)<font color="orange"> <strong>YUM常用命令</strong>：</font></p>
+<p>​    A. <font color="red"><strong>浏览</strong></font>：</p>
+<p>​        (a) <code>yum    repolist    all</code>    ：列出所有yum软件仓库</p>
+<p>​        (b) <code>yum    list    all</code>    ：列出仓库中所有软件包</p>
+<p>​        (c) <code>yum    info    软件包名称</code>    ：，列出软件包安装信息</p>
+<p>​    B. <font color="red"><strong>安装</strong></font>：</p>
+<p>​        (a) <code>yum    install    软件包名</code>    ：安装软件包</p>
+<p>​        (b) <code>yum    install    -y    软件包名</code>    ：安装并确认</p>
+<p>​            ◆ <code>yum    install    java</code></p>
+<p>​            ◆ <code>yum    install    -y    python</code></p>
+<p>​    C. <font color="red"><strong>更新</strong></font>：</p>
+<p>​        (a) <code>yum    update</code>    ：升级所有软件</p>
+<p>​        (b) <code>yum    update    软件包名</code>    ：升级更新指定软件</p>
+<p>​        (c) 例：<code>yum    update    kernel</code></p>
+<p>​                    <code>yum    update    bash</code></p>
+<p>​    D. <font color="red"><strong>卸载</strong></font>：<code>yum    remove    软件包名</code></p>
+<p>​    E. <font color="orange"> *yum命令安装下载RPM包：</font></p>
+<p>​        (a) 格式1：<code>yum    install    软件包名.rpm</code></p>
+<p>​        (b) 格式2：<code>yum    installl    URL/软件包名.rpm</code></p>
+<p>​    安装wps Linux版：</p>
+<p>​    网址：<a href="https://wdl1.cache.wps.cn/wps/download/ep/Linux2019/8722/wps-office-11.1.0.8722-1.x86_64.rpm" target="_blank" rel="noopener">https://wdl1.cache.wps.cn/wps/download/ep/Linux2019/8722/wps-office-11.1.0.8722-1.x86_64.rpm</a></p>
+<p>​    <code>yum    install    https://wdl1.cache.wps.cn/wps/download/ep/Linux2019/8722/wps-office-11.1.0.8722-1.x86_64.rpm</code></p>
+<p>(4) <font color="orange"> <strong>YUM安装软件包组</strong>：</font></p>
+<p>​    A. 命令格式：</p>
+<p>​        (a) <code>yum    grouplist</code>    ：列出所有可以使用的包组</p>
+<p>​        (b) <code>yum    grouplist    包组名</code>    ：列出软件包组的软件信息</p>
+<p>​        (c) <code>yum    groupinstall    包组名</code>    ：安装软件包组</p>
+<p>​        (d) <code>yum    groupremove    包组名</code>    ：卸载软件包组</p>
+<p>​    B. 意义：安装大型项目时，所需的软件很多，此时通过单个软件安装非常麻烦，如：GNOME    x-WINDOWS等大型软件，可以通过软件包组进行安装</p>
+</li>
+</ol>
+<p>   ​    </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/21/js布尔值和自定义属性/" rel="next" title="js布尔值和自定义属性">
+                <i class="fa fa-chevron-left"></i> js布尔值和自定义属性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">73.2k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/07/22/Linux运维初级-九、软件下载及安装/';
+          this.page.identifier = '2019/07/22/Linux运维初级-九、软件下载及安装/';
+          this.page.title = 'Linux运维初级-九、软件下载及安装';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+
