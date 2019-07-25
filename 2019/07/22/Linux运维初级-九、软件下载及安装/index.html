@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="ErioY">
 <meta property="og:description" content="九、软件下载及安装   安装方式 (1) 原码安装 ​    A. 原理：软件编写者或厂商编写放出的原始代码文本文件 ​    B. 方式：解压缩Tarball文件，并且安装前需要进行检测操作系统、设定编辑环境参数、编译、设置等工作再进行安装 ​    C. 特点：软件安装自由，可以制定相关功能，但操作量大，麻烦，对安装人员的技术要求较高 (2) RPM安装 ​    A. RPM ：Red">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T02:25:26.175Z">
+<meta property="og:updated_time" content="2019-07-23T05:42:31.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux运维初级-九、软件下载及安装">
 <meta name="twitter:description" content="九、软件下载及安装   安装方式 (1) 原码安装 ​    A. 原理：软件编写者或厂商编写放出的原始代码文本文件 ​    B. 方式：解压缩Tarball文件，并且安装前需要进行检测操作系统、设定编辑环境参数、编译、设置等工作再进行安装 ​    C. 特点：软件安装自由，可以制定相关功能，但操作量大，麻烦，对安装人员的技术要求较高 (2) RPM安装 ​    A. RPM ：Red">
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.4k
+                  1.7k
                 </span>
               
 
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  5
+                  7
                 </span>
               
             </div>
@@ -520,6 +520,37 @@
 <p>​        (c) <code>yum    groupinstall    包组名</code>    ：安装软件包组</p>
 <p>​        (d) <code>yum    groupremove    包组名</code>    ：卸载软件包组</p>
 <p>​    B. 意义：安装大型项目时，所需的软件很多，此时通过单个软件安装非常麻烦，如：GNOME    x-WINDOWS等大型软件，可以通过软件包组进行安装</p>
+<p>​    C. <strong>安装图形化界面</strong></p>
+<p>​        (a) 查询：<code>yum    grouplist</code></p>
+<p>​        (b) 安装：<code>yum    groupinstall    GNOME    Desktop</code></p>
+<p>​        (c) 启动：<code>startx</code></p>
+<p>(5) yum配置文件分析：</p>
+<p>​    A. 路径：<code>/etc/repos.d/CentOS-Base.repo</code></p>
+<p>​    B. 分析：</p>
+<p>​        (a) <code>[base]</code> ：表示yum软件库的名称，[]不能省略，内容任意，但不能相同</p>
+<p>​        (b) <code>name</code> ：描述软件库意义，可省略</p>
+<p>​        (c) <code>mirrorlist=</code> ：映射方式，可省略</p>
+<p>​        (d) <code>baseurl =</code> ：<font color="red">表示软件库的域名网址，非常重要！</font></p>
+<p>​        (e) <code>enable=1</code>  ：启用该库，<code>enable=0</code> ：不启用</p>
+<p>​        (f) <code>gpgcheck=1</code> ：检查软件的数字签名，<code>gpgcheck=0</code> ：不检查</p>
+<p>​        (g) <code>gpgkey=</code> ：检查数字签名时所需的公钥文件位置，不检查数字签名时，可省略</p>
+<p>​        (h)注意：其他库如：升级库（update）、附加库（extras）意义同此库（base）</p>
+<p>​    C. <strong>利用本地光盘镜像搭建yum仓库：（断网可用）</strong></p>
+<p>​        (a) 挂载本地光盘：<code>mount    /dev/sr0    /media</code></p>
+<p>​        (b) 清空yum缓存：<code>yum    clean    all</code></p>
+<p>​        (c) <code>cd    /etc</code></p>
+<p>​        (d) 备份原有配置文件目录：<code>mv    yum.repos.d    yum.repos.d.back</code></p>
+<p>​        (e) 新建配置文件目录：<code>mkdir    yum.repos.d</code></p>
+<p>​        (f) <code>cd    yum.repos.d</code></p>
+<p>​        (g) 新建yum配置文件：<code>vim    DVD.repo</code>    输入以下内容：</p>
+<p>​                <code>[DVD]</code></p>
+<p>​                <code>baseurl=file:///media</code></p>
+<p>​                <code>enabled=1</code></p>
+<p>​                <code>gpgcheck=0</code></p>
+<p>​                保存退出</p>
+<p>​        (h) 新建yum缓存：<code>yum    makecache</code></p>
+<p>​        (i) 查看是否启用：<code>yum    repolist    all</code></p>
+<p>​        (j) 尝试下载安装软件：<code>yum    install    tftp</code></p>
 </li>
 </ol>
 <p>   ​    </p>
@@ -562,6 +593,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/23/Linux运维初级-十、操作系统基础知识/" rel="prev" title="Linux运维初级-十、操作系统基础知识">
+                Linux运维初级-十、操作系统基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -641,7 +676,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -736,7 +771,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">73.2k</span>
+    <span title="Site words total count">77k</span>
   
 </div>
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-23T02:25:26.175Z</updated>
+  <updated>2019-07-24T07:57:17.539Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux运维初级-十一、使用Apache部署静态网站</title>
+    <link href="http://yoursite.com/2019/07/23/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E5%8D%81%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8Apache%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/"/>
+    <id>http://yoursite.com/2019/07/23/Linux运维初级-十一、使用Apache部署静态网站/</id>
+    <published>2019-07-23T08:13:39.000Z</published>
+    <updated>2019-07-24T07:57:17.539Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;十一、使用Apache部署静态网站&lt;/font&gt;&lt;/center&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;web网站服务又称为www服务（world    wide   
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux运维初级-十、操作系统基础知识</title>
+    <link href="http://yoursite.com/2019/07/23/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E5%8D%81%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://yoursite.com/2019/07/23/Linux运维初级-十、操作系统基础知识/</id>
+    <published>2019-07-23T05:42:15.000Z</published>
+    <updated>2019-07-23T08:12:43.152Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;十、操作系统基础知识&lt;/font&gt;&lt;/center&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;概念&lt;/strong&gt;：管理计算机软硬件资源，提供系统设备接口及工作界面&lt;/p&gt;
+&lt;p&gt;(1) 管理者作用&lt;/p&gt;
+&lt;p&gt;​    A.
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux运维初级-九、软件下载及安装</title>
     <link href="http://yoursite.com/2019/07/22/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E4%B9%9D%E3%80%81%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85/"/>
     <id>http://yoursite.com/2019/07/22/Linux运维初级-九、软件下载及安装/</id>
     <published>2019-07-22T06:50:27.000Z</published>
-    <updated>2019-07-23T02:25:26.175Z</updated>
+    <updated>2019-07-23T05:42:31.648Z</updated>
     
     <summary type="html">
     
@@ -492,62 +548,6 @@
 &lt;p&gt;​     A.   root:表示当前登录账户名称&lt;/p&gt;
 &lt;p&gt;​     B.   @：表示分隔符&lt;/p&gt;
 &lt;p&gt;​ 
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux运维初级--- 二、Linux的安装与部署</title>
-    <link href="http://yoursite.com/2019/07/17/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E4%BA%8C%E3%80%81Linux%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2/"/>
-    <id>http://yoursite.com/2019/07/17/Linux运维初级-二、Linux的安装与部署/</id>
-    <published>2019-07-17T03:23:50.000Z</published>
-    <updated>2019-07-17T06:38:28.492Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;二、Linux的安装与部署&lt;/font&gt;&lt;/center&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;VMware虚拟机的安装&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;(1) .增强型键盘驱动需要打勾&lt;/p&gt;
-&lt;p&gt;(2)
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux运维初级--- 一、Linux环境简介</title>
-    <link href="http://yoursite.com/2019/07/17/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E4%B8%80%E3%80%81Linux%E7%8E%AF%E5%A2%83%E7%AE%80%E4%BB%8B/"/>
-    <id>http://yoursite.com/2019/07/17/Linux运维初级-一、Linux环境简介/</id>
-    <published>2019-07-17T03:19:51.000Z</published>
-    <updated>2019-07-17T06:28:14.215Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;一、Linux环境简介&lt;/font&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;font color=&quot;blue&quot;
         
       
     
