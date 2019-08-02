@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="ErioY">
 <meta property="og:description" content="数据类型详解   未定义：undefined，如 var n ; 就是一种状态，通常指出错了，出现的情况： 当变量定义但未赋值时，该变量的值被格式化为undefined； 对一个没有声明的变量调用typeof时，返回值也是undefined； 当函数无明确返回值时，返回值也是undefiend   空对象：null，如 var n = null; 不存在的object，通常是人为设置的空 虽然n">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-21T13:28:15.909Z">
+<meta property="og:updated_time" content="2019-07-26T02:01:14.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js数据类型详解和数据类型转换">
 <meta name="twitter:description" content="数据类型详解   未定义：undefined，如 var n ; 就是一种状态，通常指出错了，出现的情况： 当变量定义但未赋值时，该变量的值被格式化为undefined； 对一个没有声明的变量调用typeof时，返回值也是undefined； 当函数无明确返回值时，返回值也是undefiend   空对象：null，如 var n = null; 不存在的object，通常是人为设置的空 虽然n">
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.9k
+                  2.2k
                 </span>
               
 
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  7
+                  8
                 </span>
               
             </div>
@@ -511,7 +511,7 @@
 <li><p><font color="green"><strong><code>parseFloat()</code>：与<code>parseInt</code>一样，但是会保留第1个小数点后面的数字</strong></font></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i1  = <span class="string">"10"</span>;</span><br><span class="line"><span class="keyword">var</span> i2 = <span class="string">"10.01"</span>;</span><br><span class="line"><span class="keyword">var</span> i3 = <span class="string">"100px"</span>;</span><br><span class="line"><span class="comment">//字符串转数字的强制类型转换</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(i3));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseFloat</span>(i2));</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>除上面的强制类型转换方法，<font color="orange"><strong>+(正号)、-(负号)、-、*、/、%、++、–</strong></font>也会让数字字符串和数字字符串或数字的运算结果变成数字类型，既<font color="orange"><strong>数字类型的隐形转换</strong></font><br>注意：+在两边有字符串时会变成字符串的隐性转换，但是作为正号或者两边没有字符串时，也是数字类型的隐形转换</p>
+<li><p>除上面的强制类型转换方法，<font color="orange"><strong>+(正号)、-(负号)、-、*、/、%、++、–</strong></font>也会让数字字符串和数字字符串或数字的运算结果变成数字类型，既<font color="orange"><strong>数字类型的隐形转换</strong></font><br><font color="blue"><strong>注意：+在两边有字符串时会变成字符串的隐性转换，但是作为正号或者两边没有字符串时，也是数字类型的隐形转换</strong></font></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">"10"</span>;</span><br><span class="line"><span class="comment">/* 表示a加正c，也就是把字符串10转换为数字10 */</span></span><br><span class="line"><span class="built_in">console</span>.log(a+ +c);		<span class="comment">//输出结果为数字20</span></span><br><span class="line"><span class="built_in">console</span>(<span class="string">"100px"</span><span class="number">-1</span>);		<span class="comment">//输出结果为NaN，跟number方法一样</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>无论是哪种转换方法，<font color="red">转换数字失败就会返回NaN，NaN（not a number）它是转换数字类型转换失败的产物，但依然变成了number类型</font>，它一旦出现代表你的代码进行了非法的操作</p>
@@ -540,6 +540,14 @@
 <p>undefined + 0;     结果：NaN</p>
 <p>20 + -“20”;             结果：0</p>
 <p>20 + +”20”            结果：40</p>
+<p><font size="4">3. 有一个数组arr = [ ‘100px’, ‘abc’-6, [], -98765, 34, -2, 0, ‘300’, , function(){alert(1);}, null, document, [], true, ‘200px’-30,’23.45元’, 5, <em>Number</em>(‘abc’), function(){ alert(3); }, ‘xyz’-90 ];    </font></p>
+<p>要求：    1、找到arr里所有的数字：-98765, 34, -2, 0, 5</p>
+<pre><code>2、找到可以转成数字的：&apos;100px&apos;, -98765, 34, -2, 0, &apos;300&apos;, &apos;23.45元&apos;,  5 
+
+3、把转成数字以后，最大值判断出来：300
+
+4、把 NaN 所在的位置找出来：1 14 17  19&lt;/font&gt;</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ <span class="string">'100px'</span>, <span class="string">'abc'</span><span class="number">-6</span>, [], <span class="number">-98765</span>, <span class="number">34</span>, <span class="number">-2</span>, <span class="number">0</span>, <span class="string">'300'</span>, , <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">1</span>);&#125;, <span class="literal">null</span>, <span class="built_in">document</span>, [], <span class="literal">true</span>, <span class="string">'200px'</span><span class="number">-30</span>,<span class="string">'23.45元'</span>, <span class="number">5</span>, <span class="built_in">Number</span>(<span class="string">'abc'</span>), <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; alert(<span class="number">3</span>); &#125;, <span class="string">'xyz'</span><span class="number">-90</span> ];</span><br><span class="line"><span class="keyword">var</span> arr1 = [];</span><br><span class="line"><span class="keyword">var</span> arr2 = [];</span><br><span class="line"><span class="keyword">var</span> arr3 = [];</span><br><span class="line"><span class="keyword">var</span> find = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">	<span class="comment">// 找到arr里所有的数字</span></span><br><span class="line">	<span class="keyword">if</span>((<span class="keyword">typeof</span>(arr[i]) == <span class="string">"number"</span>) &amp;&amp; !<span class="built_in">isNaN</span>(arr[i]))&#123;</span><br><span class="line">		arr1.push(arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 找到可以转成数字的</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">isNaN</span>(<span class="built_in">parseFloat</span>(arr[i])) )&#123;</span><br><span class="line">		arr2.push(arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//把 NaN 所在的位置找出来</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">isNaN</span>(<span class="built_in">Number</span>(arr[i])) &amp;&amp; (<span class="keyword">typeof</span>(arr[i]) == <span class="string">"number"</span>))&#123;</span><br><span class="line">		find.push(i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> arr1)&#123;</span><br><span class="line">	arr2.push(arr1[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//转成数字</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> arr2)&#123;</span><br><span class="line">	arr3[i] = <span class="built_in">parseFloat</span>(arr2[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 把转成数字以后，最大值判断出来：300</span></span><br><span class="line"><span class="keyword">var</span> max = arr3[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;arr3.length;i++)&#123;</span><br><span class="line">	<span class="keyword">if</span>(max&lt;arr3[i])&#123;</span><br><span class="line">		max = arr3[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr1);</span><br><span class="line"><span class="built_in">console</span>.log(arr2);</span><br><span class="line"><span class="built_in">console</span>.log(arr3);</span><br><span class="line"><span class="built_in">console</span>.log(max);</span><br><span class="line"><span class="built_in">console</span>.log(find);</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -671,7 +679,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -782,7 +790,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">77k</span>
+    <span title="Site words total count">87.2k</span>
   
 </div>
 

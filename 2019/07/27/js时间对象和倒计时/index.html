@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="时间对象   获取当前时间(既计算机读到这句函数时)系统的时间对象 12var myTime  = new Date();//objectDate() //直接调用也会返回一个当前时间的字符串(无论传什么参数)  注意：时间对象是对象类型，而获取的时间是数字类型： 12345678910var iYear = myTime.getFullYear(); //获取年var iMonth = myT">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js时间对象和倒计时">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/js时间对象和倒计时/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="时间对象   获取当前时间(既计算机读到这句函数时)系统的时间对象 12var myTime  = new Date();//objectDate() //直接调用也会返回一个当前时间的字符串(无论传什么参数)  注意：时间对象是对象类型，而获取的时间是数字类型： 12345678910var iYear = myTime.getFullYear(); //获取年var iMonth = myT">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-28T07:14:42.046Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js时间对象和倒计时">
+<meta name="twitter:description" content="时间对象   获取当前时间(既计算机读到这句函数时)系统的时间对象 12var myTime  = new Date();//objectDate() //直接调用也会返回一个当前时间的字符串(无论传什么参数)  注意：时间对象是对象类型，而获取的时间是数字类型： 12345678910var iYear = myTime.getFullYear(); //获取年var iMonth = myT">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/27/js时间对象和倒计时/">
+
+
+
+
+
+  <title>js时间对象和倒计时 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/js时间对象和倒计时/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js时间对象和倒计时</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-27T10:51:19+08:00">
+                2019-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/27/js时间对象和倒计时/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/27/js时间对象和倒计时/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><h4 id="时间对象"><a href="#时间对象" class="headerlink" title="时间对象"></a>时间对象</h4></li>
+</ul>
+<ol>
+<li><p><strong>获取当前时间</strong>(既计算机读到这句函数时)系统的时间对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myTime  = <span class="keyword">new</span> <span class="built_in">Date</span>();<span class="comment">//object</span></span><br><span class="line"><span class="built_in">Date</span>() <span class="comment">//直接调用也会返回一个当前时间的字符串(无论传什么参数)</span></span><br></pre></td></tr></table></figure>
+
+<p><font color="red">注意：时间对象是对象类型，而获取的时间是数字类型：</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iYear = myTime.getFullYear(); <span class="comment">//获取年</span></span><br><span class="line"><span class="keyword">var</span> iMonth = myTime.getMonth()+<span class="number">1</span>; <span class="comment">//获取月，月份是0-11的数字，需要在结果上+1</span></span><br><span class="line"><span class="keyword">var</span> iDate = myTime.getDate(); <span class="comment">//获取日</span></span><br><span class="line"><span class="keyword">var</span> iWeek = myTime.getDay(); <span class="comment">//获取星期，星期是0-6的数字，需要转换一下显示方式才能用</span></span><br><span class="line"><span class="keyword">var</span> weeks = [<span class="string">"星期日"</span>,<span class="string">"星期一"</span>,<span class="string">"星期二"</span>,<span class="string">"星期三"</span>,<span class="string">"星期四"</span>,<span class="string">"星期五"</span>,<span class="string">"星期六"</span>];</span><br><span class="line"><span class="keyword">var</span> sWeek = weeks[iWeek];</span><br><span class="line"><span class="keyword">var</span> iHours = myTime.getHours(); <span class="comment">//获取时</span></span><br><span class="line"><span class="keyword">var</span> iMin = myTime.getMinutes(); <span class="comment">//获取分</span></span><br><span class="line"><span class="keyword">var</span> iSec = myTime.getSeconds(); <span class="comment">//获取秒</span></span><br><span class="line"><span class="keyword">var</span> iMsec = myTime.getMilliseconds(); <span class="comment">//获取毫秒</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>时间对象上还能获取的特殊值string类型，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sDate = myTime.toLocaleDateString(); <span class="comment">//获取年月日(字符串)</span></span><br><span class="line"><span class="keyword">var</span> sTime = myTime.toLocaleTimeString(); <span class="comment">//获取时分秒(字符串)</span></span><br><span class="line"><span class="keyword">var</span> sAllTime = myTime.toLocaleString();  <span class="comment">//获取年月日时分秒(字符串)</span></span><br></pre></td></tr></table></figure>
+
+<p>但往往上面得到的未必是我们需要的格式，因此<strong>一般都是将前面获取的所有数字进行拼接成时间字符串</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tFormat(iYear) +<span class="string">'/'</span>+tFormat(iMonth)+<span class="string">'/'</span>+tFormat(iDate)+<span class="string">' '</span>+sWeek+<span class="string">' '</span>+tFormat(iHours)+<span class="string">':'</span>+tFormat(iMin)+<span class="string">':'</span>+tFormat(iSec);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tFormat</span>(<span class="params">n</span>)</span>&#123; </span><br><span class="line">    <span class="keyword">return</span> n &lt; <span class="number">10</span> ? <span class="string">"0"</span>+n : <span class="string">""</span>+n; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">注意：通常时间格式使用的数字应该是两位数，因此需要把所有的个位数前面补’0’，我们可以自己封装一个小于10前面加0的函数tFormat</font></p>
+</li>
+<li><p><strong>时间戳</strong>：是1970日1月1日0时0分0秒到现在的时间的毫秒数，下面三个方法等价：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>().getTime(); </span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>().valueOf();</span><br><span class="line"><span class="built_in">Date</span>.now();  <span class="comment">//ES5的方法</span></span><br></pre></td></tr></table></figure>
+
+<p>用途：可以用来判断一段程序运行的时间差，或者每次需要得到一个不同的数字时使用</p>
+</li>
+</ol>
+<hr>
+<ul>
+<li><h4 id="倒计时"><a href="#倒计时" class="headerlink" title="倒计时"></a>倒计时</h4></li>
+</ul>
+<ol>
+<li><p>用在团购，抢购等网站，<strong>原理是现在的时间点(一直在变)与终点(不会变)两个时间的差就是倒计时(毫秒)</strong></p>
+</li>
+<li><p>如果在实例化时间对象时给其传参就可以设置一个时间对象，有</p>
+</li>
+<li><p>如下几种格式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iNew = <span class="keyword">new</span> <span class="built_in">Date</span>(毫秒数); <span class="comment">//将毫秒数的对应时间返回，可以是一个负数，表示1970年1月1日之前的时间。</span></span><br><span class="line"><span class="keyword">var</span> iNew = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2016-08-01'</span>);<span class="comment">//假设用户处于格林尼治国际标准时的时区。ES6规定凡是没有指定时区时认为用户处于本地时区。</span></span><br><span class="line"><span class="keyword">var</span> iNew = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2016</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">9</span>,<span class="number">48</span>,<span class="number">12</span>); <span class="comment">//数字形式，这里的月也是当前月份-1</span></span><br><span class="line"><span class="keyword">var</span> iNew = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'September 1,2016 9:48:12'</span>); <span class="comment">//字符串形式</span></span><br><span class="line"><span class="built_in">Date</span>.parse(<span class="string">'January 26, 2011 13:51:50'</span>); <span class="comment">//如果要把一个时间字符串转换成毫秒数需要用Date.parse方法  </span></span><br><span class="line"><span class="built_in">Date</span>.parse(<span class="string">'2011-10-10'</span>);  <span class="comment">//如果Date.parse解析失败则返回NaN</span></span><br><span class="line"><span class="built_in">Date</span>.parse(<span class="string">'2011-10-10T14:48:00'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另外一种方式是<strong>直接在当前时间对象上设置新时间(该类方法返回的是设置后时间的时间戳)</strong>，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iNow = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">iNow.setDate(<span class="number">15</span>); <span class="comment">//将时间设置为本月15日</span></span><br><span class="line">iNow.setDate(iNow.getDate()+<span class="number">5</span>); <span class="comment">//设置日期为当前日期后5天</span></span><br><span class="line">iNow.setFullYear()　　　　<span class="comment">//设置当前年份(四位数字，月日是可选参数)</span></span><br><span class="line">iNow.setHours()　　　　　 <span class="comment">//设置当前小时数(24小时制,0-23)</span></span><br><span class="line">iNow.setMilliseconds()　　<span class="comment">//设置当前毫秒数</span></span><br><span class="line">iNow.setMinutes()　　　　 <span class="comment">//设置当前分钟数</span></span><br><span class="line">iNow.setMonth()　　　　　 <span class="comment">//设置当前月份(注意从0开始:0-Jan,1-Feb...)</span></span><br><span class="line">iNow.setSeconds()　　　　 <span class="comment">//设置当前秒数</span></span><br></pre></td></tr></table></figure>
+
+<p>这些参数如果超出了正常范围，会被自动折算。比如，如果月设为15，就表示下一年的4月；设置为-2，就表示上一年的11月。</p>
+</li>
+<li><p>计算时间差，无论用哪种方法设置了未来时间，用未来时间-当前时间就是两者时间差(毫秒)：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--	    alert( myDate &gt; today ? <span class="string">"今天在2018年9月1日之前"</span> : <span class="string">"今天在2018年9月1日之后"</span> ); <span class="comment">//两个时间对象比较大小</span></span><br><span class="line">    <span class="keyword">var</span> t = (iNew - iNow)/<span class="number">1000</span>; <span class="comment">//计算差值，用math.floor向下取整</span></span><br><span class="line">    <span class="keyword">var</span> iD = <span class="built_in">Math</span>.floor(t/<span class="number">86400</span>); <span class="comment">//毫秒转天</span></span><br><span class="line">    <span class="keyword">var</span> iH = <span class="built_in">Math</span>.floor(t%<span class="number">86400</span>/<span class="number">3600</span>); <span class="comment">//毫秒转时</span></span><br><span class="line">    <span class="keyword">var</span> iM = <span class="built_in">Math</span>.floor(t%<span class="number">3600</span>/<span class="number">60</span>); <span class="comment">//毫秒转分</span></span><br><span class="line">    <span class="keyword">var</span> iS = t%<span class="number">60</span>; <span class="comment">//毫秒转秒</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<p><font size="5" color="gree">练习：</font></p>
+<p><font size="4">1. 小明情人节给女朋友做了一段js，并定了饭店，可女朋友没有去，请问原因是什么：</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oTime = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">if</span> (oTime.getMonth() === <span class="number">2</span> &amp;&amp; oTime.getDate() === <span class="number">14</span>) &#123;</span><br><span class="line">    alert(<span class="string">'亲爱的，我预定了晚餐，晚上6点在餐厅见！'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font size="4">2. 用任意方法设置一个未来时间：今天五天之后，6小时后</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oTime = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">oTime.setDate(oTime.getDate()+<span class="number">5</span>);</span><br><span class="line">oTime.setHours(oTime.getHours()+<span class="number">6</span>);</span><br><span class="line"><span class="built_in">console</span>.log(oTime);</span><br></pre></td></tr></table></figure>
+
+<p><font size="4">3. 用计时器把当前时间的时分秒每1秒钟在页面的p标签中展示一次时间格式(xx:xx:xx的格式)，做出一个时钟效果，第一秒页面也要展示一次时间</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oP = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>)[<span class="number">0</span>];</span><br><span class="line">clock();</span><br><span class="line">setInterval(clock,<span class="number">1000</span>);<span class="function"><span class="keyword">function</span> <span class="title">clock</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> iTime = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        <span class="keyword">var</span> iHours = iTime.getHours(); <span class="comment">//获取时</span></span><br><span class="line">        <span class="keyword">var</span> iMin = iTime.getMinutes(); <span class="comment">//获取分</span></span><br><span class="line">        <span class="keyword">var</span> iSec = iTime.getSeconds(); <span class="comment">//获取秒</span></span><br><span class="line">        oP.innerHTML = add0(iHours) + <span class="string">":"</span> + add0(iMin) + <span class="string">":"</span> + add0(iSec);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add0</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num&lt;<span class="number">10</span> ? <span class="string">"0"</span>+ num : <span class="string">""</span> + num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font size="4">4. 设置一个未来时间，做一个秒杀倒计时，而且显示的所有数字和“:”用图片显示</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><font size="4">5. 倒计时：距离放假还有<em>:</em>:* </font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oSpan = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"span"</span>)[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> oTimeNew = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    oTimeNew.setHours(<span class="number">16</span>);</span><br><span class="line">    oTimeNew.setMinutes(<span class="number">30</span>);</span><br><span class="line">    oTimeNew.setSeconds(<span class="number">0</span>);</span><br><span class="line">    clock();</span><br><span class="line">    <span class="keyword">var</span> timer = setInterval(clock,<span class="number">1000</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">clock</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> t = (oTimeNew - <span class="keyword">new</span> <span class="built_in">Date</span>())/<span class="number">1000</span>;</span><br><span class="line">        <span class="keyword">var</span> iH = <span class="built_in">Math</span>.floor(t%<span class="number">86400</span>/<span class="number">3600</span>); <span class="comment">//毫秒转时</span></span><br><span class="line">        <span class="keyword">var</span> iM = <span class="built_in">Math</span>.floor(t%<span class="number">3600</span>/<span class="number">60</span>); <span class="comment">//毫秒转分</span></span><br><span class="line">        <span class="keyword">var</span> iS = t%<span class="number">60</span>; <span class="comment">//毫秒转秒 --&gt;</span></span><br><span class="line">        oSpan.innerHTML = add0(iH) +  <span class="string">":"</span> + add0(iM) + <span class="string">":"</span> + add0(iS);</span><br><span class="line">        t == <span class="number">0</span> &amp;&amp; clearIntervaltimer(timer);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">add0</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num&lt;<span class="number">10</span> ? <span class="string">"0"</span>+ num : <span class="string">""</span> + num;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/27/js特殊函数和运算符/" rel="next" title="js特殊函数和运算符">
+                <i class="fa fa-chevron-left"></i> js特殊函数和运算符
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/27/js计时器和动画/" rel="prev" title="js计时器和动画">
+                js计时器和动画 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#时间对象"><span class="nav-number">1.</span> <span class="nav-text">时间对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#倒计时"><span class="nav-number">2.</span> <span class="nav-text">倒计时</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">87.2k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/07/27/js时间对象和倒计时/';
+          this.page.identifier = '2019/07/27/js时间对象和倒计时/';
+          this.page.title = 'js时间对象和倒计时';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

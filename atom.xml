@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-24T07:57:17.539Z</updated>
+  <updated>2019-07-15T12:49:04.233Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,233 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>html和css知识点</title>
+    <link href="http://yoursite.com/2019/08/01/html%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>http://yoursite.com/2019/08/01/html知识点/</id>
+    <published>2019-08-01T01:12:03.624Z</published>
+    <updated>2019-07-15T12:49:04.233Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;HTML部分知识点总结&quot;&gt;&lt;a href=&quot;#HTML部分知识点总结&quot; class=&quot;headerlink&quot; title=&quot;HTML部分知识点总结&quot;&gt;&lt;/a&gt;&lt;strong&gt;HTML部分知识点总结&lt;/strong&gt;&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The Operation Of Hexo</title>
+    <link href="http://yoursite.com/2019/08/01/hello-world/"/>
+    <id>http://yoursite.com/2019/08/01/hello-world/</id>
+    <published>2019-08-01T01:12:03.618Z</published>
+    <updated>2019-07-05T16:07:43.796Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="operation" scheme="http://yoursite.com/tags/operation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js字符串和数组方法</title>
+    <link href="http://yoursite.com/2019/07/27/js%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/07/27/js字符串和数组方法/</id>
+    <published>2019-07-27T15:06:32.000Z</published>
+    <updated>2019-07-27T15:20:00.194Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;字符串方法&quot;&gt;&lt;a href=&quot;#字符串方法&quot; class=&quot;headerlink&quot; title=&quot;字符串方法&quot;&gt;&lt;/a&gt;字符串方法&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;前面我们学习了字符串，&lt;font
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js计时器和动画</title>
+    <link href="http://yoursite.com/2019/07/27/js%E8%AE%A1%E6%97%B6%E5%99%A8%E5%92%8C%E5%8A%A8%E7%94%BB/"/>
+    <id>http://yoursite.com/2019/07/27/js计时器和动画/</id>
+    <published>2019-07-27T02:52:28.000Z</published>
+    <updated>2019-07-28T02:52:29.558Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;获取元素样式&quot;&gt;&lt;a href=&quot;#获取元素样式&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js时间对象和倒计时</title>
+    <link href="http://yoursite.com/2019/07/27/js%E6%97%B6%E9%97%B4%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%80%92%E8%AE%A1%E6%97%B6/"/>
+    <id>http://yoursite.com/2019/07/27/js时间对象和倒计时/</id>
+    <published>2019-07-27T02:51:19.000Z</published>
+    <updated>2019-07-28T07:14:42.046Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;时间对象&quot;&gt;&lt;a href=&quot;#时间对象&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js特殊函数和运算符</title>
+    <link href="http://yoursite.com/2019/07/27/js%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>http://yoursite.com/2019/07/27/js特殊函数和运算符/</id>
+    <published>2019-07-27T02:37:44.000Z</published>
+    <updated>2019-07-27T06:15:29.535Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;自执行-立即执行-自调用-函数&quot;&gt;&lt;a href=&quot;#自执行-立即执行-自调用-函数&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js获取作用域的数据和闭包</title>
+    <link href="http://yoursite.com/2019/07/27/js%E8%8E%B7%E5%8F%96%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E5%92%8C%E9%97%AD%E5%8C%85/"/>
+    <id>http://yoursite.com/2019/07/27/js获取作用域的数据和闭包/</id>
+    <published>2019-07-27T00:48:41.000Z</published>
+    <updated>2019-08-02T14:45:16.180Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;闭包&quot;&gt;&lt;a href=&quot;#闭包&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js函数的返回值和arguments对象</title>
+    <link href="http://yoursite.com/2019/07/26/js%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%E5%92%8Carguments%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2019/07/26/js函数的返回值和arguments对象/</id>
+    <published>2019-07-26T06:52:42.000Z</published>
+    <updated>2019-07-27T01:54:58.791Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;函数的创建形式&quot;&gt;&lt;a href=&quot;#函数的创建形式&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js函数的参数和作用域</title>
+    <link href="http://yoursite.com/2019/07/26/js%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    <id>http://yoursite.com/2019/07/26/js函数的参数和作用域/</id>
+    <published>2019-07-26T01:02:29.000Z</published>
+    <updated>2019-07-26T03:49:06.152Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;函数的参数&quot;&gt;&lt;a href=&quot;#函数的参数&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux运维初级-十一、使用Apache部署静态网站</title>
@@ -106,7 +333,7 @@
     <link href="http://yoursite.com/2019/07/21/js%E5%B8%83%E5%B0%94%E5%80%BC%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/"/>
     <id>http://yoursite.com/2019/07/21/js布尔值和自定义属性/</id>
     <published>2019-07-21T05:38:37.000Z</published>
-    <updated>2019-07-21T13:40:34.573Z</updated>
+    <updated>2019-07-26T02:10:33.152Z</updated>
     
     <summary type="html">
     
@@ -158,7 +385,7 @@
     <link href="http://yoursite.com/2019/07/20/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
     <id>http://yoursite.com/2019/07/20/js数据类型详解和数据类型转换/</id>
     <published>2019-07-20T15:38:40.000Z</published>
-    <updated>2019-07-21T13:28:15.909Z</updated>
+    <updated>2019-07-26T02:01:14.498Z</updated>
     
     <summary type="html">
     
@@ -303,258 +530,6 @@
     
     
       <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript的概述和历史</title>
-    <link href="http://yoursite.com/2019/07/19/javascript%E7%9A%84%E6%A6%82%E8%BF%B0%E5%92%8C%E5%8E%86%E5%8F%B2/"/>
-    <id>http://yoursite.com/2019/07/19/javascript的概述和历史/</id>
-    <published>2019-07-18T16:29:12.000Z</published>
-    <updated>2019-07-18T16:30:11.187Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ol&gt;
-&lt;li&gt;JavaScript作为赋予网页活力与交互性的主要手段之一，已成为web设计师和开发人员的必备技能。但它诞生时其实是个屌丝，没有想到发展到如今的地位&lt;/li&gt;
-&lt;li&gt;JavaScript是被人误解和误用最多的主流编程语言，很多人将它看作Java等面向对象语言的
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WEB前端CSS3选择器和常用样式</title>
-    <link href="http://yoursite.com/2019/07/18/WEB%E5%89%8D%E7%AB%AFCSS3%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8C%E5%B8%B8%E7%94%A8%E6%A0%B7%E5%BC%8F/"/>
-    <id>http://yoursite.com/2019/07/18/WEB前端CSS3选择器和常用样式/</id>
-    <published>2019-07-18T13:24:51.000Z</published>
-    <updated>2019-07-19T01:16:35.745Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;CSS3基础&lt;/font&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;h4
-        
-      
-    
-    </summary>
-    
-    
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WEB前端BFC和三栏式布局、SEO和服务器、HTTP</title>
-    <link href="http://yoursite.com/2019/07/18/WEB%E5%89%8D%E7%AB%AFBFC%E5%92%8C%E4%B8%89%E6%A0%8F%E5%BC%8F%E5%B8%83%E5%B1%80%E3%80%81SEO%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E3%80%81HTTP/"/>
-    <id>http://yoursite.com/2019/07/18/WEB前端BFC和三栏式布局、SEO和服务器、HTTP/</id>
-    <published>2019-07-18T12:41:08.000Z</published>
-    <updated>2019-07-18T13:22:27.416Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;BFC-Block-fomatting-context&quot;&gt;&lt;a href=&quot;#BFC-Block-fomatting-context&quot; class=&quot;headerlink&quot; title=&quot;BFC(Block fomatting
-        
-      
-    
-    </summary>
-    
-    
-      <category term="html" scheme="http://yoursite.com/tags/html/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux运维初级-八、VIM程序编辑器</title>
-    <link href="http://yoursite.com/2019/07/18/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E5%85%AB%E3%80%81VIM%E7%A8%8B%E5%BA%8F%E7%BC%96%E8%BE%91%E5%99%A8/"/>
-    <id>http://yoursite.com/2019/07/18/Linux运维初级-八、VIM程序编辑器/</id>
-    <published>2019-07-18T08:31:00.000Z</published>
-    <updated>2019-07-22T07:17:37.557Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;八、VIM程序编辑器&lt;/font&gt;&lt;/center&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;作用：是一种打开文本文件的程序，可以编辑改文件已达到配置服务的功能&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;分类：&lt;/p&gt;
-&lt;p&gt;(1)
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux运维初级--- 七、RAID 与 LVM</title>
-    <link href="http://yoursite.com/2019/07/17/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E4%B8%83%E3%80%81RAID-%E4%B8%8E-LVM/"/>
-    <id>http://yoursite.com/2019/07/17/Linux运维初级-七、RAID-与-LVM/</id>
-    <published>2019-07-17T06:53:02.000Z</published>
-    <updated>2019-07-18T08:28:22.592Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;七、RAID 与 LVM&lt;/font&gt;&lt;/center&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;RAID&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;(1) RAID : Redundant   Array    of   
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux运维初级--- 六、磁盘管理</title>
-    <link href="http://yoursite.com/2019/07/17/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E5%85%AD%E3%80%81%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/"/>
-    <id>http://yoursite.com/2019/07/17/Linux运维初级-六、磁盘管理/</id>
-    <published>2019-07-17T03:32:43.000Z</published>
-    <updated>2019-07-17T10:24:10.194Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;六、磁盘管理&lt;/font&gt;&lt;/center&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;磁盘基础知识&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;(1) 概念：使用一片或多片带有磁性的铝合金制的盘片构成的外部存储介质&lt;/p&gt;
-&lt;p&gt;(2)
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux运维初级--- 五、用户账户及权限</title>
-    <link href="http://yoursite.com/2019/07/17/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E4%BA%94%E3%80%81%E7%94%A8%E6%88%B7%E8%B4%A6%E6%88%B7%E5%8F%8A%E6%9D%83%E9%99%90/"/>
-    <id>http://yoursite.com/2019/07/17/Linux运维初级-五、用户账户及权限/</id>
-    <published>2019-07-17T03:30:12.000Z</published>
-    <updated>2019-07-17T10:20:55.384Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;三、用户账户及权限&lt;/font&gt;&lt;/center&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;用户账户及身份&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;(1) UUID值&lt;/p&gt;
-&lt;p&gt;​    A. 作用：User
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux运维初级--- 四、文件系统命令</title>
-    <link href="http://yoursite.com/2019/07/17/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E5%9B%9B%E3%80%81%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yoursite.com/2019/07/17/Linux运维初级-四、文件系统命令/</id>
-    <published>2019-07-17T03:28:10.000Z</published>
-    <updated>2019-07-17T07:43:02.274Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;四、文件系统命令&lt;/font&gt;&lt;/center&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;FHS&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;(1) FHS：Linux文件系统层次化标准&lt;/p&gt;
-&lt;p&gt;(2)
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux运维初级--- 三、常用Linux命令</title>
-    <link href="http://yoursite.com/2019/07/17/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E4%B8%89%E3%80%81%E5%B8%B8%E7%94%A8Linux%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yoursite.com/2019/07/17/Linux运维初级-三、常用Linux命令/</id>
-    <published>2019-07-17T03:27:35.000Z</published>
-    <updated>2019-07-17T06:48:21.097Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;命令提示符的意义&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;（1）[root@localhost   ~] &lt;/p&gt;
-&lt;p&gt;​     A.   root:表示当前登录账户名称&lt;/p&gt;
-&lt;p&gt;​     B.   @：表示分隔符&lt;/p&gt;
-&lt;p&gt;​ 
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
   </entry>
   

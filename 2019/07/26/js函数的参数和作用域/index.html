@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="函数的参数   函数在声明和调用时，有个小括号，这里就是放置参数的地方： 1234function fn1(a)&amp;#123;  //相当于在函数的内部 var a    alert(a);&amp;#125;;  fn1(100);   //函数调用的时候为a赋值 a = 100  注意：函数声明时的a叫做形参：形式上的参数，用一个变量代表值的参数，只会出现在函数声明的时候；函数调用里的100叫做实参，">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js函数的参数和作用域">
+<meta property="og:url" content="http://yoursite.com/2019/07/26/js函数的参数和作用域/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="函数的参数   函数在声明和调用时，有个小括号，这里就是放置参数的地方： 1234function fn1(a)&amp;#123;  //相当于在函数的内部 var a    alert(a);&amp;#125;;  fn1(100);   //函数调用的时候为a赋值 a = 100  注意：函数声明时的a叫做形参：形式上的参数，用一个变量代表值的参数，只会出现在函数声明的时候；函数调用里的100叫做实参，">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-26T03:49:06.152Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js函数的参数和作用域">
+<meta name="twitter:description" content="函数的参数   函数在声明和调用时，有个小括号，这里就是放置参数的地方： 1234function fn1(a)&amp;#123;  //相当于在函数的内部 var a    alert(a);&amp;#125;;  fn1(100);   //函数调用的时候为a赋值 a = 100  注意：函数声明时的a叫做形参：形式上的参数，用一个变量代表值的参数，只会出现在函数声明的时候；函数调用里的100叫做实参，">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/26/js函数的参数和作用域/">
+
+
+
+
+
+  <title>js函数的参数和作用域 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/js函数的参数和作用域/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js函数的参数和作用域</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T09:02:29+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/26/js函数的参数和作用域/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/07/26/js函数的参数和作用域/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><h4 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h4></li>
+</ul>
+<ol>
+<li><p>函数在声明和调用时，有个小括号，这里就是放置参数的地方：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">a</span>)</span>&#123;  <span class="comment">//相当于在函数的内部 var a</span></span><br><span class="line">    alert(a);</span><br><span class="line">&#125;;  </span><br><span class="line">fn1(<span class="number">100</span>);   <span class="comment">//函数调用的时候为a赋值 a = 100</span></span><br></pre></td></tr></table></figure>
+
+<p><font color="red">注意：函数声明时的a叫做形参：形式上的参数，用一个变量代表值的参数，只会出现在函数声明的时候；函数调用里的100叫做实参，给函数实际传递的参数值，只会出现在函数被调用的时候</font></p>
+</li>
+<li><p>因为形参相当于变量，因而实参可以存任何数据类型：数字、字符串、布尔值、函数、对象、未定义等；参数可以有多个，参数之间用”,”分割，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fn1(<span class="number">100</span>,<span class="string">"px"</span>); </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">a,b</span>)</span>&#123; </span><br><span class="line">    alert(a+b); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数的封装：由顺序、选择和循环三种基本结构组成，功能相对独立的一个模块，如下，根据参数的类型函数会执行不同的操作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> m = <span class="number">100</span>;<span class="comment">//数字</span></span><br><span class="line"><span class="keyword">var</span> n = <span class="string">"num"</span>;<span class="comment">//字符串</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="number">1</span>);&#125;<span class="comment">//函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">switch</span>(<span class="keyword">typeof</span>(a))&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'number'</span>: alert(a+<span class="number">20</span>); <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'string'</span>: alert(a.charAt(<span class="number">2</span>)); <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'function'</span>: a();<span class="comment">//调用函数</span></span><br><span class="line">            <span class="keyword">default</span>: <span class="built_in">console</span>.log(a);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">fn1(m);<span class="comment">//函数调用</span></span><br><span class="line">fn1(n);</span><br><span class="line">fn1(c);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数的封装的注意事项：</p>
+<ul>
+<li>尽量保证HTML代码结构一致(否则很难重用代码)</li>
+<li>需要把核心程序实现，再用函数包裹起来</li>
+<li>把每组中不同的值找出来，通过传参分别实现效果</li>
+<li>运算符号是不能作为参数传递的，只能在函数内部通过判断的方式来分别执行</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ul>
+<li><h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4></li>
+</ul>
+<ol>
+<li><p>域：空间、范围、区域。如：js必须放在script里，css放在style里，它的作用就是(在一个范围内)读和写</p>
+</li>
+<li><p>浏览器有读js的解析器，当进入script标签后：</p>
+<ul>
+<li>第1步–预解析：找到全局的var和function(变量提升)，先检查function函数名和内容并储存，当发现重名时，后面的函数覆盖前面的函数；再检查var的变量储存并初始化值undefind，但是发现重名时会跳过储存(不管重复的是变量名还是函数名)</li>
+<li>第2步–逐行读代码：变量被赋值之前的值是初始化时的undefind，直到读到=、+、-、*、/、%、++、–、！等表达式才会获得新值，而读到函数声明时则什么都不会做，直到函数被调用才会执行其内容代码</li>
+</ul>
+</li>
+<li><p>看一个例子，并分别分析下面代码中的alert(a)都弹出什么：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">alert(a);  <span class="comment">//1、第一次弹出a，再声明变量a  弹出function a()&#123; alert(4); &#125;</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">alert(a);  <span class="comment">//2、第一次弹出a，再为a赋值		弹出1</span></span><br><span class="line">a = <span class="number">1</span>;</span><br><span class="line">alert(a);  <span class="comment">//3、多次弹出a，再中间多次声明变量和函数a	</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">alert(a);		<span class="comment">//1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123; alert(<span class="number">2</span>); &#125;</span><br><span class="line">alert(a);	<span class="comment">//1</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">alert(a);		<span class="comment">//3</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123; alert(<span class="number">4</span>); &#125;</span><br><span class="line">alert(a);			<span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：没有var的写法只存在于面试中，我们写的代码中不允许出现</p>
+</li>
+<li><p>在script标签里定义的变量是全局变量和函数，若写有两个script标签则是2个域，每个域的解析独立进行：上面script标签输出不了下面script声明的变量；下面script标签可以输出上面script声明的变量</p>
+</li>
+<li><p>另外一个函数的内部也是一个域，因此函数被调用时也会第一时间开始域解析，函数内部的变量是局部变量，该变量会在函数调用结束时销毁。注意：函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量。</p>
+</li>
+<li><p>作用域链：在一个域内没有找到某变量时，会由里到外，自上到下去更高级的域中去寻找，继续分析下面代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;   <span class="comment">//1、函数内外都声明有a变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123; alert(a); <span class="keyword">var</span> a = <span class="number">2</span>; &#125;</span><br><span class="line">fn1();</span><br><span class="line">alert(a);</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;   <span class="comment">//2、全局声明a变量，函数未声明a变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123; alert(a); a = <span class="number">2</span>; &#125;</span><br><span class="line">fn1();</span><br><span class="line">alert(a);</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;   <span class="comment">//3、全局声明a变量，函数有a形参</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">a</span>)</span>&#123; alert(a); a = <span class="number">2</span>; &#125; </span><br><span class="line">fn1();</span><br><span class="line">alert(a);</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;   <span class="comment">//4、全局声明a变量，函数未声明a变量，调用有a实参</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123; alert(a); a = <span class="number">2</span>; &#125;</span><br><span class="line">fn1(a);</span><br><span class="line">alert(a);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：if(){}和for(){}的花括号不是域；匿名函数的{}里是一个域；当js出现错误的时候，如果不是代码写错了，那就是代码的解析机制想错了</p>
+</li>
+</ol>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<p><font size="4">1. 封装一个函数，3个参数（a , b , c），如果参数a的结果为”+”，则输出b和c的和；如果参数a的结果为”-“，则输出b和c的差</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">switch</span>(a)&#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">"+"</span>: <span class="built_in">console</span>.log(b+c);<span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">"-"</span>: <span class="built_in">console</span>.log(b-c);<span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn1(<span class="string">"+"</span>,<span class="number">5</span>,<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+
+<p>做一个根据图片数量生成对应数量按钮，并通过点击按钮控制图片的切换，用传参的方式封装函数，要求并在页面中设置两个图片切换，区别1图片数量不同，区别2切换的方式不同(一个hover效果，一个click效果)</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/23/Linux运维初级-十一、使用Apache部署静态网站/" rel="next" title="Linux运维初级-十一、使用Apache部署静态网站">
+                <i class="fa fa-chevron-left"></i> Linux运维初级-十一、使用Apache部署静态网站
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/26/js函数的返回值和arguments对象/" rel="prev" title="js函数的返回值和arguments对象">
+                js函数的返回值和arguments对象 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的参数"><span class="nav-number">1.</span> <span class="nav-text">函数的参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域"><span class="nav-number">2.</span> <span class="nav-text">作用域</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">87.2k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/07/26/js函数的参数和作用域/';
+          this.page.identifier = '2019/07/26/js函数的参数和作用域/';
+          this.page.title = 'js函数的参数和作用域';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

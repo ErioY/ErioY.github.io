@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="ErioY">
 <meta property="og:description" content="数据类型转换   布尔值类型: Boolean(value)把值转换成Boolean型 Boolean方法和之前的Number方法和String方法进行数值类型转换时，都将创建一个新值，存放由原始值直接转换成的值。 在进行比较时，也会得到一个布尔值，如&amp;gt;、&amp;lt;、或都会让字符串和数字的比较结果正确显示，但两个字符串不行(因为字符串是没有固定大小的原始类型)，如：’10’&amp;gt;9和’10">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-21T13:40:34.573Z">
+<meta property="og:updated_time" content="2019-07-26T02:10:33.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js布尔值和自定义属性">
 <meta name="twitter:description" content="数据类型转换   布尔值类型: Boolean(value)把值转换成Boolean型 Boolean方法和之前的Number方法和String方法进行数值类型转换时，都将创建一个新值，存放由原始值直接转换成的值。 在进行比较时，也会得到一个布尔值，如&amp;gt;、&amp;lt;、或都会让字符串和数字的比较结果正确显示，但两个字符串不行(因为字符串是没有固定大小的原始类型)，如：’10’&amp;gt;9和’10">
@@ -449,7 +449,7 @@
 <li><font color="orange"><strong>比较：</strong></font>比较会在判断前==将两边转换成数字==然后比较其值，<font color="red"><strong>但是有几种情况比较特殊</strong></font><ul>
 <li>如果两边有<code>null</code>和<code>undefined</code>时，不会发生转换数字的，因此null和undefined只与自己和对方相等</li>
 <li>由于字符串没有固定大小，因此转数字会变成NaN，所以它也不会发生数字类型转换，而是从左向右一位一位的比较unicode编码大小</li>
-<li>由于对象转换数字也是NaN，因此如果两边都为对象的时候也不会发生数字类型转换，而是按照对象在内存中的地址比较，地址相同既相等，否则不等</li>
+<li>由于对象转换数字也是NaN，因此如果两边都为对象的时候也不会发生数字类型转换，而是按照对象在内存中的地址比较，<strong>地址相同即相等</strong>，否则不等</li>
 </ul>
 </li>
 </ol>
@@ -457,26 +457,29 @@
 <ol>
 <li><p>不要用<code>new Number()/Boolean()/String()</code>等构造函数实例化的方式去创建包装对象，因为这样创建出来的是object类型</p>
 </li>
-<li><p>判断Array使用Array.isArray(arr)</p>
+<li><p>判断Array（数组是数组）使用<code>Array.isArray(arr)</code></p>
 </li>
-<li><p>判断null请使用myVar === null</p>
+<li><p>判断null请使用<code>myVar === null</code></p>
 </li>
-<li><p>number对象(非变量(调用toString()报SyntaxError：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">123.toString(); // 报SyntaxError</span><br><span class="line">//遇到这种情况，要特殊处理一下：</span><br><span class="line">123..toString(); // &apos;123&apos;, 注意是两个点！</span><br><span class="line">(123).toString(); // &apos;123&apos;</span><br></pre></td></tr></table></figure>
+<li><p>number对象(非变量(调用<code>toString()</code>报SyntaxError：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123.</span>toString(); <span class="comment">// 报SyntaxError</span></span><br><span class="line"><span class="comment">//遇到这种情况，要特殊处理一下：</span></span><br><span class="line"><span class="number">123.</span>.toString(); <span class="comment">// '123', 注意是两个点！</span></span><br><span class="line">(<span class="number">123</span>).toString(); <span class="comment">// '123'</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<p>自定义属性：</p>
+<hr>
+<ul>
+<li><h4 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h4></li>
+</ul>
 <ol>
 <li><p>人为给元素上定义本来不存在的属性就是自定义属性，自定义属性一般根据语义去取名，语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.自定义属性 = 123;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素.自定义属性 = <span class="number">123</span>;</span><br></pre></td></tr></table></figure>
 
 <p>注意：自定义属性的操作如同原本属性一样</p>
 </li>
 <li><p>可以为元素添加任意数量的自定义属性，它是js向html添加值的方式之一</p>
 </li>
 <li><p>使用范例：索引值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var i=0;i&lt;n;i++)&#123;</span><br><span class="line">    元素[i].index = i;  //为每一个对象建立&quot;匹配&quot;/&quot;对应&quot;关系</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    元素[i].index = i;  <span class="comment">//为每一个对象建立"匹配"/"对应"关系</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>注意：后面循环几乎都会用到索引值</p>
 </li>
@@ -485,22 +488,16 @@
 <li><p>解决方法就是使用自定义属性，将i的值在循环时保存下来，在函数内部需要的时候使用该自定义属性</p>
 </li>
 </ol>
-<p>练习：</p>
-<ol>
-<li><p>如何让’10’&gt;’9’正确的比较出大小，试着用多种方法来实现</p>
-</li>
-<li><p>看下面代码说出结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(2==true);</span><br><span class="line">console.log(null==0);</span><br><span class="line">console.log(&quot;123&quot;==&quot;0123&quot;);</span><br><span class="line">console.log([]==[]);</span><br><span class="line">console.log([]==![]);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>做3个按钮，起始value为0，每次点击时对应按钮的value值+1</p>
-</li>
-<li><p>在上题的基础上增加一个数组[“A”,”B”,”C”,”D”]，要求每个按钮在点击时，让其value值显示为数组数据的循环(A-&gt;B-&gt;C-&gt;D-&gt;A循环)</p>
-</li>
-<li><p>在点击按钮(3个)时用索引值把arr(3个)里的数据输入到p(3个)标签里</p>
-</li>
-<li><p>写一个img标签并将其图片信息和图片数量等进行布局；按照图片数量动态生成按钮，并写个数组保存图片信息；设置active的样式为红色背景白色字体，第一个按钮的class=”active”，并在点击其他按钮时切换active；尽量使用函数去把代码合并，并在点击按钮时用索引值的一一对应来做当图片切换时同步切换图片信息和图片的数量</p>
-</li>
-</ol>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<p><font size="4">1. 如何让’10’&gt;’9’正确的比较出大小，试着用多种方法来实现</font></p>
+<p>看下面代码说出结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>==<span class="literal">true</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">null</span>==<span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"123"</span>==<span class="string">"0123"</span>);</span><br><span class="line"><span class="built_in">console</span>.log([]==[]);</span><br><span class="line"><span class="built_in">console</span>.log([]==![]);</span><br></pre></td></tr></table></figure>
+
+<p><font size="4">2. 做3个按钮，起始value为0，每次点击时对应按钮的value值+1</font></p>
+<p><font size="4">3. 在上题的基础上增加一个数组[“A”,”B”,”C”,”D”]，要求每个按钮在点击时，让其value值显示为数组数据的循环(A-&gt;B-&gt;C-&gt;D-&gt;A循环)</font></p>
+<p><font size="4">4. 在点击按钮(3个)时用索引值把arr(3个)里的数据输入到p(3个)标签里</font></p>
+<p><font size="4">5. 写一个img标签并将其图片信息和图片数量等进行布局；按照图片数量动态生成按钮，并写个数组保存图片信息；设置active的样式为红色背景白色字体，第一个按钮的class=”active”，并在点击其他按钮时切换active；尽量使用函数去把代码合并，并在点击按钮时用索引值的一一对应来做当图片切换时同步切换图片信息和图片的数量</font></p>
 
       
     </div>
@@ -632,7 +629,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -709,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型转换"><span class="nav-number">1.</span> <span class="nav-text">数据类型转换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型转换"><span class="nav-number">1.</span> <span class="nav-text">数据类型转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义属性"><span class="nav-number">2.</span> <span class="nav-text">自定义属性</span></a></li></ol></div>
             
 
           </div>
@@ -743,7 +740,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">77k</span>
+    <span title="Site words total count">87.2k</span>
   
 </div>
 
