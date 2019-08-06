@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="CSS3 渐变可以让你在两个或多个指定的颜色之间显示平稳的过渡，它有两种渐变分别为线性渐变和径向渐变  CSS3 定义了两种类型的渐变：  线性渐变（Linear Gradients）：向下/向上/向左/向右/对角方向 径向渐变（Radial Gradients）： 由它们的中心定义  浏览器支持：     属性         浏览器类别 IE浏览器 谷歌浏览器 火狐浏览器     linea">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3渐变(Gradients)">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/CSS3渐变(Gradients)/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="CSS3 渐变可以让你在两个或多个指定的颜色之间显示平稳的过渡，它有两种渐变分别为线性渐变和径向渐变  CSS3 定义了两种类型的渐变：  线性渐变（Linear Gradients）：向下/向上/向左/向右/对角方向 径向渐变（Radial Gradients）： 由它们的中心定义  浏览器支持：     属性         浏览器类别 IE浏览器 谷歌浏览器 火狐浏览器     linea">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://img.php.cn/upload/study/000/000/005/5c1b2e36deb6b882.png">
+<meta property="og:image" content="https://img.php.cn/upload/study/000/000/005/5c1b2e6204949924.png">
+<meta property="og:image" content="https://img.php.cn/upload/study/000/000/005/5c1b2e717ab31518.png">
+<meta property="og:image" content="https://img.php.cn/upload/study/000/000/005/5c1b2e7d1c68a591.png">
+<meta property="og:image" content="https://img.php.cn/upload/study/000/000/005/5c1b2e87a001d318.png">
+<meta property="og:updated_time" content="2019-08-06T16:28:46.387Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3渐变(Gradients)">
+<meta name="twitter:description" content="CSS3 渐变可以让你在两个或多个指定的颜色之间显示平稳的过渡，它有两种渐变分别为线性渐变和径向渐变  CSS3 定义了两种类型的渐变：  线性渐变（Linear Gradients）：向下/向上/向左/向右/对角方向 径向渐变（Radial Gradients）： 由它们的中心定义  浏览器支持：     属性         浏览器类别 IE浏览器 谷歌浏览器 火狐浏览器     linea">
+<meta name="twitter:image" content="https://img.php.cn/upload/study/000/000/005/5c1b2e36deb6b882.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/06/CSS3渐变(Gradients)/">
+
+
+
+
+
+  <title>CSS3渐变(Gradients) | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/CSS3渐变(Gradients)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS3渐变(Gradients)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-06T22:14:31+08:00">
+                2019-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/06/CSS3渐变(Gradients)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/06/CSS3渐变(Gradients)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p><font face="黑体"><strong>CSS3 渐变可以让你在两个或多个指定的颜色之间显示平稳的过渡，它有两种渐变分别为线性渐变和径向渐变</strong></font></p>
+</blockquote>
+<p><strong>CSS3 定义了两种类型的渐变：</strong></p>
+<ul>
+<li><font color="orange"><strong>线性渐变（<code>Linear Gradients</code>）</strong></font>：向下/向上/向左/向右/对角方向</li>
+<li><font color="orange"><strong>径向渐变（<code>Radial Gradients</code>）</strong></font>： 由它们的中心定义</li>
+</ul>
+<p><font face="黑体"><strong>浏览器支持：</strong></font> </p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="center"><img src="https://img.php.cn/upload/study/000/000/005/5c1b2e36deb6b882.png" alt="img"></th>
+<th align="center"><img src="https://img.php.cn/upload/study/000/000/005/5c1b2e6204949924.png" alt="img"></th>
+<th align="center"><img src="https://img.php.cn/upload/study/000/000/005/5c1b2e717ab31518.png" alt="img"></th>
+<th align="center"><img src="https://img.php.cn/upload/study/000/000/005/5c1b2e7d1c68a591.png" alt="img"></th>
+<th align="center"><img src="https://img.php.cn/upload/study/000/000/005/5c1b2e87a001d318.png" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">浏览器类别</td>
+<td align="center">IE浏览器</td>
+<td align="center">谷歌浏览器</td>
+<td align="center">火狐浏览器</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">linear-gradient</td>
+<td align="center">10.0</td>
+<td align="center">26.0    10.0            <code>-webkit-</code></td>
+<td align="center">16.0      3.6        <code>-moz-</code></td>
+<td align="center">6.1   5.1                <code>-webkit-</code></td>
+<td align="center">12.1   11.1    <code>-o-</code></td>
+</tr>
+<tr>
+<td align="left">radial-gradient</td>
+<td align="center">10.0</td>
+<td align="center">26.0     10.0             <code>-webkit-</code></td>
+<td align="center">16.0      3.6       <code>-moz-</code></td>
+<td align="center">6.1    5.1             <code>-webkit-</code></td>
+<td align="center">12.1   11.1   <code>-o-</code></td>
+</tr>
+<tr>
+<td align="left">repeating-linear-gradient</td>
+<td align="center">10.0</td>
+<td align="center">26.0     10.0            <code>-webkit-</code></td>
+<td align="center">16.0       3.6      <code>-moz-</code></td>
+<td align="center">6.1    5.1             <code>-webkit-</code></td>
+<td align="center">12.1   11.1   <code>-o-</code></td>
+</tr>
+<tr>
+<td align="left">repeating-radial-gradient</td>
+<td align="center">10.0</td>
+<td align="center">26.0      10.0          <code>-webkit-</code></td>
+<td align="center">16.0        3.6    <code>-moz-</code></td>
+<td align="center">6.1    5.1               <code>-webkit-</code></td>
+<td align="center">12.1   11.1 <code>-o-</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h5 id="1-线性渐变-linear-gradients"><a href="#1-线性渐变-linear-gradients" class="headerlink" title="1.  线性渐变(linear gradients)"></a>1.  线性渐变(<code>linear gradients</code>)</h5><p>​    为了创建一个线性渐变，必须至少定义两种颜色结点(颜色结点即想要呈现平稳过渡的颜色)。同时，也可以设置一个起点和一个方向（或一个角度）。</p>
+<ul>
+<li><p><font color="gree">线性渐变-从上到下（默认情况下）：</font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">450px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(#03a9f4, #f71ab95e); <span class="comment">/* 标准的语法 */</span></span><br><span class="line">    <span class="comment">/* 以下三种均是为了适应浏览器而写，因为我用的是Google浏览器，所以下面只举适应谷歌浏览器的例子 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-webkit-linear-gradient</span>(#03a9f4, #f71ab95e); <span class="comment">/* Safari 5.1 - 6.0 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-o-linear-gradient</span>(#03a9f4, #f71ab95e); <span class="comment">/* Opera 11.1 - 12.0 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-moz-linear-gradient</span>(#03a9f4, #f71ab95e); <span class="comment">/* Firefox 3.6 - 15 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="gree">线性渐变-从左到右：</font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">450px</span>; </span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(left, #03a9f4, #f71ab95e);<span class="comment">/* 标准写法，谷歌浏览器不兼容 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-webkit-linear-gradient</span>(left, #03a9f4, #f71ab95e);<span class="comment">/* 谷歌浏览器 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="gree">线性渐变-对角：</font>可以通过指定水平和垂直的起始位置来制作一个对角渐变</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">450px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(left top, #03a9f4, #f71ab95e);<span class="comment">/* 标准写法，谷歌浏览器不兼容 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-webkit-linear-gradient</span>(left top, #03a9f4, #f71ab95e);<span class="comment">/* 谷歌浏览器 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="gree">线性渐变-自定义角度：</font>如果想要在渐变的方向上做更多的控制，可以自定义一个角度，而不用预定义方向（to bottom、to top、to right、to left、to bottom right等等）</p>
+<p><font color="red">注意：很多浏览器(Chrome,Safari,fiefox等)使用了旧的标准，即 0deg 将创建一个从左到右的渐变，90deg 将创建一个从下到上的渐变。换算公式 90 - x = y 其中 x 为标准角度，y为非标准角度</font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">450px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(150deg, #03a9f4, #f71ab95e);<span class="comment">/* 标准写法 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-webkit-linear-gradient</span>(150deg, #03a9f4, #f71ab95e);<span class="comment">/* 谷歌浏览器 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="gree">线性渐变-使用多个颜色结点：</font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">450px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(pink,#03a9f4, #f71ab95e);<span class="comment">/* 标准语法 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-webkit-linear-gradient</span>(pink,#03a9f4, #f71ab95e);<span class="comment">/* 谷歌浏览器 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="gree">使用透明度（transparent）：</font>CSS3 渐变也支持透明度，可用于创建减弱变淡的效果。为了添加透明度，我们使用 <code>rgba()</code>函数来定义颜色结点。<code>rgba()</code>函数中的最后一个参数可以是从 0 到 1 的值，它定义了颜色的透明度：<u>0 表示完全透明，1 表示完全不透明</u>。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">450px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(right,rgba(247,26,185,0.37 ),<span class="built_in">rgba</span>(3,169,244,0.8));<span class="comment">/* 标准语法 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-webkit-linear-gradient</span>(right,rgba(247,26,185,0.37 ),<span class="built_in">rgba</span>(3,169,244,0.8));<span class="comment">/* 谷歌浏览器 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="gree">重复的线性渐变：</font><code>repeating-linear-gradient()</code> 函数用于重复线性渐变</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">450px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-webkit-repeating-linear-gradient</span>(#03a9f4 30%, #f71ab95e 70%);<span class="comment">/* 谷歌浏览器 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h5 id="2-径向渐变-radial-gradient"><a href="#2-径向渐变-radial-gradient" class="headerlink" title="2. 径向渐变(radial-gradient)"></a>2. 径向渐变(<code>radial-gradient</code>)</h5><p>​    径向渐变(<code>radial-gradient</code>)由它的中心定义。<u>必须至少定义两种颜色结点(颜色结点即你想要呈现平稳过渡的颜色)。同时，也可以指定渐变的中心、形状（圆形或椭圆形）、大小(<code>closest-side</code>：最近；<code>farthest-corner</code>：最远)。</u></p>
+<p><font color="red"><strong>默认情况下，渐变的中心是 center，渐变的形状是 ellipse（表示椭圆形），渐变的大小是 farthest-corner（表示到最远的角落）</strong></font></p>
+<ul>
+<li><p><font color="blue">默认情况下：</font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-webkit-radial-gradient</span>(#03a9f4 30%, #f71ab95e 70%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="blue">设置径向渐变的大小以及形状：</font>shape 参数定义了形状，它可以是值 <code>circle</code>（圆形）或 <code>ellipse</code>（椭圆形）。默认值是<code>ellipse</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(circle, #03a9f4, #f71ab95e);<span class="comment">/*我试了一下，在谷歌浏览器里如果设置形状就没办法显示*/</span></span><br><span class="line">    <span class="comment">/* 其他浏览器 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-webkit-radial-gradient</span>(circle, closest-side,#03a9f4,#f71ab95e); <span class="comment">/* Safari 5.1 - 6.0 */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">-o-radial-gradient</span>(circle,closest-side,#03a9f4,#f71ab95e); <span class="comment">/* Opera 11.1 - 12.0 */</span></span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">-moz-radial-gradient</span>(circle, closest-side,#03a9f4,#f71ab95e); <span class="comment">/* Firefox 3.6 - 15 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="blue">size 参数定义了渐变的大小。它可以是以下四个值：</font></p>
+<p><code>closest-side</code>：径向渐变的半径长度为从圆心到离圆心<strong>最近的边</strong></p>
+<p><code>farthest-side</code>：径向渐变的半径长度为从圆心到离圆心<strong>最远的边</strong></p>
+<p><code>closest-corner</code>：径向渐变的半径长度为从圆心到离圆心<strong>最近的角</strong></p>
+<p><code>farthest-corner</code>：径向渐变的半径长度为从圆心到离圆心<strong>最远的角</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">450px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(60% 55%, closest-side,#03a9f4,#f71ab95e); <span class="comment">/* 标准的语法 */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">-webkit-radial-gradient</span>(40% 55%, closest-side,#03a9f4,#f71ab95e); <span class="comment">/* 谷歌浏览器 */</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="blue">重复的径向渐变：</font><code>repeating-radial-gradient()</code>函数用于重复径向渐变</p>
+<p><font color="green">效果像一朵花一样很好看~</font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">450px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">repeating-radial-gradient</span>(#03a9f4 40%,#f71ab95e 60%); <span class="comment">/* 标准的语法 */</span></span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">-webkit-repeating-radial-gradient</span>(#03a9f4 40%,#f71ab95e 60%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/01/html知识点/" rel="next" title="html和css知识点">
+                <i class="fa fa-chevron-left"></i> html和css知识点
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-线性渐变-linear-gradients"><span class="nav-number">1.</span> <span class="nav-text">1.  线性渐变(linear gradients)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-径向渐变-radial-gradient"><span class="nav-number">2.</span> <span class="nav-text">2. 径向渐变(radial-gradient)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">88.6k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/08/06/CSS3渐变(Gradients)/';
+          this.page.identifier = '2019/08/06/CSS3渐变(Gradients)/';
+          this.page.title = 'CSS3渐变(Gradients)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+
