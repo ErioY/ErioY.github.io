@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-06T16:28:46.387Z</updated>
+  <updated>2019-08-12T02:40:10.520Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>构造函数创建对象</title>
+    <link href="http://yoursite.com/2019/08/11/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2019/08/11/构造函数创建对象/</id>
+    <published>2019-08-11T14:27:06.000Z</published>
+    <updated>2019-08-12T02:40:10.520Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;font face=&quot;楷体&quot;&gt;前面有两种创建对象的方法：1.对象字面量创建对象；2. new Object()创建对象；
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js预解析</title>
+    <link href="http://yoursite.com/2019/08/11/js%E5%9F%9F%E8%A7%A3%E6%9E%90/"/>
+    <id>http://yoursite.com/2019/08/11/js域解析/</id>
+    <published>2019-08-11T09:18:58.000Z</published>
+    <updated>2019-08-11T14:08:10.586Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;当变量没有var声明，直接赋值时，相当于全局变量，不会被销毁&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;h5 id=&quot;JS引擎执行js分为两步：1-预解析；2-执行代码&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js 数组-Array类型</title>
+    <link href="http://yoursite.com/2019/08/08/js-%E6%95%B0%E7%BB%84-Array%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://yoursite.com/2019/08/08/js-数组-Array类型/</id>
+    <published>2019-08-08T02:02:53.000Z</published>
+    <updated>2019-08-08T02:28:10.173Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;创建数组：&quot;&gt;&lt;a href=&quot;#创建数组：&quot; class=&quot;headerlink&quot; title=&quot;创建数组：&quot;&gt;&lt;/a&gt;&lt;font
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS3渐变(Gradients)</title>
@@ -148,7 +227,7 @@
     <link href="http://yoursite.com/2019/07/27/js%E6%97%B6%E9%97%B4%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%80%92%E8%AE%A1%E6%97%B6/"/>
     <id>http://yoursite.com/2019/07/27/js时间对象和倒计时/</id>
     <published>2019-07-27T02:51:19.000Z</published>
-    <updated>2019-07-28T07:14:42.046Z</updated>
+    <updated>2019-08-12T12:53:21.701Z</updated>
     
     <summary type="html">
     
@@ -445,84 +524,6 @@
         
           &lt;ul&gt;
 &lt;li&gt;&lt;h4 id=&quot;流程控制语句&quot;&gt;&lt;a href=&quot;#流程控制语句&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js数组和循环</title>
-    <link href="http://yoursite.com/2019/07/20/js%E6%95%B0%E7%BB%84%E5%92%8C%E5%BE%AA%E7%8E%AF/"/>
-    <id>http://yoursite.com/2019/07/20/js数组和循环/</id>
-    <published>2019-07-20T01:10:44.000Z</published>
-    <updated>2019-07-20T06:34:28.068Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;数组-Array&quot;&gt;&lt;a href=&quot;#数组-Array&quot; class=&quot;headerlink&quot; title=&quot;数组(Array)&quot;&gt;&lt;/a&gt;数组(Array)&lt;/h4&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;font
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js数据类型和判断</title>
-    <link href="http://yoursite.com/2019/07/19/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%88%A4%E6%96%AD/"/>
-    <id>http://yoursite.com/2019/07/19/js数据类型和判断/</id>
-    <published>2019-07-19T14:55:53.000Z</published>
-    <updated>2019-07-19T16:23:02.683Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;关键字、保留字和ECMAScript标准&quot;&gt;&lt;a href=&quot;#关键字、保留字和ECMAScript标准&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js事件函数和属性操作</title>
-    <link href="http://yoursite.com/2019/07/19/js%E4%BA%8B%E4%BB%B6%E5%87%BD%E6%95%B0%E5%92%8C%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/"/>
-    <id>http://yoursite.com/2019/07/19/js事件函数和属性操作/</id>
-    <published>2019-07-19T14:55:33.000Z</published>
-    <updated>2019-07-19T15:47:39.492Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;js选择器和事件函数&quot;&gt;&lt;a href=&quot;#js选择器和事件函数&quot; class=&quot;headerlink&quot;
         
       
     

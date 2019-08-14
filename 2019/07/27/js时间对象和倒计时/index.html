@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="ErioY">
 <meta property="og:description" content="时间对象   获取当前时间(既计算机读到这句函数时)系统的时间对象 12var myTime  = new Date();//objectDate() //直接调用也会返回一个当前时间的字符串(无论传什么参数)  注意：时间对象是对象类型，而获取的时间是数字类型： 12345678910var iYear = myTime.getFullYear(); //获取年var iMonth = myT">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-28T07:14:42.046Z">
+<meta property="og:updated_time" content="2019-08-12T12:53:21.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js时间对象和倒计时">
 <meta name="twitter:description" content="时间对象   获取当前时间(既计算机读到这句函数时)系统的时间对象 12var myTime  = new Date();//objectDate() //直接调用也会返回一个当前时间的字符串(无论传什么参数)  注意：时间对象是对象类型，而获取的时间是数字类型： 12345678910var iYear = myTime.getFullYear(); //获取年var iMonth = myT">
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.4k
+                  1.7k
                 </span>
               
 
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  5
+                  7
                 </span>
               
             </div>
@@ -468,6 +468,22 @@
 
 </li>
 </ol>
+<p><font color="red" size="4"><strong>倒计时完整思路：</strong></font></p>
+<ol>
+<li><p>核心算法：输入的时间减去现在的时间就是剩余的时间，即倒计时，但是不能拿时分秒相减，比如05分减去25分，结果会是负数</p>
+</li>
+<li><p>用时间戳来做。剩余时间的毫秒数 = 用户输入时间总的毫秒数 - 现在时间总的毫秒数</p>
+</li>
+<li><p>把剩余的时间总的毫秒数转换为天、时、分、秒 （时间戳转换为时分秒）</p>
+</li>
+<li><p>转换公式如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">d = <span class="built_in">parseInt</span>(总秒数/ <span class="number">60</span>/<span class="number">60</span> /<span class="number">24</span>); <span class="comment">// 计算天数</span></span><br><span class="line">h = <span class="built_in">parseInt</span>(总秒数/ <span class="number">60</span>/<span class="number">60</span> %<span class="number">24</span>); <span class="comment">// 计算小时</span></span><br><span class="line">m = <span class="built_in">parseInt</span>(总秒数/ <span class="number">60</span> %<span class="number">60</span>); <span class="comment">// 计算分钟</span></span><br><span class="line">s = <span class="built_in">parseInt</span>(总秒数 %<span class="number">60</span>); <span class="comment">// 计算当前秒</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><font color="red" size="4"><strong>倒计时效果：</strong></font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countDown</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nowTime = +<span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">// 返回的是当前时间总的毫秒数</span></span><br><span class="line">    <span class="keyword">var</span> inputTime = +<span class="keyword">new</span> <span class="built_in">Date</span>(time); <span class="comment">// 返回的是用户输入时间总的毫秒数</span></span><br><span class="line">    <span class="keyword">var</span> times = (inputTime - nowTime) / <span class="number">1000</span>; <span class="comment">// times就是剩余时间总的秒数(/1000表示毫秒转换为秒)</span></span><br><span class="line">    <span class="keyword">var</span> d = <span class="built_in">parseInt</span>(times/ <span class="number">60</span> /<span class="number">60</span> /<span class="number">24</span>); <span class="comment">// 计算天数</span></span><br><span class="line">    <span class="comment">// 前面补0</span></span><br><span class="line">    d = d &lt; <span class="number">10</span> ? <span class="string">'0'</span> + d : d;</span><br><span class="line">    <span class="keyword">var</span> h = <span class="built_in">parseInt</span>(times/ <span class="number">60</span> /<span class="number">60</span> %<span class="number">24</span>); <span class="comment">// 计算小时</span></span><br><span class="line">    h = h &lt; <span class="number">10</span> ? <span class="string">'0'</span> + h : h;</span><br><span class="line">    <span class="keyword">var</span> m = <span class="built_in">parseInt</span>(times/ <span class="number">60</span> %<span class="number">60</span>); <span class="comment">// 计算分钟</span></span><br><span class="line">    m = m &lt; <span class="number">10</span> ? <span class="string">'0'</span> + m : m;</span><br><span class="line">    <span class="keyword">var</span> s = <span class="built_in">parseInt</span>(times%<span class="number">60</span>); <span class="comment">// 计算秒</span></span><br><span class="line">    s = s &lt; <span class="number">10</span> ? <span class="string">'0'</span> + s : s;</span><br><span class="line">    <span class="keyword">return</span> (d + <span class="string">"天"</span> + h + <span class="string">"时"</span> + m + <span class="string">"分"</span> + s + <span class="string">"秒"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(countDown(<span class="string">"2019-8-23 07:00:00"</span>));</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><font size="5" color="gree">练习：</font></p>
 <p><font size="4">1. 小明情人节给女朋友做了一段js，并定了饭店，可女朋友没有去，请问原因是什么：</font></p>
@@ -477,7 +493,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oTime = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">oTime.setDate(oTime.getDate()+<span class="number">5</span>);</span><br><span class="line">oTime.setHours(oTime.getHours()+<span class="number">6</span>);</span><br><span class="line"><span class="built_in">console</span>.log(oTime);</span><br></pre></td></tr></table></figure>
 
 <p><font size="4">3. 用计时器把当前时间的时分秒每1秒钟在页面的p标签中展示一次时间格式(xx:xx:xx的格式)，做出一个时钟效果，第一秒页面也要展示一次时间</font></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oP = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>)[<span class="number">0</span>];</span><br><span class="line">clock();</span><br><span class="line">setInterval(clock,<span class="number">1000</span>);<span class="function"><span class="keyword">function</span> <span class="title">clock</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> iTime = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        <span class="keyword">var</span> iHours = iTime.getHours(); <span class="comment">//获取时</span></span><br><span class="line">        <span class="keyword">var</span> iMin = iTime.getMinutes(); <span class="comment">//获取分</span></span><br><span class="line">        <span class="keyword">var</span> iSec = iTime.getSeconds(); <span class="comment">//获取秒</span></span><br><span class="line">        oP.innerHTML = add0(iHours) + <span class="string">":"</span> + add0(iMin) + <span class="string">":"</span> + add0(iSec);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add0</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num&lt;<span class="number">10</span> ? <span class="string">"0"</span>+ num : <span class="string">""</span> + num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oP = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>)[<span class="number">0</span>];</span><br><span class="line">clock();</span><br><span class="line">setInterval(clock,<span class="number">1000</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clock</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> iTime = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        <span class="keyword">var</span> iHours = iTime.getHours(); <span class="comment">//获取时</span></span><br><span class="line">        <span class="keyword">var</span> iMin = iTime.getMinutes(); <span class="comment">//获取分</span></span><br><span class="line">        <span class="keyword">var</span> iSec = iTime.getSeconds(); <span class="comment">//获取秒</span></span><br><span class="line">        oP.innerHTML = add0(iHours) + <span class="string">":"</span> + add0(iMin) + <span class="string">":"</span> + add0(iSec);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add0</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num&lt;<span class="number">10</span> ? <span class="string">"0"</span>+ num : <span class="string">""</span> + num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><font size="4">4. 设置一个未来时间，做一个秒杀倒计时，而且显示的所有数字和“:”用图片显示</font></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -616,7 +632,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -727,7 +743,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">88.6k</span>
+    <span title="Site words total count">90.5k</span>
   
 </div>
 
