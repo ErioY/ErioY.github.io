@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-12T02:40:10.520Z</updated>
+  <updated>2019-09-28T01:31:26.194Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>构造函数创建对象</title>
-    <link href="http://yoursite.com/2019/08/11/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/2019/08/11/构造函数创建对象/</id>
-    <published>2019-08-11T14:27:06.000Z</published>
-    <updated>2019-08-12T02:40:10.520Z</updated>
+    <title>ECMAScript 新标准4</title>
+    <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%864/"/>
+    <id>http://yoursite.com/2019/09/23/ECMAScript-新标准4/</id>
+    <published>2019-09-23T12:33:20.000Z</published>
+    <updated>2019-09-28T01:31:26.194Z</updated>
     
     <summary type="html">
     
@@ -29,37 +29,11 @@
       
         
         
-          &lt;blockquote&gt;
-&lt;p&gt;&lt;font face=&quot;楷体&quot;&gt;前面有两种创建对象的方法：1.对象字面量创建对象；2. new Object()创建对象；
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js预解析</title>
-    <link href="http://yoursite.com/2019/08/11/js%E5%9F%9F%E8%A7%A3%E6%9E%90/"/>
-    <id>http://yoursite.com/2019/08/11/js域解析/</id>
-    <published>2019-08-11T09:18:58.000Z</published>
-    <updated>2019-08-11T14:08:10.586Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;当变量没有var声明，直接赋值时，相当于全局变量，不会被销毁&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;ECMAScript 新标准&lt;/font&gt;&lt;/center&gt;
+- #### 数组新方法
+
 &lt;ul&gt;
-&lt;li&gt;&lt;h5 id=&quot;JS引擎执行js分为两步：1-预解析；2-执行代码&quot;&gt;&lt;a
+&lt;li&gt;&lt;p&gt;&lt;font
         
       
     
@@ -71,11 +45,39 @@
   </entry>
   
   <entry>
-    <title>js 数组-Array类型</title>
-    <link href="http://yoursite.com/2019/08/08/js-%E6%95%B0%E7%BB%84-Array%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://yoursite.com/2019/08/08/js-数组-Array类型/</id>
-    <published>2019-08-08T02:02:53.000Z</published>
-    <updated>2019-08-08T02:28:10.173Z</updated>
+    <title>ECMAScript 新标准3</title>
+    <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%863/"/>
+    <id>http://yoursite.com/2019/09/23/ECMAScript-新标准3/</id>
+    <published>2019-09-23T12:33:16.000Z</published>
+    <updated>2019-09-28T01:31:17.277Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;ECMAScript 新标准&lt;/font&gt;&lt;/center&gt;
+- #### 新函数写法
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;font
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ECMAScript 新标准2</title>
+    <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%862/"/>
+    <id>http://yoursite.com/2019/09/23/ECMAScript-新标准2/</id>
+    <published>2019-09-23T12:00:25.000Z</published>
+    <updated>2019-09-28T01:31:07.546Z</updated>
     
     <summary type="html">
     
@@ -84,7 +86,9 @@
         
         
           &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;创建数组：&quot;&gt;&lt;a href=&quot;#创建数组：&quot; class=&quot;headerlink&quot; title=&quot;创建数组：&quot;&gt;&lt;/a&gt;&lt;font
+&lt;li&gt;&lt;h4 id=&quot;解构&quot;&gt;&lt;a href=&quot;#解构&quot; class=&quot;headerlink&quot; title=&quot;解构&quot;&gt;&lt;/a&gt;解构&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;解构（解析结构）：解析结构是一种全新的写法，我们看下面一个例子&lt;/p&gt;
+&lt;figure
         
       
     
@@ -96,11 +100,60 @@
   </entry>
   
   <entry>
-    <title>CSS3渐变(Gradients)</title>
-    <link href="http://yoursite.com/2019/08/06/CSS3%E6%B8%90%E5%8F%98(Gradients)/"/>
-    <id>http://yoursite.com/2019/08/06/CSS3渐变(Gradients)/</id>
-    <published>2019-08-06T14:14:31.000Z</published>
-    <updated>2019-08-06T16:28:46.387Z</updated>
+    <title>ECMAScript 新标准</title>
+    <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%861/"/>
+    <id>http://yoursite.com/2019/09/23/ECMAScript-新标准1/</id>
+    <published>2019-09-23T10:24:41.000Z</published>
+    <updated>2019-09-27T11:39:53.766Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;ECMAScript 新标准&lt;/font&gt;&lt;/center&gt;
+- #### ECMAScript
+        
+      
+    
+    </summary>
+    
+    
+      <category term="ECMAScript" scheme="http://yoursite.com/tags/ECMAScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js键盘键值</title>
+    <link href="http://yoursite.com/2019/09/16/js%E9%94%AE%E7%9B%98%E9%94%AE%E5%80%BC/"/>
+    <id>http://yoursite.com/2019/09/16/js键盘键值/</id>
+    <published>2019-09-16T10:50:31.000Z</published>
+    <updated>2019-09-16T10:51:12.895Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;js键盘键值大全&quot;&gt;&lt;a href=&quot;#js键盘键值大全&quot; class=&quot;headerlink&quot; title=&quot;js键盘键值大全&quot;&gt;&lt;/a&gt;js键盘键值大全&lt;/h1&gt;&lt;p&gt;keycode    8 = BackSpace BackSpace&lt;br&gt;keycode
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css不常用的属性</title>
+    <link href="http://yoursite.com/2019/09/15/css%E4%B8%8D%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B1%9E%E6%80%A7/"/>
+    <id>http://yoursite.com/2019/09/15/css不常用的属性/</id>
+    <published>2019-09-15T12:44:08.000Z</published>
+    <updated>2019-09-19T13:01:49.577Z</updated>
     
     <summary type="html">
     
@@ -109,7 +162,10 @@
         
         
           &lt;blockquote&gt;
-&lt;p&gt;&lt;font face=&quot;黑体&quot;&gt;&lt;strong&gt;CSS3
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;a标签：&quot;&gt;&lt;a href=&quot;#a标签：&quot; class=&quot;headerlink&quot; title=&quot;a标签：&quot;&gt;&lt;/a&gt;a标签：&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;将a标签中的文字右移30px：
         
       
     
@@ -121,11 +177,11 @@
   </entry>
   
   <entry>
-    <title>html和css知识点</title>
-    <link href="http://yoursite.com/2019/08/01/html%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    <id>http://yoursite.com/2019/08/01/html知识点/</id>
-    <published>2019-08-01T01:12:03.624Z</published>
-    <updated>2019-07-15T12:49:04.233Z</updated>
+    <title>js原型和原型链</title>
+    <link href="http://yoursite.com/2019/09/07/js%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>http://yoursite.com/2019/09/07/js原型和原型链/</id>
+    <published>2019-09-07T03:45:24.000Z</published>
+    <updated>2019-09-24T10:42:51.992Z</updated>
     
     <summary type="html">
     
@@ -133,60 +189,8 @@
       
         
         
-          &lt;h1 id=&quot;HTML部分知识点总结&quot;&gt;&lt;a href=&quot;#HTML部分知识点总结&quot; class=&quot;headerlink&quot; title=&quot;HTML部分知识点总结&quot;&gt;&lt;/a&gt;&lt;strong&gt;HTML部分知识点总结&lt;/strong&gt;&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;h4
-        
-      
-    
-    </summary>
-    
-    
-      <category term="html" scheme="http://yoursite.com/tags/html/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The Operation Of Hexo</title>
-    <link href="http://yoursite.com/2019/08/01/hello-world/"/>
-    <id>http://yoursite.com/2019/08/01/hello-world/</id>
-    <published>2019-08-01T01:12:03.618Z</published>
-    <updated>2019-07-05T16:07:43.796Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="operation" scheme="http://yoursite.com/tags/operation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js字符串和数组方法</title>
-    <link href="http://yoursite.com/2019/07/27/js%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2019/07/27/js字符串和数组方法/</id>
-    <published>2019-07-27T15:06:32.000Z</published>
-    <updated>2019-07-27T15:20:00.194Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;字符串方法&quot;&gt;&lt;a href=&quot;#字符串方法&quot; class=&quot;headerlink&quot; title=&quot;字符串方法&quot;&gt;&lt;/a&gt;字符串方法&lt;/h4&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;前面我们学习了字符串，&lt;font
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js原型和原型链&lt;/font&gt;&lt;/center&gt;
+- ####
         
       
     
@@ -198,11 +202,11 @@
   </entry>
   
   <entry>
-    <title>js计时器和动画</title>
-    <link href="http://yoursite.com/2019/07/27/js%E8%AE%A1%E6%97%B6%E5%99%A8%E5%92%8C%E5%8A%A8%E7%94%BB/"/>
-    <id>http://yoursite.com/2019/07/27/js计时器和动画/</id>
-    <published>2019-07-27T02:52:28.000Z</published>
-    <updated>2019-07-28T02:52:29.558Z</updated>
+    <title>js组合继承和beget函数</title>
+    <link href="http://yoursite.com/2019/09/07/js%E7%BB%84%E5%90%88%E7%BB%A7%E6%89%BF%E5%92%8Cbeget%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2019/09/07/js组合继承和beget函数/</id>
+    <published>2019-09-07T03:45:08.000Z</published>
+    <updated>2019-09-22T08:07:34.901Z</updated>
     
     <summary type="html">
     
@@ -210,246 +214,12 @@
       
         
         
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;获取元素样式&quot;&gt;&lt;a href=&quot;#获取元素样式&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js时间对象和倒计时</title>
-    <link href="http://yoursite.com/2019/07/27/js%E6%97%B6%E9%97%B4%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%80%92%E8%AE%A1%E6%97%B6/"/>
-    <id>http://yoursite.com/2019/07/27/js时间对象和倒计时/</id>
-    <published>2019-07-27T02:51:19.000Z</published>
-    <updated>2019-08-12T12:53:21.701Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;时间对象&quot;&gt;&lt;a href=&quot;#时间对象&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js特殊函数和运算符</title>
-    <link href="http://yoursite.com/2019/07/27/js%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
-    <id>http://yoursite.com/2019/07/27/js特殊函数和运算符/</id>
-    <published>2019-07-27T02:37:44.000Z</published>
-    <updated>2019-07-27T06:15:29.535Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;自执行-立即执行-自调用-函数&quot;&gt;&lt;a href=&quot;#自执行-立即执行-自调用-函数&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js获取作用域的数据和闭包</title>
-    <link href="http://yoursite.com/2019/07/27/js%E8%8E%B7%E5%8F%96%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E5%92%8C%E9%97%AD%E5%8C%85/"/>
-    <id>http://yoursite.com/2019/07/27/js获取作用域的数据和闭包/</id>
-    <published>2019-07-27T00:48:41.000Z</published>
-    <updated>2019-08-02T14:45:16.180Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;闭包&quot;&gt;&lt;a href=&quot;#闭包&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js函数的返回值和arguments对象</title>
-    <link href="http://yoursite.com/2019/07/26/js%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC%E5%92%8Carguments%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/2019/07/26/js函数的返回值和arguments对象/</id>
-    <published>2019-07-26T06:52:42.000Z</published>
-    <updated>2019-07-27T01:54:58.791Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;函数的创建形式&quot;&gt;&lt;a href=&quot;#函数的创建形式&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js函数的参数和作用域</title>
-    <link href="http://yoursite.com/2019/07/26/js%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
-    <id>http://yoursite.com/2019/07/26/js函数的参数和作用域/</id>
-    <published>2019-07-26T01:02:29.000Z</published>
-    <updated>2019-07-26T03:49:06.152Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;函数的参数&quot;&gt;&lt;a href=&quot;#函数的参数&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux运维初级-十一、使用Apache部署静态网站</title>
-    <link href="http://yoursite.com/2019/07/23/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E5%8D%81%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8Apache%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/"/>
-    <id>http://yoursite.com/2019/07/23/Linux运维初级-十一、使用Apache部署静态网站/</id>
-    <published>2019-07-23T08:13:39.000Z</published>
-    <updated>2019-07-24T07:57:17.539Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;十一、使用Apache部署静态网站&lt;/font&gt;&lt;/center&gt;
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js组合继承和beget函数&lt;/font&gt;&lt;/center&gt;
+- #### 借用构造函数：
 
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;web网站服务又称为www服务（world    wide   
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux运维初级-十、操作系统基础知识</title>
-    <link href="http://yoursite.com/2019/07/23/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E5%8D%81%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://yoursite.com/2019/07/23/Linux运维初级-十、操作系统基础知识/</id>
-    <published>2019-07-23T05:42:15.000Z</published>
-    <updated>2019-07-23T08:12:43.152Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;十、操作系统基础知识&lt;/font&gt;&lt;/center&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;概念&lt;/strong&gt;：管理计算机软硬件资源，提供系统设备接口及工作界面&lt;/p&gt;
-&lt;p&gt;(1) 管理者作用&lt;/p&gt;
-&lt;p&gt;​    A.
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux运维初级-九、软件下载及安装</title>
-    <link href="http://yoursite.com/2019/07/22/Linux%E8%BF%90%E7%BB%B4%E5%88%9D%E7%BA%A7-%E4%B9%9D%E3%80%81%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85/"/>
-    <id>http://yoursite.com/2019/07/22/Linux运维初级-九、软件下载及安装/</id>
-    <published>2019-07-22T06:50:27.000Z</published>
-    <updated>2019-07-23T05:42:31.648Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;九、软件下载及安装&lt;/font&gt;&lt;/center&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;安装方式&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;(1) 原码安装&lt;/p&gt;
-&lt;p&gt;​    A.
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js布尔值和自定义属性</title>
-    <link href="http://yoursite.com/2019/07/21/js%E5%B8%83%E5%B0%94%E5%80%BC%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/"/>
-    <id>http://yoursite.com/2019/07/21/js布尔值和自定义属性/</id>
-    <published>2019-07-21T05:38:37.000Z</published>
-    <updated>2019-07-26T02:10:33.152Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;数据类型转换&quot;&gt;&lt;a href=&quot;#数据类型转换&quot; class=&quot;headerlink&quot; title=&quot;数据类型转换&quot;&gt;&lt;/a&gt;数据类型转换&lt;/h4&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;font
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原型链继承存在2个致命缺点，于是出现了借用构造函数方法：&lt;/p&gt;
+&lt;figure class=&quot;highlight
         
       
     
@@ -461,11 +231,11 @@
   </entry>
   
   <entry>
-    <title>（转）Markdown语法</title>
-    <link href="http://yoursite.com/2019/07/20/Markdown%E8%AF%AD%E6%B3%95/"/>
-    <id>http://yoursite.com/2019/07/20/Markdown语法/</id>
-    <published>2019-07-20T15:39:50.000Z</published>
-    <updated>2019-07-20T15:51:20.789Z</updated>
+    <title>js正则表达式量词匹配和面向对象</title>
+    <link href="http://yoursite.com/2019/09/07/js%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E9%87%8F%E8%AF%8D%E5%8C%B9%E9%85%8D%E5%92%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2019/09/07/js正则表达式量词匹配和面向对象/</id>
+    <published>2019-09-07T03:44:51.000Z</published>
+    <updated>2019-09-22T06:06:58.951Z</updated>
     
     <summary type="html">
     
@@ -473,32 +243,8 @@
       
         
         
-          &lt;h2 id=&quot;本文转自：简书&quot;&gt;&lt;a href=&quot;#本文转自：简书&quot; class=&quot;headerlink&quot; title=&quot;本文转自：简书&quot;&gt;&lt;/a&gt;本文转自：简书&lt;/h2&gt;&lt;h2 id=&quot;作者：高鸿祥&quot;&gt;&lt;a href=&quot;#作者：高鸿祥&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="operation" scheme="http://yoursite.com/tags/operation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js数据类型详解和数据类型转换</title>
-    <link href="http://yoursite.com/2019/07/20/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%AF%A6%E8%A7%A3%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
-    <id>http://yoursite.com/2019/07/20/js数据类型详解和数据类型转换/</id>
-    <published>2019-07-20T15:38:40.000Z</published>
-    <updated>2019-07-26T02:01:14.498Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;数据类型详解&quot;&gt;&lt;a href=&quot;#数据类型详解&quot; class=&quot;headerlink&quot;
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;js正则表达式量词匹配和面向对象&lt;/font&gt;&lt;/center&gt;
+- ####
         
       
     
@@ -510,11 +256,274 @@
   </entry>
   
   <entry>
-    <title>js流程控制、JSON和this</title>
-    <link href="http://yoursite.com/2019/07/20/js%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E3%80%81JSON%E5%92%8Cthis/"/>
-    <id>http://yoursite.com/2019/07/20/js流程控制、JSON和this/</id>
-    <published>2019-07-20T03:00:20.000Z</published>
-    <updated>2019-07-21T02:21:21.627Z</updated>
+    <title>js正则表达式元字符和方法</title>
+    <link href="http://yoursite.com/2019/09/07/js%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%83%E5%AD%97%E7%AC%A6%E5%92%8C%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/09/07/js正则表达式元字符和方法/</id>
+    <published>2019-09-07T03:44:22.000Z</published>
+    <updated>2019-09-22T03:56:13.842Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;js正则表达式元字符和方法&lt;/font&gt;&lt;/center&gt;
+&gt; 只能处理字符串
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;正则表达式的使用：&quot;&gt;&lt;a href=&quot;#正则表达式的使用：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js键盘事件和元素的拖放</title>
+    <link href="http://yoursite.com/2019/09/07/js%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%85%83%E7%B4%A0%E7%9A%84%E6%8B%96%E6%94%BE/"/>
+    <id>http://yoursite.com/2019/09/07/js键盘事件和元素的拖放/</id>
+    <published>2019-09-07T03:10:09.000Z</published>
+    <updated>2019-09-20T10:06:42.581Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js键盘事件和元素的拖放&lt;/font&gt;&lt;/center&gt;
+- ####
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js事件委托和滚轮事件</title>
+    <link href="http://yoursite.com/2019/09/07/js%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E5%92%8C%E6%BB%9A%E8%BD%AE%E4%BA%8B%E4%BB%B6/"/>
+    <id>http://yoursite.com/2019/09/07/js事件委托和滚轮事件/</id>
+    <published>2019-09-07T03:09:51.000Z</published>
+    <updated>2019-09-09T13:28:33.140Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js事件委托和滚轮事件&lt;/font&gt;&lt;/center&gt;
+- ####
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js事件流和事件监听</title>
+    <link href="http://yoursite.com/2019/09/07/js%E4%BA%8B%E4%BB%B6%E6%B5%81%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/"/>
+    <id>http://yoursite.com/2019/09/07/js事件流和事件监听/</id>
+    <published>2019-09-07T03:09:29.000Z</published>
+    <updated>2019-09-09T11:48:11.330Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js事件流和事件监听&lt;/font&gt;&lt;/center&gt;
+- ####
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js浏览器定位对象和事件对象</title>
+    <link href="http://yoursite.com/2019/09/03/js%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%9A%E4%BD%8D%E5%AF%B9%E8%B1%A1%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2019/09/03/js浏览器定位对象和事件对象/</id>
+    <published>2019-09-03T12:26:59.000Z</published>
+    <updated>2019-09-08T02:59:54.298Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;js浏览器定位对象和事件对象&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;浏览器的历史记录&quot;&gt;&lt;a href=&quot;#浏览器的历史记录&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js浏览器对象和方法</title>
+    <link href="http://yoursite.com/2019/09/03/js%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/09/03/js浏览器对象和方法/</id>
+    <published>2019-09-03T12:11:46.000Z</published>
+    <updated>2019-09-04T10:15:52.710Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;浏览器对象和方法&lt;/font&gt;&lt;/center&gt;
+- #### BOM的常用属性和方法
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;font
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>选择器详解和BOM</title>
+    <link href="http://yoursite.com/2019/08/31/%E9%80%89%E6%8B%A9%E5%99%A8%E8%AF%A6%E8%A7%A3%E5%92%8CBOM/"/>
+    <id>http://yoursite.com/2019/08/31/选择器详解和BOM/</id>
+    <published>2019-08-31T13:06:36.000Z</published>
+    <updated>2019-09-03T11:55:11.167Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js选择器详解和BOM&lt;/font&gt;&lt;/center&gt;
+- ####
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js表格和表单的DOM操作</title>
+    <link href="http://yoursite.com/2019/08/31/js%E8%A1%A8%E6%A0%BC%E5%92%8C%E8%A1%A8%E5%8D%95%E7%9A%84DOM%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2019/08/31/js表格和表单的DOM操作/</id>
+    <published>2019-08-31T13:06:22.000Z</published>
+    <updated>2019-09-03T11:02:10.689Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js表格和表单的DOM操作&lt;/font&gt;&lt;/center&gt;
+- #### 表格的DOM操作：
+
+&lt;ul&gt;
+&lt;li&gt;表格较为繁杂，层次也多，使用DOM只是来获取某个元素会非常难受，所以使用table
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js元素属性节点和属性操作</title>
+    <link href="http://yoursite.com/2019/08/31/js%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E8%8A%82%E7%82%B9%E5%92%8C%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2019/08/31/js元素属性节点和属性操作/</id>
+    <published>2019-08-31T13:05:54.000Z</published>
+    <updated>2019-09-05T12:49:27.561Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js元素属性节点和属性操作&lt;/font&gt;&lt;/center&gt;
+- #### DOM的属性节点
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;元素.offsetLeft/offsetTop&lt;/code&gt;   //  &lt;font
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js 对象操作和DOM</title>
+    <link href="http://yoursite.com/2019/08/30/js-%E5%AF%B9%E8%B1%A1%E6%93%8D%E4%BD%9C%E5%92%8CDOM/"/>
+    <id>http://yoursite.com/2019/08/30/js-对象操作和DOM/</id>
+    <published>2019-08-30T10:08:01.000Z</published>
+    <updated>2019-09-01T12:45:14.788Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;js对象操作和DOM&lt;/font&gt;&lt;/center&gt;
+- ####
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js表单验证</title>
+    <link href="http://yoursite.com/2019/08/26/js%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
+    <id>http://yoursite.com/2019/08/26/js表单验证/</id>
+    <published>2019-08-26T09:24:24.000Z</published>
+    <updated>2019-08-26T09:52:19.052Z</updated>
     
     <summary type="html">
     
@@ -523,7 +532,7 @@
         
         
           &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;流程控制语句&quot;&gt;&lt;a href=&quot;#流程控制语句&quot; class=&quot;headerlink&quot;
+&lt;li&gt;&lt;h5 id=&quot;必填或必选项目（验证表单数据是否为空？）&quot;&gt;&lt;a href=&quot;#必填或必选项目（验证表单数据是否为空？）&quot; class=&quot;headerlink&quot;
         
       
     

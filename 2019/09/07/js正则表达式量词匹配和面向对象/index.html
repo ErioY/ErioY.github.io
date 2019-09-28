@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="js正则表达式量词匹配和面向对象 - #### 正则表达式匹配相似项：中括号   一组相似的元素，用[]表示，整体代表一个字符，如： 123var str = &apos;abc&apos;;  var re = /a[bde]c/; // []里面是或的关系alert(re.test(str));  连字符(-)：可以是任意从大到小的范围，如[a-z0-9A-Z]，其中任意一个都匹配成功， 如： 123var st">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js正则表达式量词匹配和面向对象">
+<meta property="og:url" content="http://yoursite.com/2019/09/07/js正则表达式量词匹配和面向对象/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="js正则表达式量词匹配和面向对象 - #### 正则表达式匹配相似项：中括号   一组相似的元素，用[]表示，整体代表一个字符，如： 123var str = &apos;abc&apos;;  var re = /a[bde]c/; // []里面是或的关系alert(re.test(str));  连字符(-)：可以是任意从大到小的范围，如[a-z0-9A-Z]，其中任意一个都匹配成功， 如： 123var st">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/09/07/js正则表达式量词匹配和面向对象/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569067817463.png">
+<meta property="og:updated_time" content="2019-09-22T06:06:58.951Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js正则表达式量词匹配和面向对象">
+<meta name="twitter:description" content="js正则表达式量词匹配和面向对象 - #### 正则表达式匹配相似项：中括号   一组相似的元素，用[]表示，整体代表一个字符，如： 123var str = &apos;abc&apos;;  var re = /a[bde]c/; // []里面是或的关系alert(re.test(str));  连字符(-)：可以是任意从大到小的范围，如[a-z0-9A-Z]，其中任意一个都匹配成功， 如： 123var st">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/07/js正则表达式量词匹配和面向对象/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569067817463.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/07/js正则表达式量词匹配和面向对象/">
+
+
+
+
+
+  <title>js正则表达式量词匹配和面向对象 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/07/js正则表达式量词匹配和面向对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js正则表达式量词匹配和面向对象</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-07T11:44:51+08:00">
+                2019-09-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/07/js正则表达式量词匹配和面向对象/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/07/js正则表达式量词匹配和面向对象/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="5">js正则表达式量词匹配和面向对象</font></center>
+- #### 正则表达式匹配相似项：中括号
+
+<ul>
+<li><p>一组相似的元素，用<code>[]</code>表示，整体代表一个字符，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;  </span><br><span class="line"><span class="keyword">var</span> re = <span class="regexp">/a[bde]c/</span>; <span class="comment">// []里面是或的关系</span></span><br><span class="line">alert(re.test(str));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>连字符(<code>-</code>)：可以是任意从大到小的范围，如<code>[a-z0-9A-Z]</code>，其中任意一个都匹配成功， 如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;  </span><br><span class="line"><span class="keyword">var</span> re = <span class="regexp">/a[a-z]c/</span>;</span><br><span class="line">alert(re.test(str));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>排除(<code>^</code>)：若写在<code>[]</code>里面，则代表排除的意思，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'abc'</span>;  </span><br><span class="line"><span class="keyword">var</span> re = <span class="regexp">/a[^bde]c/</span>;</span><br><span class="line">alert(re.test(str));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>限定开始位置(<code>^</code>)和限定结束位置(<code>$</code>)，他们本身不占位置</p>
+</li>
+</ul>
+<ul>
+<li><h4 id="正则表达式量词：大括号，匹配的字符最少和最多出现的数量"><a href="#正则表达式量词：大括号，匹配的字符最少和最多出现的数量" class="headerlink" title="正则表达式量词：大括号，匹配的字符最少和最多出现的数量"></a>正则表达式量词：大括号，匹配的字符最少和最多出现的数量</h4><ul>
+<li><p><code>{4,7}</code> ： 最少出现4次，最多出现7次</p>
+</li>
+<li><p><code>{4,}</code>： 最少出现4次，最多不限</p>
+</li>
+<li><p><code>{4}</code>： 恰好出现4次</p>
+</li>
+<li><p>特殊情况：</p>
+<ul>
+<li><code>+</code>：出现至少1次，完整写法{1,}</li>
+<li><code>?</code>：出现0-1次，完整写法{0,1}</li>
+<li><code>*</code>：至少出现0次，完整写法{0,}*</li>
+</ul>
+<p><img src="/2019/09/07/js正则表达式量词匹配和面向对象/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569067817463.png" alt="1569067817463"></p>
+</li>
+<li><p>贪婪和非贪婪匹配：<em>、+或?限定符都是贪婪的，因为它们会尽可能多的匹配文字，<font color="red">*</font></em>只有在它们的后面加上一个?就可以实现非贪婪或最小匹配**。如我们想匹配一个字符串中的标签：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> re = <span class="regexp">/&lt;.*&gt;/</span>; <span class="comment">// 贪婪：开始小于符号到最后一个大于符号之间的所有内容</span></span><br><span class="line"><span class="keyword">var</span> re = <span class="regexp">/&lt;.*?&gt;/</span>; <span class="comment">// 非贪婪：第一个标签的头标签</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="面向对象、面向过程和构造函数："><a href="#面向对象、面向过程和构造函数：" class="headerlink" title="面向对象、面向过程和构造函数："></a>面向对象、面向过程和构造函数：</h4><ul>
+<li><p>面对对象：把数据及对数据的操作方法放在一起，作为一个相互依存的整体——对象。对同类对象抽象出其共性，形成类。类中的大多数数据，只能用本类的方法进行处理。类通过一个简单的外部接口与外界发生关系，对象与对象之间通过消息进行通信。程序流程由用户在使用中决定。</p>
+</li>
+<li><p>面向过程：自顶向下顺序执行，逐步求精；其程序结构是按功能划分为若干个基本模块，这些模块形成一个树状结构；各模块之间的关系尽可能简单，在功能上相对独立；每一模块内部均是由顺序、选择和循环三种基本结构组成；其模块化实现的具体方法是使用子程序。程序流程在写程序时就已决定。</p>
+</li>
+<li><p>创建对象的方式包括两种：对象字面量和使用new表达式。对象字面量是一种灵活方便的书写方式，我们之前经常使用’var 变量名 = 对象’这种方式创建一个变量。</p>
+</li>
+<li><p>js里没有类的概念，也就没有面向对象，但new的方法却模拟了面向对象，因此new(var 变量名 = new 函数())也就成了唯一能够区别一般函数和构造函数的方法。</p>
+</li>
+<li><p>若一个函数的返回值是引用类型(对象)的数据，作为构造函数用new运算符执行构造时，运算的结果将被返回值取代，其内的this值丢失了，取而代之的是被返回的对象；若一个函数的返回值是一个值类型(this或者非对象)，执行构造时，它的返回值将被丢弃，结果仍然是this所引用的对象：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">demo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.a = <span class="number">10</span>; <span class="comment">// 成员变量</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">1</span>;&#125;  <span class="comment">//返回值是对象</span></span><br><span class="line">    <span class="comment">// return 1;  //返回值是值类型或undefined</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> demo();</span><br><span class="line"><span class="keyword">var</span> n = demo();</span><br><span class="line">alert(m);   <span class="comment">// 分别返回return后面的闭包和Object</span></span><br><span class="line">alert(n);   <span class="comment">// 分别返回return后面的闭包和1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="green"><strong>在用new来调用一个构造函数的时候，发生了下面四件事</strong>：</font></p>
+<ul>
+<li><code>var obj ={};</code>   //    创建一个空对象obj</li>
+<li><code>obj.__proto__ = test.prototype;</code>   //    创建一个指向<code>test.prototype</code>（构造函数原型对象）的指针,<code>__proto__</code>：构造器原型</li>
+<li><code>test.call(obj);</code>// 将构造函数的作用域赋给新对象，因此m函数中的this指向新对象obj，然后再调用test函数。于是我们就给obj对象赋值了一个成员变量a，这个成员变量的值是1。<font color="purple"><strong>除了<code>call</code>外，改变this指向的还有<code>aplly</code></strong></font>，它们是函数调用的一种特殊方法。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>return obj;</code> // 返回新对象obj。</p>
+<ul>
+<li><p>函数内的变量有如下分类：</p>
+<ul>
+<li>其中例子中写成<code>this.a</code>代表类的成员变量(共有变量，实例变量，每个实例独立的存储)</li>
+<li><code>函数名.b</code>是类变量(函数的属性，静态变量，所有实例共享存储)</li>
+</ul>
+</li>
+<li><p>而var定义的则是局部变量(私有变量，函数执行时临时存储)</p>
+</li>
+<li><p><code>instanceof</code>：要求其左边是一个对象，右边是对象类的名字或构造函数。如果左边的object是class或构造函数的实例，则<code>instanceof</code>运算符返回true。如果左边的object不是指定class或函数的实例，或object为null，则返回false。</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<p><font size="4">写一个去掉字符串中的前后空格的方法</font></p>
+<ol>
+<li><p>输入框里输入</p><h3 class="title">标题</h3>aaaaa，通过匹配替换得到’标题aaaaa’<p></p>
+</li>
+<li><p>将一串数字字符串加上千分符</p>
+</li>
+<li><p>查看以下正则并说出他们匹配的是什么</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">^\w+@[a-z0<span class="number">-9</span>]+(\.[a-z]+)&#123;<span class="number">1</span>,<span class="number">3</span>&#125;$  <span class="comment">// 邮箱地址</span></span><br><span class="line">[a-zA-Z]+:<span class="comment">//[^\s]*  // 网址</span></span><br><span class="line">[<span class="number">1</span><span class="number">-9</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">4</span>,<span class="number">9</span>&#125;  <span class="comment">// qq号</span></span><br><span class="line">^[<span class="number">1</span><span class="number">-9</span>]\d&#123;<span class="number">5</span>&#125;$   <span class="comment">// 邮编</span></span><br><span class="line">[<span class="number">1</span><span class="number">-9</span>]\d&#123;<span class="number">14</span>&#125;|[<span class="number">1</span><span class="number">-9</span>]\d&#123;<span class="number">17</span>&#125;|[<span class="number">1</span><span class="number">-9</span>]\d&#123;<span class="number">16</span>&#125;x <span class="comment">// 身份证号</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下面的函数是不是构造函数(返回值为非对象)，若是则写出它的实例化对象oF，并判断oF是构造函数F的实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125; <span class="comment">// 返回值为非对象，因此是构造函数</span></span><br><span class="line"><span class="keyword">var</span> oF = <span class="keyword">new</span> F();</span><br><span class="line"><span class="built_in">console</span>.log(oF <span class="keyword">instanceof</span> F);</span><br><span class="line"><span class="built_in">console</span>.log(oF <span class="keyword">instanceof</span> <span class="built_in">Object</span>);</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/07/js正则表达式元字符和方法/" rel="next" title="js正则表达式元字符和方法">
+                <i class="fa fa-chevron-left"></i> js正则表达式元字符和方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/07/js组合继承和beget函数/" rel="prev" title="js组合继承和beget函数">
+                js组合继承和beget函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式量词：大括号，匹配的字符最少和最多出现的数量"><span class="nav-number">1.</span> <span class="nav-text">正则表达式量词：大括号，匹配的字符最少和最多出现的数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象、面向过程和构造函数："><span class="nav-number">2.</span> <span class="nav-text">面向对象、面向过程和构造函数：</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number"></span> <span class="nav-text">标题</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">121.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/09/07/js正则表达式量词匹配和面向对象/';
+          this.page.identifier = '2019/09/07/js正则表达式量词匹配和面向对象/';
+          this.page.title = 'js正则表达式量词匹配和面向对象';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="ECMAScript 新标准 - #### 新函数写法   箭头函数：ES6新增了一种新的函数：Arrow Function(箭头函数)。它的定义用的就是一个箭头：x =&amp;gt; x * x 这个箭头函数相当于： 123function (x) &amp;#123;    return x * x;&amp;#125;  箭头函数相当于匿名函数，并且简化了函数定义。但箭头函数可以替换函数表达式，但是不能替换函数声">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECMAScript 新标准3">
+<meta property="og:url" content="http://yoursite.com/2019/09/23/ECMAScript-新标准3/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="ECMAScript 新标准 - #### 新函数写法   箭头函数：ES6新增了一种新的函数：Arrow Function(箭头函数)。它的定义用的就是一个箭头：x =&amp;gt; x * x 这个箭头函数相当于： 123function (x) &amp;#123;    return x * x;&amp;#125;  箭头函数相当于匿名函数，并且简化了函数定义。但箭头函数可以替换函数表达式，但是不能替换函数声">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-28T01:31:17.277Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ECMAScript 新标准3">
+<meta name="twitter:description" content="ECMAScript 新标准 - #### 新函数写法   箭头函数：ES6新增了一种新的函数：Arrow Function(箭头函数)。它的定义用的就是一个箭头：x =&amp;gt; x * x 这个箭头函数相当于： 123function (x) &amp;#123;    return x * x;&amp;#125;  箭头函数相当于匿名函数，并且简化了函数定义。但箭头函数可以替换函数表达式，但是不能替换函数声">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/23/ECMAScript-新标准3/">
+
+
+
+
+
+  <title>ECMAScript 新标准3 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/23/ECMAScript-新标准3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ECMAScript 新标准3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-23T20:33:16+08:00">
+                2019-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/23/ECMAScript-新标准3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/23/ECMAScript-新标准3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="4">ECMAScript 新标准</font></center>
+- #### 新函数写法
+
+<ul>
+<li><p><font color="orange"><strong>箭头函数</strong></font>：ES6新增了一种新的函数：Arrow Function(箭头函数)。它的定义用的就是一个箭头：x =&gt; x * x 这个箭头函数相当于：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color="green"><strong>箭头函数相当于匿名函数</strong></font>，并且简化了函数定义。但箭头函数可以替换函数表达式，但是不能替换函数声明。箭头函数有两种格式，一种像上面的，只包含一个表达式，连{ … }和return都省略掉了。还有一种可以包含多条语句，这时候就不能省略{ … }和return：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">x =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">0</span>) &#123; </span><br><span class="line">        <span class="keyword">return</span> x * x;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> - x * x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">(x, y) =&gt; x * x + y * y  <span class="comment">// 不是一个参数要加括号</span></span><br><span class="line">() =&gt; <span class="number">3.14</span>  <span class="comment">// 无参数为一个空括号</span></span><br><span class="line">x =&gt; &#123; </span><br><span class="line">    foo: x; </span><br><span class="line">&#125;  <span class="comment">// SyntaxError，返回对象报错，因为和函数体的&#123;  &#125;有语法冲突，所以要改为：</span></span><br><span class="line">x =&gt; (&#123; </span><br><span class="line">  foo: x;  <span class="comment">// 返回对象 </span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>箭头函数看上去是匿名函数的一种简写，但<font color="red">箭头函数和匿名函数有个明显的区别：箭头函数内部的<code>this</code>是词法作用域，由上下文确定，也就是外层调用者obj。由于<code>this</code>在箭头函数中已经按照词法作用域绑定了，所以，用<code>call()</code>或者<code>apply()</code>调用箭头函数时，无法对<code>this</code>进行绑定。</font>箭头函数的this不受函数内部影响</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 这里的this指向document</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    	<span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// 此时this指向window，这个匿名函数相当于直接调用，和document.onclick = function()无关</span></span><br><span class="line">    &#125;,<span class="number">1000</span>);</span><br><span class="line">   </span><br><span class="line">  <span class="comment">// 换成箭头函数</span></span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// 此时this指向document,跟它的上一级document.onclick = function()相同</span></span><br><span class="line">    &#125;,<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+</ul>
+<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;  <span class="comment">//  ES5</span></span><br><span class="line">    name: <span class="string">'tom'</span>, </span><br><span class="line">  getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">const</span> person = &#123;  <span class="comment">//  ES6</span></span><br><span class="line">    name: <span class="string">'tom'</span>, </span><br><span class="line">    getName: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.name; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+在ES6中，会默认采用严格模式，因此this也不会自动指向window对象了，而箭头函数本身并没有this，因此this就只能是undefined，这种情况，如果你还想用this，就不要用使用箭头函数的写法。除此之外，箭头函数中也无法访问`arguments`对象。</code></pre><ul>
+<li><p><font color="orange"><strong>函数默认参数</strong></font>：之前我们不能直接为函数指定默认参数，因此很多时候为了保证传入的参数具备一个默认值，我们常常使用如下的方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = x || <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">var</span> y = y || <span class="number">30</span>;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(add()); <span class="comment">// 50</span></span><br></pre></td></tr></table></figure>
+
+<p>上面这种方式有缺点，比如当我传入一个x值为false，这个时候仍然会取到默认值，就不是我们的本意了。</p>
+<p>ES6函数默认值写法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x = <span class="number">20</span>, y = <span class="number">30</span></span>) </span>&#123; <span class="comment">// ES6默认值</span></span><br><span class="line">    <span class="keyword">return</span> x + y; </span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(add()); <span class="comment">// 输出  50 （取默认值）</span></span><br><span class="line"><span class="built_in">console</span>.log(add(<span class="number">1</span>, <span class="number">2</span>)); <span class="comment">// 输出   3</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="generator-生成器"><a href="#generator-生成器" class="headerlink" title="generator(生成器)"></a>generator(生成器)</h4><ul>
+<li><p>generator：ES6的新的数据类型。一个generator看上去像一个函数，但可以返回多次。</p>
+<p>函数执行过程中，如果没有遇到return语句，控制权无法交回被调用的代码。定义如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params">x</span>) </span>&#123; </span><br><span class="line">        <span class="keyword">yield</span> x + <span class="number">1</span>; </span><br><span class="line">        <span class="keyword">yield</span> x + <span class="number">2</span>; </span><br><span class="line">        <span class="keyword">return</span> x + <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>和函数不同的generator由<code>function*</code>定义，除了<code>return</code>语句，还可以用<code>yield</code>返回多次。</p>
+<p>要编写一个产生斐波那契数列的函数，可以这么写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">fib</span>(<span class="params">max</span>) </span>&#123;  <span class="comment">// 函数只能返回一次，必须返回一个Array</span></span><br><span class="line">   	<span class="keyword">var</span> a = <span class="number">0</span>, b = <span class="number">1</span>, c = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">var</span> arr = [];</span><br><span class="line">       arr.push(a, b);</span><br><span class="line">       <span class="keyword">while</span> (arr.length &lt; max) &#123;</span><br><span class="line">           c = a + b; </span><br><span class="line">           a = b;</span><br><span class="line">           b = c;</span><br><span class="line">           arr.push(c);</span><br><span class="line">       &#125;</span><br><span class="line">   	<span class="keyword">return</span> arr;</span><br><span class="line">   &#125;</span><br><span class="line">   fib(<span class="number">5</span>);   <span class="comment">// 测试结果[0, 1, 1, 2, 3]</span></span><br><span class="line">   <span class="function"><span class="keyword">function</span>* <span class="title">fib</span>(<span class="params">max</span>) </span>&#123;  <span class="comment">// generator就可以一次返回一个数，不断返回多次</span></span><br><span class="line">   	<span class="keyword">var</span> c = <span class="number">0</span>, a = <span class="number">0</span>, b = <span class="number">1</span>;</span><br><span class="line">   	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">           <span class="keyword">yield</span> a; <span class="comment">// 返回a</span></span><br><span class="line">           c = a + b;</span><br><span class="line">           a = b;</span><br><span class="line">           b = c; </span><br><span class="line">       &#125;</span><br><span class="line">   	<span class="keyword">return</span> a;</span><br><span class="line">   &#125;</span><br><span class="line">   fib(<span class="number">5</span>);  <span class="comment">// fib &#123;[[GeneratorStatus]]: "suspended", [[GeneratorReceiver]]: Window&#125;</span></span><br><span class="line">   <span class="comment">// fib(5)仅仅是创建了一个generator对象，还没有去执行它，一个方法是不断地调用next()方法：</span></span><br><span class="line">   <span class="keyword">var</span> f = fib(<span class="number">5</span>);</span><br><span class="line">    <span class="comment">// done为false时就是yield的返回值，而不是return 的返回值</span></span><br><span class="line">   <span class="built_in">console</span>.log(f.next()); <span class="comment">// &#123;value: 0, done: false&#125; </span></span><br><span class="line">   f.next(); <span class="comment">// &#123;value: 1, done: false&#125;</span></span><br><span class="line">   f.next(); <span class="comment">// &#123;value: 1, done: false&#125;</span></span><br><span class="line">   f.next(); <span class="comment">// &#123;value: 2, done: false&#125;   // value就是yield的返回值</span></span><br><span class="line">   f.next(); <span class="comment">// &#123;value: 3, done: true&#125;    // done表示这个generator是否已经执行结束了</span></span><br><span class="line">   f.next(); <span class="comment">// &#123;value: undefined, done: true&#125;  // 为true时value就是return的返回值，并且执行完毕，不要再调用next()了</span></span><br><span class="line">   </span><br><span class="line">   <span class="comment">// 第二个方法是直接用for ... of循环迭代generator对象，这种方式不需要我们自己判断done</span></span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> fib(<span class="number">5</span>)) &#123;</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br><span class="line">   &#125; <span class="comment">// 依次输出0, 1, 1, 2</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;font color=&quot;red&quot;&gt;这里需要注意，一旦`next`方法的返回对象的done属性为true，`for...of`循环就会中止，且不包含该返回对象，所以上面代码的return语句返回的3，不包括在for...of循环之中。&lt;/font&gt;</span><br><span class="line"></span><br><span class="line">&lt;font color=&quot;green&quot;&gt;**我们可以让函数内部无限循环，但是调用时限制范围：**&lt;/font&gt;</span><br><span class="line"></span><br><span class="line">```js</span><br><span class="line">function* fibonacci() &#123;</span><br><span class="line">    let [a, b] = [0,1];</span><br><span class="line">    for(;1;) &#123; // 1为true, 无限循环</span><br><span class="line">        [a, b] = [b, a + b];</span><br><span class="line">        yield b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var i = 0;</span><br><span class="line">for (let n of fibonacci()) &#123; // 直接用for ... of循环迭代generator对象</span><br><span class="line">	console.log(n);</span><br><span class="line">    i++;</span><br><span class="line">    if (i==5) &#123; // 限制范围</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li><h4 id="类和继承"><a href="#类和继承" class="headerlink" title="类和继承"></a>类和继承</h4><ul>
+<li><p><font color="orange"><strong><code>class</code>（类）</strong></font>：ES6为我们创建对象提供了新的语法，这就是Class语法。如果你对ES5中面向对象的方式比较熟悉的话，Class掌握起来也是非常迅速的，因为除了写法的不同，它并不会增加新的难以理解的知识点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123; <span class="comment">// 构造函数 </span></span><br><span class="line">    <span class="keyword">this</span>.name = name; </span><br><span class="line">    <span class="keyword">this</span>.age = age; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">Person.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">// 原型方法</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;  <span class="comment">// Person不是构造函数了</span></span><br><span class="line">    <span class="keyword">constructor</span>(name, age) &#123;  <span class="comment">// 构造函数 </span></span><br><span class="line">        <span class="keyword">this</span>.name = name; </span><br><span class="line">        <span class="keyword">this</span>.age = age; </span><br><span class="line">    &#125; </span><br><span class="line">    getName() &#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name; </span><br><span class="line">    &#125; <span class="comment">// 原型方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<p>  // 创建实例并调用<br>    var xiaoming = new Person(“小明”， 18);<br>  xiaoming.getName();<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- &lt;font color=&quot;orange&quot;&gt;**继承 `extends`**&lt;/font&gt;：ES6的继承就要简单很多</span><br><span class="line"></span><br><span class="line">  ```js</span><br><span class="line">  class Person &#123; // Student类继承Person类 </span><br><span class="line">      constructor(name, age) &#123; </span><br><span class="line">          this.name = name; </span><br><span class="line">          this.age = age; </span><br><span class="line">      &#125; </span><br><span class="line">      getName() &#123; </span><br><span class="line">          return this.name; </span><br><span class="line">      &#125; </span><br><span class="line">  &#125; </span><br><span class="line">  class Student extends Person &#123; // 继承</span><br><span class="line">      constructor(name, age, classes) &#123; </span><br><span class="line">          super(name, age);  // 相当于ES5中的Person.call(this);</span><br><span class="line">          this.classes = classes; </span><br><span class="line">      &#125; </span><br><span class="line">      getClasses() &#123; </span><br><span class="line">          return this.classes; </span><br><span class="line">      &#125; </span><br><span class="line">  &#125;</span><br><span class="line">  var xiaoming = new Student(&quot;小明&quot;, 14, 2);</span><br><span class="line">  console.log(xiaoming.getClasses()); // 输出：2</span><br><span class="line">  console.log(xiaoming.getName()); // 输出：小明</span><br></pre></td></tr></table></figure></p>
+<pre><code>只需要一个`extends1`关键字，就可以实现继承了，不用像ES5那样去担心构造函数继承和原型继承，除此之外，我们还需要关注一个叫做`super`的方法。在继承的构造函数中，我们必须如上面的例子那么调用一次`super`方法，它表示构造函数的继承，与ES5中利用`call/apply`继承构造函数是一样的功能。</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/23/ECMAScript-新标准2/" rel="next" title="ECMAScript 新标准2">
+                <i class="fa fa-chevron-left"></i> ECMAScript 新标准2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/23/ECMAScript-新标准4/" rel="prev" title="ECMAScript 新标准4">
+                ECMAScript 新标准4 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#generator-生成器"><span class="nav-number">1.</span> <span class="nav-text">generator(生成器)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类和继承"><span class="nav-number">2.</span> <span class="nav-text">类和继承</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">121.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/09/23/ECMAScript-新标准3/';
+          this.page.identifier = '2019/09/23/ECMAScript-新标准3/';
+          this.page.title = 'ECMAScript 新标准3';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

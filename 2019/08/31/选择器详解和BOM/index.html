@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="js选择器详解和BOM - #### 获取元素方法详解：   通过document可以访问其子节点(其实任何节点都可以)，我们看一下获取元素的所有方法  var oEle = document.getElementById(id); 该方法接收一个参数——元素的ID(区分大小写，严格匹配)，返回一个Element对象(可看作是动态NodeList集合，只是集合中只包含一个匹配的元素，会实时反映DO">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="选择器详解和BOM">
+<meta property="og:url" content="http://yoursite.com/2019/08/31/选择器详解和BOM/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="js选择器详解和BOM - #### 获取元素方法详解：   通过document可以访问其子节点(其实任何节点都可以)，我们看一下获取元素的所有方法  var oEle = document.getElementById(id); 该方法接收一个参数——元素的ID(区分大小写，严格匹配)，返回一个Element对象(可看作是动态NodeList集合，只是集合中只包含一个匹配的元素，会实时反映DO">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-03T11:55:11.167Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="选择器详解和BOM">
+<meta name="twitter:description" content="js选择器详解和BOM - #### 获取元素方法详解：   通过document可以访问其子节点(其实任何节点都可以)，我们看一下获取元素的所有方法  var oEle = document.getElementById(id); 该方法接收一个参数——元素的ID(区分大小写，严格匹配)，返回一个Element对象(可看作是动态NodeList集合，只是集合中只包含一个匹配的元素，会实时反映DO">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/31/选择器详解和BOM/">
+
+
+
+
+
+  <title>选择器详解和BOM | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/选择器详解和BOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">选择器详解和BOM</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-31T21:06:36+08:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/31/选择器详解和BOM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/31/选择器详解和BOM/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="4">js选择器详解和BOM</font></center>
+- #### 获取元素方法详解：
+
+<ul>
+<li><p>通过document可以访问其子节点(其实任何节点都可以)，我们看一下获取元素的所有方法</p>
+</li>
+<li><p><code>var oEle = document.getElementById(id);</code></p>
+<p>该方法接收一个参数——元素的ID(区分大小写，严格匹配)，返回一个Element对象(可看作是动态<code>NodeList</code>集合，只是集合中只包含一个匹配的元素，会实时反映DOM节点的变化)，若当前文档中拥有特定ID的元素不存在则返回<code>null</code>。</p>
+<p><font color="red">注意：该方法不会搜索不在文档中的元素，创建一个元素且分配ID后，要用<code>insertBefore()</code>或其他类似的方法把元素插入到文档中之后才能使用该方法获取到</font></p>
+</li>
+<li><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aEle = element.getElementsByTagName(tagName);</span><br><span class="line"><span class="keyword">var</span> aEle = rootElement.getElementsByTagName(names);<span class="comment">//调用这个方法的元素将作为本次查找的根元素</span></span><br></pre></td></tr></table></figure>
+
+<p>该方法接收一个参数——元素的标签名(不区分大小写)，返回一个<code>HTMLCollection</code>动态集合(也可以说返回一个<code>NodeList</code>类数组对象)，集合中包含以当前元素为根节点(不包括当前元素自身)，所有指定标签名的子元素，子元素的顺序是在当前元素的子树中出现的顺序，如果没有搜索到元素则集合为空。</p>
+</li>
+<li><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aEle = <span class="built_in">document</span>.getElementsByClassName(names); </span><br><span class="line"><span class="keyword">var</span> aEle = rootElement.getElementsByClassName(names); <span class="comment">//调用这个方法的元素将作为本次查找的根元素</span></span><br></pre></td></tr></table></figure>
+
+<p>该方法接收一个参数——一个或多个类名的字符串(类名通过空格分隔)，返回一个<code>HTMLCollection</code>动态集合(也可以说返回一个<code>NodeList</code>类数组对象)，集合中包含以当前元素为根节点，所有指定 class 名的子元素。</p>
+<p><font color="red">注意：<code>getElementsByTagName()</code>和<code>getElementsByClassName()</code>方法都是动态方法，因此我们用循环依次删除时会发现删不干净，原因是每次删除都会改变<code>HTMLCollection</code>动态集合的<code>length</code>，可以每次删除第一项(或最后一项)</font></p>
+</li>
+<li><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aRadio = oForm.getElementsByName(<span class="string">"sex"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>该方法接收一个参数——元素<code>name</code>的属性值，返回一个动态<code>NodeList</code>类数组对象，对象中包含以当前元素为根节点，所有指定<code>name</code>属性值的子元素。</p>
+<p><font color="red">注意：表单元素获取更多的是用表单的DOM操作，既<code>oF.sex</code>的方式获取</font></p>
+</li>
+<li><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oSub = <span class="built_in">document</span>.querySelector(<span class="string">"form#f1 input[name=login]"</span>);</span><br><span class="line"><span class="keyword">var</span> oLi = <span class="built_in">document</span>.querySelector(<span class="string">".box"</span>);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<p>该方法接收一个参数——包含一个或多个CSS选择器的字符串(多个选择器以逗号分隔)，返回匹配指定CSS选择器的<strong>第一个元素节点</strong>(无法选中伪元素)，没有发现匹配的节点则返回null。该方法非常强大，它能像css一样选择元素。</p>
+<p><font color="red">注意：由于它的写法类似于css，所以必须给传的参数加上”.”和”#”等css标识，否则无法区分</font></p>
+<ul>
+<li><p><code>var aMatch = document.querySelectorAll(&quot;div.note, div.alert&quot;);</code></p>
+<p>该方法接收一个参数——包含一个或多个CSS选择器的字符串(多个选择器以逗号分隔)，返回静态<code>NodeList</code>对象集合，该集合中包含匹配指定CSS选择器的所有节点，元素节点的变化无法实时反映在结果中；如果参数中包含CSS伪元素则返回一个空的对象集合。</p>
+<p><font color="red">注意：该方法可以将所有匹配项返回成一个集合，所以需要和其他类似方法一样进行遍历，但由于该方法为<strong>静态方法</strong>，因此不需要如动态方法一样进行特殊处理，也就是说可以一次性删除</font></p>
+<ul>
+<li><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oEle = <span class="built_in">document</span>.elementFromPoint(x, y);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<p>  该方法接收两个参数——是相对于当前窗口左上角的横纵坐标，单位为像素；返回位于页面指定位置的元素，如果该元素不可返回(如滚动条)则返回它的父元素，如果坐标值无意义(如负值)则返回null。</p>
+<ul>
+<li><p><code>getElementBy</code>系列返回的都是动态的<code>HTMLCollection</code>集合，DOM结构变化能实时地反映到所保存的对象中，而<code>querySelector</code>系列返回的都是静态的<code>NodeList</code>对象，是一个快照，DOM的任何操作都不会对其产生影响(这是规范的要求)。那么这两者有什么异同：</p>
+<ul>
+<li><p>二者都是类数组对象，因此都具有length属性，都具有<code>item()</code>方法(该方法节点列表中位于指定索引的节点)，下面写法等价</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.children.item(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">document</span>.body.children[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>NodeList</code>对象会包含文档中的所有节点，如 Element、Text 和 Comment 等</p>
+</li>
+<li><p><code>HTMLCollection</code> 对象只会包含文档中的 Element 节点</p>
+<p><font color="red">注意：由于我们使用的获取元素的方法一般都不会获得Element以外的节点，因此在这里我们可以认为他们是等价的</font></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="BOM："><a href="#BOM：" class="headerlink" title="BOM："></a>BOM：</h4><ul>
+<li><p>Browser Object Model(简称BOM)：浏览器对象模型，专门操作浏览器窗口(window)的对象，而window是BOM对象，而非js对象。通常浏览器特定的 JavaScript 扩展都被看做 BOM 的一部分。这些扩展包括：</p>
+<ul>
+<li><p>弹出新的浏览器窗口</p>
+</li>
+<li><p>移动、关闭浏览器窗口以及调整窗口大小</p>
+</li>
+<li><p>提供 Web 浏览器详细信息的定位对象</p>
+</li>
+<li><p>提供用户屏幕分辨率详细信息的屏幕对象</p>
+</li>
+<li><p>对 cookie 的支持</p>
+</li>
+</ul>
+</li>
+<li><p>BOM的window包含了document，window对象的属性和方法是直接可以使用而且被感知的，如我们之前学习的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert();</span><br><span class="line">setInterval();</span><br></pre></td></tr></table></figure>
+
+<p>这些方法其实都是window的方法，因此可以直接使用window对象的document属性，通过document属性就可以访问、检索、修改XHTML文档内容与结构。因为document对象又是DOM(Document Object Model)模型的根节点。可以说，BOM包含了DOM(对象)，浏览器提供出来给予访问的是BOM对象，从BOM对象再访问到DOM对象，从而js可以操作浏览器以及浏览器读取到的文档。</p>
+</li>
+<li><p>DOM和BOM的区别：DOM描述了处理网页内容的方法和接口，BOM描述了与浏览器进行交互的方法和接口</p>
+<ul>
+<li>在可视区窗口中我们看到的所有元素(也就是我们写在html文件的body之内部分的)，在js中由DOM负责</li>
+<li>浏览器的标签页，地址栏，搜索栏，书签栏，窗口放大还原关闭按钮，菜单栏等等；浏览器的右键菜单；document加载时的状态栏，显示http状态码等；滚动条scroll bar，上面这些在js由BOM负责</li>
+</ul>
+</li>
+<li><p>window对象是js层级中的顶层对象；代表一个浏览器窗口或一个框架；会在每次打开页面(或框架)时被自动创建。因为window对象的属性和方法是直接可以使用而且被感知的，所以使用window的属性和方法时我们常常会省略window(为了防止和变量的误会最好加上)</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<p><font size="4">1. 获取一个ul的所有子元素li，然后遍历并输出所有的li，要求分别用NodeList和HTMLCollection操作一次</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><font size="4">2. 封装一个方法，要求点击页面时，返回被点击的元素</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/31/js表格和表单的DOM操作/" rel="next" title="js表格和表单的DOM操作">
+                <i class="fa fa-chevron-left"></i> js表格和表单的DOM操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/03/js浏览器对象和方法/" rel="prev" title="js浏览器对象和方法">
+                js浏览器对象和方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#BOM："><span class="nav-number">1.</span> <span class="nav-text">BOM：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">121.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/08/31/选择器详解和BOM/';
+          this.page.identifier = '2019/08/31/选择器详解和BOM/';
+          this.page.title = '选择器详解和BOM';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

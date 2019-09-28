@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="ErioY">
 <meta property="og:description" content="获取元素样式   元素.style.width获取的样式是元素的行间样式(不管该样式是否有效)，若样式时通过选择器写成内部或外链样式时就无法获取了  计算元素有效的样式的代码： 12getComputedStyle(元素).width; //标准浏览器元素.currentStyle.width; //IE8及以下浏览器  处理浏览器兼容后封装代码： 1234function getStyle(o">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-28T02:52:29.558Z">
+<meta property="og:updated_time" content="2019-08-27T08:26:06.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js计时器和动画">
 <meta name="twitter:description" content="获取元素样式   元素.style.width获取的样式是元素的行间样式(不管该样式是否有效)，若样式时通过选择器写成内部或外链样式时就无法获取了  计算元素有效的样式的代码： 12getComputedStyle(元素).width; //标准浏览器元素.currentStyle.width; //IE8及以下浏览器  处理浏览器兼容后封装代码： 1234function getStyle(o">
@@ -491,11 +491,11 @@
 <li><h4 id="管理和封装计时器"><a href="#管理和封装计时器" class="headerlink" title="管理和封装计时器"></a>管理和封装计时器</h4></li>
 </ul>
 <ol>
-<li>封装一个doMove函数，用来做动画效果</li>
+<li>封装一个<code>doMove</code>函数，用来做动画效果</li>
 <li>用计时器移动元素时需要注意：<ul>
 <li>判断终点位置时不能用==，若总长不能整除步长会停不下来；如果用&gt;=虽然会停下来，但不能直接赋值，该限制应该在赋值之前，否则在视觉上有个超过终点后的后退效果</li>
 <li>每次开启计时器时应该注意先清除之前的计时器</li>
-<li><code>timer</code>定义成自定义属性<code>(oDiv.timer)</code>，并在定义时清除一下这个自定义属性，<code>clearInterval</code>可以清除null和未定义，这样做的好处是不靠任何外面的变量，为的是后面的封装</li>
+<li><code>timer</code>定义成自定义属性<code>(oDiv.timer)</code>，并在定义时清除一下这个自定义属性，<code>clearInterval</code>可以清除<code>null</code>和未定义，这样做的好处是不靠任何外面的变量，为的是后面的封装</li>
 <li>封装的过程我们要分清代码中哪些数据是变化的，并把他们变成参数</li>
 <li>事件和计时器调用函数时函数名是不能加()的(因为函数名+()就变成返回值了)，如果需要传参必须将该事件调用改成调用匿名函数，然后在匿名函数里面直接调用该函数的办法</li>
 <li>传入的正值和负值对用户来说并不友好，用户还要根据方向来判断需要传入值得正负，我们可以把代码改成判断当前位置和目标点位置来确定</li>
@@ -667,7 +667,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -680,7 +680,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -778,7 +778,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">90.5k</span>
+    <span title="Site words total count">121.7k</span>
   
 </div>
 

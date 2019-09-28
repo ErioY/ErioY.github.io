@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="创建数组：">
+<meta name="description" content="事件处理函数【类型】鼠标事件、键盘事件、HTML事件 【组成】on + 事件名称  事件流【概念】事件流描述的是页面接收事件的顺序 【阶段】事件流的三个阶段：捕获、目标、冒泡  DOM 2级事件 添加事件监听器：addEventListener(事件名, 处理函数, 布尔值)  移除事件监听器：removeEventListener(事件名, 处理函数) IE下的事件监听器：attachEven">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js 数组-Array类型">
-<meta property="og:url" content="http://yoursite.com/2019/08/08/js-数组-Array类型/index.html">
+<meta property="og:title" content="js 事件event详解">
+<meta property="og:url" content="http://yoursite.com/2019/08/18/js-事件详解/index.html">
 <meta property="og:site_name" content="ErioY">
-<meta property="og:description" content="创建数组：">
+<meta property="og:description" content="事件处理函数【类型】鼠标事件、键盘事件、HTML事件 【组成】on + 事件名称  事件流【概念】事件流描述的是页面接收事件的顺序 【阶段】事件流的三个阶段：捕获、目标、冒泡  DOM 2级事件 添加事件监听器：addEventListener(事件名, 处理函数, 布尔值)  移除事件监听器：removeEventListener(事件名, 处理函数) IE下的事件监听器：attachEven">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-08T02:28:10.173Z">
+<meta property="og:updated_time" content="2019-08-18T15:09:52.180Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js 数组-Array类型">
-<meta name="twitter:description" content="创建数组：">
+<meta name="twitter:title" content="js 事件event详解">
+<meta name="twitter:description" content="事件处理函数【类型】鼠标事件、键盘事件、HTML事件 【组成】on + 事件名称  事件流【概念】事件流描述的是页面接收事件的顺序 【阶段】事件流的三个阶段：捕获、目标、冒泡  DOM 2级事件 添加事件监听器：addEventListener(事件名, 处理函数, 布尔值)  移除事件监听器：removeEventListener(事件名, 处理函数) IE下的事件监听器：attachEven">
 
 
 
@@ -166,13 +166,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/08/js-数组-Array类型/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/18/js-事件详解/">
 
 
 
 
 
-  <title>js 数组-Array类型 | ErioY</title>
+  <title>js 事件event详解 | ErioY</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/08/js-数组-Array类型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/18/js-事件详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Erio">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js 数组-Array类型</h1>
+          <h1 class="post-title" itemprop="name headline">js 事件event详解</h1>
         
 
         <div class="post-meta">
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-08T10:02:53+08:00">
-                2019-08-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-18T22:34:58+08:00">
+                2019-08-18
               </time>
             
 
@@ -357,8 +357,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/08/js-数组-Array类型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/08/js-数组-Array类型/" itemprop="commentCount"></span>
+                <a href="/2019/08/18/js-事件详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/18/js-事件详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  4
+                  125
                 </span>
               
 
@@ -423,7 +423,20 @@
 
       
         <ul>
-<li><h4 id="创建数组："><a href="#创建数组：" class="headerlink" title="创建数组："></a><font face="楷体">创建数组：</font></h4></li>
+<li><h5 id="事件处理函数"><a href="#事件处理函数" class="headerlink" title="事件处理函数"></a>事件处理函数</h5><p><font color="blue"><strong>【类型】</strong></font>鼠标事件、键盘事件、HTML事件</p>
+<p><font color="blue"><strong>【组成】</strong></font><code>on + 事件名称</code></p>
+</li>
+<li><h5 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h5><p><font color="blue"><strong>【概念】</strong></font>事件流描述的是页面接收事件的顺序</p>
+<p><font color="blue"><strong>【阶段】</strong></font>事件流的三个阶段：捕获、目标、冒泡</p>
+</li>
+<li><h5 id="DOM-2级事件"><a href="#DOM-2级事件" class="headerlink" title="DOM 2级事件"></a>DOM 2级事件</h5><ol>
+<li><p>添加事件监听器：<code>addEventListener(事件名, 处理函数, 布尔值)</code></p>
+</li>
+<li><p>移除事件监听器：<code>removeEventListener(事件名, 处理函数)</code></p>
+<p>IE下的事件监听器：<code>attachEvent(事件名, 处理函数)</code>、   <code>detachEvent(事件名, 处理函数)</code></p>
+</li>
+</ol>
+</li>
 </ul>
 
       
@@ -455,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/06/CSS3渐变(Gradients)/" rel="next" title="CSS3渐变(Gradients)">
-                <i class="fa fa-chevron-left"></i> CSS3渐变(Gradients)
+              <a href="/2019/08/17/js-封装获取节点函数/" rel="next" title="js 封装获取节点函数">
+                <i class="fa fa-chevron-left"></i> js 封装获取节点函数
               </a>
             
           </div>
@@ -465,8 +478,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/11/js域解析/" rel="prev" title="js预解析">
-                js预解析 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/19/js-cookie基础操作/" rel="prev" title="js cookie基础操作">
+                js cookie基础操作 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -556,7 +569,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -569,7 +582,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -633,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数组："><span class="nav-number">1.</span> <span class="nav-text">创建数组：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#事件处理函数"><span class="nav-number">1.</span> <span class="nav-text">事件处理函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#事件流"><span class="nav-number">2.</span> <span class="nav-text">事件流</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM-2级事件"><span class="nav-number">3.</span> <span class="nav-text">DOM 2级事件</span></a></li></ol></div>
             
 
           </div>
@@ -667,7 +680,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">90.5k</span>
+    <span title="Site words total count">121.7k</span>
   
 </div>
 
@@ -839,9 +852,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2019/08/08/js-数组-Array类型/';
-          this.page.identifier = '2019/08/08/js-数组-Array类型/';
-          this.page.title = 'js 数组-Array类型';
+          this.page.url = 'http://yoursite.com/2019/08/18/js-事件详解/';
+          this.page.identifier = '2019/08/18/js-事件详解/';
+          this.page.title = 'js 事件event详解';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="js事件委托和滚轮事件 - #### 事件委托：   在JavaScript中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致这一问题的原因是多方面的。首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的DOM访问次数，会延迟整个页面的交互就绪时间。  对“事件处理程序过多”问题的解决方案就是事件委托。事件委托利用了事件">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js事件委托和滚轮事件">
+<meta property="og:url" content="http://yoursite.com/2019/09/07/js事件委托和滚轮事件/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="js事件委托和滚轮事件 - #### 事件委托：   在JavaScript中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致这一问题的原因是多方面的。首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的DOM访问次数，会延迟整个页面的交互就绪时间。  对“事件处理程序过多”问题的解决方案就是事件委托。事件委托利用了事件">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-09T13:28:33.140Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js事件委托和滚轮事件">
+<meta name="twitter:description" content="js事件委托和滚轮事件 - #### 事件委托：   在JavaScript中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致这一问题的原因是多方面的。首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的DOM访问次数，会延迟整个页面的交互就绪时间。  对“事件处理程序过多”问题的解决方案就是事件委托。事件委托利用了事件">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/07/js事件委托和滚轮事件/">
+
+
+
+
+
+  <title>js事件委托和滚轮事件 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/07/js事件委托和滚轮事件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js事件委托和滚轮事件</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-07T11:09:51+08:00">
+                2019-09-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/07/js事件委托和滚轮事件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/07/js事件委托和滚轮事件/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="4">js事件委托和滚轮事件</font></center>
+- #### 事件委托：
+
+<ul>
+<li><p>在JavaScript中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致这一问题的原因是多方面的。首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的DOM访问次数，会延迟整个页面的交互就绪时间。</p>
+</li>
+<li><p>对“事件处理程序过多”问题的解决方案就是事件委托。事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。例如，click事件会一直冒泡到document层次。也就是说，我们可以为整个页面指定一个<code>onclick</code>事件处理程序，而不必给每个可单击的元素分别添加事件处理程序</p>
+</li>
+<li><p><code>event.type</code> ：<strong>触发事件的类型</strong>，如通过<code>onclick</code>的事件类型是click</p>
+</li>
+<li><p><code>event.target</code>(低版本IE用<code>event.srcElement</code>)：事件触发元素，比如可以用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tar = event.target || event.srcElement;  <span class="comment">//兼容写法</span></span><br><span class="line">tar.tagName;  <span class="comment">//获取事件触发元素标签名，大写，需要转换为小写</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用事件触发元素封装一个事件委托方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delegation</span>(<span class="params">fEle,ele,attr,fn</span>)</span>&#123;</span><br><span class="line">    ele = ele.toLowerCase();</span><br><span class="line">    bind(fEle,attr,<span class="function"><span class="keyword">function</span> (<span class="params">ev</span>)</span>&#123;</span><br><span class="line">        ev = ev || event;</span><br><span class="line">        <span class="keyword">var</span> tar = ev.target || ev.srcElement; </span><br><span class="line">        <span class="keyword">if</span>(ele[<span class="number">0</span>]===<span class="string">"#"</span>&amp;&amp;(<span class="string">"#"</span>+tar.id)===ele||</span><br><span class="line">        ele[<span class="number">0</span>]===<span class="string">"."</span>&amp;&amp;tar.className.indexOf(ele.substring(<span class="number">1</span>))!=<span class="number">-1</span>||</span><br><span class="line">        /[a-z]/.test(ele[<span class="number">0</span>])&amp;&amp;tar.nodeName.toLowerCase()===ele)&#123;</span><br><span class="line">            fn.call(tar);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="鼠标滚轮事件："><a href="#鼠标滚轮事件：" class="headerlink" title="鼠标滚轮事件："></a>鼠标滚轮事件：</h4><ul>
+<li><p>在ie浏览器和谷歌浏览器的滚轮事件使用<code>onmousewheel</code>；而火狐浏览器的事件用<code>DOMMouseScroll</code>(该事件必须用<code>addEventListener</code>事件监听才能生效)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.navigator.userAgent.indexOf(<span class="string">"Firefox"</span>)!=<span class="number">-1</span>)&#123;</span><br><span class="line">    obj.addEventListener(<span class="string">'DOMMouseScroll'</span>, wheel, <span class="literal">false</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    obj.onmousewheel = wheel;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>根据不同浏览器执行不同的代码</p>
+</li>
+<li><p>另外在ie浏览器和谷歌浏览器里用来判断滚轮方向的属性为：<code>event.wheelDelta</code>(上：120 下：-120)；而火狐浏览器的属性为：<code>ev.detail</code>(上：-3 下：3)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> delta = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">if</span> (ev.wheelDelta) &#123;</span><br><span class="line">    delta = ev.wheelDelta &gt; <span class="number">0</span> ? <span class="literal">true</span> : <span class="literal">false</span>; </span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(ev.detail) &#123;</span><br><span class="line">    delta = ev.detail &lt; <span class="number">0</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将滚动方向统一为向上为true，向下为false</p>
+</li>
+<li><p>最后我们将其进行封装，在使用滚动条事件时需要注意几点：</p>
+<ul>
+<li><p>封装函数的参数尽量设置成一个对象，并设置默认值，提高用户体验，并且在函数命名时尽量使用名字空间的方式</p>
+</li>
+<li><p>如果我们想在滚轮滚动时不要移动滚动条就需要阻止浏览器默认行为，而标准浏览器的事件监听需要通过event的<code>ev.preventDefault()</code>来阻止，而<code>attachEvent</code>和<code>on</code>事件用的是<code>return false</code></p>
+</li>
+<li><p>滚动距离(可视区到页面顶部/左侧)：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.scrollTop/scrollLeft <span class="comment">// 仅chrome下有效</span></span><br><span class="line"><span class="built_in">document</span>.documentElement.scrollTop/scrollLeft <span class="comment">// 其他浏览器</span></span><br><span class="line"><span class="comment">// 垂直滚动条和水平滚动条的兼容写法：</span></span><br><span class="line"><span class="keyword">var</span> scrollTop =  <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop;</span><br><span class="line"><span class="keyword">var</span> scrollLeft = <span class="built_in">document</span>.body.scrollLeft || <span class="built_in">document</span>.documentElement.scrollLeft;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>页面内容宽高(盒子内部包括溢出部分的宽度/高度)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oBWidth = <span class="built_in">document</span>.body.scrollWidth</span><br><span class="line"><span class="keyword">var</span> oBHeight = <span class="built_in">document</span>.body.scrollHeight</span><br></pre></td></tr></table></figure>
+
+<p>例如一个元素内容被隐藏，可以用滚动条查看，这些实际内容的宽高</p>
+</li>
+<li><p>设置滚动条的位置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.scrollTo(x,y); <span class="comment">// x为水平方向的滚动条位置，y为垂直方向的滚动条位置,是window的方法</span></span><br></pre></td></tr></table></figure>
+
+<p><font color="red">注意：必须两个值都写，如希望设置y轴滚动条(x不变)，首先获得x轴滚动条位置并为之赋值，然后设置y轴位置，设置的时候不需要单位。不过现在的页面很少需要水平方向滚动条，所以一般用0即可</font></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="Console-对象"><a href="#Console-对象" class="headerlink" title="Console 对象"></a>Console 对象</h4><ul>
+<li><p>JavaScript 原生中默认是没有 Console 对象,这是宿主对象(也就是游览器)提供的内置对象。 用于访问调试控制台, 在不同的浏览器里效果可能不同。</p>
+</li>
+<li><p>console命令中最常用的就是<code>console.log</code> 了。<code>console.log</code>有一个特殊的首参数：字符串(%s)、整数(%d或%i)、css样式(%c)、浮点数(%f)、DOM对象属性(%O)和可展开的JS对象(%o)，如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"%s"</span>,&#123;<span class="attr">name</span>:<span class="string">"魏老师"</span>&#125;); <span class="comment">//输出:[object Object]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"%d年%d月%d日"</span>,<span class="number">2011</span>,<span class="number">3</span>,<span class="number">26</span>); <span class="comment">//输出:2011年3月26日</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"%chello world"</span>, <span class="string">"color: red;font-size: 24px;font-weight: bold;"</span>); <span class="comment">//输出：hello world(带有样式)</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"圆周率是%f"</span>,<span class="number">3.14159</span>); <span class="comment">//输出：圆周率是3.14159</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"%o"</span>,&#123;<span class="attr">name</span>:<span class="string">"魏老师"</span>&#125;); <span class="comment">//输出：Object &#123; name: "魏老师" &#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>常用的还有</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.dir(obj);  <span class="comment">//输出obj的信息</span></span><br><span class="line"><span class="built_in">console</span>.dirxml(info); <span class="comment">//某个节点(node)所包含的html/xml代码</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<p><font size="4">1. 做一个点击添加留言效果，用事件委托的方法给每个添加的留言设置一个撤回功能</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">delegation(oLi,<span class="string">"button"</span>,<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    oUl.removeChild(oLi);</span><br><span class="line">    len--; <span class="comment">// 将留言条数减一</span></span><br><span class="line">    <span class="comment">// console.log(len);</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><font size="4">2. 鼠标滚轮控制并改变div高度变化，向上滚动减少div高度，向下滚动增加div高度</font></p>
+<p>CSS部分：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>JS部分：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"div"</span>)[<span class="number">0</span>];</span><br><span class="line">doWheel(oDiv,&#123;</span><br><span class="line">    <span class="string">"up"</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        oDiv.style.height = oDiv.offsetHeight - <span class="number">1</span> + <span class="string">"px"</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"down"</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        oDiv.style.height = oDiv.offsetHeight + <span class="number">1</span> + <span class="string">"px"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 鼠标滚轮事件封装</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doWheel</span>(<span class="params">obj,fns,stop</span>) </span>&#123;  <span class="comment">// obj,fns都为对象</span></span><br><span class="line">    <span class="keyword">var</span> up = fns.up || <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> down = fns.down || <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> stop = stop === <span class="literal">undefined</span> ? <span class="literal">true</span> : stop;</span><br><span class="line">    <span class="comment">// 判断是否火狐浏览器</span></span><br><span class="line">    <span class="keyword">var</span> fire = <span class="built_in">window</span>.navigator.userAgent.indexOf(<span class="string">"Firefox"</span>) &gt;= <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// console.log(fire);</span></span><br><span class="line">    <span class="keyword">if</span> (fire) &#123;</span><br><span class="line">        obj.addEventListener(<span class="string">"DOMMouseScroll"</span>,</span><br><span class="line">                             <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            event.detail &lt; <span class="number">0</span> ? up() : down();</span><br><span class="line">            <span class="keyword">if</span> (stop) &#123;</span><br><span class="line">                event.preventDefault();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,<span class="literal">false</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        obj.onmousewheel = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            event.wheelDelta &gt; <span class="number">0</span> ? up() : down();</span><br><span class="line">            <span class="keyword">if</span> (stop) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font size="4">3. 点击按钮返回页面顶部按钮，要求定位在页面左下角，但是在滚动距离少于200px时隐藏</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oBtn = <span class="built_in">document</span>.querySelector(<span class="string">"button"</span>);</span><br><span class="line"><span class="comment">// 触发滚动事件</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="built_in">window</span>.onscroll = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scrollTop =  <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop;</span><br><span class="line">    oBtn.style.display = scrollTop &gt;= <span class="number">200</span> ? <span class="string">"block"</span> : <span class="string">"none"</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(scrollTop);</span><br><span class="line">&#125;</span><br><span class="line">oBtn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.scrollTo(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/07/js事件流和事件监听/" rel="next" title="js事件流和事件监听">
+                <i class="fa fa-chevron-left"></i> js事件流和事件监听
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/07/js键盘事件和元素的拖放/" rel="prev" title="js键盘事件和元素的拖放">
+                js键盘事件和元素的拖放 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#鼠标滚轮事件："><span class="nav-number">1.</span> <span class="nav-text">鼠标滚轮事件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Console-对象"><span class="nav-number">2.</span> <span class="nav-text">Console 对象</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">121.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/09/07/js事件委托和滚轮事件/';
+          this.page.identifier = '2019/09/07/js事件委托和滚轮事件/';
+          this.page.title = 'js事件委托和滚轮事件';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

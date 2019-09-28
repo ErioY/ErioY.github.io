@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="js原型和原型链 - #### 原型和原型链：   每个对象都连接到一个原型对象，并可从中继承属性。所有通过字面量创建的对象都具有同一个原型对象——Object.prototype既原型对象的引用。通过new关键字后跟构造函数创建的对象的原型，就是构造函数的prototype属性的值，比如通过new Object()创建的对象和字面量创建的对象一样也继承自Object.prototype 1234">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js原型和原型链">
+<meta property="og:url" content="http://yoursite.com/2019/09/07/js原型和原型链/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="js原型和原型链 - #### 原型和原型链：   每个对象都连接到一个原型对象，并可从中继承属性。所有通过字面量创建的对象都具有同一个原型对象——Object.prototype既原型对象的引用。通过new关键字后跟构造函数创建的对象的原型，就是构造函数的prototype属性的值，比如通过new Object()创建的对象和字面量创建的对象一样也继承自Object.prototype 1234">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/09/07/js原型和原型链/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569133688912.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/07/js原型和原型链/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569134062845.png">
+<meta property="og:updated_time" content="2019-09-24T10:42:51.992Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js原型和原型链">
+<meta name="twitter:description" content="js原型和原型链 - #### 原型和原型链：   每个对象都连接到一个原型对象，并可从中继承属性。所有通过字面量创建的对象都具有同一个原型对象——Object.prototype既原型对象的引用。通过new关键字后跟构造函数创建的对象的原型，就是构造函数的prototype属性的值，比如通过new Object()创建的对象和字面量创建的对象一样也继承自Object.prototype 1234">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/07/js原型和原型链/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569133688912.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/07/js原型和原型链/">
+
+
+
+
+
+  <title>js原型和原型链 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/07/js原型和原型链/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js原型和原型链</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-07T11:45:24+08:00">
+                2019-09-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/07/js原型和原型链/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/07/js原型和原型链/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="4">js原型和原型链</font></center>
+- #### 原型和原型链：
+
+<ul>
+<li><p>每个对象都连接到一个原型对象，并可从中继承属性。所有通过字面量创建的对象都具有同一个原型对象——<code>Object.prototype</code>既原型对象的引用。通过new关键字后跟构造函数创建的对象的原型，就是构造函数的<code>prototype</code>属性的值，比如通过<code>new Object()</code>创建的对象和字面量创建的对象一样也继承自<code>Object.prototype</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> sum = &#123;</span><br><span class="line">      name: <span class="string">"百度"</span>, </span><br><span class="line">      type: <span class="string">"加法"</span></span><br><span class="line">  &#125;  <span class="comment">// 创建原型对象的一个方法：</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.add = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">      alert(<span class="string">"原型对象的方法"</span>); </span><br><span class="line">&#125;</span><br><span class="line">  sum.add(); <span class="comment">// 在sum上调用原型对象的方法</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>构造器(constructor，包括: Object；Function；Array；Date；String等函数)才有prototype属性，对象(除Object外)都拥有<code>__proto__</code>。<font color="red">构造器才有原型对象</font></p>
+</li>
+<li><p>而javascript中的对象就是一个指向prototype的指针和一个自身的属性列表。</p>
+</li>
+<li><p>原型链继承就是创建一个新的指针，指向构造器的prototype属性</p>
+<ul>
+<li><p>用一张图来表示：<code>prototype</code>(原型)、<code>constructor</code>(构造器)、<code>__proto__</code>(构造器的原型——<code>constructor.prototype</code>)</p>
+<p><img src="/2019/09/07/js原型和原型链/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569133688912.png" alt="1569133688912"></p>
+<p>所谓原型链，指的就是图中的<code>__proto__</code>这一条指针链！原型链的顶层就是<code>Object.prototype</code>，而这个对象的是没有原型对象的(null)。</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> A();</span><br><span class="line">  <span class="built_in">console</span>.log(a.__proto__); <span class="comment">// A &#123;&#125; (即构造器function A 的原型对象)</span></span><br><span class="line">  <span class="built_in">console</span>.log(a.__proto__.__proto__); <span class="comment">// Object &#123;&#125; (即构造器function Object 的原型对象)</span></span><br><span class="line">  <span class="built_in">console</span>.log(a.__proto__.__proto__.__proto__); <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p><code>prototype</code>、<code>_proto_</code>的区别以及<code>_proto_</code>的指向：</p>
+<p><img src="/2019/09/07/js原型和原型链/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569134062845.png" alt="1569134062845"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;;  <span class="comment">//字面量方式</span></span><br><span class="line"><span class="built_in">console</span>.log(a.__proto__);  <span class="comment">//Object &#123;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(a.__proto__ === a.constructor.prototype); <span class="comment">//true</span></span><br><span class="line"><span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;; <span class="comment">//构造器方式</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> A();</span><br><span class="line"><span class="built_in">console</span>.log(a.__proto__); <span class="comment">//A &#123;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(a.__proto__ === a.constructor.prototype); <span class="comment">//true</span></span><br><span class="line"><span class="keyword">var</span> a1 = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;;  <span class="comment">//Object.create()方式</span></span><br><span class="line"><span class="keyword">var</span> a2 = <span class="built_in">Object</span>.create(a1);</span><br><span class="line"><span class="built_in">console</span>.log(a2.__proto__); <span class="comment">//Object &#123;a: 1&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(a.__proto__ === a.constructor.prototype); <span class="comment">//false(此处即为图1中的例外情况)</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="原型链继承："><a href="#原型链继承：" class="headerlink" title="原型链继承："></a>原型链继承：</h4><ul>
+<li><p>这是实现继承最简单的方式了，核心就一句话：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Super</span>(<span class="params"></span>)</span>&#123;   <span class="comment">// 父类构造函数</span></span><br><span class="line">    <span class="keyword">this</span>.val = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">this</span>.arr = [<span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params"></span>)</span>&#123;<span class="comment">// ...&#125;  // 子类构造函数</span></span><br><span class="line">Sub.prototype = <span class="keyword">new</span> Super();    <span class="comment">// 核心</span></span><br><span class="line"><span class="keyword">var</span> sub1 = <span class="keyword">new</span> Sub();</span><br><span class="line"><span class="keyword">var</span> sub2 = <span class="keyword">new</span> Sub();</span><br><span class="line">sub1.val = <span class="number">2</span>;</span><br><span class="line">sub1.arr.push(<span class="number">2</span>);</span><br><span class="line">alert(sub1.val);    <span class="comment">// 2</span></span><br><span class="line">alert(sub2.val);    <span class="comment">// 1</span></span><br><span class="line">alert(sub1.arr);    <span class="comment">// 1, 2</span></span><br><span class="line">alert(sub2.arr);    <span class="comment">// 1, 2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>核心：拿父类实例来充当子类原型对象</strong></font></p>
+</li>
+<li><p>优缺点：</p>
+<ul>
+<li><p>优点：简单，易于实现；</p>
+</li>
+<li><p>缺点：</p>
+<p>1、修改<code>sub1.arr</code>后<code>sub2.arr</code>也变了，因为来自原型对象的引用属性是所有实例共享的；</p>
+<p>2、创建子类实例时，无法向父类构造函数传参</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<p><font size="4">1. 创建一个dog类，包含共有属性：name、age和varieties。在该类的原型对象上增加一个color属性和值，用<code>for in</code>遍历对象属性，然后通过<code>document.write</code>输出对象的全部属性和值</font></p>
+<p><font color="blue">使用 for in 循环遍历对象的属性时，原型链上的所有属性都将被访问</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name,age,varieties</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name,</span><br><span class="line">        <span class="keyword">this</span>.age = age,</span><br><span class="line">        <span class="keyword">this</span>.varieties = varieties</span><br><span class="line">&#125;</span><br><span class="line">Dog.prototype.color = <span class="string">"blue"</span>;</span><br><span class="line"><span class="keyword">var</span> dog = <span class="keyword">new</span> Dog(<span class="string">"大黄"</span>, <span class="number">5</span>, <span class="string">"泰迪"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(dog);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> dog) &#123;</span><br><span class="line">    <span class="built_in">document</span>.write(dog[i] + <span class="string">" "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font size="4">2. <code>Array.prototype.slice.call()</code>的方法可以将一个伪数组(类数组)转换成真正的数组，先将伪数组转换成数组，并在它的构造器的原型上添加一个<code>numSort</code>方法，该方法按照数组的数字大小进行正序排列(提示：不用<code>sort</code>方法，用冒泡排序)，并且指出在转换之前它的构造器是谁，转换之后构造器又是谁？</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = &#123;</span><br><span class="line">    <span class="string">"0"</span>:<span class="number">111</span>,</span><br><span class="line">    <span class="string">"1"</span>:<span class="number">22</span>,</span><br><span class="line">    <span class="string">"2"</span>:<span class="number">3</span>,</span><br><span class="line">    <span class="string">"length"</span>:<span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(arr.__proto__); <span class="comment">// 输出类数组构造器原型 =&gt; object</span></span><br><span class="line">arr = <span class="built_in">Array</span>.prototype.slice.call(arr); <span class="comment">// 伪数组转换为数组</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.__proto__); <span class="comment">// 输出数组构造器原型 =&gt; array</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.numSort = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 冒泡排序</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="keyword">this</span>.length - <span class="number">1</span> -i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>[j] &gt; <span class="keyword">this</span>[j+<span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="keyword">var</span> temp = <span class="keyword">this</span>[j];</span><br><span class="line">                <span class="keyword">this</span>[j] = <span class="keyword">this</span>[j+<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">this</span>[j+<span class="number">1</span>] = temp; </span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">arr.numSort();</span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">0</span>,<span class="number">9</span>];</span><br><span class="line">arr1.numSort();</span><br></pre></td></tr></table></figure>
+
+<p><font size="4">3. 创建一个animal父类(共有属性color、sex)，一个dog子类(共有属性name和wang())和一个cat子类(共有属性name和miao())，分别用两个子类创建一个实例，要求该实例可以通过继承为其设置color和sex，并用子类的共有属性设置对应属性和方法</font></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/07/js组合继承和beget函数/" rel="next" title="js组合继承和beget函数">
+                <i class="fa fa-chevron-left"></i> js组合继承和beget函数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/15/css不常用的属性/" rel="prev" title="css不常用的属性">
+                css不常用的属性 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型链继承："><span class="nav-number">1.</span> <span class="nav-text">原型链继承：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">121.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/09/07/js原型和原型链/';
+          this.page.identifier = '2019/09/07/js原型和原型链/';
+          this.page.title = 'js原型和原型链';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

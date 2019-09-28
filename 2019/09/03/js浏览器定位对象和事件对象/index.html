@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="js浏览器定位对象和事件对象  浏览器的历史记录 window的history对象，html5中新增了popstate等方法我们会在后面详细说明 123456window.history.go(-1); //访问浏览器窗口的历史，负数为后退，正数为前进window.history.back(); //在浏览历史里后退一步，等同go(-1)window.history.forward(); //在浏">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js浏览器定位对象和事件对象">
+<meta property="og:url" content="http://yoursite.com/2019/09/03/js浏览器定位对象和事件对象/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="js浏览器定位对象和事件对象  浏览器的历史记录 window的history对象，html5中新增了popstate等方法我们会在后面详细说明 123456window.history.go(-1); //访问浏览器窗口的历史，负数为后退，正数为前进window.history.back(); //在浏览历史里后退一步，等同go(-1)window.history.forward(); //在浏">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-08T02:59:54.298Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js浏览器定位对象和事件对象">
+<meta name="twitter:description" content="js浏览器定位对象和事件对象  浏览器的历史记录 window的history对象，html5中新增了popstate等方法我们会在后面详细说明 123456window.history.go(-1); //访问浏览器窗口的历史，负数为后退，正数为前进window.history.back(); //在浏览历史里后退一步，等同go(-1)window.history.forward(); //在浏">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/03/js浏览器定位对象和事件对象/">
+
+
+
+
+
+  <title>js浏览器定位对象和事件对象 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/js浏览器定位对象和事件对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js浏览器定位对象和事件对象</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-03T20:26:59+08:00">
+                2019-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/03/js浏览器定位对象和事件对象/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/03/js浏览器定位对象和事件对象/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>js浏览器定位对象和事件对象</p>
+<ul>
+<li><h4 id="浏览器的历史记录"><a href="#浏览器的历史记录" class="headerlink" title="浏览器的历史记录"></a>浏览器的历史记录</h4><ul>
+<li><p>window的history对象，html5中新增了popstate等方法我们会在后面详细说明</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.history.go(<span class="number">-1</span>); <span class="comment">//访问浏览器窗口的历史，负数为后退，正数为前进</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.history.back(); <span class="comment">//在浏览历史里后退一步，等同go(-1)</span></span><br><span class="line"><span class="built_in">window</span>.history.forward(); <span class="comment">//在浏览历史里前进一步，等同go(1)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.history.length <span class="comment">//浏览过的页面数</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="location对象和其他打开页面方法"><a href="#location对象和其他打开页面方法" class="headerlink" title="location对象和其他打开页面方法"></a>location对象和其他打开页面方法</h4></li>
+</ul>
+<ol>
+<li><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 常用</span></span><br><span class="line"><span class="built_in">window</span>.location.href; <span class="comment">// 载入页面的完整URL，如http://www.baidu.com </span></span><br><span class="line"><span class="built_in">window</span>.location.search; <span class="comment">// 执行GET请求的URL中的问号后的部分，又称查询字符串，如?p=xxxx </span></span><br><span class="line"><span class="built_in">window</span>.location.hash; <span class="comment">// 如果URL包含#，返回该符号之后的内容，如#anchor1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.location.portocol; <span class="comment">// URL中使用的协议，即双斜杠之前的部分，如http </span></span><br><span class="line"><span class="built_in">window</span>.location.host; <span class="comment">// 服务器的名字，如www.baidu.com </span></span><br><span class="line"><span class="built_in">window</span>.location.hostname; <span class="comment">// 通常等于host，有时会省略前面的www </span></span><br><span class="line"><span class="built_in">window</span>.location.port; <span class="comment">// URL声明的请求的端口，默认情况下，大多数URL没有端口信息，如8080 </span></span><br><span class="line"><span class="built_in">window</span>.location.pathname; <span class="comment">// URL中主机名后的部分，如/pictures/index.html </span></span><br><span class="line"><span class="built_in">window</span>.location.assign(<span class="string">"http:www.baidu.com"</span>); <span class="comment">// 同href，新地址会被加到浏览器的历史栈中 </span></span><br><span class="line"><span class="built_in">window</span>.location.replace(<span class="string">"http:www.baidu.com"</span>); <span class="comment">// 同assign，但新地址不会被加到浏览器的历史栈中，不能通过back和forward访问</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.location.reload(<span class="literal">true</span> | <span class="literal">false</span>); <span class="comment">// 重新载入当前页面，为false时从浏览器缓存中重载，为true时从服务器端重载，默认为false</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line">2. `open`方法打开一个新窗口</span><br><span class="line"></span><br><span class="line">   ```js</span><br><span class="line">   open(URL,打开方式)；  // 用来打开一个新窗口</span><br></pre></td></tr></table></figure>
+
+<p>   <font color="red">注意：网址为空时打开的是空白页面，打开方式默认为_blank(新窗口)，设置_self(当前窗口)，此方法的返回值是新窗口的window对象</font></p>
+<ol start="3">
+<li><p><code>close</code>方法关闭窗口，有兼容性问题(火狐禁止代码关闭浏览器，chrome直接关闭，ie询问关闭)，但可以用来关闭用js方法打开的窗口</p>
+</li>
+<li><p><code>window.location.href</code>的方法也可以用来做页面跳转，如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.location.href = <span class="string">"url"</span>; <span class="comment">//同时可以在url后面添加信息，如"?"+信息或者"#"+信息          </span></span><br><span class="line"><span class="built_in">window</span>.location.search  <span class="comment">//用来获取url?后面的内容</span></span><br><span class="line"><span class="built_in">window</span>.location.hash  <span class="comment">//用来获取url#后面的内容</span></span><br></pre></td></tr></table></figure>
+
+<p><font color="red">注意：下面两个的window是跳转后新窗口对象，获取的数据还包括”?”和”#”</font></p>
+</li>
+</ol>
+<hr>
+<ul>
+<li><h4 id="window的事件"><a href="#window的事件" class="headerlink" title="window的事件"></a>window的事件</h4></li>
+</ul>
+<ol>
+<li><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload; <span class="comment">//window的加载事件</span></span><br><span class="line"><span class="built_in">window</span>.onscroll; <span class="comment">//window的滚动事件</span></span><br><span class="line"><span class="built_in">window</span>.onresize; <span class="comment">//window的窗口变化事件</span></span><br><span class="line"><span class="built_in">window</span>.onhashchange; <span class="comment">//window的hash值发生变化事件</span></span><br></pre></td></tr></table></figure>
+
+<p><font color="red">注意：onscroll和onresize不是按照距离触发事件，而是单位时间；<code>onhashchange</code>可以让我们在改变页面视图的同时让历史记录功能生效，如后面的ajax的问题</font></p>
+</li>
+</ol>
+<hr>
+<ul>
+<li><h4 id="获取选中文字"><a href="#获取选中文字" class="headerlink" title="获取选中文字"></a>获取选中文字</h4></li>
+</ul>
+<ol>
+<li><p>获取和取消鼠标选中的文字：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.selection.createRange().text; <span class="comment">//IE9以下获取选中文字</span></span><br><span class="line"><span class="built_in">window</span>.getSelection().toString(); <span class="comment">//其他浏览器获取选中文字</span></span><br><span class="line"><span class="built_in">window</span>.getSelection ? <span class="built_in">window</span>.getSelection().toString() : <span class="built_in">document</span>.selection.createRange().text; <span class="comment">//兼容写法</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.selection.empty(); <span class="comment">//IE9以下取消选中文字</span></span><br><span class="line"><span class="built_in">window</span>.getSelection().removeAllRanges(); <span class="comment">//其他浏览器取消选中文字</span></span><br><span class="line"><span class="built_in">window</span>.getSelection ? <span class="built_in">window</span>.getSelection().removeAllRanges() : <span class="built_in">document</span>.selection.empty(); <span class="comment">//兼容写法</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<ul>
+<li><h4 id="事件对象event"><a href="#事件对象event" class="headerlink" title="事件对象event"></a>事件对象<code>event</code></h4></li>
+</ul>
+<ol>
+<li><p>当我们与浏览器中 Web 页面进行某些类型的交互时，事件就发生了。可能是用户在某些内容上的点击、鼠标经过某个特定元素或按下键盘上的某些按键。还可能是 Web 浏览器中发生的事情，比如某个 Web 页面加载完成，或者是用户滚动窗口或改变窗口大小。</p>
+</li>
+<li><p>当事件发生时，和这个对象事件有关的一些信息都会被临时保存到一个指定地方–event对象(类似飞机的黑匣子)</p>
+</li>
+<li><p><font color="red">注意：事件对象必须在一个事件调用的函数里面使用才有内容。函数是不是事件函数，不是定义时决定，而是调用时决定，</font>如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(event);</span><br><span class="line">&#125; <span class="comment">//通过fn1()方式调用就不会有内容</span></span><br><span class="line"><span class="built_in">document</span>.onclick = fn1;  <span class="comment">//用事件调用就有内容</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>event</code>对象在ie和chrome里面是内置的全局变量，是window的属性，弹出为空和未定义。但是在火狐里会报错(新版不会报错)，火狐的事件对象是通过事件函数的第一个参数–<code>function fn1(ev){alert(ev)};</code>(event标准下的用法，在标准的ie和chrome也是有效)，兼容写法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ev = ev || event; <span class="comment">//前面必须是ev，因为event在前火狐里会直接报错</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>event储存了很多东西，如在event上获得事件发生时的鼠标位置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">event.clientX/event.clientY;  <span class="comment">//鼠标在可视区的X/Y的坐标</span></span><br><span class="line">event.pageX/event.pageY; <span class="comment">//鼠标在页面的X/Y的坐标</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<ol>
+<li><p>点击一个按钮，以新的窗口打开”<a href="http://www.yahoo.com&quot;首页，然后再用另一个按钮关闭它。" target="_blank" rel="noopener">http://www.yahoo.com&quot;首页，然后再用另一个按钮关闭它。</a></p>
+</li>
+<li><p>五个按钮(value分别为一、二、三、四、五)都可以用location.href打开同一个新页面，在新页面中输出“你是通过第几个按钮跳转到该页面的”</p>
+</li>
+<li><p>做一个自动生成彩票系统，要求每次生成一注28选7的随机彩票(从1-28中选择7个不重复的数字)，并且能够通过历史记录找到之前生成的彩票</p>
+</li>
+<li><p>页面中一个p和一个div，p元素里设置一篇文章，当你选中p中的文字后，在div里显示出来</p>
+</li>
+<li><p>设置一个div元素，跟着鼠标移动的效果</p>
+<p>CSS部分：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">background</span>: red;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>JS部分：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv = <span class="built_in">document</span>.querySelector(<span class="string">"div"</span>);</span><br><span class="line"><span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    oDiv.style.left = event.clientX + <span class="string">"px"</span>;</span><br><span class="line">    oDiv.style.top = event.clientY + <span class="string">"px"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/03/js浏览器对象和方法/" rel="next" title="js浏览器对象和方法">
+                <i class="fa fa-chevron-left"></i> js浏览器对象和方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/07/js事件流和事件监听/" rel="prev" title="js事件流和事件监听">
+                js事件流和事件监听 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器的历史记录"><span class="nav-number">1.</span> <span class="nav-text">浏览器的历史记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#location对象和其他打开页面方法"><span class="nav-number">2.</span> <span class="nav-text">location对象和其他打开页面方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window的事件"><span class="nav-number">3.</span> <span class="nav-text">window的事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取选中文字"><span class="nav-number">4.</span> <span class="nav-text">获取选中文字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件对象event"><span class="nav-number">5.</span> <span class="nav-text">事件对象event</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">121.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/09/03/js浏览器定位对象和事件对象/';
+          this.page.identifier = '2019/09/03/js浏览器定位对象和事件对象/';
+          this.page.title = 'js浏览器定位对象和事件对象';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

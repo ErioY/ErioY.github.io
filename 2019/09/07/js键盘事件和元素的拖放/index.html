@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="js键盘事件和元素的拖放 - #### 键盘事件：   onkeydown/onkeyup：当键盘按键按下/抬起时触发  我们不能让所有按键按下时都执行同一件事，这时需要用到：event.keyCode——键盘按键值(数字类型),如： 1234document.onkeydown = function(ev) &amp;#123;	ev = ev || event;	alert(ev.keyCode);&amp;">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js键盘事件和元素的拖放">
+<meta property="og:url" content="http://yoursite.com/2019/09/07/js键盘事件和元素的拖放/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="js键盘事件和元素的拖放 - #### 键盘事件：   onkeydown/onkeyup：当键盘按键按下/抬起时触发  我们不能让所有按键按下时都执行同一件事，这时需要用到：event.keyCode——键盘按键值(数字类型),如： 1234document.onkeydown = function(ev) &amp;#123;	ev = ev || event;	alert(ev.keyCode);&amp;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-20T10:06:42.581Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js键盘事件和元素的拖放">
+<meta name="twitter:description" content="js键盘事件和元素的拖放 - #### 键盘事件：   onkeydown/onkeyup：当键盘按键按下/抬起时触发  我们不能让所有按键按下时都执行同一件事，这时需要用到：event.keyCode——键盘按键值(数字类型),如： 1234document.onkeydown = function(ev) &amp;#123;	ev = ev || event;	alert(ev.keyCode);&amp;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/07/js键盘事件和元素的拖放/">
+
+
+
+
+
+  <title>js键盘事件和元素的拖放 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/07/js键盘事件和元素的拖放/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js键盘事件和元素的拖放</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-07T11:10:09+08:00">
+                2019-09-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/07/js键盘事件和元素的拖放/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/07/js键盘事件和元素的拖放/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="4">js键盘事件和元素的拖放</font></center>
+- #### 键盘事件：
+
+<ul>
+<li><p><code>onkeydown/onkeyup</code>：当键盘按键按下/抬起时触发</p>
+</li>
+<li><p>我们不能让所有按键按下时都执行同一件事，这时需要用到：<code>event.keyCode</code>——键盘按键值(数字类型),如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.onkeydown = <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</span><br><span class="line">	ev = ev || event;</span><br><span class="line">	alert(ev.keyCode);</span><br><span class="line">&#125;  <span class="comment">//判断一下当前按键的键值</span></span><br></pre></td></tr></table></figure>
+
+<p>因此在使用该事件时应该判断一下当前按键的键值，来分别执行不同的函数</p>
+</li>
+<li><p>event下还有<code>ctrlKey</code>，<code>shiftKey</code>，<code>altKey</code>等属性(布尔值)，当一个事件发生时，如果<code>ctrl</code>或<code>shift</code>或<code>alt</code>是按下状态，返回true，否则返回false</p>
+</li>
+<li><p><font color="red">注意：只有能接受焦点的元素才能接收键盘事件，特殊的document可以接收，如不能直接给div加</font></p>
+</li>
+<li><p>按键事件在按下不抬起时会连续触发，但是连续触发前会有一个停顿，如果要做按住连续触发并且不想要停顿效果时，需要自己写个方法(可以用计时器的方法)</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="元素的拖拽："><a href="#元素的拖拽：" class="headerlink" title="元素的拖拽："></a>元素的拖拽：</h4><ul>
+<li><p>前面我们说到用下面两个方法获取到鼠标的位置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ev.clientX/ev.clientY; </span><br><span class="line">ev.pageX/ev.pageY;</span><br></pre></td></tr></table></figure>
+
+<p>那么我在选择元素时<strong>(鼠标按下)</strong>保存下鼠标的位置和元素位置的差值；然后移动元素时<strong>(鼠标移动)</strong>，不停的给元素赋值(当前鼠标位置减去保存的差值)；释放元素<strong>(鼠标抬起)</strong>时，取消移动事件，就能让该元素随着我的鼠标移动了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 鼠标按下时保存差值：</span></span><br><span class="line"><span class="keyword">var</span> disX = ev.pageX - 元素.offsetLeft;  <span class="comment">// ev.pageX是相对页面，包括有滚动条的情况</span></span><br><span class="line"><span class="keyword">var</span> disY = ev.pageY - 元素.offsetTop;</span><br><span class="line"><span class="comment">// 鼠标移动时不停的给元素赋值：</span></span><br><span class="line">元素.style.left = ev.pageX - disX + <span class="string">'px'</span>;</span><br><span class="line">元素.style.top= ev.pageY - disY + <span class="string">'px'</span>;</span><br><span class="line"><span class="comment">// 鼠标抬起释放元素，把事件指向null：</span></span><br><span class="line">元素.onmousemove = 元素.onmouseup =  <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>问题：</p>
+<ul>
+<li>移动太快脱离元素时事件就不会执行了，解决方法：<code>onmousemove</code>事件放在document上就可以了</li>
+<li>抬起鼠标时在其他元素上抬起的，元素也不会停止。同样把<code>onmouseup</code>事件也放在document上</li>
+<li>鼠标按下时，如果有文字被选中(包括图片)，拖拽会变成复制(浏览器的默认行为)，在<code>onmousedown</code>阻止默认行为。</li>
+<li>封装拖拽，限制范围的拖拽：让其不能离开另一个元素的范围。方法：在赋值前进行判断，将一个正确的值赋给它</li>
+</ul>
+</li>
+<li><p><strong>碰撞检测</strong>：当我们拖拽一个元素的时候，它可能会与另一个元素发生重叠，当两个元素有重叠区域时，我们认为它们发生了碰撞。那么怎么检查两个元素是否发生了碰撞那？思路：九宫格方式判断，我们可以找出它们不碰撞的情况，然后排除这些情况既是碰撞状态了</p>
+</li>
+<li><p><strong>模拟滚动条</strong>：滚动条的样式我们没法处理，类似表单元素select、单选多选等，因此我们可以自己定义一个滚动条，这样我们就是自己设置样式了。方法：定义一个元素在另一个元素里拖拽，只需要一个方向移动。</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="try…catch…语句："><a href="#try…catch…语句：" class="headerlink" title="try…catch…语句："></a>try…catch…语句：</h4><ul>
+<li><p>错误发生时JavaScript引擎会停止并生成一个错误消息，try允许执行时进行错误测试的代码块，<code>catch</code>允许当 try代码块发生错误时执行的代码块，finally无论有没有错都执行的代码块，<code>throw new Error(&quot;自定义错误&quot;)</code>自定义错误信息</p>
+</li>
+<li><p>可以在用户自己操作失误或者函数少条件时不会影响下面的函数执行</p>
+</li>
+<li><p>语法：<code>try {//运行代码} catch (err) {//处理错误} finally {//无论有没有错都执行的代码块}</code>，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    allert(<span class="string">"Welcome guest!"</span>);</span><br><span class="line">    <span class="comment">//throw new Error("自定义错误");</span></span><br><span class="line">&#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line">    txt = <span class="string">"本页有一个错误。\n"</span>; </span><br><span class="line">    txt += <span class="string">"错误描述："</span> + err.message + <span class="string">"\n"</span>; </span><br><span class="line">    txt += <span class="string">"点击确定继续。\n"</span>; </span><br><span class="line">    alert(txt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>适用情况：</p>
+<ul>
+<li>兼容性问题，浏览器兼容性不是程序员能改正的，所以可以用try catch：不同浏览器的报错提示是不一样的，根据浏览器的报错提示判断用户的浏览器，做出对应的措施，这时候用try catch，if通常只能反馈真或假，不能直接反馈浏览器的报错内容。</li>
+<li>如<code>window.a.b</code>是非法的，再跟2对比就没有意义，这样非法的条件，在<code>try catch</code>中仍可以继续运行下去。但在if中<code>window.a.b</code>已经报错，整个页面都会坏掉。用<code>try catch</code>，程序不但知道<code>window.a.b == 2</code>是假的，而且直接可以知道究竟哪一步就已经是假的。</li>
+<li><font color="blue"><strong><code>try catch</code>不能做真假判断，只能做非法判断</strong></font>。也就是说：<code>try {1 === 2}</code>，虽然1===2是假，但是是合法的，catch不会捕捉到错误，也不会告诉你1 === 2到底是真是假。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="名字空间："><a href="#名字空间：" class="headerlink" title="名字空间："></a>名字空间：</h4><ul>
+<li><p>用一个对象制作名字空间(命名空间)，全局变量会绑定到window上，不同的JavaScript文件如果使用了相同的全局变量，或定义了相同名字的顶层函数，会造成命名冲突，很难发现。</p>
+</li>
+<li><p>减少冲突的一个方法是把所有变量和函数绑定到一个全局变量中。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myApp = &#123;&#125;;<span class="comment">// 唯一的全局变量myApp</span></span><br><span class="line">myApp.name = <span class="string">'myapp'</span>;<span class="comment">// 其他变量</span></span><br><span class="line">myApp.version = <span class="number">1.0</span>;<span class="comment">// 其他变量</span></span><br><span class="line">myApp.foo=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="string">'foo'</span>;</span><br><span class="line">&#125;; <span class="comment">//其他函数</span></span><br></pre></td></tr></table></figure>
+
+<p>把自己的代码全部放入唯一的名字空间myApp中，会大大减少全局变量冲突的可能。许多著名的JavaScript库都是这么干的，如：jQuery，YUI等等。</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<p><font size="4">1. 做一个输入框和ul，每次输入完内容后，点击ctrl+回车变成留言</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oInput = <span class="built_in">document</span>.querySelector(<span class="string">"input"</span>);</span><br><span class="line"><span class="keyword">var</span> oUl = <span class="built_in">document</span>.querySelector(<span class="string">"ul"</span>);</span><br><span class="line">oInput.onkeydown = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 同时按下 ctrl和 enter</span></span><br><span class="line">    <span class="keyword">if</span> (event.ctrlKey &amp;&amp; event.keyCode == <span class="number">13</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> oLi = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span><br><span class="line">        oLi.innerHTML = oInput.value;</span><br><span class="line">        <span class="comment">// 将留言从上往下显示</span></span><br><span class="line">        oUl.children[<span class="number">0</span>] ? oUl.insertBefore(oLi, oUl.children[<span class="number">0</span>]) : oUl.appendChild(oLi);</span><br><span class="line">        oInput.value = <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font size="4">2. 做一个div元素，用上下左右按钮按住时，在页面中移动的效果</font></p>
+<p><font size="4">3. 模拟一个滚动条的拖拽，并在拖拽时改变一个div的高度</font></p>
+<p><font size="4">4. 做一个拖拽的方块和图片碰撞时，图片切换成另一张图片，离开时变回的效果</font></p>
+<p><font size="4">5. 做一个弹球游戏，要求左右键控制一个木板在页面底部20px处移动，小球只会在页面中来回反弹，碰到木板会反弹，落到地下就失败</font></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/07/js事件委托和滚轮事件/" rel="next" title="js事件委托和滚轮事件">
+                <i class="fa fa-chevron-left"></i> js事件委托和滚轮事件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/07/js正则表达式元字符和方法/" rel="prev" title="js正则表达式元字符和方法">
+                js正则表达式元字符和方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#元素的拖拽："><span class="nav-number">1.</span> <span class="nav-text">元素的拖拽：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#try…catch…语句："><span class="nav-number">2.</span> <span class="nav-text">try…catch…语句：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#名字空间："><span class="nav-number">3.</span> <span class="nav-text">名字空间：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">121.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/09/07/js键盘事件和元素的拖放/';
+          this.page.identifier = '2019/09/07/js键盘事件和元素的拖放/';
+          this.page.title = 'js键盘事件和元素的拖放';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+
