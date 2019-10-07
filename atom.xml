@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-28T01:31:26.194Z</updated>
+  <updated>2019-10-07T01:48:32.389Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,214 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>knn算法</title>
+    <link href="http://yoursite.com/2019/10/05/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-knn%E7%AE%97%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/10/05/Python机器学习-knn算法/</id>
+    <published>2019-10-05T02:54:56.000Z</published>
+    <updated>2019-10-07T01:48:32.389Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;KNN算法&lt;/font&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;题目名称&quot;&gt;&lt;a href=&quot;#题目名称&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python机器学习" scheme="http://yoursite.com/tags/python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax-3-Ajax的优缺点和跨域问题</title>
+    <link href="http://yoursite.com/2019/10/02/Ajax-3-Ajax%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9%E5%92%8C%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2019/10/02/Ajax-3-Ajax的优缺点和跨域问题/</id>
+    <published>2019-10-02T05:54:38.000Z</published>
+    <updated>2019-10-03T03:23:21.387Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;Ajax的优缺点和跨域问题&lt;/font&gt;&lt;/center&gt;
+- ####
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Ajax" scheme="http://yoursite.com/tags/Ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax-2-jQuery的ajax的属性和用法</title>
+    <link href="http://yoursite.com/2019/10/02/Ajax-2-jQuery%E7%9A%84ajax%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E7%94%A8%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/10/02/Ajax-2-jQuery的ajax的属性和用法/</id>
+    <published>2019-10-02T03:26:12.000Z</published>
+    <updated>2019-10-02T07:58:14.530Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;jquery的ajax的属性和用法&lt;/font&gt;&lt;/center&gt;
+- ####
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Ajax" scheme="http://yoursite.com/tags/Ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax-1-Ajax原理和封装</title>
+    <link href="http://yoursite.com/2019/10/02/Ajax-1-Ajax%E5%8E%9F%E7%90%86%E5%92%8C%E5%B0%81%E8%A3%85/"/>
+    <id>http://yoursite.com/2019/10/02/Ajax-1-Ajax原理和封装/</id>
+    <published>2019-10-02T02:58:19.000Z</published>
+    <updated>2019-10-02T07:32:44.896Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;Ajax原理和封装&lt;/font&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;Ajax基础&quot;&gt;&lt;a href=&quot;#Ajax基础&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Ajax" scheme="http://yoursite.com/tags/Ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery-4-动画和Velocity动画库</title>
+    <link href="http://yoursite.com/2019/09/28/jQuery-4-%E5%8A%A8%E7%94%BB%E5%92%8CVelocity%E5%8A%A8%E7%94%BB%E5%BA%93/"/>
+    <id>http://yoursite.com/2019/09/28/jQuery-4-动画和Velocity动画库/</id>
+    <published>2019-09-28T03:07:31.000Z</published>
+    <updated>2019-10-02T01:11:12.173Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;JQ动画和Velocity动画库&lt;/font&gt;&lt;/center&gt;
+- ####
+        
+      
+    
+    </summary>
+    
+    
+      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery-3-工具方法和高级方法</title>
+    <link href="http://yoursite.com/2019/09/28/jQuery-3-%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95%E5%92%8C%E9%AB%98%E7%BA%A7%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/09/28/jQuery-3-工具方法和高级方法/</id>
+    <published>2019-09-28T02:40:47.000Z</published>
+    <updated>2019-10-01T01:32:57.851Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;JQ工具方法和高级方法&lt;/font&gt;&lt;/center&gt;
+- ####
+        
+      
+    
+    </summary>
+    
+    
+      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery-2-DOM操作和事件操作</title>
+    <link href="http://yoursite.com/2019/09/28/jQuery-2-DOM%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BA%8B%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2019/09/28/jQuery-2-DOM操作和事件操作/</id>
+    <published>2019-09-28T02:34:36.000Z</published>
+    <updated>2019-09-28T07:11:27.374Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;JQ的DOM操作和事件操作&lt;/font&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;JQ的DOM操作&quot;&gt;&lt;a href=&quot;#JQ的DOM操作&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery-1-选择器和常用方法</title>
+    <link href="http://yoursite.com/2019/09/28/jQuery-1-%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8C%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/09/28/jQuery-1-选择器和常用方法/</id>
+    <published>2019-09-28T01:39:31.000Z</published>
+    <updated>2019-09-28T03:57:54.417Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;jQuery选择器和常用方法&lt;/font&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;JQ简介&quot;&gt;&lt;a href=&quot;#JQ简介&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
+    
+  </entry>
   
   <entry>
     <title>ECMAScript 新标准4</title>
@@ -323,216 +531,6 @@
         
           &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js事件委托和滚轮事件&lt;/font&gt;&lt;/center&gt;
 - ####
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js事件流和事件监听</title>
-    <link href="http://yoursite.com/2019/09/07/js%E4%BA%8B%E4%BB%B6%E6%B5%81%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/"/>
-    <id>http://yoursite.com/2019/09/07/js事件流和事件监听/</id>
-    <published>2019-09-07T03:09:29.000Z</published>
-    <updated>2019-09-09T11:48:11.330Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js事件流和事件监听&lt;/font&gt;&lt;/center&gt;
-- ####
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js浏览器定位对象和事件对象</title>
-    <link href="http://yoursite.com/2019/09/03/js%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%9A%E4%BD%8D%E5%AF%B9%E8%B1%A1%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/2019/09/03/js浏览器定位对象和事件对象/</id>
-    <published>2019-09-03T12:26:59.000Z</published>
-    <updated>2019-09-08T02:59:54.298Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;js浏览器定位对象和事件对象&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;浏览器的历史记录&quot;&gt;&lt;a href=&quot;#浏览器的历史记录&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js浏览器对象和方法</title>
-    <link href="http://yoursite.com/2019/09/03/js%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2019/09/03/js浏览器对象和方法/</id>
-    <published>2019-09-03T12:11:46.000Z</published>
-    <updated>2019-09-04T10:15:52.710Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;浏览器对象和方法&lt;/font&gt;&lt;/center&gt;
-- #### BOM的常用属性和方法
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;font
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>选择器详解和BOM</title>
-    <link href="http://yoursite.com/2019/08/31/%E9%80%89%E6%8B%A9%E5%99%A8%E8%AF%A6%E8%A7%A3%E5%92%8CBOM/"/>
-    <id>http://yoursite.com/2019/08/31/选择器详解和BOM/</id>
-    <published>2019-08-31T13:06:36.000Z</published>
-    <updated>2019-09-03T11:55:11.167Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js选择器详解和BOM&lt;/font&gt;&lt;/center&gt;
-- ####
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js表格和表单的DOM操作</title>
-    <link href="http://yoursite.com/2019/08/31/js%E8%A1%A8%E6%A0%BC%E5%92%8C%E8%A1%A8%E5%8D%95%E7%9A%84DOM%E6%93%8D%E4%BD%9C/"/>
-    <id>http://yoursite.com/2019/08/31/js表格和表单的DOM操作/</id>
-    <published>2019-08-31T13:06:22.000Z</published>
-    <updated>2019-09-03T11:02:10.689Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js表格和表单的DOM操作&lt;/font&gt;&lt;/center&gt;
-- #### 表格的DOM操作：
-
-&lt;ul&gt;
-&lt;li&gt;表格较为繁杂，层次也多，使用DOM只是来获取某个元素会非常难受，所以使用table
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js元素属性节点和属性操作</title>
-    <link href="http://yoursite.com/2019/08/31/js%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E8%8A%82%E7%82%B9%E5%92%8C%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/"/>
-    <id>http://yoursite.com/2019/08/31/js元素属性节点和属性操作/</id>
-    <published>2019-08-31T13:05:54.000Z</published>
-    <updated>2019-09-05T12:49:27.561Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js元素属性节点和属性操作&lt;/font&gt;&lt;/center&gt;
-- #### DOM的属性节点
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;元素.offsetLeft/offsetTop&lt;/code&gt;   //  &lt;font
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js 对象操作和DOM</title>
-    <link href="http://yoursite.com/2019/08/30/js-%E5%AF%B9%E8%B1%A1%E6%93%8D%E4%BD%9C%E5%92%8CDOM/"/>
-    <id>http://yoursite.com/2019/08/30/js-对象操作和DOM/</id>
-    <published>2019-08-30T10:08:01.000Z</published>
-    <updated>2019-09-01T12:45:14.788Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;js对象操作和DOM&lt;/font&gt;&lt;/center&gt;
-- ####
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js表单验证</title>
-    <link href="http://yoursite.com/2019/08/26/js%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
-    <id>http://yoursite.com/2019/08/26/js表单验证/</id>
-    <published>2019-08-26T09:24:24.000Z</published>
-    <updated>2019-08-26T09:52:19.052Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h5 id=&quot;必填或必选项目（验证表单数据是否为空？）&quot;&gt;&lt;a href=&quot;#必填或必选项目（验证表单数据是否为空？）&quot; class=&quot;headerlink&quot;
         
       
     

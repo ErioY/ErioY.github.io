@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="jQuery,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="JQ工具方法和高级方法 - #### 工具方法：   JQ的方法（$().css()等）只能给JQ对象用；而工具方法（$.type()等）不仅可以给JQ用，也可以给原生JS用  工具方法目的是完善原生js方法： 123456789101112131415$.type(a); // 可以判断比type方法更多的类型$.trim(str);   // 去掉字符串前后空格(原生ES5中增加了trim()">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery-3-工具方法和高级方法">
+<meta property="og:url" content="http://yoursite.com/2019/09/28/jQuery-3-工具方法和高级方法/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="JQ工具方法和高级方法 - #### 工具方法：   JQ的方法（$().css()等）只能给JQ对象用；而工具方法（$.type()等）不仅可以给JQ用，也可以给原生JS用  工具方法目的是完善原生js方法： 123456789101112131415$.type(a); // 可以判断比type方法更多的类型$.trim(str);   // 去掉字符串前后空格(原生ES5中增加了trim()">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-01T01:32:57.851Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery-3-工具方法和高级方法">
+<meta name="twitter:description" content="JQ工具方法和高级方法 - #### 工具方法：   JQ的方法（$().css()等）只能给JQ对象用；而工具方法（$.type()等）不仅可以给JQ用，也可以给原生JS用  工具方法目的是完善原生js方法： 123456789101112131415$.type(a); // 可以判断比type方法更多的类型$.trim(str);   // 去掉字符串前后空格(原生ES5中增加了trim()">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/28/jQuery-3-工具方法和高级方法/">
+
+
+
+
+
+  <title>jQuery-3-工具方法和高级方法 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/jQuery-3-工具方法和高级方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery-3-工具方法和高级方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-28T10:40:47+08:00">
+                2019-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/28/jQuery-3-工具方法和高级方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/28/jQuery-3-工具方法和高级方法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="5">JQ工具方法和高级方法</font></center>
+- #### 工具方法：
+
+<ul>
+<li><p>JQ的方法（<code>$().css()</code>等）只能给JQ对象用；而工具方法（<code>$.type()</code>等）不仅可以给JQ用，也可以给原生JS用</p>
+</li>
+<li><p>工具方法目的是完善原生js方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$.type(a); <span class="comment">// 可以判断比type方法更多的类型</span></span><br><span class="line"></span><br><span class="line">$.trim(str);   <span class="comment">// 去掉字符串前后空格(原生ES5中增加了trim()方法)</span></span><br><span class="line"></span><br><span class="line">$.inArray(<span class="string">'b'</span>,arr); <span class="comment">// 类似于 indexOf，如果第一个参数不存在返回-1(原生ES5中增加了数组的indexOf()方法)</span></span><br><span class="line"></span><br><span class="line">$.proxy(); <span class="comment">// 改变this指向，参数：函数和this的指向。等同于函数.call(this的指向)</span></span><br><span class="line"></span><br><span class="line">$.noConflict(); <span class="comment">// 防止冲突的，将返回值赋值给新变量，新变量就拥有$的操控权了</span></span><br><span class="line"></span><br><span class="line">$.parseJSON( <span class="string">'&#123;"name":"hello"&#125;'</span> ).name); <span class="comment">// 把字符串解析成json，等同于JSON.parse( '&#123;"name":"hello"&#125;' )</span></span><br><span class="line"></span><br><span class="line">$.makeArray(elems); <span class="comment">// 将类数组elems转换成数组，(原生ES5的[].slice.call(elems)方法)</span></span><br><span class="line"></span><br><span class="line">$.ajax();  <span class="comment">// 需要在服务器环境下，需要有地址页面，后面详解</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="高级方法："><a href="#高级方法：" class="headerlink" title="高级方法："></a>高级方法：</h4><ul>
+<li><p><font color="orange"><strong>简便的节点筛选方法</strong></font>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">JQ对象.siblings();  <span class="comment">// 找所有的兄弟节点，参数是筛选功能, 除当前元素</span></span><br><span class="line"></span><br><span class="line">JQ对象.nextAll();  <span class="comment">// 下面所有兄弟节点，参数是筛选功能</span></span><br><span class="line"></span><br><span class="line">JQ对象.prevAll();  <span class="comment">// 上面所有兄弟节点，参数是筛选功能</span></span><br><span class="line"></span><br><span class="line">JQ对象.parentsUntil()/nextUntil()/prevUntil();  <span class="comment">// 截止第一次出现筛选条件之前，无参数时和上面一样</span></span><br><span class="line"></span><br><span class="line">JQ对象.clone();  <span class="comment">// 复制元素，可以接收一个参数true ，可以复制之前的操作。为了防止id重复，应该用class做clone</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>元素的包装</strong></font>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">JQ对象.wrap();     <span class="comment">// 包装</span></span><br><span class="line">$(<span class="string">"div"</span>).wrap($(<span class="string">"&lt;div&gt;"</span>)); <span class="comment">// 给每个div前都加一个div</span></span><br><span class="line"></span><br><span class="line">JQ对象.wrapAll();  <span class="comment">// 整体包装</span></span><br><span class="line">$(<span class="string">"div"</span>).wrapAll($(<span class="string">"&lt;div&gt;"</span>)); <span class="comment">// 给所有div前加一个整体的div</span></span><br><span class="line"></span><br><span class="line">JQ对象.wrapInner();  <span class="comment">// 内部包装</span></span><br><span class="line">$(<span class="string">"div"</span>).wrapInner($(<span class="string">"&lt;span&gt;"</span>)); <span class="comment">// 在每个div里添加一个span标签</span></span><br><span class="line"></span><br><span class="line">JQ对象.unwrap();    <span class="comment">// 删除包装 ( 删除父级 : 不包括body)</span></span><br><span class="line">$(<span class="string">"span"</span>).unwrap(); <span class="comment">// 删除了span元素的父元素</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>JQ集合中添加和截取</strong></font>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JQ对象.add();  <span class="comment">// 一个或多个元素添加到匹配的元素集合</span></span><br><span class="line">$(<span class="string">"div"</span>).add(<span class="string">"span"</span>).css(<span class="string">"background"</span>, <span class="string">"red"</span>); <span class="comment">// 把与div同级的span的背景颜色也改变为红色</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> elem = $(<span class="string">'div'</span>);  <span class="comment">// 获取div集合</span></span><br><span class="line"><span class="keyword">var</span> elem2 = elem.add(<span class="string">'span'</span>);  <span class="comment">// 在div集合中加入span集合</span></span><br><span class="line"></span><br><span class="line">JQ对象.slice(a,b);  <span class="comment">// 选中a到b（前）的元素，参数为下标，不是对象，左闭右开，只有一个参数时从这个参数开始，直到结束</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong><code>delegate()</code> ：事件委托</strong></font></p>
+<p><font color="orange"><strong><code>undelegate()</code>： 终止事件委托</strong></font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'li'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).css(<span class="string">'backgroundColor'</span>,<span class="string">'red'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'ul'</span>).delegate(<span class="string">'li'</span>,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).css(<span class="string">'backgroundColor'</span>,<span class="string">'red'</span>);</span><br><span class="line">    $(<span class="string">'ul'</span>).undelegate();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">优点：</font></p>
+<p>1、<font color="red">不用循环（同时会提高性能）；</font></p>
+<p>2、<font color="red">js添加的元素也会获得事件</font></p>
+</li>
+<li><p><font color="orange"><strong><code>trigger()</code>主动触发，适合自定义事件</strong></font>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#div1'</span>).on(<span class="string">'show'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="number">123</span>);</span><br><span class="line">&#125;);  <span class="comment">// 绑定自定义事件函数</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">'#div1'</span>).trigger(<span class="string">'show'</span>);  <span class="comment">// 触发自定义事件</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong><code>ev.data</code>（获取数据）</strong></font></p>
+<p><font color="orange"><strong><code>ev.target</code>（获取事件源）</strong></font></p>
+<p><font color="orange"><strong><code>ev.type</code>（获取事件类型)</strong></font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#div1'</span>).on(<span class="string">'click'</span>, &#123;<span class="attr">name</span>:<span class="string">'hello'</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    alert( ev.data.name );</span><br><span class="line">    alert( ev.target );</span><br><span class="line">    alert( ev.type );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong><code>$.extend</code>：扩展工具方法下的插件形式，语法：<code>$.xxx() $.yyy()</code></strong></font></p>
+<p><font color="orange"><strong><code>$.fn.extend</code>：扩展到JQ对象下的插件形式，语法：<code>$().xxx() $().yyy()</code></strong></font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$.extend(&#123;   <span class="comment">// 工具方法例子</span></span><br><span class="line">    leftTrim : <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> str.replace(<span class="regexp">/^\s+/</span>,<span class="string">''</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$.fn.highlight1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  <span class="comment">// this已绑定为当前jQuery对象:</span></span><br><span class="line">    <span class="keyword">this</span>.css(<span class="string">'backgroundColor'</span>,<span class="string">'#fffceb'</span>).css(<span class="string">'color'</span>, <span class="string">'#d85030'</span>); </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;  <span class="comment">// 保证我们自己写的扩展方法也要能继续链式下去</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$.fn.highlight2 = <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;   <span class="comment">// 带有默认值且用户可改版</span></span><br><span class="line">    <span class="keyword">var</span> bgcolor = options &amp;&amp; options.backgroundColor || <span class="string">'#fffceb'</span>; </span><br><span class="line">    <span class="keyword">var</span> color = options &amp;&amp; options.color || <span class="string">'#d85030'</span>; </span><br><span class="line">    <span class="keyword">this</span>.css(<span class="string">'backgroundColor'</span>, bgcolor).css(<span class="string">'color'</span>, color); </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 扩展：传参改变元素的字体和大小</span></span><br><span class="line">$.fn.changeF = <span class="function"><span class="keyword">function</span> (<span class="params">str, size</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.css(&#123;</span><br><span class="line">        <span class="string">"fontFamily"</span>: str,</span><br><span class="line">        <span class="string">"fontSize"</span>: size</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line">$(<span class="string">"span"</span>).changeF(<span class="string">"楷体"</span>, <span class="number">22</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>JQ动画：<code>JQ对象.animate();</code></strong></font>（支持链式操作）</p>
+<blockquote>
+<p>参数1：{} 运动的值和属性；</p>
+<p>参数2：时间(运动快慢的)    默认:  400；</p>
+<p>参数3：运动形式swing( 慢快慢，默认 )     linear(匀速);</p>
+<p>参数4：回调函数 (到达指定时间后（终点）执行的动作)</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#div1'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).animate(&#123;</span><br><span class="line">        width: <span class="number">300</span> , </span><br><span class="line">        height: <span class="number">300</span></span><br><span class="line">    &#125; , <span class="number">4000</span> , <span class="string">"linear"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="number">123</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'#div1'</span>).stop();            <span class="comment">// 默认: 只会阻止当前运动，链式操作时不会阻止下一个动画 </span></span><br><span class="line">$(<span class="string">'#div1'</span>).stop(<span class="literal">true</span>);       <span class="comment">// 阻止当前和后续所有的运动</span></span><br><span class="line">$(<span class="string">'#div1'</span>).stop(<span class="literal">true</span>, <span class="literal">true</span>); <span class="comment">// 立即停止当前和后续所有的动画并移动至当前动画的终点</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">'#div1'</span>).finish();  <span class="comment">// 立即停止当前和后续所有的动画并移动到所有动画的终点</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">'#div1'</span>).delay(<span class="string">"400"</span>);  <span class="comment">// 延时，参数可以是数字或字符串</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!$(element).is(<span class="string">":animated"</span>))&#123;&#125; <span class="keyword">else</span>&#123;&#125; <span class="comment">// 判断当前元素是否在执行jq动画animate</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<p><font size="4">1. 做一个多个图片输入移入凸显效果</font></p>
+<p><font size="4">2. 做一个左侧导航折叠效果</font></p>
+<p><font size="4">3. 无缝滚动和3个一组的轮播图</font></p>
+<p><font size="4">4. 淘宝好评</font></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"jquery-1.10.1.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 淘宝打评价</span></span></span><br><span class="line"><span class="javascript">    $(<span class="string">"li"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        $(<span class="keyword">this</span>).css(<span class="string">"backgroundColor"</span>, <span class="string">"red"</span>);</span></span><br><span class="line"><span class="javascript">        $(<span class="keyword">this</span>).prevAll().css(<span class="string">"backgroundColor"</span>, <span class="string">"red"</span>);</span></span><br><span class="line"><span class="javascript">        $(<span class="string">"p"</span>).html(($(<span class="keyword">this</span>).prevAll().length + <span class="number">1</span>) + <span class="string">"星"</span>);</span></span><br><span class="line">    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>CSS部分：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> <span class="number">#000</span> solid;</span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">3px</span>;</span><br><span class="line">    borde</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/" rel="tag"><i class="fa fa-tag"></i> jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/28/jQuery-2-DOM操作和事件操作/" rel="next" title="jQuery-2-DOM操作和事件操作">
+                <i class="fa fa-chevron-left"></i> jQuery-2-DOM操作和事件操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/28/jQuery-4-动画和Velocity动画库/" rel="prev" title="jQuery-4-动画和Velocity动画库">
+                jQuery-4-动画和Velocity动画库 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#高级方法："><span class="nav-number">1.</span> <span class="nav-text">高级方法：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">134.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/09/28/jQuery-3-工具方法和高级方法/';
+          this.page.identifier = '2019/09/28/jQuery-3-工具方法和高级方法/';
+          this.page.title = 'jQuery-3-工具方法和高级方法';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

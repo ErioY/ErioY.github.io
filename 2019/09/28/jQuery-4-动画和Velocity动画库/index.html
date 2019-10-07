@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="jQuery,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="JQ动画和Velocity动画库 - #### Velocity.js介绍：   在Web上可以使用CSS实现动画，但是css的动画样式表内容膨胀，丧失对动画时间的控制，且无法灵活地实现基于物理运动模型的动画设计。也可以使用JS来实现，并且JS还有一些CSS无法替代的优势。 但是CSS动画在Web中扮演重要的角色，可以独自的实现动画或是同JS协作实现。特别的，CSS在一些简单基本的动画交互上表现的">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery-4-动画和Velocity动画库">
+<meta property="og:url" content="http://yoursite.com/2019/09/28/jQuery-4-动画和Velocity动画库/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="JQ动画和Velocity动画库 - #### Velocity.js介绍：   在Web上可以使用CSS实现动画，但是css的动画样式表内容膨胀，丧失对动画时间的控制，且无法灵活地实现基于物理运动模型的动画设计。也可以使用JS来实现，并且JS还有一些CSS无法替代的优势。 但是CSS动画在Web中扮演重要的角色，可以独自的实现动画或是同JS协作实现。特别的，CSS在一些简单基本的动画交互上表现的">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-02T01:11:12.173Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery-4-动画和Velocity动画库">
+<meta name="twitter:description" content="JQ动画和Velocity动画库 - #### Velocity.js介绍：   在Web上可以使用CSS实现动画，但是css的动画样式表内容膨胀，丧失对动画时间的控制，且无法灵活地实现基于物理运动模型的动画设计。也可以使用JS来实现，并且JS还有一些CSS无法替代的优势。 但是CSS动画在Web中扮演重要的角色，可以独自的实现动画或是同JS协作实现。特别的，CSS在一些简单基本的动画交互上表现的">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/28/jQuery-4-动画和Velocity动画库/">
+
+
+
+
+
+  <title>jQuery-4-动画和Velocity动画库 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/jQuery-4-动画和Velocity动画库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery-4-动画和Velocity动画库</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-28T11:07:31+08:00">
+                2019-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/28/jQuery-4-动画和Velocity动画库/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/28/jQuery-4-动画和Velocity动画库/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="5">JQ动画和Velocity动画库</font></center>
+- #### Velocity.js介绍：
+
+<ul>
+<li>在Web上可以使用CSS实现动画，但是css的动画样式表内容膨胀，丧失对动画时间的控制，且无法灵活地实现基于物理运动模型的动画设计。也可以使用JS来实现，并且JS还有一些CSS无法替代的优势。</li>
+<li>但是CSS动画在Web中扮演重要的角色，可以独自的实现动画或是同JS协作实现。特别的，CSS在一些简单基本的动画交互上表现的特别好，比如<code>hover</code>和<code>focus</code>等（客观的看待CSS动画和JS动画，他们各有优点）</li>
+<li>然而，对于几乎所有事情，JS都是不错的选择，因为他的能力太强大了。jQuery设计的动画非常糟糕，比如动画出现抖动、不平滑，这不是JS的错！jQuery是由许多原生JS写的函数组成的库，原本不是以动画引擎为目标设计的，而是为了使烦人的DOM操作变得方便高效。</li>
+<li>Velocity动画库就是专为动画而设计，简单易用，功能强大。它模仿了jQuery的语法，可以同jQuery协作，也能独立地使用，且容易学习。</li>
+<li>为了提高你所有动画的性能，只需要简单地将目前jQuery的<code>animate()</code>函数调用换成<code>velocity()</code>，这样的一个小改变，也能使你的网站有一个显著的性能提升。</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="Velocity-js的方法的使用："><a href="#Velocity-js的方法的使用：" class="headerlink" title="Velocity.js的方法的使用："></a>Velocity.js的方法的使用：</h4><ul>
+<li><p>要使用Velocity首先要引入它，如果想与JQ配合使用注意要先引入JQ再引入Velocity</p>
+</li>
+<li><p>Velocity 接收一个或更多的参数，</p>
+<ul>
+<li><p>只有第一个参数是是强制要求的，它可以是一个命令（如”<code>scroll</code>“），或者是由CSS属性值组成的对象（这些值是动画的目标值）；</p>
+</li>
+<li><p><font color="green">第二个参数是由动画附加选项组成的对象，比如过渡时长，张弛度，延时还有回调函数</font>：</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$element.velocity(&#123; </span><br><span class="line">    left: <span class="string">"500px"</span> </span><br><span class="line">&#125;, &#123; </span><br><span class="line">    delay: <span class="number">1000</span>, </span><br><span class="line">    duration: <span class="number">500</span>,</span><br><span class="line">    easing: [ <span class="number">1000</span>, <span class="number">40</span> ], <span class="comment">// 1000是张驰度（提高整体动画的速度，可以更早到达终点，然后在终点附近来回反弹），40是摩擦系数（越小更快停下来）</span></span><br><span class="line">    complete: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="number">123</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>其中重要的属性都有默认值</strong>：</p>
+<pre><code>&quot;`easing`&quot;的默认值是 swing；</code></pre><p>​    “<code>duration</code>“的默认值是 400ms;</p>
+<p>​    其他的属性则是可选的</p>
+</li>
+<li><p><font color="red">你只能为一个CSS属性设置一个值，</font>所以 “<code>padding:&#39;10px 15px&#39;</code>“是不合法的。应该写成： <code>{paddingLeft:&quot;10px&quot;,paddingTop:&quot;15px&quot;,….}</code>。这样不仅表达清晰，而且意味着你可以特别指定每一个css分属性的值（注意变成了驼峰命名了）</p>
+</li>
+<li><p><font color="green"><strong>运动曲线<code>easing</code>（缓动）的取值</strong></font>：</p>
+<ul>
+<li>“<code>ease-in-out</code>“  ： 先加速再减速；</li>
+<li>“<code>ease-in</code>“  ： 加速到恒定速度直到动画结束；</li>
+<li>“<code>ease-out</code>“ ： 动画以恒定速度开始动画结束前减速</li>
+</ul>
+<p>Velocity还提供弹性动画功能（spring），以一个张弛度（默认500）和一个摩擦系数（默认20）作为他的参数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$element.velocity(&#123; </span><br><span class="line">    width: <span class="string">"100px"</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">    easing:[ <span class="number">500</span>, <span class="number">20</span> ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">较高的张弛度将提高整体速度和动画的反弹力度，较小的摩擦系数将提高动画结束时的速度。</font></p>
+</li>
+<li><p>第二个参数其他常用名称：</p>
+<ul>
+<li><code>begin</code>：为<code>begin</code>设置的函数会在动画开始前触发</li>
+<li><code>complete</code>：为<code>complete</code>设置的函数会在动画完成时调用；</li>
+<li><code>loop</code>：值为一个整数<code>n</code>或<code>true</code>，动画循环n次或无限循环；</li>
+<li><code>delay</code>：动画开始之前等待时间。</li>
+</ul>
+</li>
+<li><p>给参数传值的时候，如果CSS属性值没有给定确切的单位，那么时间默认：ms，长度默认：px，角度默认：deg。</p>
+<p>为了表达清晰最好还是显示注明单位，如果有一个值不仅仅由数字表示，那么必须加引号。如：<code>duration:500</code>或<code>duration:&quot;500ms&quot;</code>都是合法的。</p>
+<p>另外也允许传入简单的表达式作为CSS的属性值，但这些表达式只限于：<code>+=</code>， <code>-=</code>， <code>*=</code> ， <code>/=</code>，表示目标值在其本来的值的基础上加多少，减多少，乘多少，除多少，任何其他的表达式是不允许的。在Velocity动画引擎里使用这些快速功能保证了动画的逻辑可读性，使代码简洁清晰（消除了值的手工计算），而且向Velocity引擎提供更多有关于你动画意图的信息将有助于提高动画的性能。</p>
+</li>
+<li><p><font color="orange"><strong>楼层监听就是一种流行常见的js效果，并且无法使用css制作，你只需在目标元素上调用<code>velocity()</code>方法并传入”scroll”命令和过渡时间</strong></font>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$element.velocity(<span class="string">"scroll"</span>, <span class="number">1000</span>); <span class="comment">// 浏览器用1000毫秒滚动到选定的元素</span></span><br><span class="line"></span><br><span class="line">$element.velocity(<span class="string">"scroll"</span>, &#123; </span><br><span class="line">    duration: <span class="number">1000</span>, <span class="comment">// 动画执行时间，也就是第一行代码中的第二个参数</span></span><br><span class="line">    offset: <span class="string">"-100px"</span> </span><br><span class="line">&#125;); </span><br><span class="line"><span class="comment">// 滚动后元素上边缘距窗口上边缘的距离：offset（向上为负，向下为正）</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>返回命令，在jQuery中，要使元素恢复成动画运行之前的状态，你要手动的设置，而在Velocity里只是一个运行”<code>reverse</code>“命令</strong></font>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$element.velocity(&#123; </span><br><span class="line">    width: <span class="string">"100px"</span> </span><br><span class="line">&#125;, <span class="number">400</span>);  </span><br><span class="line"></span><br><span class="line">$element.velocity(<span class="string">"reverse"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>velocity的链式调用即在同一个元素上一个动画完成之后马上进入另一个动画，这样一个一个的执行下去：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$element.velocity(&#123; </span><br><span class="line">    width: <span class="string">"500px"</span>, </span><br><span class="line">    height: <span class="string">"300px"</span></span><br><span class="line">&#125;).velocity(&#123; </span><br><span class="line">    opacity: <span class="number">0</span> </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这允许你不需要任何手动的计算,就能使那些复杂的、有时间限制的多级动画如当初计划的一样,一个接一个的执行。</p>
+</li>
+<li><p><font color="orange"><strong>velocity 允许制作基于颜色变换的动画</strong></font>，比如: <code>color</code>,<code>backgroundColor</code>,<code>borderColor</code>还有<code>outlineColor</code>.所有这些颜色的值只允许是16进制的字符串（黑色：#000000 , 脸谱蓝：#3b5998（for Facebook blue））.也许你想使用rgb格式的颜色设置,甚至指定颜色透明度（值介于0到1），只需简单地在CSS颜色名后面加上 “Red”，”Green”,”Blue” 或者”Alpha”即可：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$element.velocity(&#123; </span><br><span class="line">    borderColor: <span class="string">"#ffff00"</span>, </span><br><span class="line">    backgroundColorAlpha: <span class="number">0.6</span>,<span class="comment">//背景颜色透明度变到60% </span></span><br><span class="line">    colorBlue: <span class="number">200</span> <span class="comment">//rgb 方式 </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置一些CSS3变换，允许你做一些2D或3D的动画，比如平移，扩大，旋转。</p>
+<p>注意不会影响元素在网页中的位置，也不会影响周围 的元素在页面中的位置。 </p>
+<p>Velocity支持下面的变换：</p>
+<ul>
+<li><code>translateX</code>: 从左向右沿x轴移动元素；</li>
+<li><code>translateY</code>: 从上到下沿y轴移动元素；</li>
+<li><code>rotateZ</code>: 关于z轴旋转元素；</li>
+<li><code>rotateX</code>: 关于x轴旋转元素（看起来由里向外）；</li>
+<li><code>rotateY</code>: 关于y轴旋转元素（由左到右）；</li>
+<li><code>scaleX</code>: 成倍数改变元素宽度；</li>
+<li><code>scaleY</code>: 成倍数改变元素高度</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$element.velocity(&#123; </span><br><span class="line">    rotateZ: <span class="string">"180deg"</span>, <span class="attr">scaleX</span>: <span class="number">2.0</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>stop</code>结束当前动画，类似jq的<code>stop</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$element.velocity(<span class="string">"stop"</span>) <span class="comment">//结束当前动画（开始执行后续动画）</span></span><br><span class="line">$element.velocity(<span class="string">"stop"</span>,<span class="literal">true</span>)  <span class="comment">//结束当前和之后的动画</span></span><br><span class="line">$element.velocity(<span class="string">"finish"</span>); <span class="comment">//结束当前动画，并达到动画终点，类似jq的stop(true,true)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个velocity动画序列，并使用<code>$.Velocity.RunSequence</code>(变量)来执行动画序列，优点是可以反复使用，见例子 预定义动画和自定义动画：预定义动画是<code>velocity.ui</code>已经定义好的一些动画，而自定义动画则是我们自己定义一个动画</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<p><font size="4">1. 用动画库做一个固定定位的返回顶部按钮，要求下拉距离超过200px后才能显示出来，否则隐藏，点击时过渡到页面顶部</font></p>
+<p><font size="4">2. 用动画库做一个旋转加缩放的方块的动画效果，要求时间4秒，旋转720deg，缩放从100%变成200%，颜色从红色到蓝色的循环动画</font></p>
+<p><font size="4">3. 用动画库做一个导航下划线滑动特效</font></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/" rel="tag"><i class="fa fa-tag"></i> jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/28/jQuery-3-工具方法和高级方法/" rel="next" title="jQuery-3-工具方法和高级方法">
+                <i class="fa fa-chevron-left"></i> jQuery-3-工具方法和高级方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/02/Ajax-1-Ajax原理和封装/" rel="prev" title="Ajax-1-Ajax原理和封装">
+                Ajax-1-Ajax原理和封装 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Velocity-js的方法的使用："><span class="nav-number">1.</span> <span class="nav-text">Velocity.js的方法的使用：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">134.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/09/28/jQuery-4-动画和Velocity动画库/';
+          this.page.identifier = '2019/09/28/jQuery-4-动画和Velocity动画库/';
+          this.page.title = 'jQuery-4-动画和Velocity动画库';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

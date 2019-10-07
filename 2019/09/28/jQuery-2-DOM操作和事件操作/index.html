@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="jQuery,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="JQ的DOM操作和事件操作   JQ的DOM操作 元素的移动：下面的方法前面的对象不同，链式操作的结果就不同 12345A.insertBefore(B)/A.before(B);  // A放在B的前面/B放在A的前面A.insertAfter(B)/A.after(B);   // A放在B的后面/B放在A的后面A.appendTo(B)/A.append(B);     // A插到B的内容">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery-2-DOM操作和事件操作">
+<meta property="og:url" content="http://yoursite.com/2019/09/28/jQuery-2-DOM操作和事件操作/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="JQ的DOM操作和事件操作   JQ的DOM操作 元素的移动：下面的方法前面的对象不同，链式操作的结果就不同 12345A.insertBefore(B)/A.before(B);  // A放在B的前面/B放在A的前面A.insertAfter(B)/A.after(B);   // A放在B的后面/B放在A的后面A.appendTo(B)/A.append(B);     // A插到B的内容">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-28T07:11:27.374Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery-2-DOM操作和事件操作">
+<meta name="twitter:description" content="JQ的DOM操作和事件操作   JQ的DOM操作 元素的移动：下面的方法前面的对象不同，链式操作的结果就不同 12345A.insertBefore(B)/A.before(B);  // A放在B的前面/B放在A的前面A.insertAfter(B)/A.after(B);   // A放在B的后面/B放在A的后面A.appendTo(B)/A.append(B);     // A插到B的内容">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/28/jQuery-2-DOM操作和事件操作/">
+
+
+
+
+
+  <title>jQuery-2-DOM操作和事件操作 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/jQuery-2-DOM操作和事件操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery-2-DOM操作和事件操作</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-28T10:34:36+08:00">
+                2019-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/28/jQuery-2-DOM操作和事件操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/28/jQuery-2-DOM操作和事件操作/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center><font size="4">JQ的DOM操作和事件操作</font></center>
+
+<ul>
+<li><h4 id="JQ的DOM操作"><a href="#JQ的DOM操作" class="headerlink" title="JQ的DOM操作"></a>JQ的DOM操作</h4><ul>
+<li><p><font color="orange"><strong>元素的移动</strong></font>：下面的方法前面的对象不同，链式操作的结果就不同</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A.insertBefore(B)/A.before(B);  <span class="comment">// A放在B的前面/B放在A的前面</span></span><br><span class="line">A.insertAfter(B)/A.after(B);   <span class="comment">// A放在B的后面/B放在A的后面</span></span><br><span class="line"></span><br><span class="line">A.appendTo(B)/A.append(B);     <span class="comment">// A插到B的内容后/B插到A的内容后</span></span><br><span class="line">A.prependTo(B)/A.prepend(B);  <span class="comment">// A插到B的内容前/B插到A的内容前</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>元素的创建</strong></font>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"&lt;li&gt;"</span>)  <span class="comment">//创建标签，如：</span></span><br><span class="line">$(<span class="string">"&lt;li class='box'&gt;"</span>).appendTo($(<span class="string">"ul"</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>元素的删除</strong></font>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).remove();   <span class="comment">// 删除该节点</span></span><br><span class="line">$(<span class="string">"div"</span>).detach();   <span class="comment">// 跟remove方法一样，只不过会保留删除这个元素的操作</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>偏移值、父级及有定位的父级</strong></font>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#div2"</span>).offset().left;     <span class="comment">// 获取元素到屏幕的左距离</span></span><br><span class="line">$(<span class="string">"#div2"</span>).position().left;  <span class="comment">// 获取元素到有定位的父级的left值,把当前元素转化成类似定位</span></span><br><span class="line"></span><br><span class="line">元素.parent();         <span class="comment">// 获取元素的父级</span></span><br><span class="line">元素.offsetParent();  <span class="comment">// 获取元素最近的被定位的父级</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>JQ的遍历：<code>each()</code></strong></font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"li"</span>).each(<span class="function"><span class="keyword">function</span>  (<span class="params">i, elem</span>) </span>&#123;   <span class="comment">// 参数：下标, 每个元素</span></span><br><span class="line">    $(elem).html(i);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">"li"</span>).each(<span class="function"><span class="keyword">function</span>  (<span class="params">i, elem</span>) </span>&#123;   <span class="comment">// 参数：下标, 每个元素</span></span><br><span class="line">    $(<span class="keyword">this</span>).html($(<span class="keyword">this</span>).index());  <span class="comment">// 与第一种结果相同</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>判断真假方法：<code>is()</code>判断里面是否为真，返回布尔值，</strong></font>如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JQ对象.is(<span class="string">":checked"</span>);   <span class="comment">// 判断单选/多选框是否被选中</span></span><br><span class="line">JQ对象.is(<span class="string">":animated"</span>);  <span class="comment">// 判断对象是否在执行动画</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="事件操作："><a href="#事件操作：" class="headerlink" title="事件操作："></a>事件操作：</h4><ul>
+<li><p><font color="orange"><strong>事件的写法</strong></font>：前面说了JQ的事件没有<code>on</code>，除此以外还有一个<code>on()</code>方法绑定事件函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="number">123</span>);</span><br><span class="line">&#125;);  <span class="comment">//  事件绑定，参数事件和事件函数</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">'div'</span>).on(<span class="string">'click mouseover'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">    alert(<span class="number">123</span>);</span><br><span class="line">&#125;);  <span class="comment">//  第一个参数可以是多个事件(空格分隔)</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">'div'</span>).on(&#123;</span><br><span class="line">    <span class="string">'click'</span> : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="number">123</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'mouseover'</span> : <span class="function"><span class="keyword">function</span> (<span class="params">&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">        alert(<span class="number">456</span></span>);</span></span><br><span class="line"><span class="function">	&#125;</span></span><br><span class="line"><span class="function">&#125;);  // 也可以是对象，事件为属性，函数为值，一次为元素绑定多个事件函数</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">$</span>(<span class="params"><span class="string">"div"</span></span>).<span class="title">one</span>(<span class="params"><span class="string">"click"</span>,function (</span>) </span>&#123; </span><br><span class="line">    alert(<span class="number">123</span>);</span><br><span class="line">&#125;);  <span class="comment">// 只执行事件一次的事件方法</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">"div"</span>).off(<span class="string">"mouseover"</span>);  <span class="comment">// 解除绑定事件写法</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">document</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert( $(<span class="built_in">window</span>).scrollTop() );</span><br><span class="line">&#125;);  <span class="comment">// 滚动距离</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;);   <span class="comment">// 滚动条事件</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">document</span>).scrollTop(<span class="number">0</span>); <span class="comment">// 滚动条赋值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 举例：</span></span><br><span class="line">$(<span class="built_in">window</span>).on(<span class="string">"scroll"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log($(<span class="built_in">document</span>).scrollTop());</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>事件对象event</strong></font>：与原生js一样，JQ的事件对象也是传第一个参数ev，且没有兼容问题：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'div'</span>).mousedown(<span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;  </span><br><span class="line">    <span class="comment">// ev : event对象 </span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="built_in">document</span>).keydown(<span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123; <span class="comment">// 键盘的event</span></span><br><span class="line">    <span class="keyword">switch</span>(ev.which) &#123;   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">ev.pageX/Y; <span class="comment">// (相对于文档的) 鼠标坐标</span></span><br><span class="line">ev.clientX; <span class="comment">// (相对于可视区) 鼠标坐标</span></span><br><span class="line"></span><br><span class="line">ev.which; <span class="comment">// 原生的keyCode：键盘按键</span></span><br><span class="line"></span><br><span class="line">ev.preventDefault(); <span class="comment">// 阻止浏览器默认事件</span></span><br><span class="line">ev.stopPropagation(); <span class="comment">// 阻止事件冒泡的操作</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 阻止默认事件 + 阻止冒泡的操作</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><font color="gree" size="5">练习：</font></p>
+<p><font size="4">1. 做3个不同颜色的方块,鼠标移入第一个方块时,调换后两个方块的位置并让第二个div的内容变成第二个,点击时调换回来并让第三个div内容变成第三个</font></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>按钮3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"jquery-1.10.1.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 点击1，交换div1和div2的位置；</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 点击2，把div1放进div3</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 点击3:，把div2放在div3的内容之后</span></span></span><br><span class="line"><span class="javascript">    $(<span class="string">"button"</span>).eq(<span class="number">0</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 选择器选择位置，而不是id值</span></span></span><br><span class="line"><span class="javascript">        $(<span class="string">"div"</span>).eq(<span class="number">0</span>).insertAfter($(<span class="string">"div"</span>).eq(<span class="number">1</span>));</span></span><br><span class="line">    &#125;);</span><br><span class="line"><span class="javascript">    $(<span class="string">"button"</span>).eq(<span class="number">1</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">"#div1"</span>).appendTo($(<span class="string">"#div3"</span>));</span></span><br><span class="line">    &#125;);</span><br><span class="line"><span class="javascript">    $(<span class="string">"button"</span>).eq(<span class="number">2</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        $(<span class="string">"#div2"</span>).appendTo($(<span class="string">"#div3"</span>));</span></span><br><span class="line">    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    CSS部分：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#div1</span>, <span class="selector-id">#div2</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#div1</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#div2</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font size="4">2. 四个多选框，做一个点击多选框判断数量的效果，如果超过两个多选框被选中会提示最多选中两个多选框并取消选中</font></p>
+<p><font size="4">3. 做一个固定到页面右下角的按钮,点击时返回页面的顶部,要求该按钮只有在滚动距离超过200px时才能看见</font></p>
+<p><font size="4">4. 用JQ编写同一个元素既可以被鼠标拖拽，又可以上下左右控制元素移动</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"div"</span>).mousedown(<span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> disX = ev.pageX - $(<span class="string">"div"</span>).offset().left;</span><br><span class="line">    <span class="keyword">var</span> disY = ev.pageY - $(<span class="string">"div"</span>).offset().top;</span><br><span class="line">    $(<span class="built_in">document</span>).mousemove(<span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"div"</span>).css(&#123;</span><br><span class="line">            <span class="string">"left"</span>: ev.pageX - disX + <span class="string">"px"</span>,</span><br><span class="line">            <span class="string">"top"</span>: ev.pageY - disY + <span class="string">"px"</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// </span></span><br><span class="line">    $(<span class="built_in">document</span>).mouseup(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">"div"</span>).off(<span class="string">"mousedown mousemove"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/" rel="tag"><i class="fa fa-tag"></i> jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/28/jQuery-1-选择器和常用方法/" rel="next" title="jQuery-1-选择器和常用方法">
+                <i class="fa fa-chevron-left"></i> jQuery-1-选择器和常用方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/28/jQuery-3-工具方法和高级方法/" rel="prev" title="jQuery-3-工具方法和高级方法">
+                jQuery-3-工具方法和高级方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JQ的DOM操作"><span class="nav-number">1.</span> <span class="nav-text">JQ的DOM操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件操作："><span class="nav-number">2.</span> <span class="nav-text">事件操作：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">134.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/09/28/jQuery-2-DOM操作和事件操作/';
+          this.page.identifier = '2019/09/28/jQuery-2-DOM操作和事件操作/';
+          this.page.title = 'jQuery-2-DOM操作和事件操作';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+
