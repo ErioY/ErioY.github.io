@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-07T01:48:32.389Z</updated>
+  <updated>2019-10-07T02:32:30.666Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/10/05/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-knn%E7%AE%97%E6%B3%95/"/>
     <id>http://yoursite.com/2019/10/05/Python机器学习-knn算法/</id>
     <published>2019-10-05T02:54:56.000Z</published>
-    <updated>2019-10-07T01:48:32.389Z</updated>
+    <updated>2019-10-07T02:32:30.666Z</updated>
     
     <summary type="html">
     
@@ -30,9 +30,11 @@
         
         
           &lt;center&gt;&lt;font size=&quot;5&quot;&gt;KNN算法&lt;/font&gt;&lt;/center&gt;
+- #### 题目名称
 
+&lt;p&gt;  knn算法–电影分类&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;题目名称&quot;&gt;&lt;a href=&quot;#题目名称&quot; class=&quot;headerlink&quot;
+&lt;li&gt;&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
         
       
     
