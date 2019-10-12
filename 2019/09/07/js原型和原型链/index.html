@@ -135,7 +135,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/09/07/js原型和原型链/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569133688912.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/07/js原型和原型链/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569134062845.png">
-<meta property="og:updated_time" content="2019-09-24T10:42:51.992Z">
+<meta property="og:updated_time" content="2019-10-09T13:20:11.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js原型和原型链">
 <meta name="twitter:description" content="js原型和原型链 - #### 原型和原型链：   每个对象都连接到一个原型对象，并可从中继承属性。所有通过字面量创建的对象都具有同一个原型对象——Object.prototype既原型对象的引用。通过new关键字后跟构造函数创建的对象的原型，就是构造函数的prototype属性的值，比如通过new Object()创建的对象和字面量创建的对象一样也继承自Object.prototype 1234">
@@ -441,12 +441,10 @@
 <li><p>而javascript中的对象就是一个指向prototype的指针和一个自身的属性列表。</p>
 </li>
 <li><p>原型链继承就是创建一个新的指针，指向构造器的prototype属性</p>
-<ul>
+</li>
 <li><p>用一张图来表示：<code>prototype</code>(原型)、<code>constructor</code>(构造器)、<code>__proto__</code>(构造器的原型——<code>constructor.prototype</code>)</p>
 <p><img src="/2019/09/07/js原型和原型链/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569133688912.png" alt="1569133688912"></p>
 <p>所谓原型链，指的就是图中的<code>__proto__</code>这一条指针链！原型链的顶层就是<code>Object.prototype</code>，而这个对象的是没有原型对象的(null)。</p>
-</li>
-</ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> A = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> A();</span><br><span class="line">  <span class="built_in">console</span>.log(a.__proto__); <span class="comment">// A &#123;&#125; (即构造器function A 的原型对象)</span></span><br><span class="line">  <span class="built_in">console</span>.log(a.__proto__.__proto__); <span class="comment">// Object &#123;&#125; (即构造器function Object 的原型对象)</span></span><br><span class="line">  <span class="built_in">console</span>.log(a.__proto__.__proto__.__proto__); <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
 
 
@@ -621,7 +619,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -634,7 +632,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -732,7 +730,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">134.9k</span>
+    <span title="Site words total count">136.4k</span>
   
 </div>
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-07T02:48:53.457Z</updated>
+  <updated>2019-10-12T10:24:26.398Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>knn算法</title>
-    <link href="http://yoursite.com/2019/10/05/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-knn%E7%AE%97%E6%B3%95/"/>
-    <id>http://yoursite.com/2019/10/05/Python机器学习-knn算法/</id>
-    <published>2019-10-05T02:54:56.000Z</published>
-    <updated>2019-10-07T02:48:53.457Z</updated>
+    <title>KNN-鸢尾花数据集</title>
+    <link href="http://yoursite.com/2019/10/12/KNN-%E9%B8%A2%E5%B0%BE%E8%8A%B1%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    <id>http://yoursite.com/2019/10/12/KNN-鸢尾花数据集/</id>
+    <published>2019-10-12T08:51:42.000Z</published>
+    <updated>2019-10-12T10:24:26.398Z</updated>
     
     <summary type="html">
     
@@ -30,12 +30,37 @@
         
         
           &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;题目名称&quot;&gt;&lt;a href=&quot;#题目名称&quot; class=&quot;headerlink&quot; title=&quot;题目名称&quot;&gt;&lt;/a&gt;题目名称&lt;/h4&gt;&lt;p&gt;knn算法–电影分类&lt;/p&gt;
+&lt;li&gt;&lt;h4 id=&quot;题目名称&quot;&gt;&lt;a href=&quot;#题目名称&quot; class=&quot;headerlink&quot; title=&quot;题目名称&quot;&gt;&lt;/a&gt;题目名称&lt;/h4&gt;&lt;p&gt;knn算法 —— 鸢尾花分类&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python机器学习" scheme="http://yoursite.com/tags/python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>knn算法</title>
+    <link href="http://yoursite.com/2019/10/05/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-knn%E7%AE%97%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/10/05/Python机器学习-knn算法/</id>
+    <published>2019-10-05T02:54:56.000Z</published>
+    <updated>2019-10-08T10:38:39.098Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;knn算法实现&lt;/font&gt;&lt;/center&gt;
+####
         
       
     
@@ -288,7 +313,7 @@
     <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%862/"/>
     <id>http://yoursite.com/2019/09/23/ECMAScript-新标准2/</id>
     <published>2019-09-23T12:00:25.000Z</published>
-    <updated>2019-09-28T01:31:07.546Z</updated>
+    <updated>2019-10-08T13:52:41.125Z</updated>
     
     <summary type="html">
     
@@ -306,7 +331,7 @@
     </summary>
     
     
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+      <category term="ECMAScript js" scheme="http://yoursite.com/tags/ECMAScript-js/"/>
     
   </entry>
   
@@ -315,7 +340,7 @@
     <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%861/"/>
     <id>http://yoursite.com/2019/09/23/ECMAScript-新标准1/</id>
     <published>2019-09-23T10:24:41.000Z</published>
-    <updated>2019-09-27T11:39:53.766Z</updated>
+    <updated>2019-10-08T13:52:28.384Z</updated>
     
     <summary type="html">
     
@@ -392,7 +417,7 @@
     <link href="http://yoursite.com/2019/09/07/js%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
     <id>http://yoursite.com/2019/09/07/js原型和原型链/</id>
     <published>2019-09-07T03:45:24.000Z</published>
-    <updated>2019-09-24T10:42:51.992Z</updated>
+    <updated>2019-10-09T13:20:11.436Z</updated>
     
     <summary type="html">
     
@@ -508,31 +533,6 @@
         
         
           &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js键盘事件和元素的拖放&lt;/font&gt;&lt;/center&gt;
-- ####
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js事件委托和滚轮事件</title>
-    <link href="http://yoursite.com/2019/09/07/js%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E5%92%8C%E6%BB%9A%E8%BD%AE%E4%BA%8B%E4%BB%B6/"/>
-    <id>http://yoursite.com/2019/09/07/js事件委托和滚轮事件/</id>
-    <published>2019-09-07T03:09:51.000Z</published>
-    <updated>2019-09-09T13:28:33.140Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js事件委托和滚轮事件&lt;/font&gt;&lt;/center&gt;
 - ####
         
       

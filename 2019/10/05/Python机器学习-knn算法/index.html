@@ -125,21 +125,21 @@
 
 
 
-<meta name="description" content="题目名称knn算法–电影分类     题目描述​       一个样本与数据集中的k个样本最相似，如果这k个样本中的大多数属于某一个类别，则该样本也属于这个类别     算法分析1. 用字典dict构建电影分类数据集(训练集)和测试集&amp;emsp;&amp;emsp;&amp;emsp;训练集：    名称 搞笑镜头 拥抱镜头 打斗镜头 类型    亲密旅行 42 2 9 喜剧片   新喜剧之王 21 17 5">
+<meta name="description" content="knn算法实现 #### 班级：软工1703班&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学号：17408070101&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;姓名：杨丽霞  博 客：https://erioy.github.io/2019/10/05/Python机器学习-knn算法/#more 题目名称knn算法 —— 电影分类">
 <meta name="keywords" content="python机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="knn算法">
 <meta property="og:url" content="http://yoursite.com/2019/10/05/Python机器学习-knn算法/index.html">
 <meta property="og:site_name" content="ErioY">
-<meta property="og:description" content="题目名称knn算法–电影分类     题目描述​       一个样本与数据集中的k个样本最相似，如果这k个样本中的大多数属于某一个类别，则该样本也属于这个类别     算法分析1. 用字典dict构建电影分类数据集(训练集)和测试集&amp;emsp;&amp;emsp;&amp;emsp;训练集：    名称 搞笑镜头 拥抱镜头 打斗镜头 类型    亲密旅行 42 2 9 喜剧片   新喜剧之王 21 17 5">
+<meta property="og:description" content="knn算法实现 #### 班级：软工1703班&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学号：17408070101&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;姓名：杨丽霞  博 客：https://erioy.github.io/2019/10/05/Python机器学习-knn算法/#more 题目名称knn算法 —— 电影分类">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/10/05/Python机器学习-knn算法/%E5%85%AC%E5%BC%8F.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/05/Python机器学习-knn算法/%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/05/Python机器学习-knn算法/%E8%BF%90%E8%A1%8C%E6%88%AA%E5%9B%BE.png">
-<meta property="og:updated_time" content="2019-10-07T02:48:53.457Z">
+<meta property="og:updated_time" content="2019-10-08T10:38:39.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="knn算法">
-<meta name="twitter:description" content="题目名称knn算法–电影分类     题目描述​       一个样本与数据集中的k个样本最相似，如果这k个样本中的大多数属于某一个类别，则该样本也属于这个类别     算法分析1. 用字典dict构建电影分类数据集(训练集)和测试集&amp;emsp;&amp;emsp;&amp;emsp;训练集：    名称 搞笑镜头 拥抱镜头 打斗镜头 类型    亲密旅行 42 2 9 喜剧片   新喜剧之王 21 17 5">
+<meta name="twitter:description" content="knn算法实现 #### 班级：软工1703班&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学号：17408070101&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;姓名：杨丽霞  博 客：https://erioy.github.io/2019/10/05/Python机器学习-knn算法/#more 题目名称knn算法 —— 电影分类">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/05/Python机器学习-knn算法/%E5%85%AC%E5%BC%8F.png">
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  995
+                  1k
                 </span>
               
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  3
+                  4
                 </span>
               
             </div>
@@ -426,8 +426,11 @@
       
 
       
-        <ul>
-<li><h4 id="题目名称"><a href="#题目名称" class="headerlink" title="题目名称"></a>题目名称</h4><p>knn算法–电影分类</p>
+        <center><font size="5">knn算法实现</font></center>
+#### 班级：软工1703班&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学号：17408070101&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;姓名：杨丽霞
+
+<h4 id="博-客：https-erioy-github-io-2019-10-05-Python机器学习-knn算法-more"><a href="#博-客：https-erioy-github-io-2019-10-05-Python机器学习-knn算法-more" class="headerlink" title="博 客：https://erioy.github.io/2019/10/05/Python机器学习-knn算法/#more"></a>博 客：<a href="https://erioy.github.io/2019/10/05/Python机器学习-knn算法/#more" target="_blank" rel="noopener">https://erioy.github.io/2019/10/05/Python机器学习-knn算法/#more</a></h4><ul>
+<li><h4 id="题目名称"><a href="#题目名称" class="headerlink" title="题目名称"></a>题目名称</h4><p>knn算法 —— 电影分类</p>
 </li>
 </ul>
 <hr>
@@ -619,6 +622,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/10/12/KNN-鸢尾花数据集/" rel="prev" title="KNN-鸢尾花数据集">
+                KNN-鸢尾花数据集 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -706,7 +713,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -719,7 +726,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -783,7 +790,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目名称"><span class="nav-number">1.</span> <span class="nav-text">题目名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述"><span class="nav-number">2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法分析"><span class="nav-number">3.</span> <span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-用字典dict构建电影分类数据集-训练集-和测试集"><span class="nav-number">3.1.</span> <span class="nav-text">1. 用字典dict构建电影分类数据集(训练集)和测试集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-计算测试集与数据集中所有数据的距离"><span class="nav-number">3.2.</span> <span class="nav-text">2. 计算测试集与数据集中所有数据的距离</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-取每段距离的小数点后两位并将电影名称和对应的距离添加到空数组中"><span class="nav-number">3.3.</span> <span class="nav-text">3. 取每段距离的小数点后两位并将电影名称和对应的距离添加到空数组中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-按距离大小升序排序并取前5项"><span class="nav-number">3.4.</span> <span class="nav-text">4. 按距离大小升序排序并取前5项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-取出训练集的列表，确定前5个样本所在类别出现的频率"><span class="nav-number">3.5.</span> <span class="nav-text">5. 取出训练集的列表，确定前5个样本所在类别出现的频率</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-对所得结果按照出现的次数用sorted-函数进行排序，得到一个升序的新数组，取出现次数最多的类型，因此要将新数组倒序，取第一个值"><span class="nav-number">3.6.</span> <span class="nav-text">6. 对所得结果按照出现的次数用sorted()函数进行排序，得到一个升序的新数组，取出现次数最多的类型，因此要将新数组倒序，取第一个值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-输出排序后的结果和出现频率最高的类别"><span class="nav-number">3.7.</span> <span class="nav-text">7. 输出排序后的结果和出现频率最高的类别</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法流程图"><span class="nav-number">4.</span> <span class="nav-text">算法流程图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行截图"><span class="nav-number">5.</span> <span class="nav-text">运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#心得体会"><span class="nav-number">6.</span> <span class="nav-text">心得体会</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#附：源代码"><span class="nav-number">7.</span> <span class="nav-text">附：源代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#博-客：https-erioy-github-io-2019-10-05-Python机器学习-knn算法-more"><span class="nav-number">1.</span> <span class="nav-text">博 客：https://erioy.github.io/2019/10/05/Python机器学习-knn算法/#more</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题目名称"><span class="nav-number">2.</span> <span class="nav-text">题目名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述"><span class="nav-number">3.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法分析"><span class="nav-number">4.</span> <span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-用字典dict构建电影分类数据集-训练集-和测试集"><span class="nav-number">4.1.</span> <span class="nav-text">1. 用字典dict构建电影分类数据集(训练集)和测试集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-计算测试集与数据集中所有数据的距离"><span class="nav-number">4.2.</span> <span class="nav-text">2. 计算测试集与数据集中所有数据的距离</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-取每段距离的小数点后两位并将电影名称和对应的距离添加到空数组中"><span class="nav-number">4.3.</span> <span class="nav-text">3. 取每段距离的小数点后两位并将电影名称和对应的距离添加到空数组中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-按距离大小升序排序并取前5项"><span class="nav-number">4.4.</span> <span class="nav-text">4. 按距离大小升序排序并取前5项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-取出训练集的列表，确定前5个样本所在类别出现的频率"><span class="nav-number">4.5.</span> <span class="nav-text">5. 取出训练集的列表，确定前5个样本所在类别出现的频率</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-对所得结果按照出现的次数用sorted-函数进行排序，得到一个升序的新数组，取出现次数最多的类型，因此要将新数组倒序，取第一个值"><span class="nav-number">4.6.</span> <span class="nav-text">6. 对所得结果按照出现的次数用sorted()函数进行排序，得到一个升序的新数组，取出现次数最多的类型，因此要将新数组倒序，取第一个值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-输出排序后的结果和出现频率最高的类别"><span class="nav-number">4.7.</span> <span class="nav-text">7. 输出排序后的结果和出现频率最高的类别</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法流程图"><span class="nav-number">5.</span> <span class="nav-text">算法流程图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行截图"><span class="nav-number">6.</span> <span class="nav-text">运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#心得体会"><span class="nav-number">7.</span> <span class="nav-text">心得体会</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#附：源代码"><span class="nav-number">8.</span> <span class="nav-text">附：源代码</span></a></li></ol></div>
             
 
           </div>
@@ -817,7 +824,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">134.9k</span>
+    <span title="Site words total count">136.4k</span>
   
 </div>
 
