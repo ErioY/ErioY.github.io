@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="js,">
+  <meta name="keywords" content="ECMAScript,">
 
 
 
@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="ECMAScript 新标准 - #### 新函数写法   箭头函数：ES6新增了一种新的函数：Arrow Function(箭头函数)。它的定义用的就是一个箭头：x =&amp;gt; x * x 这个箭头函数相当于： 123function (x) &amp;#123;    return x * x;&amp;#125;  箭头函数相当于匿名函数，并且简化了函数定义。但箭头函数可以替换函数表达式，但是不能替换函数声">
-<meta name="keywords" content="js">
+<meta name="description" content="新函数写法 箭头函数：ES6新增了一种新的函数：Arrow Function(箭头函数)。它的定义用的就是一个箭头：x =&amp;gt; x * x 这个箭头函数相当于： 123function (x) &amp;#123;    return x * x;&amp;#125;  箭头函数相当于匿名函数，并且简化了函数定义。但箭头函数可以替换函数表达式，但是不能替换函数声明。箭头函数有两种格式，一种像上面的，只包含一">
+<meta name="keywords" content="ECMAScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMAScript 新标准3">
 <meta property="og:url" content="http://yoursite.com/2019/09/23/ECMAScript-新标准3/index.html">
 <meta property="og:site_name" content="ErioY">
-<meta property="og:description" content="ECMAScript 新标准 - #### 新函数写法   箭头函数：ES6新增了一种新的函数：Arrow Function(箭头函数)。它的定义用的就是一个箭头：x =&amp;gt; x * x 这个箭头函数相当于： 123function (x) &amp;#123;    return x * x;&amp;#125;  箭头函数相当于匿名函数，并且简化了函数定义。但箭头函数可以替换函数表达式，但是不能替换函数声">
+<meta property="og:description" content="新函数写法 箭头函数：ES6新增了一种新的函数：Arrow Function(箭头函数)。它的定义用的就是一个箭头：x =&amp;gt; x * x 这个箭头函数相当于： 123function (x) &amp;#123;    return x * x;&amp;#125;  箭头函数相当于匿名函数，并且简化了函数定义。但箭头函数可以替换函数表达式，但是不能替换函数声明。箭头函数有两种格式，一种像上面的，只包含一">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-28T01:31:17.277Z">
+<meta property="og:updated_time" content="2019-10-20T02:36:05.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript 新标准3">
-<meta name="twitter:description" content="ECMAScript 新标准 - #### 新函数写法   箭头函数：ES6新增了一种新的函数：Arrow Function(箭头函数)。它的定义用的就是一个箭头：x =&amp;gt; x * x 这个箭头函数相当于： 123function (x) &amp;#123;    return x * x;&amp;#125;  箭头函数相当于匿名函数，并且简化了函数定义。但箭头函数可以替换函数表达式，但是不能替换函数声">
+<meta name="twitter:description" content="新函数写法 箭头函数：ES6新增了一种新的函数：Arrow Function(箭头函数)。它的定义用的就是一个箭头：x =&amp;gt; x * x 这个箭头函数相当于： 123function (x) &amp;#123;    return x * x;&amp;#125;  箭头函数相当于匿名函数，并且简化了函数定义。但箭头函数可以替换函数表达式，但是不能替换函数声明。箭头函数有两种格式，一种像上面的，只包含一">
 
 
 
@@ -422,10 +422,8 @@
       
 
       
-        <center><font size="4">ECMAScript 新标准</font></center>
-- #### 新函数写法
-
-<ul>
+        <ul>
+<li><h4 id="新函数写法"><a href="#新函数写法" class="headerlink" title="新函数写法"></a>新函数写法</h4><ul>
 <li><p><font color="orange"><strong>箭头函数</strong></font>：ES6新增了一种新的函数：Arrow Function(箭头函数)。它的定义用的就是一个箭头：x =&gt; x * x 这个箭头函数相当于：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -438,6 +436,8 @@
 
 
 
+</li>
+</ul>
 </li>
 </ul>
 <pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;  <span class="comment">//  ES5</span></span><br><span class="line">    name: <span class="string">'tom'</span>, </span><br><span class="line">  getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">const</span> person = &#123;  <span class="comment">//  ES6</span></span><br><span class="line">    name: <span class="string">'tom'</span>, </span><br><span class="line">    getName: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">this</span>.name; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -498,7 +498,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+            <a href="/tags/ECMAScript/" rel="tag"><i class="fa fa-tag"></i> ECMAScript</a>
           
         </div>
       
@@ -625,7 +625,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -689,7 +689,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#generator-生成器"><span class="nav-number">1.</span> <span class="nav-text">generator(生成器)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类和继承"><span class="nav-number">2.</span> <span class="nav-text">类和继承</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#新函数写法"><span class="nav-number">1.</span> <span class="nav-text">新函数写法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#generator-生成器"><span class="nav-number">2.</span> <span class="nav-text">generator(生成器)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类和继承"><span class="nav-number">3.</span> <span class="nav-text">类和继承</span></a></li></ol></div>
             
 
           </div>
@@ -723,7 +723,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">136.4k</span>
+    <span title="Site words total count">137.6k</span>
   
 </div>
 

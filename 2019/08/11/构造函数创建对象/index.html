@@ -128,14 +128,14 @@
 <meta name="description" content="前面有两种创建对象的方法：1.对象字面量创建对象；2. new Object()创建对象； 但是这两种方法一次只能创建一个对象，但可能不同的对象里面很多的属性和方法是大量相同的，而我们只能复制，因此我们可以用构造函数的方法重复这些相同的代码   构造函数：把对象里面一些相同的属性和方法抽象出来封装到函数里面，主要用来初始化对象 构造函数的语法格式：123456function 构造函数名() &amp;">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="构造函数创建对象">
+<meta property="og:title" content="js构造函数">
 <meta property="og:url" content="http://yoursite.com/2019/08/11/构造函数创建对象/index.html">
 <meta property="og:site_name" content="ErioY">
 <meta property="og:description" content="前面有两种创建对象的方法：1.对象字面量创建对象；2. new Object()创建对象； 但是这两种方法一次只能创建一个对象，但可能不同的对象里面很多的属性和方法是大量相同的，而我们只能复制，因此我们可以用构造函数的方法重复这些相同的代码   构造函数：把对象里面一些相同的属性和方法抽象出来封装到函数里面，主要用来初始化对象 构造函数的语法格式：123456function 构造函数名() &amp;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-12T02:40:10.520Z">
+<meta property="og:updated_time" content="2019-10-15T11:19:35.639Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="构造函数创建对象">
+<meta name="twitter:title" content="js构造函数">
 <meta name="twitter:description" content="前面有两种创建对象的方法：1.对象字面量创建对象；2. new Object()创建对象； 但是这两种方法一次只能创建一个对象，但可能不同的对象里面很多的属性和方法是大量相同的，而我们只能复制，因此我们可以用构造函数的方法重复这些相同的代码   构造函数：把对象里面一些相同的属性和方法抽象出来封装到函数里面，主要用来初始化对象 构造函数的语法格式：123456function 构造函数名() &amp;">
 
 
@@ -172,7 +172,7 @@
 
 
 
-  <title>构造函数创建对象 | ErioY</title>
+  <title>js构造函数 | ErioY</title>
   
 
 
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">构造函数创建对象</h1>
+          <h1 class="post-title" itemprop="name headline">js构造函数</h1>
         
 
         <div class="post-meta">
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  863
+                  1k
                 </span>
               
 
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  3
+                  4
                 </span>
               
             </div>
@@ -470,6 +470,21 @@
 <li><p>注意：一般 <code>for...in</code>  里面的变量为 <code>k</code> 或者 <code>key</code></p>
 </li>
 </ol>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h5 id="静态成员和实例成员"><a href="#静态成员和实例成员" class="headerlink" title="静态成员和实例成员"></a>静态成员和实例成员</h5><ul>
+<li><p>实例成员：构造函数内部通过<code>this</code>添加的成员，只能通过实例化的对象来访问</p>
+</li>
+<li><p>静态成员：在构造函数本身添加的成员，只能通过构造函数访问，即<code>构造函数.属性</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Star</span>(<span class="params">uname, age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.uname = uname;  <span class="comment">// 实例成员</span></span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="comment">/* this.sing = function() &#123;</span></span><br><span class="line"><span class="comment">        console.log('我会唱歌');</span></span><br><span class="line"><span class="comment">    &#125; */</span></span><br><span class="line">&#125;</span><br><span class="line">Star.prototype.sing = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我会唱歌'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> ldh  = <span class="keyword">new</span> Star(<span class="string">'刘德华'</span>, <span class="number">18</span>);</span><br><span class="line">Star.sex = <span class="string">'男'</span>;  <span class="comment">// 静态成员</span></span><br><span class="line"><span class="built_in">console</span>.log(Star.sex);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="构造函数的缺点"><a href="#构造函数的缺点" class="headerlink" title="构造函数的缺点"></a>构造函数的缺点</h5><ul>
+<li>存在浪费内存的问题</li>
+</ul>
 </li>
 </ul>
 <hr>
@@ -621,7 +636,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -685,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数：把对象里面一些相同的属性和方法抽象出来封装到函数里面，主要用来初始化对象"><span class="nav-number">1.</span> <span class="nav-text">构造函数：把对象里面一些相同的属性和方法抽象出来封装到函数里面，主要用来初始化对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数的语法格式："><span class="nav-number">2.</span> <span class="nav-text">构造函数的语法格式：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数和对象的区别："><span class="nav-number">3.</span> <span class="nav-text">构造函数和对象的区别：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#new关键字执行过程："><span class="nav-number">4.</span> <span class="nav-text">new关键字执行过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#遍历对象：for-in语句"><span class="nav-number">5.</span> <span class="nav-text">遍历对象：for...in语句</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数：把对象里面一些相同的属性和方法抽象出来封装到函数里面，主要用来初始化对象"><span class="nav-number">1.</span> <span class="nav-text">构造函数：把对象里面一些相同的属性和方法抽象出来封装到函数里面，主要用来初始化对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数的语法格式："><span class="nav-number">2.</span> <span class="nav-text">构造函数的语法格式：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数和对象的区别："><span class="nav-number">3.</span> <span class="nav-text">构造函数和对象的区别：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#new关键字执行过程："><span class="nav-number">4.</span> <span class="nav-text">new关键字执行过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#遍历对象：for-in语句"><span class="nav-number">5.</span> <span class="nav-text">遍历对象：for...in语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#静态成员和实例成员"><span class="nav-number">6.</span> <span class="nav-text">静态成员和实例成员</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数的缺点"><span class="nav-number">7.</span> <span class="nav-text">构造函数的缺点</span></a></li></ol></div>
             
 
           </div>
@@ -719,7 +734,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">136.4k</span>
+    <span title="Site words total count">137.6k</span>
   
 </div>
 
@@ -893,7 +908,7 @@
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/2019/08/11/构造函数创建对象/';
           this.page.identifier = '2019/08/11/构造函数创建对象/';
-          this.page.title = '构造函数创建对象';
+          this.page.title = 'js构造函数';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';

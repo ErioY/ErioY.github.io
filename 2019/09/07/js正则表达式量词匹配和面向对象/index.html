@@ -134,7 +134,7 @@
 <meta property="og:description" content="js正则表达式量词匹配和面向对象 - #### 正则表达式匹配相似项：中括号   一组相似的元素，用[]表示，整体代表一个字符，如： 123var str = &apos;abc&apos;;  var re = /a[bde]c/; // []里面是或的关系alert(re.test(str));  连字符(-)：可以是任意从大到小的范围，如[a-z0-9A-Z]，其中任意一个都匹配成功， 如： 123var st">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/09/07/js正则表达式量词匹配和面向对象/C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569067817463.png">
-<meta property="og:updated_time" content="2019-09-22T06:06:58.951Z">
+<meta property="og:updated_time" content="2019-10-13T12:16:04.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js正则表达式量词匹配和面向对象">
 <meta name="twitter:description" content="js正则表达式量词匹配和面向对象 - #### 正则表达式匹配相似项：中括号   一组相似的元素，用[]表示，整体代表一个字符，如： 123var str = &apos;abc&apos;;  var re = /a[bde]c/; // []里面是或的关系alert(re.test(str));  连字符(-)：可以是任意从大到小的范围，如[a-z0-9A-Z]，其中任意一个都匹配成功， 如： 123var st">
@@ -475,19 +475,22 @@
 <li><p>js里没有类的概念，也就没有面向对象，但new的方法却模拟了面向对象，因此new(var 变量名 = new 函数())也就成了唯一能够区别一般函数和构造函数的方法。</p>
 </li>
 <li><p>若一个函数的返回值是引用类型(对象)的数据，作为构造函数用new运算符执行构造时，运算的结果将被返回值取代，其内的this值丢失了，取而代之的是被返回的对象；若一个函数的返回值是一个值类型(this或者非对象)，执行构造时，它的返回值将被丢弃，结果仍然是this所引用的对象：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">demo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.a = <span class="number">10</span>; <span class="comment">// 成员变量</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">1</span>;&#125;  <span class="comment">//返回值是对象</span></span><br><span class="line">    <span class="comment">// return 1;  //返回值是值类型或undefined</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> demo();</span><br><span class="line"><span class="keyword">var</span> n = demo();</span><br><span class="line">alert(m);   <span class="comment">// 分别返回return后面的闭包和Object</span></span><br><span class="line">alert(n);   <span class="comment">// 分别返回return后面的闭包和1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">demo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.a = <span class="number">10</span>; <span class="comment">// 成员变量</span></span><br><span class="line">      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">      &#125;  <span class="comment">//返回值是对象</span></span><br><span class="line">      <span class="comment">// return 1;  //返回值是值类型或undefined</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> m = <span class="keyword">new</span> demo();</span><br><span class="line">  <span class="keyword">var</span> n = demo();</span><br><span class="line">  alert(m);   <span class="comment">// 分别返回return后面的闭包和Object</span></span><br><span class="line">alert(n);   <span class="comment">// 分别返回return后面的闭包和1</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
+</ul>
+</li>
+</ul>
+<ul>
 <li><p><font color="green"><strong>在用new来调用一个构造函数的时候，发生了下面四件事</strong>：</font></p>
 <ul>
 <li><code>var obj ={};</code>   //    创建一个空对象obj</li>
 <li><code>obj.__proto__ = test.prototype;</code>   //    创建一个指向<code>test.prototype</code>（构造函数原型对象）的指针,<code>__proto__</code>：构造器原型</li>
 <li><code>test.call(obj);</code>// 将构造函数的作用域赋给新对象，因此m函数中的this指向新对象obj，然后再调用test函数。于是我们就给obj对象赋值了一个成员变量a，这个成员变量的值是1。<font color="purple"><strong>除了<code>call</code>外，改变this指向的还有<code>aplly</code></strong></font>，它们是函数调用的一种特殊方法。</li>
+<li><code>return obj;</code> // 返回新对象obj。</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p><code>return obj;</code> // 返回新对象obj。</p>
-<ul>
 <li><p>函数内的变量有如下分类：</p>
 <ul>
 <li>其中例子中写成<code>this.a</code>代表类的成员变量(共有变量，实例变量，每个实例独立的存储)</li>
@@ -497,8 +500,6 @@
 <li><p>而var定义的则是局部变量(私有变量，函数执行时临时存储)</p>
 </li>
 <li><p><code>instanceof</code>：要求其左边是一个对象，右边是对象类的名字或构造函数。如果左边的object是class或构造函数的实例，则<code>instanceof</code>运算符返回true。如果左边的object不是指定class或函数的实例，或object为null，则返回false。</p>
-</li>
-</ul>
 </li>
 </ul>
 <hr>
@@ -659,7 +660,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -757,7 +758,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">136.4k</span>
+    <span title="Site words total count">137.6k</span>
   
 </div>
 

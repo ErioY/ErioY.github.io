@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="JQ工具方法和高级方法 - #### 工具方法：   JQ的方法（$().css()等）只能给JQ对象用；而工具方法（$.type()等）不仅可以给JQ用，也可以给原生JS用  工具方法目的是完善原生js方法： 123456789101112131415$.type(a); // 可以判断比type方法更多的类型$.trim(str);   // 去掉字符串前后空格(原生ES5中增加了trim()">
+<meta name="description" content="工具方法： JQ的方法（$().css()等）只能给JQ对象用；而工具方法（$.type()等）不仅可以给JQ用，也可以给原生JS用  工具方法目的是完善原生js方法： 123456789101112131415$.type(a); // 可以判断比type方法更多的类型$.trim(str);   // 去掉字符串前后空格(原生ES5中增加了trim()方法)$.inArray(&apos;b&apos;,arr">
 <meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery-3-工具方法和高级方法">
 <meta property="og:url" content="http://yoursite.com/2019/09/28/jQuery-3-工具方法和高级方法/index.html">
 <meta property="og:site_name" content="ErioY">
-<meta property="og:description" content="JQ工具方法和高级方法 - #### 工具方法：   JQ的方法（$().css()等）只能给JQ对象用；而工具方法（$.type()等）不仅可以给JQ用，也可以给原生JS用  工具方法目的是完善原生js方法： 123456789101112131415$.type(a); // 可以判断比type方法更多的类型$.trim(str);   // 去掉字符串前后空格(原生ES5中增加了trim()">
+<meta property="og:description" content="工具方法： JQ的方法（$().css()等）只能给JQ对象用；而工具方法（$.type()等）不仅可以给JQ用，也可以给原生JS用  工具方法目的是完善原生js方法： 123456789101112131415$.type(a); // 可以判断比type方法更多的类型$.trim(str);   // 去掉字符串前后空格(原生ES5中增加了trim()方法)$.inArray(&apos;b&apos;,arr">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-01T01:32:57.851Z">
+<meta property="og:updated_time" content="2019-10-20T02:35:11.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery-3-工具方法和高级方法">
-<meta name="twitter:description" content="JQ工具方法和高级方法 - #### 工具方法：   JQ的方法（$().css()等）只能给JQ对象用；而工具方法（$.type()等）不仅可以给JQ用，也可以给原生JS用  工具方法目的是完善原生js方法： 123456789101112131415$.type(a); // 可以判断比type方法更多的类型$.trim(str);   // 去掉字符串前后空格(原生ES5中增加了trim()">
+<meta name="twitter:description" content="工具方法： JQ的方法（$().css()等）只能给JQ对象用；而工具方法（$.type()等）不仅可以给JQ用，也可以给原生JS用  工具方法目的是完善原生js方法： 123456789101112131415$.type(a); // 可以判断比type方法更多的类型$.trim(str);   // 去掉字符串前后空格(原生ES5中增加了trim()方法)$.inArray(&apos;b&apos;,arr">
 
 
 
@@ -422,15 +422,15 @@
       
 
       
-        <center><font size="5">JQ工具方法和高级方法</font></center>
-- #### 工具方法：
-
-<ul>
+        <ul>
+<li><h4 id="工具方法："><a href="#工具方法：" class="headerlink" title="工具方法："></a>工具方法：</h4><ul>
 <li><p>JQ的方法（<code>$().css()</code>等）只能给JQ对象用；而工具方法（<code>$.type()</code>等）不仅可以给JQ用，也可以给原生JS用</p>
 </li>
 <li><p>工具方法目的是完善原生js方法：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$.type(a); <span class="comment">// 可以判断比type方法更多的类型</span></span><br><span class="line"></span><br><span class="line">$.trim(str);   <span class="comment">// 去掉字符串前后空格(原生ES5中增加了trim()方法)</span></span><br><span class="line"></span><br><span class="line">$.inArray(<span class="string">'b'</span>,arr); <span class="comment">// 类似于 indexOf，如果第一个参数不存在返回-1(原生ES5中增加了数组的indexOf()方法)</span></span><br><span class="line"></span><br><span class="line">$.proxy(); <span class="comment">// 改变this指向，参数：函数和this的指向。等同于函数.call(this的指向)</span></span><br><span class="line"></span><br><span class="line">$.noConflict(); <span class="comment">// 防止冲突的，将返回值赋值给新变量，新变量就拥有$的操控权了</span></span><br><span class="line"></span><br><span class="line">$.parseJSON( <span class="string">'&#123;"name":"hello"&#125;'</span> ).name); <span class="comment">// 把字符串解析成json，等同于JSON.parse( '&#123;"name":"hello"&#125;' )</span></span><br><span class="line"></span><br><span class="line">$.makeArray(elems); <span class="comment">// 将类数组elems转换成数组，(原生ES5的[].slice.call(elems)方法)</span></span><br><span class="line"></span><br><span class="line">$.ajax();  <span class="comment">// 需要在服务器环境下，需要有地址页面，后面详解</span></span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
 </li>
 </ul>
 <hr>
@@ -631,7 +631,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -695,7 +695,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#高级方法："><span class="nav-number">1.</span> <span class="nav-text">高级方法：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#工具方法："><span class="nav-number">1.</span> <span class="nav-text">工具方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级方法："><span class="nav-number">2.</span> <span class="nav-text">高级方法：</span></a></li></ol></div>
             
 
           </div>
@@ -729,7 +729,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">136.4k</span>
+    <span title="Site words total count">137.6k</span>
   
 </div>
 

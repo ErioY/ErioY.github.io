@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-12T10:31:44.491Z</updated>
+  <updated>2019-10-19T08:39:41.270Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>KNN-鸢尾花数据集</title>
-    <link href="http://yoursite.com/2019/10/12/KNN-%E9%B8%A2%E5%B0%BE%E8%8A%B1%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    <id>http://yoursite.com/2019/10/12/KNN-鸢尾花数据集/</id>
-    <published>2019-10-12T08:51:42.000Z</published>
-    <updated>2019-10-12T10:31:44.491Z</updated>
+    <title>js面向对象</title>
+    <link href="http://yoursite.com/2019/10/19/js%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2019/10/19/js面向对象/</id>
+    <published>2019-10-19T06:16:38.000Z</published>
+    <updated>2019-10-19T08:39:41.270Z</updated>
     
     <summary type="html">
     
@@ -30,12 +30,62 @@
         
         
           &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;题目名称&quot;&gt;&lt;a href=&quot;#题目名称&quot; class=&quot;headerlink&quot; title=&quot;题目名称&quot;&gt;&lt;/a&gt;题目名称&lt;/h4&gt;&lt;p&gt;knn算法 —— 鸢尾花分类&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;h4 id=&quot;轮播图&quot;&gt;&lt;a href=&quot;#轮播图&quot; class=&quot;headerlink&quot; title=&quot;轮播图&quot;&gt;&lt;/a&gt;轮播图&lt;/h4&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;h4
+&lt;li&gt;&lt;h4 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>黑马-js面向对象-原型和原型链</title>
+    <link href="http://yoursite.com/2019/10/13/%E9%BB%91%E9%A9%AC-js%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>http://yoursite.com/2019/10/13/黑马-js面向对象-原型和原型链/</id>
+    <published>2019-10-13T11:18:05.000Z</published>
+    <updated>2019-10-13T12:55:52.356Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;/2019/10/13/黑马-js面向对象-原型和原型链/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D.png&quot; alt=&quot;面向对象介绍&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>KNN-鸢尾花数据集</title>
+    <link href="http://yoursite.com/2019/10/12/KNN-%E9%B8%A2%E5%B0%BE%E8%8A%B1%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    <id>http://yoursite.com/2019/10/12/KNN-鸢尾花数据集/</id>
+    <published>2019-10-12T08:51:42.000Z</published>
+    <updated>2019-10-12T10:44:10.700Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;knn算法实现-鸢尾花数据集&lt;/font&gt;&lt;/center&gt;
+
+&lt;h4
         
       
     
@@ -48,10 +98,10 @@
   
   <entry>
     <title>knn算法</title>
-    <link href="http://yoursite.com/2019/10/05/Python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-knn%E7%AE%97%E6%B3%95/"/>
-    <id>http://yoursite.com/2019/10/05/Python机器学习-knn算法/</id>
+    <link href="http://yoursite.com/2019/10/05/KNN-%E7%94%B5%E5%BD%B1%E5%88%86%E7%B1%BB/"/>
+    <id>http://yoursite.com/2019/10/05/KNN-电影分类/</id>
     <published>2019-10-05T02:54:56.000Z</published>
-    <updated>2019-10-08T10:38:39.098Z</updated>
+    <updated>2019-10-20T02:33:49.775Z</updated>
     
     <summary type="html">
     
@@ -59,8 +109,13 @@
       
         
         
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;knn算法实现&lt;/font&gt;&lt;/center&gt;
-####
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;题目名称&quot;&gt;&lt;a href=&quot;#题目名称&quot; class=&quot;headerlink&quot; title=&quot;题目名称&quot;&gt;&lt;/a&gt;题目名称&lt;/h4&gt;&lt;p&gt;knn算法 —— 电影分类&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;h4
         
       
     
@@ -153,7 +208,7 @@
     <link href="http://yoursite.com/2019/09/28/jQuery-4-%E5%8A%A8%E7%94%BB%E5%92%8CVelocity%E5%8A%A8%E7%94%BB%E5%BA%93/"/>
     <id>http://yoursite.com/2019/09/28/jQuery-4-动画和Velocity动画库/</id>
     <published>2019-09-28T03:07:31.000Z</published>
-    <updated>2019-10-02T01:11:12.173Z</updated>
+    <updated>2019-10-20T02:35:24.060Z</updated>
     
     <summary type="html">
     
@@ -161,8 +216,8 @@
       
         
         
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;JQ动画和Velocity动画库&lt;/font&gt;&lt;/center&gt;
-- ####
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;Velocity-js介绍：&quot;&gt;&lt;a href=&quot;#Velocity-js介绍：&quot; class=&quot;headerlink&quot;
         
       
     
@@ -178,7 +233,7 @@
     <link href="http://yoursite.com/2019/09/28/jQuery-3-%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95%E5%92%8C%E9%AB%98%E7%BA%A7%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2019/09/28/jQuery-3-工具方法和高级方法/</id>
     <published>2019-09-28T02:40:47.000Z</published>
-    <updated>2019-10-01T01:32:57.851Z</updated>
+    <updated>2019-10-20T02:35:11.676Z</updated>
     
     <summary type="html">
     
@@ -186,8 +241,8 @@
       
         
         
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;JQ工具方法和高级方法&lt;/font&gt;&lt;/center&gt;
-- ####
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;工具方法：&quot;&gt;&lt;a href=&quot;#工具方法：&quot; class=&quot;headerlink&quot;
         
       
     
@@ -203,7 +258,7 @@
     <link href="http://yoursite.com/2019/09/28/jQuery-2-DOM%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BA%8B%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
     <id>http://yoursite.com/2019/09/28/jQuery-2-DOM操作和事件操作/</id>
     <published>2019-09-28T02:34:36.000Z</published>
-    <updated>2019-09-28T07:11:27.374Z</updated>
+    <updated>2019-10-20T02:34:55.279Z</updated>
     
     <summary type="html">
     
@@ -212,9 +267,10 @@
         
         
           &lt;center&gt;&lt;font size=&quot;4&quot;&gt;JQ的DOM操作和事件操作&lt;/font&gt;&lt;/center&gt;
+- #### JQ的DOM操作
 
 &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;JQ的DOM操作&quot;&gt;&lt;a href=&quot;#JQ的DOM操作&quot; class=&quot;headerlink&quot;
+&lt;li&gt;&lt;p&gt;&lt;font
         
       
     
@@ -230,7 +286,7 @@
     <link href="http://yoursite.com/2019/09/28/jQuery-1-%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8C%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2019/09/28/jQuery-1-选择器和常用方法/</id>
     <published>2019-09-28T01:39:31.000Z</published>
-    <updated>2019-09-28T03:57:54.417Z</updated>
+    <updated>2019-10-20T02:34:45.335Z</updated>
     
     <summary type="html">
     
@@ -239,9 +295,7 @@
         
         
           &lt;center&gt;&lt;font size=&quot;4&quot;&gt;jQuery选择器和常用方法&lt;/font&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;JQ简介&quot;&gt;&lt;a href=&quot;#JQ简介&quot; class=&quot;headerlink&quot;
+- ####
         
       
     
@@ -257,7 +311,7 @@
     <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%864/"/>
     <id>http://yoursite.com/2019/09/23/ECMAScript-新标准4/</id>
     <published>2019-09-23T12:33:20.000Z</published>
-    <updated>2019-09-28T01:31:26.194Z</updated>
+    <updated>2019-10-20T02:36:19.151Z</updated>
     
     <summary type="html">
     
@@ -265,10 +319,8 @@
       
         
         
-          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;ECMAScript 新标准&lt;/font&gt;&lt;/center&gt;
-- #### 数组新方法
-
-&lt;ul&gt;
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;数组新方法&quot;&gt;&lt;a href=&quot;#数组新方法&quot; class=&quot;headerlink&quot; title=&quot;数组新方法&quot;&gt;&lt;/a&gt;数组新方法&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;font
         
       
@@ -276,7 +328,7 @@
     </summary>
     
     
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+      <category term="ECMAScript" scheme="http://yoursite.com/tags/ECMAScript/"/>
     
   </entry>
   
@@ -285,7 +337,7 @@
     <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%863/"/>
     <id>http://yoursite.com/2019/09/23/ECMAScript-新标准3/</id>
     <published>2019-09-23T12:33:16.000Z</published>
-    <updated>2019-09-28T01:31:17.277Z</updated>
+    <updated>2019-10-20T02:36:05.574Z</updated>
     
     <summary type="html">
     
@@ -293,10 +345,8 @@
       
         
         
-          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;ECMAScript 新标准&lt;/font&gt;&lt;/center&gt;
-- #### 新函数写法
-
-&lt;ul&gt;
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;新函数写法&quot;&gt;&lt;a href=&quot;#新函数写法&quot; class=&quot;headerlink&quot; title=&quot;新函数写法&quot;&gt;&lt;/a&gt;新函数写法&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;font
         
       
@@ -304,7 +354,7 @@
     </summary>
     
     
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+      <category term="ECMAScript" scheme="http://yoursite.com/tags/ECMAScript/"/>
     
   </entry>
   
@@ -313,7 +363,7 @@
     <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%862/"/>
     <id>http://yoursite.com/2019/09/23/ECMAScript-新标准2/</id>
     <published>2019-09-23T12:00:25.000Z</published>
-    <updated>2019-10-08T13:52:41.125Z</updated>
+    <updated>2019-10-20T02:35:50.481Z</updated>
     
     <summary type="html">
     
@@ -331,7 +381,7 @@
     </summary>
     
     
-      <category term="ECMAScript js" scheme="http://yoursite.com/tags/ECMAScript-js/"/>
+      <category term="ECMAScript" scheme="http://yoursite.com/tags/ECMAScript/"/>
     
   </entry>
   
@@ -340,7 +390,7 @@
     <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%861/"/>
     <id>http://yoursite.com/2019/09/23/ECMAScript-新标准1/</id>
     <published>2019-09-23T10:24:41.000Z</published>
-    <updated>2019-10-08T13:52:28.384Z</updated>
+    <updated>2019-10-20T02:35:41.646Z</updated>
     
     <summary type="html">
     
@@ -348,8 +398,8 @@
       
         
         
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;ECMAScript 新标准&lt;/font&gt;&lt;/center&gt;
-- #### ECMAScript
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;ECMAScript-X新标准-简称ESx，如ES6&quot;&gt;&lt;a href=&quot;#ECMAScript-X新标准-简称ESx，如ES6&quot; class=&quot;headerlink&quot; title=&quot;ECMAScript
         
       
     
@@ -417,7 +467,7 @@
     <link href="http://yoursite.com/2019/09/07/js%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
     <id>http://yoursite.com/2019/09/07/js原型和原型链/</id>
     <published>2019-09-07T03:45:24.000Z</published>
-    <updated>2019-10-09T13:20:11.436Z</updated>
+    <updated>2019-10-15T11:48:40.965Z</updated>
     
     <summary type="html">
     
@@ -426,7 +476,10 @@
         
         
           &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js原型和原型链&lt;/font&gt;&lt;/center&gt;
-- ####
+- #### 构造函数原型 `prototype`：
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;font
         
       
     
@@ -471,7 +524,7 @@
     <link href="http://yoursite.com/2019/09/07/js%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E9%87%8F%E8%AF%8D%E5%8C%B9%E9%85%8D%E5%92%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2019/09/07/js正则表达式量词匹配和面向对象/</id>
     <published>2019-09-07T03:44:51.000Z</published>
-    <updated>2019-09-22T06:06:58.951Z</updated>
+    <updated>2019-10-13T12:16:04.921Z</updated>
     
     <summary type="html">
     
@@ -480,59 +533,6 @@
         
         
           &lt;center&gt;&lt;font size=&quot;5&quot;&gt;js正则表达式量词匹配和面向对象&lt;/font&gt;&lt;/center&gt;
-- ####
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js正则表达式元字符和方法</title>
-    <link href="http://yoursite.com/2019/09/07/js%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%83%E5%AD%97%E7%AC%A6%E5%92%8C%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2019/09/07/js正则表达式元字符和方法/</id>
-    <published>2019-09-07T03:44:22.000Z</published>
-    <updated>2019-09-22T03:56:13.842Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;js正则表达式元字符和方法&lt;/font&gt;&lt;/center&gt;
-&gt; 只能处理字符串
-
-&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;正则表达式的使用：&quot;&gt;&lt;a href=&quot;#正则表达式的使用：&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js键盘事件和元素的拖放</title>
-    <link href="http://yoursite.com/2019/09/07/js%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%85%83%E7%B4%A0%E7%9A%84%E6%8B%96%E6%94%BE/"/>
-    <id>http://yoursite.com/2019/09/07/js键盘事件和元素的拖放/</id>
-    <published>2019-09-07T03:10:09.000Z</published>
-    <updated>2019-09-20T10:06:42.581Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;js键盘事件和元素的拖放&lt;/font&gt;&lt;/center&gt;
 - ####
         
       

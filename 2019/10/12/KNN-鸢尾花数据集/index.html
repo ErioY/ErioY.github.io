@@ -125,13 +125,13 @@
 
 
 
-<meta name="description" content="题目名称knn算法 —— 鸢尾花分类     题目描述​       一个样本与数据集中的k个样本最相似，如果这k个样本中的大多数属于某一个类别，则该样本也属于这个类别     算法设计1. 读取文件123with open(&apos;Iris_Data.csv&apos;, &apos;r&apos;) as file:    reader = csv.DictReader(file)    data = [row for row">
+<meta name="description" content="knn算法实现-鸢尾花数据集  班级：软工1703班&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学号：17408070101&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;姓名：杨丽霞博 客：https://erioy.github.io/2019/10/12/KNN-鸢尾花数据集/#moreGithub：https://github.com/E">
 <meta name="keywords" content="python机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KNN-鸢尾花数据集">
 <meta property="og:url" content="http://yoursite.com/2019/10/12/KNN-鸢尾花数据集/index.html">
 <meta property="og:site_name" content="ErioY">
-<meta property="og:description" content="题目名称knn算法 —— 鸢尾花分类     题目描述​       一个样本与数据集中的k个样本最相似，如果这k个样本中的大多数属于某一个类别，则该样本也属于这个类别     算法设计1. 读取文件123with open(&apos;Iris_Data.csv&apos;, &apos;r&apos;) as file:    reader = csv.DictReader(file)    data = [row for row">
+<meta property="og:description" content="knn算法实现-鸢尾花数据集  班级：软工1703班&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学号：17408070101&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;姓名：杨丽霞博 客：https://erioy.github.io/2019/10/12/KNN-鸢尾花数据集/#moreGithub：https://github.com/E">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/10/12/KNN-鸢尾花数据集/%E5%85%AC%E5%BC%8F.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/12/KNN-鸢尾花数据集/train_data.png">
@@ -141,10 +141,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/10/12/KNN-鸢尾花数据集/result_1.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/12/KNN-鸢尾花数据集/result_2.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/12/KNN-鸢尾花数据集/%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
-<meta property="og:updated_time" content="2019-10-12T10:31:44.491Z">
+<meta property="og:updated_time" content="2019-10-12T10:44:10.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="KNN-鸢尾花数据集">
-<meta name="twitter:description" content="题目名称knn算法 —— 鸢尾花分类     题目描述​       一个样本与数据集中的k个样本最相似，如果这k个样本中的大多数属于某一个类别，则该样本也属于这个类别     算法设计1. 读取文件123with open(&apos;Iris_Data.csv&apos;, &apos;r&apos;) as file:    reader = csv.DictReader(file)    data = [row for row">
+<meta name="twitter:description" content="knn算法实现-鸢尾花数据集  班级：软工1703班&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;学号：17408070101&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;姓名：杨丽霞博 客：https://erioy.github.io/2019/10/12/KNN-鸢尾花数据集/#moreGithub：https://github.com/E">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/12/KNN-鸢尾花数据集/%E5%85%AC%E5%BC%8F.png">
 
 
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.5k
+                  1.6k
                 </span>
               
 
@@ -431,7 +431,9 @@
       
 
       
-        <ul>
+        <center><font size="5">knn算法实现-鸢尾花数据集</font></center>
+
+<h4 id="班级：软工1703班-emsp-emsp-emsp-emsp-emsp-emsp-学号：17408070101-emsp-emsp-emsp-emsp-emsp-emsp-姓名：杨丽霞"><a href="#班级：软工1703班-emsp-emsp-emsp-emsp-emsp-emsp-学号：17408070101-emsp-emsp-emsp-emsp-emsp-emsp-姓名：杨丽霞" class="headerlink" title="班级：软工1703班&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学号：17408070101&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;姓名：杨丽霞"></a>班级：软工1703班&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;学号：17408070101&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;姓名：杨丽霞</h4><h4 id="博-客：https-erioy-github-io-2019-10-12-KNN-鸢尾花数据集-more"><a href="#博-客：https-erioy-github-io-2019-10-12-KNN-鸢尾花数据集-more" class="headerlink" title="博 客：https://erioy.github.io/2019/10/12/KNN-鸢尾花数据集/#more"></a>博 客：<a href="https://erioy.github.io/2019/10/12/KNN-鸢尾花数据集/#more" target="_blank" rel="noopener">https://erioy.github.io/2019/10/12/KNN-鸢尾花数据集/#more</a></h4><h4 id="Github：https-github-com-ErioY-KNN-Iris-Machine-Learning"><a href="#Github：https-github-com-ErioY-KNN-Iris-Machine-Learning" class="headerlink" title="Github：https://github.com/ErioY/KNN_Iris-Machine_Learning"></a>Github：<a href="https://github.com/ErioY/KNN_Iris-Machine_Learning" target="_blank" rel="noopener">https://github.com/ErioY/KNN_Iris-Machine_Learning</a></h4><ul>
 <li><h4 id="题目名称"><a href="#题目名称" class="headerlink" title="题目名称"></a>题目名称</h4><p>knn算法 —— 鸢尾花分类</p>
 </li>
 </ul>
@@ -553,7 +555,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/05/Python机器学习-knn算法/" rel="next" title="knn算法">
+              <a href="/2019/10/05/KNN-电影分类/" rel="next" title="knn算法">
                 <i class="fa fa-chevron-left"></i> knn算法
               </a>
             
@@ -562,6 +564,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/13/黑马-js面向对象-原型和原型链/" rel="prev" title="黑马-js面向对象-原型和原型链">
+                黑马-js面向对象-原型和原型链 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -663,7 +669,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -727,7 +733,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目名称"><span class="nav-number">1.</span> <span class="nav-text">题目名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述"><span class="nav-number">2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法设计"><span class="nav-number">3.</span> <span class="nav-text">算法设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-读取文件"><span class="nav-number">3.1.</span> <span class="nav-text">1. 读取文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-打乱数据集顺序并把数据集分为训练集和测试集"><span class="nav-number">3.2.</span> <span class="nav-text">2. 打乱数据集顺序并把数据集分为训练集和测试集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-计算测试集中每组数据与数据集中所有数据的距离"><span class="nav-number">3.3.</span> <span class="nav-text">3. 计算测试集中每组数据与数据集中所有数据的距离</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-按距离大小升序排序并取前-K个距离最近的数据"><span class="nav-number">3.4.</span> <span class="nav-text">4. 按距离大小升序排序并取前 K个距离最近的数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-遍历前-K个数据，将他们的距离累加"><span class="nav-number">3.5.</span> <span class="nav-text">5. 遍历前 K个数据，将他们的距离累加</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-定义一个种类和权重的字典，遍历前-K个数据，计算每一个数据距离所占权重，存到该字典中"><span class="nav-number">3.6.</span> <span class="nav-text">6. 定义一个种类和权重的字典，遍历前 K个数据，计算每一个数据距离所占权重，存到该字典中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-判断哪个种类占的权重大，即将这个测试集归为此类"><span class="nav-number">3.7.</span> <span class="nav-text">7. 判断哪个种类占的权重大，即将这个测试集归为此类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-判断真实种类和预测是否一致，若一致则准确个数累加"><span class="nav-number">3.8.</span> <span class="nav-text">8. 判断真实种类和预测是否一致，若一致则准确个数累加</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-计算准确率，保留小数点后两位小数"><span class="nav-number">3.9.</span> <span class="nav-text">9. 计算准确率，保留小数点后两位小数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调试截图"><span class="nav-number">4.</span> <span class="nav-text">调试截图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-训练集："><span class="nav-number">4.1.</span> <span class="nav-text">1. 训练集：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-测试集："><span class="nav-number">4.2.</span> <span class="nav-text">2. 测试集：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-准确项："><span class="nav-number">4.3.</span> <span class="nav-text">3.  准确项：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-误差项："><span class="nav-number">4.4.</span> <span class="nav-text">4. 误差项：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-调试结果"><span class="nav-number">4.5.</span> <span class="nav-text">5. 调试结果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行截图"><span class="nav-number">5.</span> <span class="nav-text">运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#心得体会"><span class="nav-number">6.</span> <span class="nav-text">心得体会</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#K值选取"><span class="nav-number">6.1.</span> <span class="nav-text">K值选取</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#训练集和测试集选择"><span class="nav-number">6.2.</span> <span class="nav-text">训练集和测试集选择</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主要操作"><span class="nav-number">6.3.</span> <span class="nav-text">主要操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#准确率计算"><span class="nav-number">6.4.</span> <span class="nav-text">准确率计算</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#附：源代码"><span class="nav-number">7.</span> <span class="nav-text">附：源代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#班级：软工1703班-emsp-emsp-emsp-emsp-emsp-emsp-学号：17408070101-emsp-emsp-emsp-emsp-emsp-emsp-姓名：杨丽霞"><span class="nav-number">1.</span> <span class="nav-text">班级：软工1703班      学号：17408070101      姓名：杨丽霞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#博-客：https-erioy-github-io-2019-10-12-KNN-鸢尾花数据集-more"><span class="nav-number">2.</span> <span class="nav-text">博 客：https://erioy.github.io/2019/10/12/KNN-鸢尾花数据集/#more</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Github：https-github-com-ErioY-KNN-Iris-Machine-Learning"><span class="nav-number">3.</span> <span class="nav-text">Github：https://github.com/ErioY/KNN_Iris-Machine_Learning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题目名称"><span class="nav-number">4.</span> <span class="nav-text">题目名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述"><span class="nav-number">5.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法设计"><span class="nav-number">6.</span> <span class="nav-text">算法设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-读取文件"><span class="nav-number">6.1.</span> <span class="nav-text">1. 读取文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-打乱数据集顺序并把数据集分为训练集和测试集"><span class="nav-number">6.2.</span> <span class="nav-text">2. 打乱数据集顺序并把数据集分为训练集和测试集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-计算测试集中每组数据与数据集中所有数据的距离"><span class="nav-number">6.3.</span> <span class="nav-text">3. 计算测试集中每组数据与数据集中所有数据的距离</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-按距离大小升序排序并取前-K个距离最近的数据"><span class="nav-number">6.4.</span> <span class="nav-text">4. 按距离大小升序排序并取前 K个距离最近的数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-遍历前-K个数据，将他们的距离累加"><span class="nav-number">6.5.</span> <span class="nav-text">5. 遍历前 K个数据，将他们的距离累加</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-定义一个种类和权重的字典，遍历前-K个数据，计算每一个数据距离所占权重，存到该字典中"><span class="nav-number">6.6.</span> <span class="nav-text">6. 定义一个种类和权重的字典，遍历前 K个数据，计算每一个数据距离所占权重，存到该字典中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-判断哪个种类占的权重大，即将这个测试集归为此类"><span class="nav-number">6.7.</span> <span class="nav-text">7. 判断哪个种类占的权重大，即将这个测试集归为此类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-判断真实种类和预测是否一致，若一致则准确个数累加"><span class="nav-number">6.8.</span> <span class="nav-text">8. 判断真实种类和预测是否一致，若一致则准确个数累加</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-计算准确率，保留小数点后两位小数"><span class="nav-number">6.9.</span> <span class="nav-text">9. 计算准确率，保留小数点后两位小数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调试截图"><span class="nav-number">7.</span> <span class="nav-text">调试截图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-训练集："><span class="nav-number">7.1.</span> <span class="nav-text">1. 训练集：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-测试集："><span class="nav-number">7.2.</span> <span class="nav-text">2. 测试集：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-准确项："><span class="nav-number">7.3.</span> <span class="nav-text">3.  准确项：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-误差项："><span class="nav-number">7.4.</span> <span class="nav-text">4. 误差项：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-调试结果"><span class="nav-number">7.5.</span> <span class="nav-text">5. 调试结果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行截图"><span class="nav-number">8.</span> <span class="nav-text">运行截图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#心得体会"><span class="nav-number">9.</span> <span class="nav-text">心得体会</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#K值选取"><span class="nav-number">9.1.</span> <span class="nav-text">K值选取</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#训练集和测试集选择"><span class="nav-number">9.2.</span> <span class="nav-text">训练集和测试集选择</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主要操作"><span class="nav-number">9.3.</span> <span class="nav-text">主要操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#准确率计算"><span class="nav-number">9.4.</span> <span class="nav-text">准确率计算</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#附：源代码"><span class="nav-number">10.</span> <span class="nav-text">附：源代码</span></a></li></ol></div>
             
 
           </div>
@@ -761,7 +767,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">136.4k</span>
+    <span title="Site words total count">137.6k</span>
   
 </div>
 
