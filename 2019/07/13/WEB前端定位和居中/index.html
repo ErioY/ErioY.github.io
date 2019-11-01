@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="ErioY">
 <meta property="og:description" content="定位详解 position: static;无定位（默认值）  元素出现在正常的流中(忽略 top, bottom, left, right 或者 z-index声明)。 当你没有为一个元素指定定位方式时，默认为static，也就是按照文档的流式(flow)定位，将元素放到一个合适的地方。 在不同的分辨率下，采用流式定位能很好的自适合，取得相对较好的布局效果。   position: inher">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-14T01:57:08.515Z">
+<meta property="og:updated_time" content="2019-10-30T09:08:36.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WEB前端定位和居中">
 <meta name="twitter:description" content="定位详解 position: static;无定位（默认值）  元素出现在正常的流中(忽略 top, bottom, left, right 或者 z-index声明)。 当你没有为一个元素指定定位方式时，默认为static，也就是按照文档的流式(flow)定位，将元素放到一个合适的地方。 在不同的分辨率下，采用流式定位能很好的自适合，取得相对较好的布局效果。   position: inher">
@@ -443,7 +443,7 @@
 </li>
 <li><p><code>position: absolute;</code><strong>绝对定位</strong></p>
 <ul>
-<li>使元素从文档流中被删除，结果就是钙元素原本占据的空间被其他元素所填充</li>
+<li>使元素从文档流中被删除，结果就是该元素原本占据的空间被其他元素所填充</li>
 <li><font color="red">使内联元素在设置宽高时支持宽高，区块元素在未设置宽度时由内容撑开宽度（改变元素的特性）</font></li>
 <li>相对于 static 定位以外的<font color="green">第一个祖先元素进行定位(其父元素没有定位则逐层上找，直到document)。</font>元素的位置通过偏移值进行规定。<font color="purple" size="5px">（所以一般对其父元素也要设置定位）</font></li>
 <li>提升层级：用<code>z-index</code>样式的值可以改变一个定位元素的层级关系，从而改变元素的覆盖关系，值大者在上面</li>
@@ -463,13 +463,11 @@
 <li>定位才可以触发z-index属性，它没有单位，并可拥有负的属性值。默认值为0</li>
 </ul>
 </li>
-<li><p><font color="green"><code>position:relative</code>和<code>-margin</code><strong>都可以使元素位置发生偏移，有什么区别？</strong></font></p>
-<ul>
-<li>相对定位可以使元素发生偏移，但是在文档流中，它仍然占据着原来的位置，所以其他元素的位置不会发生变化</li>
-</ul>
+<li><p><font color="green"><code>position:relative</code>和<code>margin</code><strong>都可以使元素位置发生偏移，有什么区别？</strong></font></p>
 </li>
 </ol>
 <ul>
+<li>相对定位可以使元素发生偏移，但是在文档流中，它仍然占据着原来的位置，所以其他元素的位置不会发生变化</li>
 <li>通过负margin偏移的元素会放弃偏移前占据的空间，后面的其它元素就会“流”过来填充，所以它们位置发生了变化。</li>
 </ul>
 </li>
@@ -487,7 +485,7 @@
 <p><font color="green">transform是css3的变形，在后面会详细说明</font></p>
 </li>
 <li><p>使用<u><strong>绝对定位方式</strong></u>, <u><strong>以及负值的margin</strong></u>, 支持水平和垂直居中，<font color="red">（适用于子元素宽度大于父元素宽度的特殊情况，是最优的水平垂直居中方法）</font>子元素设置如下:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.son</span>&#123;</span><br><span class="line">       <span class="attribute">position</span>:absolute;</span><br><span class="line">       width:固定宽;  //height:固定高;</span><br><span class="line">       left:50%;      //top:50%;</span><br><span class="line">       margin-left:-0.5固定宽; //margin-top:-0.5固定高</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.son</span>&#123;</span><br><span class="line">       <span class="attribute">position</span>:absolute;</span><br><span class="line">       width:固定宽;  //height:固定高;</span><br><span class="line">       left:50%;      // top:50%;</span><br><span class="line">       margin-left:-0.5固定宽; // margin-top:-0.5固定高</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 
 </li>
@@ -658,7 +656,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -671,7 +669,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -769,7 +767,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">137.6k</span>
+    <span title="Site words total count">142.5k</span>
   
 </div>
 

@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="ErioY">
 <meta property="og:description" content="【概念】cookie ：（需要放在服务器端执行）  是指缓存在本地客户端的数据（保存在硬盘上的数据），能识别用户的身份（要和后端的session结合）   http是无状态的 客户端用cookie，服务器端用session  首次请求，服务器端会分配一个sessionid（编号，相当于身份证号码），保存在session里，在响应时，把sessionid发给客户端，客户端保存在cookie里 第二次">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-20T01:58:25.497Z">
+<meta property="og:updated_time" content="2019-10-20T03:15:04.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js cookie基础操作">
 <meta name="twitter:description" content="【概念】cookie ：（需要放在服务器端执行）  是指缓存在本地客户端的数据（保存在硬盘上的数据），能识别用户的身份（要和后端的session结合）   http是无状态的 客户端用cookie，服务器端用session  首次请求，服务器端会分配一个sessionid（编号，相当于身份证号码），保存在session里，在响应时，把sessionid发给客户端，客户端保存在cookie里 第二次">
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  668
+                  774
                 </span>
               
 
@@ -439,6 +439,9 @@
 <li><p>先去后端验证用户名和密码是否正确</p>
 </li>
 <li><p>保存cookie；（就是使用<code>document</code>）</p>
+<blockquote>
+<p>path是设置当前cookie可以被那些路径下的html访问</p>
+</blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'键=值; expires=日期的GMT格式; path=可以访问的路径; domain=可以访问的域名'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>获取cookie；（）</p>
@@ -450,13 +453,13 @@
 <ul>
 <li><h5 id="cookie操作的封装"><a href="#cookie操作的封装" class="headerlink" title="cookie操作的封装"></a>cookie操作的封装</h5><ol>
 <li><p><code>setCookie()</code>：建立cookie</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name,value,day</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    oDate.setDate(oDate.getDate() + day);</span><br><span class="line">    <span class="built_in">document</span>.cookie = name + <span class="string">"="</span> + value + <span class="string">";expires="</span> + oDate;</span><br><span class="line">&#125;</span><br><span class="line">setCookie(<span class="string">"name1"</span>, <span class="string">"honey1"</span>, <span class="number">1</span>);</span><br><span class="line">setCookie(<span class="string">"name2"</span>, <span class="string">"honey2"</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params"> name, value, day, path, domain</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> oDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    oDate.setDate(oDate.getDate() + day);</span><br><span class="line">    <span class="built_in">document</span>.cookie = name + <span class="string">"="</span> + <span class="built_in">escape</span>(value) + <span class="string">";expires="</span> + oDate.toGMTString(); <span class="comment">// escape():是把字符串进行百分号编码</span></span><br><span class="line">&#125;</span><br><span class="line">setCookie(<span class="string">"name1"</span>, <span class="string">"honey1"</span>, <span class="number">1</span>);</span><br><span class="line">setCookie(<span class="string">"name2"</span>, <span class="string">"honey2"</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>getCookie()</code>：获取cookie</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="built_in">document</span>.cookie;</span><br><span class="line">    <span class="keyword">var</span> arr = str.split(<span class="string">"; "</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> arr1 = arr[i].split(<span class="string">"="</span>);</span><br><span class="line">        <span class="keyword">if</span>(arr1[<span class="number">0</span>] == name) &#123;</span><br><span class="line">            <span class="keyword">return</span> arr1[<span class="number">1</span>];</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="built_in">unescape</span>(<span class="built_in">document</span>.cookie); <span class="comment">// unescape:解码</span></span><br><span class="line">    <span class="keyword">var</span> arr = str.split(<span class="string">"; "</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> arr) &#123;</span><br><span class="line">        <span class="keyword">var</span> arr1 = arr[i].split(<span class="string">"="</span>);</span><br><span class="line">        <span class="keyword">if</span>(arr1[<span class="number">0</span>] == name) &#123;</span><br><span class="line">            <span class="keyword">return</span> arr1[<span class="number">1</span>];</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>removeCookie()</code>  删除cookie（cookie没办法直接删除，只能设置过去的时间）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    setCookie(name,<span class="number">1</span>,<span class="number">-1</span>); </span><br><span class="line">&#125;</span><br><span class="line">removeCookie(<span class="string">"name1"</span>); </span><br><span class="line">consolelog(getCookie(<span class="string">"name1"</span>)); <span class="comment">//发现控制台没有name1了，删除成功！</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    setCookie(name,<span class="number">1</span>,<span class="number">-1</span>); </span><br><span class="line">&#125;</span><br><span class="line">removeCookie(<span class="string">"name1"</span>); </span><br><span class="line"><span class="built_in">console</span>.log(getCookie(<span class="string">"name1"</span>)); <span class="comment">//发现控制台没有name1了，删除成功！</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -467,7 +470,16 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提前封装好的cookie操作</span></span><br><span class="line"><span class="comment">// 设置cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">name,value,day</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> oDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    oDate.setDate(oDate.getDate()+day);</span><br><span class="line">    <span class="comment">// 保存cookie</span></span><br><span class="line">    <span class="built_in">document</span>.cookie = name + <span class="string">"="</span> + value + <span class="string">";expires="</span> + oDate; <span class="comment">// 时间点</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取cookie</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="built_in">document</span>.cookie;</span><br><span class="line">    <span class="keyword">var</span> arr = str.split(<span class="string">"; "</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> arr1 = arr[i].split(<span class="string">"="</span>);</span><br><span class="line">        <span class="keyword">if</span>(arr1[<span class="number">0</span>] == name) &#123;</span><br><span class="line">            <span class="keyword">return</span> arr1[<span class="number">1</span>];</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeCookie</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    setCookie(name,<span class="number">1</span>,<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> aInput = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"input"</span>);</span><br><span class="line"><span class="comment">// 判断cookie的usernam值是否存在</span></span><br><span class="line"><span class="keyword">if</span>(getCookie(<span class="string">"username"</span>)) &#123;</span><br><span class="line">    <span class="comment">// 赋值</span></span><br><span class="line">    aInput[<span class="number">0</span>].value = getCookie(<span class="string">"username"</span>);</span><br><span class="line">    aInput[<span class="number">1</span>].value = getCookie(<span class="string">"password"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 点击“登录”</span></span><br><span class="line">aInput[<span class="number">3</span>].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> username = aInput[<span class="number">0</span>].value;</span><br><span class="line">    <span class="keyword">var</span> password = aInput[<span class="number">1</span>].value;</span><br><span class="line">    <span class="comment">// 如果点击了“七天免登录”</span></span><br><span class="line">    <span class="keyword">if</span>(aInput[<span class="number">2</span>].checked) &#123;</span><br><span class="line">        <span class="comment">// 七天过期</span></span><br><span class="line">        setCookie(<span class="string">"username"</span>,username,<span class="number">7</span>);</span><br><span class="line">        setCookie(<span class="string">"password"</span>,password,<span class="number">7</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
+
+
 </li>
+</ul>
+<ul>
+<li><h5 id="XSS（cross-site-script）：跨站脚本攻击"><a href="#XSS（cross-site-script）：跨站脚本攻击" class="headerlink" title="XSS（cross site script）：跨站脚本攻击"></a>XSS（cross site script）：跨站脚本攻击</h5><blockquote>
+<p>用户写一些恶意的js代码，注入到网页，来执行一些恶意的行为，如：得到cookie信息</p>
+</blockquote>
+</li>
+<li><h5 id="防止XSS攻击：（处理尖括号-lt-gt-，用转义字符：-amp-lt-和-amp-gt-代替-lt-和-gt-）"><a href="#防止XSS攻击：（处理尖括号-lt-gt-，用转义字符：-amp-lt-和-amp-gt-代替-lt-和-gt-）" class="headerlink" title="防止XSS攻击：（处理尖括号&lt;&gt;，用转义字符：&amp;lt;和&amp;gt;代替&lt;和&gt;）"></a>防止XSS攻击：（处理尖括号&lt;&gt;，用转义字符：<code>&amp;lt;</code>和<code>&amp;gt;</code>代替<code>&lt;</code>和<code>&gt;</code>）</h5></li>
 </ul>
 
       
@@ -600,7 +612,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -613,7 +625,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -677,7 +689,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#cookie操作的封装"><span class="nav-number">1.</span> <span class="nav-text">cookie操作的封装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cookie基础应用：记住用户账户密码，第二次登陆直接点击登录即可"><span class="nav-number">2.</span> <span class="nav-text">cookie基础应用：记住用户账户密码，第二次登陆直接点击登录即可</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#cookie操作的封装"><span class="nav-number">1.</span> <span class="nav-text">cookie操作的封装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cookie基础应用：记住用户账户密码，第二次登陆直接点击登录即可"><span class="nav-number">2.</span> <span class="nav-text">cookie基础应用：记住用户账户密码，第二次登陆直接点击登录即可</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#XSS（cross-site-script）：跨站脚本攻击"><span class="nav-number">3.</span> <span class="nav-text">XSS（cross site script）：跨站脚本攻击</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#防止XSS攻击：（处理尖括号-lt-gt-，用转义字符：-amp-lt-和-amp-gt-代替-lt-和-gt-）"><span class="nav-number">4.</span> <span class="nav-text">防止XSS攻击：（处理尖括号&lt;&gt;，用转义字符：&amp;lt;和&amp;gt;代替&lt;和&gt;）</span></a></li></ol></div>
             
 
           </div>
@@ -711,7 +723,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">137.6k</span>
+    <span title="Site words total count">142.5k</span>
   
 </div>
 

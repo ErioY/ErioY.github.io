@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="跨域 跨域就是跨域名访问，即A网站的网页从B网站的服务器获取数据  跨域的需求：  气象数据（从气象台获取数据） 地图数据（从高德地图、百度地图等获取）   同源策略 同源：来自同一个服务器，具体到：同样的协议，同样的域名，同样的端口号，如：http://www.163.com:80（默认端口号是80） 浏览器因为同源策略，会限制不能跨域，这是浏览器的安全机制    总结：跨域需求有，但是浏览器">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jsonp">
+<meta property="og:url" content="http://yoursite.com/2019/10/27/jsonp/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="跨域 跨域就是跨域名访问，即A网站的网页从B网站的服务器获取数据  跨域的需求：  气象数据（从气象台获取数据） 地图数据（从高德地图、百度地图等获取）   同源策略 同源：来自同一个服务器，具体到：同样的协议，同样的域名，同样的端口号，如：http://www.163.com:80（默认端口号是80） 浏览器因为同源策略，会限制不能跨域，这是浏览器的安全机制    总结：跨域需求有，但是浏览器">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-27T05:22:49.523Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jsonp">
+<meta name="twitter:description" content="跨域 跨域就是跨域名访问，即A网站的网页从B网站的服务器获取数据  跨域的需求：  气象数据（从气象台获取数据） 地图数据（从高德地图、百度地图等获取）   同源策略 同源：来自同一个服务器，具体到：同样的协议，同样的域名，同样的端口号，如：http://www.163.com:80（默认端口号是80） 浏览器因为同源策略，会限制不能跨域，这是浏览器的安全机制    总结：跨域需求有，但是浏览器">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/27/jsonp/">
+
+
+
+
+
+  <title>jsonp | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/27/jsonp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jsonp</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-27T09:19:50+08:00">
+                2019-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/27/jsonp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/27/jsonp/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  859
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><h5 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h5><blockquote>
+<p>跨域就是跨域名访问，即A网站的网页从B网站的服务器获取数据</p>
+</blockquote>
+<p>跨域的需求：</p>
+<ul>
+<li>气象数据（从气象台获取数据）</li>
+<li>地图数据（从高德地图、百度地图等获取）</li>
+</ul>
+</li>
+<li><h5 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h5><blockquote>
+<p>同源：来自同一个服务器，具体到：同样的协议，同样的域名，同样的端口号，如：<a href="http://www.163.com:80（默认端口号是80）" target="_blank" rel="noopener">http://www.163.com:80（默认端口号是80）</a></p>
+<p>浏览器因为同源策略，会限制不能跨域，这是浏览器的安全机制</p>
+</blockquote>
+</li>
+</ul>
+<p>总结：跨域需求有，但是浏览器又不允许跨域，如何跨域？</p>
+<p>常见的跨域有：<code>xhr2</code>、<code>iframe</code>、<code>jsonp</code></p>
+<ul>
+<li><h5 id="jsonp-json-with-padding"><a href="#jsonp-json-with-padding" class="headerlink" title="jsonp(json with padding)"></a>jsonp(json with padding)</h5><blockquote>
+<p>jsonp的核心是利用HTML标签的src属性（src属性天生就能跨域）</p>
+</blockquote>
+</li>
+<li><h5 id="面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像"><a href="#面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像" class="headerlink" title="面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像"></a><font color=" red">面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像</font></h5><ul>
+<li><blockquote>
+<p><code>json</code>：描述数据的一种格式</p>
+<p><code>jsonp</code>：跨域访问的技巧</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><h5 id="面试题：jsonp是不是属于ajax？"><a href="#面试题：jsonp是不是属于ajax？" class="headerlink" title="面试题：jsonp是不是属于ajax？"></a><font color=" red">面试题：jsonp是不是属于ajax？</font></h5><ul>
+<li><p>问这个题的原因：</p>
+<ul>
+<li><p>jsonp和ajax都是从后端获取数据的</p>
+</li>
+<li><p>很多框架（如jquery）会把jsonp和ajax放在一起，所以，主要考察是否懂原生js</p>
+<p>jquery的ajax：</p>
+</li>
+</ul>
+</li>
+<li><p>jsonp不是ajax，因为jsonp中并没有使用ajax的核心对象是XMLHttpRequest，jsonp并不是一门新技术，而是一种技巧</p>
+</li>
+<li><p>jsonp还有一个特点：只能用get方式</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h5 id="跨域访问例子"><a href="#跨域访问例子" class="headerlink" title="跨域访问例子"></a>跨域访问例子</h5></li>
+<li><h5 id="（1）访问指定服务器的数据"><a href="#（1）访问指定服务器的数据" class="headerlink" title="（1）访问指定服务器的数据"></a>（1）访问指定服务器的数据</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"hi:"</span>+str);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 点击按钮时显示指定服务器的数据，服务器ip地址：192.168.43.149（注意：需要连同一个局域网，对方需要打开Apache）</span></span><br><span class="line">$(<span class="string">"#btn01"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//动态创建script标签</span></span><br><span class="line">    <span class="keyword">let</span> scriptDom = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    <span class="comment">// 跨域访问其他电脑的文件</span></span><br><span class="line">    scriptDom.src = <span class="string">'http://192.168.43.149/191027.txt/test.php?callback=fn1'</span>;</span><br><span class="line">    <span class="built_in">document</span>.body.append(scriptDom);</span><br><span class="line">    <span class="comment">// 点击完毕后删除标签，以防冗余</span></span><br><span class="line">    scriptDom.remove();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="（2）获取淘宝搜索关键字"><a href="#（2）获取淘宝搜索关键字" class="headerlink" title="（2）获取淘宝搜索关键字"></a>（2）获取淘宝搜索关键字</h5><h5 id="1-接口文档：（4个）"><a href="#1-接口文档：（4个）" class="headerlink" title="1. 接口文档：（4个）"></a>1. 接口文档：（4个）</h5><ul>
+<li><p>请求方式：<code>get</code></p>
+</li>
+<li><p>请求地址：</p>
+</li>
+<li><p>请求参数：</p>
+<ul>
+<li><code>q</code>：搜索的关键字</li>
+<li><code>callback</code>：回调函数</li>
+</ul>
+</li>
+<li><p>返回数据的格式：</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用jquery</span></span><br><span class="line"><span class="comment">// 获取搜索文本框</span></span><br><span class="line"><span class="keyword">let</span> queryStr = $(<span class="string">"input"</span>);</span><br><span class="line"><span class="keyword">let</span> $ul =</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<ul>
+<li><h5 id="回调地狱：层层回调"><a href="#回调地狱：层层回调" class="headerlink" title="回调地狱：层层回调"></a>回调地狱：层层回调</h5><h5 id="使用Promise写法："><a href="#使用Promise写法：" class="headerlink" title="使用Promise写法："></a>使用Promise写法：</h5><blockquote>
+<p><code>Promise</code>是ES6中新增的一个原生（js）的对象，和Date，Array是一样的</p>
+<p><code>Promise</code>对象是一个异步的对象，解决的是层层回调的问题</p>
+</blockquote>
+<ul>
+<li><p>用法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// resolve: 是一个函数，是异步操作成功时，调用的函数</span></span><br><span class="line">    <span class="comment">// reject：是一个函数，是异步操作失败时，调用的函数</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法：<code>then()</code></p>
+<blockquote>
+<p><code>then()</code>方法有两个参数：<code>resolve</code> 和 <code>reject</code> 的实参</p>
+<p><code>then()</code>方法的返回值是它里面回调函数里返回的promise对象</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"fn1开始"</span>);</span><br><span class="line">    <span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"fn1的异步操作也执行完毕了！"</span>);</span><br><span class="line">            resolve();</span><br><span class="line">        &#125;, <span class="number">2000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"fn1结束"</span>);</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"fn2开始"</span>);</span><br><span class="line">    <span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"fn2的异步操作也执行完毕了！"</span>);</span><br><span class="line">            resolve();</span><br><span class="line">        &#125;, <span class="number">2000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"fn2结束"</span>);</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"fn3开始"</span>);</span><br><span class="line">    <span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123; <span class="comment">// 里面放异步操作代码</span></span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"fn3的异步操作也执行完毕了！"</span>);</span><br><span class="line">            resolve();</span><br><span class="line">        &#125;, <span class="number">2000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"fn3结束"</span>);</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn4</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"fn4开始"</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"fn4结束"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// then()里面的实参传到resolve，先执行fn1，然后执行fn2，以此类推</span></span><br><span class="line">fn1().then(fn2).then(fn3).then(fn4);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用<code>promise</code>封装ajax</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/20/事件防抖/" rel="next" title="事件防抖">
+                <i class="fa fa-chevron-left"></i> 事件防抖
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/27/gulp压缩工具/" rel="prev" title="gulp压缩工具">
+                gulp压缩工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">100</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#跨域"><span class="nav-number">1.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#同源策略"><span class="nav-number">2.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jsonp-json-with-padding"><span class="nav-number">3.</span> <span class="nav-text">jsonp(json with padding)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像"><span class="nav-number">4.</span> <span class="nav-text">面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面试题：jsonp是不是属于ajax？"><span class="nav-number">5.</span> <span class="nav-text">面试题：jsonp是不是属于ajax？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#跨域访问例子"><span class="nav-number">6.</span> <span class="nav-text">跨域访问例子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）访问指定服务器的数据"><span class="nav-number">7.</span> <span class="nav-text">（1）访问指定服务器的数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）获取淘宝搜索关键字"><span class="nav-number">8.</span> <span class="nav-text">（2）获取淘宝搜索关键字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口文档：（4个）"><span class="nav-number">9.</span> <span class="nav-text">1. 接口文档：（4个）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回调地狱：层层回调"><span class="nav-number">10.</span> <span class="nav-text">回调地狱：层层回调</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用Promise写法："><span class="nav-number">11.</span> <span class="nav-text">使用Promise写法：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">142.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/10/27/jsonp/';
+          this.page.identifier = '2019/10/27/jsonp/';
+          this.page.title = 'jsonp';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

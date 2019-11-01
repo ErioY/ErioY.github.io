@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="gulp,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="gulp的理解 概念理解：gulp跟js没有关系，跟编写程序的功能也没有关系。跟做项目有关系，是工程化（把项目叫作工程）有关的一个工具，这个工具能干什么？  作用： （1）能够完成代码的压缩 （2）合并，复制，监听，ES6的代码转换，启动服务器等等。    Gulp的使用步骤： 搭建操作系统的环境：  （1）安装nodeJS（gulp是基于nodeJS的，所以要安装nodeJS） ​">
+<meta name="keywords" content="gulp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp压缩工具">
+<meta property="og:url" content="http://yoursite.com/2019/10/27/gulp压缩工具/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="gulp的理解 概念理解：gulp跟js没有关系，跟编写程序的功能也没有关系。跟做项目有关系，是工程化（把项目叫作工程）有关的一个工具，这个工具能干什么？  作用： （1）能够完成代码的压缩 （2）合并，复制，监听，ES6的代码转换，启动服务器等等。    Gulp的使用步骤： 搭建操作系统的环境：  （1）安装nodeJS（gulp是基于nodeJS的，所以要安装nodeJS） ​">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps17.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps18.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps19.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps20.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps21.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps22.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps23.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps24.jpg">
+<meta property="og:updated_time" content="2019-10-27T07:43:10.151Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp压缩工具">
+<meta name="twitter:description" content="gulp的理解 概念理解：gulp跟js没有关系，跟编写程序的功能也没有关系。跟做项目有关系，是工程化（把项目叫作工程）有关的一个工具，这个工具能干什么？  作用： （1）能够完成代码的压缩 （2）合并，复制，监听，ES6的代码转换，启动服务器等等。    Gulp的使用步骤： 搭建操作系统的环境：  （1）安装nodeJS（gulp是基于nodeJS的，所以要安装nodeJS） ​">
+<meta name="twitter:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps17.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/27/gulp压缩工具/">
+
+
+
+
+
+  <title>gulp压缩工具 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/27/gulp压缩工具/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">gulp压缩工具</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-27T15:31:13+08:00">
+                2019-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/27/gulp压缩工具/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/27/gulp压缩工具/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><h4 id="gulp的理解"><a href="#gulp的理解" class="headerlink" title="gulp的理解"></a>gulp的理解</h4><ul>
+<li><p>概念理解：gulp跟js没有关系，跟编写程序的功能也没有关系。跟做项目有关系，是工程化（把项目叫作工程）有关的一个工具，这个工具能干什么？</p>
+</li>
+<li><p>作用：</p>
+<p>（1）能够完成代码的压缩</p>
+<p>（2）合并，复制，监听，ES6的代码转换，启动服务器等等。</p>
+</li>
+</ul>
+</li>
+<li><h4 id="Gulp的使用步骤："><a href="#Gulp的使用步骤：" class="headerlink" title="Gulp的使用步骤："></a>Gulp的使用步骤：</h4><ol>
+<li><strong>搭建操作系统的环境</strong>：</li>
+</ol>
+<p>（1）安装nodeJS（gulp是基于nodeJS的，所以要安装nodeJS）</p>
+<p>​        测试：在命令行输入：<code>node -v</code> ，能够显示版本号(version)，就说明没有问题， 如果提示:不是内部或者外部命令，则配置环境变量</p>
+<p>（2）测试npm：在命令行输入：<code>npm -v</code></p>
+<p>​    <font color="green"><strong>注</strong>：Npm(nodeJS Package Manager)：nodeJS的包管理工具</font></p>
+<p>​    安装node的另外一个目的，是为了使用npm。npm在安装node时，已经同时安装过了</p>
+<p>​    我们在开发项目时，会使用第三方的js代码，比如：jQuery等等。如果一个项目中使用的第三方js代码非常多，意味着，我们需要在不同的网站下载不同的js代码（js库），非常麻烦，而且，如果js代码之间互相有依赖，那么还需要把依赖的js下载下来。非常麻烦。</p>
+<p>​     Npm把所有第三方js库收集在一起，放在npm的服务器上，这样，程序员每次下载时，统一从npm下载。而且，npm还可以管理js之间的依赖关系。</p>
+<p>​    一个包就是一个js库。所以，nodeJS Package Manager就是nodeJS专门管理js库的一个工具。</p>
+<p>（3）安装全局的gulp：命令行输入：<code>npm install gulp -g</code></p>
+<blockquote>
+<p>全局安装gulp的意思是：给整个操作系统安装gulp。跟安装qq是同样的道理，只不过，平时安装qq是用可视化的方式，而安装gulp用的是命令行的方式</p>
+<p>Install：安装的意思，可以简写为i。</p>
+<p>-g:表示global，全局。</p>
+</blockquote>
+<p>​        测试：在命令行输入:<code>gulp -v</code></p>
+<ol start="2">
+<li><strong>搭建项目环境（本地安装gulp）</strong>：</li>
+</ol>
+<p>（1）建立项目文件夹：</p>
+<blockquote>
+<p> 从盘符到项目文件夹中间，任何一级都不要有中文，项目名也不要用中文，项目名不要用“gulp”。</p>
+<p>如： d:\我的\prj  这不行；  </p>
+<p>​          d:\my\项目 这也不行；</p>
+<p>​          d:\my\gulp  这也不行</p>
+</blockquote>
+<p>（2）打开命令行，并且把命令行的路径切换到项目目录下</p>
+<blockquote>
+<p> 快速的方式：</p>
+<p>​     在windows操作系统中，进入我的电脑，进入我的项目目录，在地址栏输入cmd，就行了。</p>
+<p>​     假如，我的项目在d:\gulpprj。</p>
+<p>​     在windows操作系统中，进入我的电脑，进入我的项目目录，如下：</p>
+</blockquote>
+</li>
+</ul>
+<p>​    </p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps17.jpg" alt="img"> </p>
+<blockquote>
+<p>在地址栏输入cmd，</p>
+</blockquote>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps18.jpg" alt="img"> </p>
+<blockquote>
+<p>回车，</p>
+</blockquote>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps19.jpg" alt="img"> </p>
+<p>（3）生成<code>package.json</code>文件</p>
+<p>​     在命令行里（把命令行的当前目录切换到项目目录下），运行 <code>npm init</code>。</p>
+<p>​    假如，项目目录是 d:\gulpprj 。那么如下图所示：</p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps20.jpg" alt="img"> </p>
+<p>​    然后，一路回车。</p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps21.jpg" alt="img"> 此时，在项目目录下就会有一个文件:<code>package.json</code></p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps22.jpg" alt="img"> </p>
+<p><code>Package.json</code>的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"gulpprj"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="string">"description"</span>: <span class="string">""</span>,</span><br><span class="line"></span><br><span class="line">  <span class="string">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line"></span><br><span class="line">​    <span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="string">"author"</span>: <span class="string">""</span>,</span><br><span class="line"></span><br><span class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（4）本地安装gulp</p>
+<p>​    即，在项目目录下安装gulp。</p>
+<p>​    在命令行里（把命令行的当前目录切换到项目目录下），</p>
+<p>​    运行：<code>npm  install  gulp --save-dev</code></p>
+<p>​    安装成功，如下画面：</p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps23.jpg" alt="img"> </p>
+<p>表示，安装了gulp的4.0.2版本，一共安装了314个包。</p>
+<p>安装成功后，在项目目录下，就会有一个 “node_modules”文件夹</p>
+<ol start="3">
+<li>在项目中使用gulp：</li>
+</ol>
+<p>（1）在项目目录下建立文件 “gulpfile.js”（此文件名不能乱写），记住：这个文件一定是放在项目根目录下。不要放在项目的其它子文件里，文件名就是“gulpfile.js”，不要乱起。</p>
+<p>（2）在gulpfile.js里实现功能：</p>
+<p>① 复制文件：</p>
+<p>const gulp = require(“gulp”);</p>
+<p>// require(“gulp”); 相当于在html的 <script src="gulp.js"></script></p>
+<p>// require(“gulp”); 是用js文件引入的js文件，这是模块化的做法。</p>
+<p>//写一个复制文件的任务</p>
+<p>gulp.task(“copy-html”,async ()=&gt;{</p>
+<p>​    //以下表示，把当前目录下的index.html文件拷贝至当前目录下的dist目录下。</p>
+<p>​    gulp.src(“index.html”)</p>
+<p>​    .pipe(gulp.dest(“dist”));</p>
+<p>});</p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml16012%5Cwps24.jpg" alt="img"> </p>
+<p>② 增加监听文件：（随时监视某个文件是否改变，如果改变则执行相应的任务）</p>
+<p>使用watch：gulp.task(“watchall”, async function() {</p>
+<p>// 监听Index.html文件的变化。如果index.html文件变化了，则执行后面的回调函数</p>
+<p>gulp.watch(“”, );</p>
+<p>})</p>
+<p>③ 压缩js文件：</p>
+<p>Gulp本身只能完成复制文件，监听文件等简单功能，如果要完成更多的功能，gulp提供很多接口，可以使用插件</p>
+<p>压缩js文件，就需要 gulp-uglify 插件。</p>
+<p>安装 gulp-uglify 插件： npm install gulp-uglify –save-dev</p>
+<p>④ 合并js</p>
+<p>使用gulp-concat 插件，把若干个小js文件合并成一个大的js文件，可以减少http的请求（提高项目的性能）。</p>
+<p>安装：    npm install gulp-concat –save-dev</p>
+<p>⑤ 重命名</p>
+<p>使用gulp-rename 插件</p>
+<p>安装：    npm install gulp-rename –save-dev</p>
+<p>⑥ 压缩css</p>
+<p>Gulp-minify-css </p>
+<p>安装：    npm install gulp-minify-css  –save-dev</p>
+<p>⑦ 编译sass</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/gulp/" rel="tag"><i class="fa fa-tag"></i> gulp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/27/jsonp/" rel="next" title="jsonp">
+                <i class="fa fa-chevron-left"></i> jsonp
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/01/版本控制工具git/" rel="prev" title="版本控制工具git">
+                版本控制工具git <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">100</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#gulp的理解"><span class="nav-number">1.</span> <span class="nav-text">gulp的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gulp的使用步骤："><span class="nav-number">2.</span> <span class="nav-text">Gulp的使用步骤：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">142.5k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/10/27/gulp压缩工具/';
+          this.page.identifier = '2019/10/27/gulp压缩工具/';
+          this.page.title = 'gulp压缩工具';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

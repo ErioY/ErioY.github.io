@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="ErioY">
 <meta property="og:description" content="浏览器的默认样式   同一个标签在不同的浏览器中有不同的默认样式，为了让样式在所有浏览器中统一，并设置一些预定义样式，我们应该做浏览器默认样式的初始化  默认样式的检查方式：可以用border+浏览器开发者工具来查看是否有默认样式  常见的浏览器默认样式  文字斜体和加粗等字体样式：font-weight:normal;font-style:normal;  body、ul等区块元素的填充和边距">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-13T03:41:19.753Z">
+<meta property="og:updated_time" content="2019-10-30T08:53:33.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WEB前端样式的初始化和css样式的补充">
 <meta name="twitter:description" content="浏览器的默认样式   同一个标签在不同的浏览器中有不同的默认样式，为了让样式在所有浏览器中统一，并设置一些预定义样式，我们应该做浏览器默认样式的初始化  默认样式的检查方式：可以用border+浏览器开发者工具来查看是否有默认样式  常见的浏览器默认样式  文字斜体和加粗等字体样式：font-weight:normal;font-style:normal;  body、ul等区块元素的填充和边距">
@@ -474,7 +474,7 @@
 </ul>
 <ul>
 <li><p>css部分：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">    <span class="selector-tag">div</span>&#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: red;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">50px</span>;</span><br><span class="line">        <span class="attribute">color</span>: white;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 设置box1的透明度为0 */</span></span><br><span class="line">    <span class="selector-class">.box1</span>&#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 当鼠标点击时box1变为不透明，即可以显示 */</span></span><br><span class="line"><span class="selector-class">.box1</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 设置box2元素为隐藏元素 */</span></span><br><span class="line">    <span class="selector-class">.box2</span>&#123;</span><br><span class="line">        <span class="attribute">visibility</span>: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 当鼠标点击时box2不能显示 */</span></span><br><span class="line">    <span class="selector-class">.box2</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">        <span class="attribute">visibility</span>: visible;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">  <span class="selector-tag">div</span>&#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: red;</span><br><span class="line">      <span class="attribute">font-size</span>: <span class="number">50px</span>;</span><br><span class="line">      <span class="attribute">color</span>: white;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* 设置box1的透明度为0 */</span></span><br><span class="line">  <span class="selector-class">.box1</span>&#123;</span><br><span class="line">      <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* 当鼠标点击时box1变为不透明，即可以显示 */</span></span><br><span class="line"><span class="selector-class">.box1</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">      <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* 设置box2元素为隐藏元素 */</span></span><br><span class="line">  <span class="selector-class">.box2</span>&#123;</span><br><span class="line">      <span class="attribute">visibility</span>: hidden;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* 当鼠标点击时box2不能显示 */</span></span><br><span class="line">  <span class="selector-class">.box2</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">      <span class="attribute">visibility</span>: visible;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 
 </li>
@@ -483,40 +483,36 @@
 <li><ol start="3">
 <li>overflow：溢出的部分应该如何显示</li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow-x</span><span class="selector-pseudo">:hidden</span>; <span class="comment">/*水平方向溢出*/</span></span><br><span class="line"><span class="selector-tag">overflow-y</span><span class="selector-pseudo">:auto</span>; <span class="comment">/*垂直方向溢出*/</span></span><br><span class="line"><span class="selector-tag">overflow</span><span class="selector-pseudo">:inherit</span>; <span class="comment">/*两个方向溢出*/</span></span><br><span class="line"><span class="selector-tag">visible</span>：默认值。溢出的内容不会被修剪，会呈现在元素框之外；</span><br><span class="line"><span class="selector-tag">hidden</span>：溢出的内容会被修剪，并且其余内容是不可见的；(如上面的初始化默认样式中的<span class="selector-tag">overflow-x</span><span class="selector-pseudo">:hidden</span>;，让<span class="selector-tag">body</span>的内容在水平方向溢出时裁切，不显示滚动条)</span><br><span class="line"><span class="selector-tag">scroll</span>：溢出的内容会被修剪，浏览器会显示滚动条以便查看其余的内容；</span><br><span class="line"><span class="selector-tag">auto</span>：如果溢出的内容被修剪，则浏览器会显示滚动条以便查看其余的内容；</span><br><span class="line"><span class="selector-tag">inherit</span>：规定应该从父元素继承 <span class="selector-tag">overflow</span> 属性的值</span><br></pre></td></tr></table></figure>
-
-
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow-x</span><span class="selector-pseudo">:hidden</span>; <span class="comment">/*水平方向溢出*/</span></span><br><span class="line"><span class="selector-tag">overflow-y</span><span class="selector-pseudo">:auto</span>; <span class="comment">/*垂直方向溢出*/</span></span><br><span class="line"><span class="selector-tag">overflow</span><span class="selector-pseudo">:inherit</span>; <span class="comment">/*两个方向溢出*/</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">visible</span>：默认值。溢出的内容不会被修剪，会呈现在元素框之外；</span><br><span class="line"><span class="selector-tag">hidden</span>：溢出的内容会被修剪，并且其余内容是不可见的；(如上面的初始化默认样式中的<span class="selector-tag">overflow-x</span><span class="selector-pseudo">:hidden</span>;，让<span class="selector-tag">body</span>的内容在水平方向溢出时裁切，不显示滚动条)</span><br><span class="line"><span class="selector-tag">scroll</span>：溢出的内容会被修剪，浏览器会显示滚动条以便查看其余的内容；</span><br><span class="line"><span class="selector-tag">auto</span>：如果溢出的内容被修剪，则浏览器会显示滚动条以便查看其余的内容；</span><br><span class="line"><span class="selector-tag">inherit</span>：规定应该从父元素继承 <span class="selector-tag">overflow</span> 属性的值</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
 <li><ol start="4">
-<li>百分比单位：</li>
+<li><strong>百分比单位</strong>：</li>
 </ol>
 <ul>
 <li>字体的行高使用了百分比，表示字体大小的百分之多少；</li>
-<li>盒子模型子元素的宽高百分比=父元素宽高的百分比*子元素的宽高百分比；</li>
+<li>盒子模型子元素的宽高百分比=父元素宽高*子元素的宽高百分比；</li>
 <li>子元素的padding和margin设置百分比时却不是对应父元素的内填充和外边距，而是<font color="red">子元素的padding和margin=父元素的宽*子元素的padding和margin的百分比</font>(后面的left和top也是父元素的宽高，需要注意)</li>
 <li>背景定位的X/Y=（父元素宽/高-图片宽/高）*背景定位的百分比</li>
 </ul>
 </li>
 <li><ol start="5">
-<li>最大最小宽高：可以配合上面的百分比宽高一起使用，做一个变化带有范围的效果：</li>
+<li><strong>最大最小宽高</strong>：可以配合上面的百分比宽高一起使用，做一个变化带有范围的效果：</li>
 </ol>
 <ul>
 <li>最大宽：<code>max-width: ;</code>    最小宽：<code>min-width: ;</code></li>
 <li>最大高：<code>max-height: ;</code> 最小高：<code>min-heihgt: ;</code></li>
 </ul>
-<p>注：设置最小高度时，当文字超过最小高度的大小时高度会随文字的增多而变高</p>
+<p><font color="red">注：设置最小高度时，当文字超过最小高度的大小时高度会随文字的增多而变高</font></p>
 </li>
 <li><ol start="6">
 <li>轮廓线outline（了解）：它是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用，它不会占据空间，也不一定是矩形。</li>
 </ol>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">outline-color</span>:; <span class="comment">/*轮廓线颜色*/</span></span><br><span class="line"><span class="selector-tag">outline-style</span>:; <span class="comment">/*轮廓线样式*/</span></span><br><span class="line"><span class="selector-tag">outline-width</span>:; <span class="comment">/*轮廓线宽度*/</span></span><br><span class="line"><span class="selector-tag">outline-offset</span>:; <span class="comment">/*轮廓线扩张*/</span></span><br></pre></td></tr></table></figure>
 
-
+<p>注：写成集合样式outline，如果不设置其中的某个值，也不会出问题，比如 <code>outline:solid #ff0000</code>; 也是允许的</p>
 </li>
 </ul>
-<pre><code>注：写成集合样式outline，如果不设置其中的某个值，也不会出问题，比如 outline:solid #ff0000; 也是允许的</code></pre><ul>
+<ul>
 <li><h4 id="列表元素"><a href="#列表元素" class="headerlink" title="列表元素"></a>列表元素</h4><ol>
 <li>列表元素有dl(定义列表)、dt(定义名)、dd(详情)、ul(无序列表)、ol(有序列表)、li(列表的项)</li>
 <li>当我们需要把一系列类似的项在页面中展示的时候就要用到列表，比如名词解释(定义列表)、商品列表或导航(无序列表)</li>
@@ -656,7 +652,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -669,7 +665,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -767,7 +763,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">137.6k</span>
+    <span title="Site words total count">142.5k</span>
   
 </div>
 

@@ -133,7 +133,7 @@
 <meta property="og:site_name" content="ErioY">
 <meta property="og:description" content="input属性 name：名字，类似id，可以用js取值和分类，后台用的较多 value：表单提交项的值(不同类型的input，value的作用也不尽相同) placeholder(文本类)：文本输入提示(css3新增属性，用来提示文本输入) checked(选择类)：页面加载时默认选定的 input 元素 readonly(文本类)：只读的文本输入元素 disabled：规定禁用的 input">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-14T04:10:35.180Z">
+<meta property="og:updated_time" content="2019-10-30T09:21:26.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WEB前端form表单">
 <meta name="twitter:description" content="input属性 name：名字，类似id，可以用js取值和分类，后台用的较多 value：表单提交项的值(不同类型的input，value的作用也不尽相同) placeholder(文本类)：文本输入提示(css3新增属性，用来提示文本输入) checked(选择类)：页面加载时默认选定的 input 元素 readonly(文本类)：只读的文本输入元素 disabled：规定禁用的 input">
@@ -509,7 +509,7 @@
 <ul>
 <li><h4 id="绑定焦点：label-内联元素"><a href="#绑定焦点：label-内联元素" class="headerlink" title="绑定焦点：label(内联元素)"></a>绑定焦点：<code>label</code>(内联元素)</h4><p><font color="blue">作用：绑定<code>input</code>元素定义标注，并帮助<code>input</code>元素获取焦点，也就是说当点击选择按钮后面的文字时，也能被选中</font></p>
 <ul>
-<li><p><strong>写法1：</strong>label<code>嵌套成</code>input<code>的父元素两个标签分开写，</code><font color="red" size="4">需要给文字加上<code>span</code>标签</font></p>
+<li><p><strong>写法1：</strong><code>label</code>嵌套成<code>input</code>的父元素两个标签分开写，<font color="red" size="4">需要给文字加上<code>span</code>标签</font></p>
 <p><font color="purple">以上面的单选代码为例：</font></p>
 </li>
 </ul>
@@ -526,7 +526,7 @@
 </li>
 <li><h4 id="form属性"><a href="#form属性" class="headerlink" title="form属性"></a><code>form</code>属性</h4><p>1.<code>method</code>：表单的提交方式（<code>POST</code>和<code>GET</code>）</p>
 <ul>
-<li>一般浏览器通过哪种方法都可以传输表单信息，而有些服务器只接受其中一种方法提供的数据。可以在 <form> 标签的 method (方法)属性中指明表单处理服务器要用方法来处理数据，使 POST 还是 GET</form></li>
+<li>一般浏览器通过哪种方法都可以传输表单信息，而有些服务器只接受其中一种方法提供的数据。可以在 <code>&lt;form&gt;</code>标签的 <code>method</code> (方法)属性中指明表单处理服务器要用方法来处理数据，使 POST 还是 GET</li>
 <li><code>POST</code> 方法，浏览器将会按照下面两步来发送数据。首先，浏览器将与 action 属性中指定的表单处理服务器建立联系，之后浏览器会按分段传输的方法将数据发送给服务器；在服务器端，一旦 POST 样式的应用程序开始执行时，就应该从一个标志位置读取参数，读到参数后，会在应用程序能够使用这些表单值以前，对这些参数进行解码。用户特定的服务器会明确指定应用程序应该如何接受这些参数</li>
 <li><code>GET</code> 方法，浏览器会与表单处理服务器建立连接，然后直接在一个传输步骤中发送所有的表单数据：浏览器会将数据直接附在表单的 action URL 之后。这两者之间用问号进行分隔</li>
 <li>GET、POST的区别：get在url里传送数据：安全性低、容量小，便于分享(商品地址和url有关)，适合获取，且会缓存；post安全性一般、容量几乎无限，更适合上传(图片等) </li>
@@ -709,7 +709,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -722,7 +722,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -820,7 +820,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">137.6k</span>
+    <span title="Site words total count">142.5k</span>
   
 </div>
 
