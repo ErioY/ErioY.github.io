@@ -135,7 +135,21 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/11/01/版本控制工具git/wps1.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/11/01/版本控制工具git/wps2.jpg">
-<meta property="og:updated_time" content="2019-11-02T01:37:33.970Z">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps1.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps2.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps3.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps4.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps6.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps5.png">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps7.png">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps8.png">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps9.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps10.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps11.png">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps12.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml17508%5Cwps1.jpg">
+<meta property="og:image" content="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml17508%5Cwps2.jpg">
+<meta property="og:updated_time" content="2019-11-02T02:22:57.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="版本控制工具git">
 <meta name="twitter:description" content="一、版本控制工具的作用 场景一：一个团队开发一个项目，指定张三疯写了一个公共的函数库 tools.js，应该分发给每个成员。李思峰在使用时，发现tools.js里的 函数 fnA有问题，李思峰会怎么办？改自己机子上的tools.js。接着怎么办? 发给张三疯，张三疯在分发给每个人（就害怕，李思峰忘了）  场景二：李思峰和李武峰都发现函数fnA有问题（但是问题又不一样），都会改，改了后怎么办？发给张">
@@ -388,7 +402,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  675
+                  1.5k
                 </span>
               
 
@@ -404,7 +418,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  5
                 </span>
               
             </div>
@@ -473,13 +487,108 @@
 </ul>
 <hr>
 <h4 id="三、git使用："><a href="#三、git使用：" class="headerlink" title="三、git使用："></a>三、git使用：</h4><ol>
-<li>安装</li>
-<li>初始化<code>user.name</code>,<code>user.email</code><ul>
+<li><p>安装</p>
+</li>
+<li><p>初始化<code>user.name</code>,<code>user.email</code></p>
+<ul>
 <li>(1) 进入git bash</li>
 <li>在命令行，输入以下内容（把your Name 改成你自己的用户名）：<code>git config  --global user.name  &quot;Your Name&quot;</code></li>
 <li>在命令行，输入以下内容（把<a href="mailto:email@example.com" target="_blank" rel="noopener">email@example.com</a> 改成你自己的邮箱）：<code>git config  --global user.email  &quot;email@example.com&quot;</code></li>
 </ul>
 </li>
+<li><p>建立远程仓库</p>
+<ul>
+<li><p>在github.com网站上创建账户</p>
+<ul>
+<li><p>进入github官网（<strong>[</strong><a href="https://github.com/**](https://github.com/)**）" target="_blank" rel="noopener">https://github.com/**](https://github.com/)**）</a></p>
+</li>
+<li><p>注册账号</p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps1.jpg" alt="img"></p>
+</li>
+<li><p>登录（Sign in）</p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps2.jpg" alt="img"></p>
+</li>
+</ul>
+</li>
+<li><p>建立远程仓库</p>
+<ul>
+<li><p>在页面中找 “new repository”，名字叫mytaobao：<br><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps3.jpg" alt="img"></p>
+<p>注意：勾选Initialize this repository with a README，这样GitHub会⾃动为我们创建⼀个 README.md⽂件。创建完毕后，可以看到README.md⽂件：<img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps4.jpg" alt="img"></p>
+</li>
+</ul>
+</li>
+<li><p>把远程仓库克隆到本地</p>
+<ul>
+<li><p>（1）先建立本地和远程的连接（使用ssh）</p>
+<ul>
+<li><p>i. 在本地创建ssh key（公钥）。</p>
+<p>在git bash里输入： ssh-keygen -t rsa -C <a href="mailto:youremail@example.com" target="_blank" rel="noopener">youremail@example.com</a>你需要把邮件地址换成你⾃⼰的邮件地址，然后⼀路回车，使⽤默认值即可.</p>
+<p>在⽤户主目录下(/c/Users/Administrator/.ssh/id_rsa))，看看有没有.ssh目录，如果有，再看看这个目录下 有没有id_rsa和id_rsa.pub这两个⽂件，如果已经有了，可直接 跳到下⼀步。</p>
+</li>
+<li><p>ii. 在远程创建ssh key：</p>
+<p>登陆GitHub，打开“Account settings”，“SSH Keys”⾯： 然后，点“Add SSH Key”，填上任意Title，在Key⽂本框⾥粘贴id_rsa.pub⽂件的内容：</p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps6.jpg" alt="img"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps5.png" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps7.png" alt="img"><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps8.png" alt="img"><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps9.jpg" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps10.jpg" alt="img"> </p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps11.png" alt="img"><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml9112%5Cwps12.jpg" alt="img"> </p>
+<p>​            点击“add SSH Key”</p>
+<ul>
+<li>（2）再克隆远程仓库到本地</li>
+</ul>
+<p>​     远程仓库地址：<code>git clone [git@github.com:tianwater/mytaobao.git](mailto:git@github.com:tianwater/mytaobao.git)</code></p>
+<p>在你的当前文件夹下就会看到 mytaobao文件夹。</p>
+<p>在此文件里有 .git 文件夹，这个文件夹就是本地版本库</p>
+<hr>
+<h5 id="现在可以在项目中使用git进行版本管理了"><a href="#现在可以在项目中使用git进行版本管理了" class="headerlink" title="现在可以在项目中使用git进行版本管理了"></a>现在可以在项目中使用git进行版本管理了</h5><ol>
+<li><p>把开发的代码放在本地版本库</p>
+<ul>
+<li><p>（1）Git add</p>
+<p>假设在项目下有个index.html文件。在 git Bash，输入：git   add   index.html</p>
+</li>
+<li><p>（2） Git commit(提交)</p>
+<p>在git Bash里输入： git commit -m “这是新建的index.html”。其中”这是新建的index.html”只是说明或者说解释。</p>
+</li>
+<li><p>理解：    add和commit；</p>
+<p>Add:添加；相当于打了标记（实际上是存储在了暂存区stage里），告诉git，下次提交时把该文件进行提交。</p>
+<p>Commit：提交。把打过标记的（即用add进行添加的文件），一次性进行提交。即可以一次性把暂存区里的文件全部进行提交，提交了master分支（主分支）。提交完成后，暂存区里就没有文件了。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml17508%5Cwps1.jpg" alt="img"> </p>
+<ol start="2">
+<li><p>恢复（跳转）到某个版本的文件</p>
+<ul>
+<li>1）、查看所有的版本的命令：<code>git  log</code></li>
+<li>2）、要恢复到上一个版本：<code>git reset  --hard   HEAD^</code></li>
+<li>3）、恢复到指定版本：<code>git  reset  --hard  版本序列号</code>（可以用版本号的前七位就行）</li>
+</ul>
+</li>
+<li><p>把本地版本库的代码放在远程库：<code>git push -u [git@github.com:tianwater/mytaobao.git](mailto:git@github.com:tianwater/bigMi.git) master</code></p>
+</li>
+</ol>
+<hr>
+<h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><p>以后，每天做的git相关工作</p>
+<p>1）、<code>git add  文件名</code></p>
+<p>2）、<code>git commit –m “版本描述”</code></p>
+<p>3）、<code>git push -u origin master</code></p>
+<p><img src="file:///C:%5CUsers%5CASUS%5CAppData%5CLocal%5CTemp%5Cksohtml17508%5Cwps2.jpg" alt="img"> </p>
+<hr>
+<h5 id="补充：git和gulp应用于现有的项目"><a href="#补充：git和gulp应用于现有的项目" class="headerlink" title="补充：git和gulp应用于现有的项目"></a>补充：git和gulp应用于现有的项目</h5><ol>
+<li>远程建立仓库（如：taobao1809），git clone到本地，并自动创建项目文件夹(taobao1809)</li>
+<li>在项目文件夹中(taobao1809)，npm init，并本地安装gulp和gulp插件</li>
+<li>把现有的代码（html,css,图片文件等等）拷贝到项目目录(taobao1809)下</li>
+<li>编辑.gitignore文件</li>
+<li>把当前项目文件夹下的所有内容（不包括node _modules文件夹等等）add到暂存区，并且commit到版本库</li>
 </ol>
 
       
@@ -689,7 +798,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、版本控制工具的作用"><span class="nav-number">1.</span> <span class="nav-text">一、版本控制工具的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、版本控制工具经历的阶段"><span class="nav-number">2.</span> <span class="nav-text">二、版本控制工具经历的阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、git使用："><span class="nav-number">3.</span> <span class="nav-text">三、git使用：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、版本控制工具的作用"><span class="nav-number">1.</span> <span class="nav-text">一、版本控制工具的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、版本控制工具经历的阶段"><span class="nav-number">2.</span> <span class="nav-text">二、版本控制工具经历的阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、git使用："><span class="nav-number">3.</span> <span class="nav-text">三、git使用：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#现在可以在项目中使用git进行版本管理了"><span class="nav-number">3.1.</span> <span class="nav-text">现在可以在项目中使用git进行版本管理了</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#总结："><span class="nav-number">3.2.</span> <span class="nav-text">总结：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#补充：git和gulp应用于现有的项目"><span class="nav-number">3.3.</span> <span class="nav-text">补充：git和gulp应用于现有的项目</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -723,7 +832,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">142.5k</span>
+    <span title="Site words total count">143.3k</span>
   
 </div>
 
