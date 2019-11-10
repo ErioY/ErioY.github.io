@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-01T04:29:24.066Z</updated>
+  <updated>2019-11-10T08:07:30.449Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,201 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue组件</title>
+    <link href="http://yoursite.com/2019/11/10/vue%E7%BB%84%E4%BB%B6/"/>
+    <id>http://yoursite.com/2019/11/10/vue组件/</id>
+    <published>2019-11-10T01:45:34.000Z</published>
+    <updated>2019-11-10T08:07:30.449Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;vue官网&quot;&gt;&lt;a href=&quot;#vue官网&quot; class=&quot;headerlink&quot; title=&quot;vue官网&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://cn.vuejs.org/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html/css/js笔试题总结</title>
+    <link href="http://yoursite.com/2019/11/04/html-css%E7%AC%94%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2019/11/04/html-css笔试题总结/</id>
+    <published>2019-11-04T11:49:11.000Z</published>
+    <updated>2019-11-08T04:43:37.712Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;ps：当时不太懂的都标注了三个&lt;font color=&quot;red&quot;&gt;*&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&quot;2019-11-04：&quot;&gt;&lt;a href=&quot;#2019-11-04：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="exercise" scheme="http://yoursite.com/tags/exercise/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git多人协作使用手册说明</title>
+    <link href="http://yoursite.com/2019/11/03/git%E5%A4%9A%E4%BA%BA%E5%8D%8F%E4%BD%9C%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"/>
+    <id>http://yoursite.com/2019/11/03/git多人协作使用手册/</id>
+    <published>2019-11-03T10:24:46.000Z</published>
+    <updated>2019-11-03T10:25:09.447Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;一、管理员操作&quot;&gt;&lt;a href=&quot;#一、管理员操作&quot; class=&quot;headerlink&quot; title=&quot;一、管理员操作&quot;&gt;&lt;/a&gt;一、管理员操作&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt; 
+        
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue</title>
+    <link href="http://yoursite.com/2019/11/03/vue/"/>
+    <id>http://yoursite.com/2019/11/03/vue/</id>
+    <published>2019-11-03T01:20:21.000Z</published>
+    <updated>2019-11-10T16:19:49.361Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;vue的介绍&quot;&gt;&lt;a href=&quot;#vue的介绍&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>写代码时常用快捷键</title>
+    <link href="http://yoursite.com/2019/11/02/%E5%86%99%E4%BB%A3%E7%A0%81%E6%97%B6%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://yoursite.com/2019/11/02/写代码时常用快捷键/</id>
+    <published>2019-11-02T09:13:44.000Z</published>
+    <updated>2019-11-02T09:13:44.851Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>gitignore的过滤规则</title>
+    <link href="http://yoursite.com/2019/11/02/gitignore%E7%9A%84%E8%BF%87%E6%BB%A4%E8%A7%84%E5%88%99/"/>
+    <id>http://yoursite.com/2019/11/02/gitignore的过滤规则/</id>
+    <published>2019-11-02T06:03:59.000Z</published>
+    <updated>2019-11-02T10:26:54.588Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;一、-gitignore文件的作用&quot;&gt;&lt;a href=&quot;#一、-gitignore文件的作用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git常见命令</title>
+    <link href="http://yoursite.com/2019/11/02/git%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2019/11/02/git常见命令/</id>
+    <published>2019-11-02T05:55:58.000Z</published>
+    <updated>2019-11-02T09:02:10.223Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;一、查看、添加、提交、删除、找回，重置修改文件&quot;&gt;&lt;a href=&quot;#一、查看、添加、提交、删除、找回，重置修改文件&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git分支</title>
+    <link href="http://yoursite.com/2019/11/02/git%E5%88%86%E6%94%AF/"/>
+    <id>http://yoursite.com/2019/11/02/git分支/</id>
+    <published>2019-11-02T02:28:20.000Z</published>
+    <updated>2019-11-02T10:13:05.558Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;一、clone-Repository&quot;&gt;&lt;a href=&quot;#一、clone-Repository&quot; class=&quot;headerlink&quot; title=&quot;一、clone Repository&quot;&gt;&lt;/a&gt;一、clone Repository&lt;/h4&gt;&lt;p&gt;clone
+        
+      
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>sass安装和使用说明</title>
@@ -45,7 +240,7 @@
     <link href="http://yoursite.com/2019/11/01/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7git/"/>
     <id>http://yoursite.com/2019/11/01/版本控制工具git/</id>
     <published>2019-11-01T03:46:31.000Z</published>
-    <updated>2019-11-02T02:22:57.178Z</updated>
+    <updated>2019-11-02T06:20:26.586Z</updated>
     
     <summary type="html">
     
@@ -60,7 +255,7 @@
     </summary>
     
     
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
   </entry>
   
@@ -134,8 +329,8 @@
     <title>win10常用键盘快捷键</title>
     <link href="http://yoursite.com/2019/10/20/win10%E5%B8%B8%E7%94%A8%E9%94%AE%E7%9B%98%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>http://yoursite.com/2019/10/20/win10常用键盘快捷键/</id>
-    <published>2019-10-20T03:40:28.000Z</published>
-    <updated>2019-10-20T03:43:28.101Z</updated>
+    <published>2019-10-20T03:40:28.505Z</published>
+    <updated>2019-11-03T02:55:32.932Z</updated>
     
     <summary type="html">
     
@@ -144,16 +339,14 @@
         
         
           &lt;p&gt;• Win + A：打开操作中心；&lt;/p&gt;
-&lt;p&gt;• Win + B：将焦点转移到任务栏通知区域，之后你可以通过左右方向键选择项目，按回车打开；&lt;/p&gt;
-&lt;p&gt;• Win + Shift + C：打开Cortana微软小娜，并开始聆听……&lt;/p&gt;
-&lt;p&gt;• Win +
+&lt;h5 id=&quot;•-Win-B：将焦点转移到任务栏通知区域，之后你可以通过左右方向键选择项目，按回车打开；&quot;&gt;&lt;a href=&quot;#•-Win-B：将焦点转移到任务栏通知区域，之后你可以通过左右方向键选择项目，按回车打开；&quot;
         
       
     
     </summary>
     
     
-      <category term="operation" scheme="http://yoursite.com/tags/operation/"/>
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
     
   </entry>
   
@@ -314,215 +507,6 @@
     
     
       <category term="Ajax" scheme="http://yoursite.com/tags/Ajax/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ajax-1-Ajax原理和封装</title>
-    <link href="http://yoursite.com/2019/10/02/Ajax-1-Ajax%E5%8E%9F%E7%90%86%E5%92%8C%E5%B0%81%E8%A3%85/"/>
-    <id>http://yoursite.com/2019/10/02/Ajax-1-Ajax原理和封装/</id>
-    <published>2019-10-02T02:58:19.000Z</published>
-    <updated>2019-10-02T07:32:44.896Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;Ajax原理和封装&lt;/font&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;Ajax基础&quot;&gt;&lt;a href=&quot;#Ajax基础&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Ajax" scheme="http://yoursite.com/tags/Ajax/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jQuery-4-动画和Velocity动画库</title>
-    <link href="http://yoursite.com/2019/09/28/jQuery-4-%E5%8A%A8%E7%94%BB%E5%92%8CVelocity%E5%8A%A8%E7%94%BB%E5%BA%93/"/>
-    <id>http://yoursite.com/2019/09/28/jQuery-4-动画和Velocity动画库/</id>
-    <published>2019-09-28T03:07:31.000Z</published>
-    <updated>2019-10-20T02:35:24.060Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;Velocity-js介绍：&quot;&gt;&lt;a href=&quot;#Velocity-js介绍：&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jQuery-3-工具方法和高级方法</title>
-    <link href="http://yoursite.com/2019/09/28/jQuery-3-%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95%E5%92%8C%E9%AB%98%E7%BA%A7%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2019/09/28/jQuery-3-工具方法和高级方法/</id>
-    <published>2019-09-28T02:40:47.000Z</published>
-    <updated>2019-10-20T02:35:11.676Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;工具方法：&quot;&gt;&lt;a href=&quot;#工具方法：&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jQuery-2-DOM操作和事件操作</title>
-    <link href="http://yoursite.com/2019/09/28/jQuery-2-DOM%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BA%8B%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
-    <id>http://yoursite.com/2019/09/28/jQuery-2-DOM操作和事件操作/</id>
-    <published>2019-09-28T02:34:36.000Z</published>
-    <updated>2019-10-20T02:34:55.279Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;JQ的DOM操作和事件操作&lt;/font&gt;&lt;/center&gt;
-- #### JQ的DOM操作
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;font
-        
-      
-    
-    </summary>
-    
-    
-      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jQuery-1-选择器和常用方法</title>
-    <link href="http://yoursite.com/2019/09/28/jQuery-1-%E9%80%89%E6%8B%A9%E5%99%A8%E5%92%8C%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2019/09/28/jQuery-1-选择器和常用方法/</id>
-    <published>2019-09-28T01:39:31.000Z</published>
-    <updated>2019-10-20T02:34:45.335Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font size=&quot;4&quot;&gt;jQuery选择器和常用方法&lt;/font&gt;&lt;/center&gt;
-- ####
-        
-      
-    
-    </summary>
-    
-    
-      <category term="jQuery" scheme="http://yoursite.com/tags/jQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ECMAScript 新标准4</title>
-    <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%864/"/>
-    <id>http://yoursite.com/2019/09/23/ECMAScript-新标准4/</id>
-    <published>2019-09-23T12:33:20.000Z</published>
-    <updated>2019-10-20T02:36:19.151Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;数组新方法&quot;&gt;&lt;a href=&quot;#数组新方法&quot; class=&quot;headerlink&quot; title=&quot;数组新方法&quot;&gt;&lt;/a&gt;数组新方法&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;font
-        
-      
-    
-    </summary>
-    
-    
-      <category term="ECMAScript" scheme="http://yoursite.com/tags/ECMAScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ECMAScript 新标准3</title>
-    <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%863/"/>
-    <id>http://yoursite.com/2019/09/23/ECMAScript-新标准3/</id>
-    <published>2019-09-23T12:33:16.000Z</published>
-    <updated>2019-10-20T02:36:05.574Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;新函数写法&quot;&gt;&lt;a href=&quot;#新函数写法&quot; class=&quot;headerlink&quot; title=&quot;新函数写法&quot;&gt;&lt;/a&gt;新函数写法&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;font
-        
-      
-    
-    </summary>
-    
-    
-      <category term="ECMAScript" scheme="http://yoursite.com/tags/ECMAScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ECMAScript 新标准2</title>
-    <link href="http://yoursite.com/2019/09/23/ECMAScript-%E6%96%B0%E6%A0%87%E5%87%862/"/>
-    <id>http://yoursite.com/2019/09/23/ECMAScript-新标准2/</id>
-    <published>2019-09-23T12:00:25.000Z</published>
-    <updated>2019-10-20T02:35:50.481Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;解构&quot;&gt;&lt;a href=&quot;#解构&quot; class=&quot;headerlink&quot; title=&quot;解构&quot;&gt;&lt;/a&gt;解构&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;解构（解析结构）：解析结构是一种全新的写法，我们看下面一个例子&lt;/p&gt;
-&lt;figure
-        
-      
-    
-    </summary>
-    
-    
-      <category term="ECMAScript" scheme="http://yoursite.com/tags/ECMAScript/"/>
     
   </entry>
   

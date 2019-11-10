@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="git,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一、管理员操作   管理员所做的事情，就是搭建版本控制工具的环境（包括：远程仓库，建立团队，人员及其权限）    以下是管理操作的步骤（简版的），如果想看详细的，请到最后的第三点中（（三）附：管理员操作的详细步骤：）  创建组织  组织下面下面有仓库，也有团队，也有人员       给组织下创建团队     给组织下创建仓库     给组织创建人员     团队和人员对应（把人员加入到团队里）">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git多人协作使用手册说明">
+<meta property="og:url" content="http://yoursite.com/2019/11/03/git多人协作使用手册/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="一、管理员操作   管理员所做的事情，就是搭建版本控制工具的环境（包括：远程仓库，建立团队，人员及其权限）    以下是管理操作的步骤（简版的），如果想看详细的，请到最后的第三点中（（三）附：管理员操作的详细步骤：）  创建组织  组织下面下面有仓库，也有团队，也有人员       给组织下创建团队     给组织下创建仓库     给组织创建人员     团队和人员对应（把人员加入到团队里）">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps2.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps3.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps4.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps5.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps6.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps7.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps8.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps9.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps11.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps13.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps14.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps15.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps16.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps17.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps18.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps19.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps20.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps21.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps22.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps23.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps24.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps25.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps27.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps29.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps31.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps33.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps35.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps38.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps41.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps45.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps46.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps50.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps52.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps54.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps56.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps59.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps61.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps63.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps65.jpg">
+<meta property="og:updated_time" content="2019-11-03T10:25:09.447Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git多人协作使用手册说明">
+<meta name="twitter:description" content="一、管理员操作   管理员所做的事情，就是搭建版本控制工具的环境（包括：远程仓库，建立团队，人员及其权限）    以下是管理操作的步骤（简版的），如果想看详细的，请到最后的第三点中（（三）附：管理员操作的详细步骤：）  创建组织  组织下面下面有仓库，也有团队，也有人员       给组织下创建团队     给组织下创建仓库     给组织创建人员     团队和人员对应（把人员加入到团队里）">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/03/git多人协作使用手册/wps1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/03/git多人协作使用手册/">
+
+
+
+
+
+  <title>git多人协作使用手册说明 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/03/git多人协作使用手册/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">git多人协作使用手册说明</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-03T18:24:46+08:00">
+                2019-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/03/git多人协作使用手册/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/03/git多人协作使用手册/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  995
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="一、管理员操作"><a href="#一、管理员操作" class="headerlink" title="一、管理员操作"></a>一、管理员操作</h4><blockquote>
+<p>  管理员所做的事情，就是搭建版本控制工具的环境（包括：远程仓库，建立团队，人员及其权限）</p>
+</blockquote>
+<p><img src="/2019/11/03/git多人协作使用手册/wps1.jpg" alt="img"> </p>
+<p>以下是管理操作的步骤（简版的），如果想看详细的，请到最后的第三点中（（三）附：管理员操作的详细步骤：）</p>
+<ol>
+<li><p>创建组织</p>
+<blockquote>
+<p>组织下面下面有仓库，也有团队，也有人员</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="/2019/11/03/git多人协作使用手册/wps2.jpg" alt="img"> </p>
+<ol start="2">
+<li>给组织下创建团队</li>
+</ol>
+<p><img src="/2019/11/03/git多人协作使用手册/wps3.jpg" alt="img"> </p>
+<ol start="3">
+<li>给组织下创建仓库</li>
+</ol>
+<p><img src="/2019/11/03/git多人协作使用手册/wps4.jpg" alt="img"> </p>
+<ol start="4">
+<li>给组织创建人员</li>
+</ol>
+<p><img src="/2019/11/03/git多人协作使用手册/wps5.jpg" alt="img"> </p>
+<ol start="5">
+<li>团队和人员对应（把人员加入到团队里）</li>
+</ol>
+<p><img src="/2019/11/03/git多人协作使用手册/wps6.jpg" alt="img"> </p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps7.jpg" alt="img"> </p>
+<ol start="6">
+<li>把仓库和团队对应</li>
+</ol>
+<p><img src="/2019/11/03/git多人协作使用手册/wps8.jpg" alt="img"> </p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps9.jpg" alt="img"> </p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps11.jpg" alt="img"> </p>
+<p>顺便设置团队权限</p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps13.jpg" alt="img"> </p>
+<hr>
+<h4 id="二、各成员的操作"><a href="#二、各成员的操作" class="headerlink" title="二、各成员的操作"></a>二、各成员的操作</h4><ol>
+<li><p><font color="blue"><strong>建立连接（创建公钥）</strong></font></p>
+<blockquote>
+<p>每个人用自己的账号登录到github上（就能看到上面建立的仓库），把本地产生的公钥加到你自己的github账户里。</p>
+</blockquote>
+<p>具体操作：</p>
+<ul>
+<li><p><font color="green"><strong>(1) 在本地创建ssh key（公钥）</strong></font></p>
+<p>在git bash命令行中输入： <code>ssh-keygen -t rsa -C  “[youremail@example.com](mailto:youremail@example.com)”</code></p>
+<p>你需要把邮件地址换成你⾃⼰的邮件地址，然后⼀路回车，使⽤默认值即可.</p>
+<p>在⽤户主目录下(/c/Users/Administrator/.ssh/目录下))，看看有没有.ssh目录，如果有，再看看这个目录下 有没有id_rsa和id_rsa.pub这两个⽂件，如果已经有了，可直接 跳到下⼀步。</p>
+</li>
+<li><p><font color="green"><strong>(2) 登陆GitHub，打开“Account settings”</strong>，</font>“SSH Keys”⾯： 然后，点“Add SSH Key”，填上任意Title，在Key⽂本框⾥粘贴id_rsa.pub⽂件的内容：</p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps14.jpg" alt="img"><img src="/2019/11/03/git多人协作使用手册/wps15.jpg" alt="img"> </p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li><p><font color="blue"><strong>克隆仓库到本地（产生了项目目录和本地仓库）</strong></font></p>
+<blockquote>
+<p>在你需要克隆仓库的一个文件夹下右键打开git bash命令行</p>
+</blockquote>
+<p>命令：<code>git clone [仓库地址]</code></p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps16.jpg" alt="img"> </p>
+<p>即可克隆仓库到该文件夹下，生成一个以组织中存储库命名的文件夹，也就是你的<strong>项目文件夹</strong>。</p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps17.jpg" alt="img"> </p>
+</li>
+<li><p><font color="blue"><strong>写代码，版本管理</strong></font></p>
+<ul>
+<li><p><font color="green"><strong>(1) 建立自己的分支</strong></font>，写代码：</p>
+<p>在<strong>项目文件夹</strong>中右键打开git bash命令行，键入命令 <code>git checkout -b xueyan</code>（该命令一键创建分支并切换）</p>
+<p>分开命令也可以写为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">branch</span> <span class="selector-attr">[分支名字]</span>   创建新分支</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">Git</span> <span class="selector-tag">checkour</span> <span class="selector-attr">[分支名字]</span>   切换到分支</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/03/git多人协作使用手册/wps18.jpg" alt="img"> </p>
+</li>
+<li><p><font color="green"><strong>(2) 上传到本地版本库：</strong> </font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">add</span> </span><br><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">commit</span></span><br></pre></td></tr></table></figure>
+
+<p>此时是将你写好的代码文件上传过程，例如你写好的文件是index.html </p>
+<p>具体命令：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">add</span> <span class="selector-tag">index</span><span class="selector-class">.html</span>  加入缓存区</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">commit</span> <span class="selector-tag">-m</span> “<span class="selector-tag">index</span>”   提交到本地仓库，引号内是提交时你修改或者添加了什么东西的描述</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/03/git多人协作使用手册/wps19.jpg" alt="img"> </p>
+</li>
+<li><p><font color="green"><strong>(3) 推送到远端：<code>git push</code></strong></font></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u [git@github.com:myyShop/xianyu.git](mailto:git@github.com:myyShop/xianyu.git) xueyan  /*此时是推送到远端自己的分支中*/</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/03/git多人协作使用手册/wps20.jpg" alt="img"> </p>
+</li>
+<li><p><font color="green"><strong>(4) 在自己的分支开发好了后，合并到开发分支（假定是master分支，也可以用dev分支，这是稳定的代码）</strong></font></p>
+<ul>
+<li><p><font color="orange"><strong>① 切换到主分支</strong></font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">checkout</span> <span class="selector-tag">master</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange"><strong>② 将远端主分支的代码拉下来，得到团队中其他人的稳定代码</strong></font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">pull</span> <span class="selector-attr">[git@github.com:myyShop/xianyu.git]</span> <span class="selector-tag">master</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/03/git多人协作使用手册/wps21.jpg" alt="img"> </p>
+</li>
+<li><p><font color="orange"><strong>③ 把自己开发的代码合并到开发分支（master分支）</strong></font></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">merge</span> <span class="selector-tag">xueyan</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><font color="orange">④ 把master分支的代码推送到远端</font></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u [git@github.com:myyShop/xianyu.git master</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/03/git多人协作使用手册/wps22.jpg" alt="img"> </p>
+</li>
+</ul>
+</li>
+<li><p><font color="green"><strong>(5) 或者可以直接将文件add ，commit， push到主分支</strong></font></p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps23.jpg" alt="img"> </p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps24.jpg" alt="img"> </p>
+</li>
+<li><p><font color="green"><strong>(6) 此时要上传的文件已经存在在远端的主分支中了</strong></font></p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps25.jpg" alt="img"> </p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="三、附：管理员操作的详细步骤"><a href="#三、附：管理员操作的详细步骤" class="headerlink" title="三、附：管理员操作的详细步骤"></a>三、附：管理员操作的详细步骤</h4><ol>
+<li><p><font color="blue"><strong>登录github</strong></font></p>
+</li>
+<li><p><font color="blue"><strong>创建一个组织</strong></font>：Accounts Settings =&gt; Organizations =&gt;new Organization</p>
+<p>图解：</p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps27.jpg" alt="img"> <img src="/2019/11/03/git多人协作使用手册/wps29.jpg" alt="img"> <img src="/2019/11/03/git多人协作使用手册/wps31.jpg" alt="img"><img src="/2019/11/03/git多人协作使用手册/wps33.jpg" alt="img"> <img src="/2019/11/03/git多人协作使用手册/wps35.jpg" alt="img"> <img src="/2019/11/03/git多人协作使用手册/wps38.jpg" alt="img"></p>
+</li>
+<li><p><font color="blue"><strong>创建一个仓库</strong></font></p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps41.jpg" alt="img"> </p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps45.jpg" alt="img"> </p>
+</li>
+</ol>
+<p><img src="/2019/11/03/git多人协作使用手册/wps46.jpg" alt="img"> </p>
+<p>看到以上画面，说明仓库创建好了</p>
+<ol start="4">
+<li><p><font color="blue"><strong>创建人员（先创建team，再给team里增加人员）</strong></font></p>
+<ul>
+<li><p><font color="green"><strong>(1) 创建team</strong></font></p>
+<blockquote>
+<p>在新建的仓库里，进入Repository的Settings，然后在Collaborators&amp;team里就可以添加team了</p>
+</blockquote>
+<p>图解：</p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps50.jpg" alt="img"> </p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps52.jpg" alt="img"> </p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps54.jpg" alt="img"> </p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps56.jpg" alt="img"> </p>
+<p>Team创建成功了</p>
+</li>
+<li><p><font color="green"><strong>(2) 给team里增加成员</strong></font></p>
+</li>
+</ul>
+<p><img src="/2019/11/03/git多人协作使用手册/wps59.jpg" alt="img"> </p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps61.jpg" alt="img"> </p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps63.jpg" alt="img"> </p>
+</li>
+</ol>
+<p>​    发送邀请（invite）后，需要对方同意（在对方的邮箱里收到的邮件里，点击”join”按钮）</p>
+<p>​    对方同意后，刷新页面，看到当前组织里，增加了一个成员：</p>
+<p><img src="/2019/11/03/git多人协作使用手册/wps65.jpg" alt="img"> </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/03/vue/" rel="next" title="vue">
+                <i class="fa fa-chevron-left"></i> vue
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/04/html-css笔试题总结/" rel="prev" title="html/css/js笔试题总结">
+                html/css/js笔试题总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、管理员操作"><span class="nav-number">1.</span> <span class="nav-text">一、管理员操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、各成员的操作"><span class="nav-number">2.</span> <span class="nav-text">二、各成员的操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、附：管理员操作的详细步骤"><span class="nav-number">3.</span> <span class="nav-text">三、附：管理员操作的详细步骤</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">152.3k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/11/03/git多人协作使用手册/';
+          this.page.identifier = '2019/11/03/git多人协作使用手册/';
+          this.page.title = 'git多人协作使用手册说明';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+

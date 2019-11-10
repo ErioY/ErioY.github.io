@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="git,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一、clone Repositoryclone Github 上的Repository，如下： 1git clone https://github.com/siskinc/siskinc.github.io  二、管理分支 1. 查看分支  查看本地分支使用 git branch命令，如下： 1$ git branch       显示* master, *标识的是你当前所在的分支。  查看远程分">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git分支">
+<meta property="og:url" content="http://yoursite.com/2019/11/02/git分支/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="一、clone Repositoryclone Github 上的Repository，如下： 1git clone https://github.com/siskinc/siskinc.github.io  二、管理分支 1. 查看分支  查看本地分支使用 git branch命令，如下： 1$ git branch       显示* master, *标识的是你当前所在的分支。  查看远程分">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/11/02/git分支/1.png">
+<meta property="og:updated_time" content="2019-11-02T10:13:05.558Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git分支">
+<meta name="twitter:description" content="一、clone Repositoryclone Github 上的Repository，如下： 1git clone https://github.com/siskinc/siskinc.github.io  二、管理分支 1. 查看分支  查看本地分支使用 git branch命令，如下： 1$ git branch       显示* master, *标识的是你当前所在的分支。  查看远程分">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/02/git分支/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/02/git分支/">
+
+
+
+
+
+  <title>git分支 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/02/git分支/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">git分支</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-02T10:28:20+08:00">
+                2019-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/02/git分支/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/02/git分支/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="一、clone-Repository"><a href="#一、clone-Repository" class="headerlink" title="一、clone Repository"></a>一、clone Repository</h4><p>clone Github 上的Repository，如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> https:<span class="comment">//github.com/siskinc/siskinc.github.io</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="二、管理分支"><a href="#二、管理分支" class="headerlink" title="二、管理分支"></a>二、管理分支</h4><ul>
+<li><h4 id="1-查看分支"><a href="#1-查看分支" class="headerlink" title="1. 查看分支"></a>1. <font color="green">查看分支</font></h4><ul>
+<li><h5 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title=" 查看本地分支"></a><font color="blue"> 查看本地分支</font></h5><p>使用 git branch命令，如下：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<p>显示<code>* master</code>, <code>*</code>标识的是你当前所在的分支。</p>
+<ul>
+<li><h5 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a><font color="blue">查看远程分支</font></h5><p>命令如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -r</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><h5 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a><font color="blue">查看所有分支</font></h5><p>命令如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><h4 id="2-本地创建新的分支"><a href="#2-本地创建新的分支" class="headerlink" title="2. 本地创建新的分支"></a>2. <font color="green">本地创建新的分支</font></h4><p>命令如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">branch</span> <span class="selector-attr">[branch name]</span></span><br></pre></td></tr></table></figure>
+
+<p>例如：（分支名为save）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">branch</span> <span class="selector-tag">save</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="3-切换到新的分支"><a href="#3-切换到新的分支" class="headerlink" title="3.切换到新的分支"></a>3.<font color="green">切换到新的分支</font></h4><p>命令如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">checkout</span> <span class="selector-attr">[branch name]</span></span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout save</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="4-创建-切换分支"><a href="#4-创建-切换分支" class="headerlink" title="4.创建+切换分支"></a>4.<font color="green">创建+切换分支</font></h4><p>创建分支的同时切换到该分支上，命令如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">checkout</span> <span class="selector-tag">-b</span> <span class="selector-attr">[branch name]</span></span><br></pre></td></tr></table></figure>
+
+<p><code>git checkout -b [branch name]</code>的效果相当于以下两步操作：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">branch</span> <span class="selector-attr">[branch name]</span></span><br><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">checkout</span> <span class="selector-attr">[branch name]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="5-把save分支的内容合并到当前分支（如：master分支）里，注：合并之前需要执行git-pull命令把更新了的仓库都克隆到本地"><a href="#5-把save分支的内容合并到当前分支（如：master分支）里，注：合并之前需要执行git-pull命令把更新了的仓库都克隆到本地" class="headerlink" title="5.把save分支的内容合并到当前分支（如：master分支）里，注：合并之前需要执行git pull命令把更新了的仓库都克隆到本地"></a>5.<font color="green">把save分支的内容合并到当前分支（如：master分支）里</font>，<font color="red">注：合并之前需要执行<code>git pull</code>命令把更新了的仓库都克隆到本地</font></h4><ol>
+<li><strong>首先确保当前分支是master分支（用命令切换：<code>git checkout master</code>）</strong></li>
+<li><strong>命令合并 <code>git merge dev</code></strong></li>
+</ol>
+</li>
+<li><h4 id="6-将新分支推送到github"><a href="#6-将新分支推送到github" class="headerlink" title="6. 将新分支推送到github"></a>6. <font color="green">将新分支推送到github</font></h4><p>命令如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">push</span> <span class="selector-tag">origin</span> <span class="selector-attr">[branch name]</span></span><br><span class="line"><span class="comment">/* 或  */</span></span><br><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">push</span> <span class="selector-tag">-u</span> 项目地址名</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">push</span> <span class="selector-tag">origin</span> <span class="selector-tag">save</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="6-删除本地分支"><a href="#6-删除本地分支" class="headerlink" title="6. 删除本地分支"></a>6. <font color="green">删除本地分支</font></h4><p>命令如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">branch</span> <span class="selector-tag">-d</span> <span class="selector-attr">[branch name]</span></span><br></pre></td></tr></table></figure>
+
+<p>例如：(注意当前分支一定不能是要删除的分支（save）)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">branch</span> <span class="selector-tag">-d</span> <span class="selector-tag">save</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="7-删除github远程分支"><a href="#7-删除github远程分支" class="headerlink" title="7. 删除github远程分支"></a>7. <font color="green">删除github远程分支</font></h4><p>命令如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">push</span> <span class="selector-tag">origin</span> :<span class="selector-attr">[branch name]</span></span><br></pre></td></tr></table></figure>
+
+<p>分支名前的冒号代表删除。<br>例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">push</span> <span class="selector-tag">origin</span> <span class="selector-pseudo">:save</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h4 id="三、操作步骤"><a href="#三、操作步骤" class="headerlink" title="三、操作步骤"></a>三、操作步骤</h4><ol>
+<li><p>clone Github 上的Repository，如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">clone</span> 仓库地址名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地创建+切换到新的分支:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">checkout</span> <span class="selector-tag">-b</span> <span class="selector-attr">[branch name]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在本地项目里写一个.html文件，(如index.html) 然后上传到本地版本库：(注意：要在分支里进行)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">add</span> <span class="selector-tag">index</span><span class="selector-class">.html</span></span><br><span class="line">git commit -m '第一个版本'</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将新分支推送到github：(注意：要在分支里进行)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">push</span> <span class="selector-tag">-u</span> <span class="selector-tag">git</span> <span class="selector-tag">clone</span> 仓库地址名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把分支的内容合并到当前分支（如：master分支）里：</p>
+<p>① 首先确保当前分支是master分支（用命令切换：<code>git checkout master</code>）</p>
+<p>② 使用<code>git pull</code>命令将远程仓库里的最新项目克隆到本地项目（很重要！！！）</p>
+<p>③ 使用命令合并 <code>git merge 分支名</code></p>
+</li>
+<li><p>把合并之后的master分支上传到远程仓库里</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">push</span> <span class="selector-tag">-u</span> 仓库地址名 <span class="selector-tag">master</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<h4 id="四、为什么要使用分支"><a href="#四、为什么要使用分支" class="headerlink" title="四、为什么要使用分支"></a>四、为什么要使用分支</h4><p>​        在开发项目的过程中使用版本控制工具，建立版本库（仓库），需要分为开发库，测试库，发布库。因为，开发人员需要不断前进完成功能，测试人员在后面紧跟测试，售后人员需要稳定版本上线。</p>
+<p>举例说明：</p>
+<p>如果只有一个版本库，会存在什么问题：</p>
+<ul>
+<li>场景1：程序员在下班时想把自己的代码，提交到版本库，但是，此代码并没有写完（开发人员自己还没有测试），如果这个时候，测试人员下载最新版本进行测试时，那么就会莫名其妙（以为，程序员提交了的功能有问题）。因为，他们是共享一个库的。开发人员只要上传了代码，测试人员立即就可以得到。如果不上传代码，那么代码就有可能会丢失。</li>
+<li>场景2：程序员A修改了自己的代码，还需要等待程序员B的代码，才能一起联调功能，而此时，程序员A上传了自己的代码，测试人员得到代码后，也会莫名其妙（以为，程序员提交了一个有问题的代码）</li>
+<li>由于没有明确的稳定版本（stable版本），导致上QA（测试库），上生产（发布库），只能采用增量更新，代码管理非常混乱，而且，测试人员的代码和开发人员的代码耦合度很高。</li>
+</ul>
+<p>解决问题：</p>
+<ul>
+<li><p>分支管理策略：采用适当的分支管理策略来保证开发库、测试库、发布库的隔离。有了各自的库，开发人员随时可以放心的提交自己没有写完的代码（提交的开发库，甚至自己可以有独立的开发库）而不用担心测试人员不小心拿到了还没有写完的代码。等到，开发人员都写完后（开发人员认为功能没有问题了），再把代码放到测试库里，供测试人员进行测试，这样一来，对于测试库来说，每个版本都是可以进行测试的版本；同理，测试人员测试完成认为可以上线时，才生成发布库，这样一来，发布库的每个版本都是可以发布的。即，开发库的版本数量是大于测试部版本数，测试库的版本数大于发布库的版本数，而发布库的版本就是对外开放的版本（即，用户使用的版本）。</p>
+</li>
+<li><p>适当引入每日编译、持续集成、Code Review（代码评审）等敏捷开发的最佳实践</p>
+</li>
+<li><p>采用自动化脚本完成上QA库、上发布库的部署工作，避免人工失误</p>
+</li>
+</ul>
+<p><font color="orange"><strong>在项目开发中，经常使用的三种版本管理策略是：不稳定主干策略、稳定主干策略、敏捷发布策略。</strong></font></p>
+<ul>
+<li><p><strong>不稳定主干策略</strong>：使用用主干作为新功能开发主线，分支用作发布。</p>
+<ul>
+<li>使用用主干作为新功能开发主线，分支用作发布。</li>
+<li>被广泛的应用于开源项目。</li>
+<li>比较适合诸如传统软件产品的开发模式，比如微软的office等。</li>
+<li>bug修改需要在各个分支中合并。</li>
+<li>新代码在主干上开发，因此如果主干不能达到稳定的标准，就不可以进行发布。</li>
+</ul>
+</li>
+<li><p>这种策略的好处是没有分支合并的工作量，因此比较简单。</p>
+</li>
+<li><p><strong>稳定主干策略</strong>：</p>
+<ul>
+<li>使用主干作为稳定版的发布。</li>
+<li>bug的修改和新功能的增加，全部在分支上进行。</li>
+<li>不同的修改或新功能开发以分支隔离。</li>
+<li>分支上的开发和测试完毕以后才合并到主干。</li>
+<li>主干上的每一次发布都做一个标签而不是分支。</li>
+<li>每次发布的内容调整起来比较容易。</li>
+</ul>
+</li>
+<li><p>缺点是分支合并所增加的成本。</p>
+</li>
+<li><p><strong>敏捷发布策略</strong>：</p>
+<ul>
+<li>敏捷开发模式的项目中广泛采用，敏捷开发的项目具有固定的发布周期。</li>
+<li>为每个task建立分支。</li>
+<li>为每个发布建立分支，每个周期内的task分支需要合并到发布分支发布。</li>
+<li>在完成发布后，发布分支的功能合并到主干和尚在进行的任务分支中。</li>
+<li>一种稳定主干策略的变体。</li>
+<li>团队成员要求较高。</li>
+</ul>
+</li>
+<li><p>建议方案：</p>
+<p>此方案已稳定主干策略为主结合了一些敏捷发布策略的思路，具体实施方案如下：</p>
+<ul>
+<li>主干时刻处于稳定状态，随时可以发布。设SCM人员对主干代码进行管理，普通开发人员只读。</li>
+<li>SCM为开发任务建立开发分支。常规的可以以小组为单位建立分支，较大的任务可以建立专门的分支。</li>
+<li>在发布日，从主干复制一个测试分支，需要在本发布日发布的各开发分支向此测试分支合并。</li>
+<li>对测试分支代码进行测试，出现bug在测试分支上更改，无误后发布。</li>
+<li>测试分支代码发布后，合并入主干，并在主干上进行标记。</li>
+<li>对紧急修复（Hotfix）的情况，可以从主干复制出测试分支，在测试分支上进行紧急修改，并在测试后发布，发布后同样将代码合并会主干，做标记。</li>
+<li>Hotfix仅限于可以很快解决的小问题，如果更改时间过长，则需采用常规方法完成。</li>
+<li>如果在测试分支测试过程中需要hotfix工作，则在复制一个新的测试分支进行hotfix，测试后发布。然后同时合并入原测试分支和主干，并在主干上做标记。此过程未在上图中画出。</li>
+<li>测试分支发布后，开发分支可以删除；测试分支合并入主干后，测试分支可以定期删除。</li>
+</ul>
+</li>
+</ul>
+<p>方案的优缺点：</p>
+<ul>
+<li><p>方案优点</p>
+<ul>
+<li>解决了没有实施分支策略时，代码不能经常签入的问题。</li>
+<li>主干代码始终处于稳定的状态随时可以发布，降低了风险。</li>
+<li>可以基于一个完整的测试分支进行测试及发布，而不是以口口相传的方式增量更新。</li>
+</ul>
+</li>
+<li><p>方案缺点：</p>
+<ul>
+<li>建立分支、合并分支增加了工作量。考虑实际情况，以及版本控制工具的辅助，增加的工作量应该可以接受。</li>
+<li>如果某些开发分支工期跨越多个发布周期，修改过于剧烈，合并分支时可能工作量较大。可以考虑分解任务，避免过大的任务出现。</li>
+<li>在同一时间最好只有一个测试分支，因此建立测试分支的权限需要限制，除hotfix场景外应当避免。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="五、分支策略"><a href="#五、分支策略" class="headerlink" title="五、分支策略"></a>五、分支策略</h4><p>​        分⽀策略 在实际开发中，我们应该按照⼏个基本原则进⾏分⽀管理： ⾸先，master分⽀应该是⾮常稳定的，也就是仅⽤来发布新版本，平时不能在上⾯干活； 那在哪干活呢？干活都在dev分⽀上，也就是说，dev分⽀是不稳定的，到某个时候，⽐如 1.0版本发布时，再把dev分⽀合并到master上，在master分⽀发布1.0版本； 你和你的⼩伙伴们每个⼈都在dev分⽀上干活，每个⼈可以都有⾃⼰的开发分⽀，时不时地往dev分 ⽀上合并就可以了。 所以，团队合作的分⽀看起来就像这样：</p>
+<p><img src="/2019/11/02/git分支/1.png" alt="img"> </p>
+<p>每个开发人员有自己的分支，完成后，放到dev分支。每次修改也可以临时建立一个分支，修改完成后，合并即可。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/01/sass安装和使用说明/" rel="next" title="sass安装和使用说明">
+                <i class="fa fa-chevron-left"></i> sass安装和使用说明
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/02/git常见命令/" rel="prev" title="git常见命令">
+                git常见命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、clone-Repository"><span class="nav-number">1.</span> <span class="nav-text">一、clone Repository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、管理分支"><span class="nav-number">2.</span> <span class="nav-text">二、管理分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查看分支"><span class="nav-number">3.</span> <span class="nav-text">1. 查看分支</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看本地分支"><span class="nav-number">3.1.</span> <span class="nav-text"> 查看本地分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看远程分支"><span class="nav-number">3.2.</span> <span class="nav-text">查看远程分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看所有分支"><span class="nav-number">3.3.</span> <span class="nav-text">查看所有分支</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-本地创建新的分支"><span class="nav-number">4.</span> <span class="nav-text">2. 本地创建新的分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-切换到新的分支"><span class="nav-number">5.</span> <span class="nav-text">3.切换到新的分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-创建-切换分支"><span class="nav-number">6.</span> <span class="nav-text">4.创建+切换分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-把save分支的内容合并到当前分支（如：master分支）里，注：合并之前需要执行git-pull命令把更新了的仓库都克隆到本地"><span class="nav-number">7.</span> <span class="nav-text">5.把save分支的内容合并到当前分支（如：master分支）里，注：合并之前需要执行git pull命令把更新了的仓库都克隆到本地</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-将新分支推送到github"><span class="nav-number">8.</span> <span class="nav-text">6. 将新分支推送到github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-删除本地分支"><span class="nav-number">9.</span> <span class="nav-text">6. 删除本地分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-删除github远程分支"><span class="nav-number">10.</span> <span class="nav-text">7. 删除github远程分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、操作步骤"><span class="nav-number">11.</span> <span class="nav-text">三、操作步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、为什么要使用分支"><span class="nav-number">12.</span> <span class="nav-text">四、为什么要使用分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、分支策略"><span class="nav-number">13.</span> <span class="nav-text">五、分支策略</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">152.3k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/11/02/git分支/';
+          this.page.identifier = '2019/11/02/git分支/';
+          this.page.title = 'git分支';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+
