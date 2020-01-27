@@ -125,18 +125,18 @@
 
 
 
-<meta name="description" content="跨域 跨域就是跨域名访问，即A网站的网页从B网站的服务器获取数据  跨域的需求：  气象数据（从气象台获取数据） 地图数据（从高德地图、百度地图等获取）   同源策略 同源：来自同一个服务器，具体到：同样的协议，同样的域名，同样的端口号，如：http://www.163.com:80（默认端口号是80） 浏览器因为同源策略，会限制不能跨域，这是浏览器的安全机制    总结：跨域需求有，但是浏览器">
+<meta name="description" content="跨域 跨域就是跨域名访问，即A网站的网页从B网站的服务器获取数据  跨域的需求：  气象数据（从气象台获取数据） 地图数据（从高德地图、百度地图等获取）  同源策略 同源：来自同一个服务器，具体到：同样的协议，同样的域名，同样的端口号，如：http://www.163.com:80（默认端口号是80） 浏览器因为同源策略，会限制不能跨域，这是浏览器的安全机制  总结：跨域需求有，但是浏览器又不允许">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jsonp">
 <meta property="og:url" content="http://yoursite.com/2019/10/27/jsonp/index.html">
 <meta property="og:site_name" content="ErioY">
-<meta property="og:description" content="跨域 跨域就是跨域名访问，即A网站的网页从B网站的服务器获取数据  跨域的需求：  气象数据（从气象台获取数据） 地图数据（从高德地图、百度地图等获取）   同源策略 同源：来自同一个服务器，具体到：同样的协议，同样的域名，同样的端口号，如：http://www.163.com:80（默认端口号是80） 浏览器因为同源策略，会限制不能跨域，这是浏览器的安全机制    总结：跨域需求有，但是浏览器">
+<meta property="og:description" content="跨域 跨域就是跨域名访问，即A网站的网页从B网站的服务器获取数据  跨域的需求：  气象数据（从气象台获取数据） 地图数据（从高德地图、百度地图等获取）  同源策略 同源：来自同一个服务器，具体到：同样的协议，同样的域名，同样的端口号，如：http://www.163.com:80（默认端口号是80） 浏览器因为同源策略，会限制不能跨域，这是浏览器的安全机制  总结：跨域需求有，但是浏览器又不允许">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-27T05:22:49.523Z">
+<meta property="og:updated_time" content="2019-12-22T01:55:51.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jsonp">
-<meta name="twitter:description" content="跨域 跨域就是跨域名访问，即A网站的网页从B网站的服务器获取数据  跨域的需求：  气象数据（从气象台获取数据） 地图数据（从高德地图、百度地图等获取）   同源策略 同源：来自同一个服务器，具体到：同样的协议，同样的域名，同样的端口号，如：http://www.163.com:80（默认端口号是80） 浏览器因为同源策略，会限制不能跨域，这是浏览器的安全机制    总结：跨域需求有，但是浏览器">
+<meta name="twitter:description" content="跨域 跨域就是跨域名访问，即A网站的网页从B网站的服务器获取数据  跨域的需求：  气象数据（从气象台获取数据） 地图数据（从高德地图、百度地图等获取）  同源策略 同源：来自同一个服务器，具体到：同样的协议，同样的域名，同样的端口号，如：http://www.163.com:80（默认端口号是80） 浏览器因为同源策略，会限制不能跨域，这是浏览器的安全机制  总结：跨域需求有，但是浏览器又不允许">
 
 
 
@@ -422,8 +422,7 @@
       
 
       
-        <ul>
-<li><h5 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h5><blockquote>
+        <h5 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h5><blockquote>
 <p>跨域就是跨域名访问，即A网站的网页从B网站的服务器获取数据</p>
 </blockquote>
 <p>跨域的需求：</p>
@@ -431,29 +430,23 @@
 <li>气象数据（从气象台获取数据）</li>
 <li>地图数据（从高德地图、百度地图等获取）</li>
 </ul>
-</li>
-<li><h5 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h5><blockquote>
+<h5 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h5><blockquote>
 <p>同源：来自同一个服务器，具体到：同样的协议，同样的域名，同样的端口号，如：<a href="http://www.163.com:80（默认端口号是80）" target="_blank" rel="noopener">http://www.163.com:80（默认端口号是80）</a></p>
 <p>浏览器因为同源策略，会限制不能跨域，这是浏览器的安全机制</p>
 </blockquote>
-</li>
-</ul>
 <p>总结：跨域需求有，但是浏览器又不允许跨域，如何跨域？</p>
 <p>常见的跨域有：<code>xhr2</code>、<code>iframe</code>、<code>jsonp</code></p>
-<ul>
-<li><h5 id="jsonp-json-with-padding"><a href="#jsonp-json-with-padding" class="headerlink" title="jsonp(json with padding)"></a>jsonp(json with padding)</h5><blockquote>
+<h5 id="jsonp-json-with-padding"><a href="#jsonp-json-with-padding" class="headerlink" title="jsonp(json with padding)"></a>jsonp(json with padding)</h5><blockquote>
 <p>jsonp的核心是利用HTML标签的src属性（src属性天生就能跨域）</p>
 </blockquote>
-</li>
-<li><h5 id="面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像"><a href="#面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像" class="headerlink" title="面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像"></a><font color=" red">面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像</font></h5><ul>
+<h5 id="面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像"><a href="#面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像" class="headerlink" title="面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像"></a><font color=" red">面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像</font></h5><ul>
 <li><blockquote>
 <p><code>json</code>：描述数据的一种格式</p>
 <p><code>jsonp</code>：跨域访问的技巧</p>
 </blockquote>
 </li>
 </ul>
-</li>
-<li><h5 id="面试题：jsonp是不是属于ajax？"><a href="#面试题：jsonp是不是属于ajax？" class="headerlink" title="面试题：jsonp是不是属于ajax？"></a><font color=" red">面试题：jsonp是不是属于ajax？</font></h5><ul>
+<h5 id="面试题：jsonp是不是属于ajax？"><a href="#面试题：jsonp是不是属于ajax？" class="headerlink" title="面试题：jsonp是不是属于ajax？"></a><font color=" red">面试题：jsonp是不是属于ajax？</font></h5><ul>
 <li><p>问这个题的原因：</p>
 <ul>
 <li><p>jsonp和ajax都是从后端获取数据的</p>
@@ -465,17 +458,13 @@
 </li>
 <li><p>jsonp不是ajax，因为jsonp中并没有使用ajax的核心对象是XMLHttpRequest，jsonp并不是一门新技术，而是一种技巧</p>
 </li>
-<li><p>jsonp还有一个特点：只能用get方式</p>
-</li>
-</ul>
+<li><p>jsonp还有一个特点：只能用<code>get</code>方式</p>
 </li>
 </ul>
 <hr>
-<ul>
-<li><h5 id="跨域访问例子"><a href="#跨域访问例子" class="headerlink" title="跨域访问例子"></a>跨域访问例子</h5></li>
-<li><h5 id="（1）访问指定服务器的数据"><a href="#（1）访问指定服务器的数据" class="headerlink" title="（1）访问指定服务器的数据"></a>（1）访问指定服务器的数据</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"hi:"</span>+str);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 点击按钮时显示指定服务器的数据，服务器ip地址：192.168.43.149（注意：需要连同一个局域网，对方需要打开Apache）</span></span><br><span class="line">$(<span class="string">"#btn01"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//动态创建script标签</span></span><br><span class="line">    <span class="keyword">let</span> scriptDom = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    <span class="comment">// 跨域访问其他电脑的文件</span></span><br><span class="line">    scriptDom.src = <span class="string">'http://192.168.43.149/191027.txt/test.php?callback=fn1'</span>;</span><br><span class="line">    <span class="built_in">document</span>.body.append(scriptDom);</span><br><span class="line">    <span class="comment">// 点击完毕后删除标签，以防冗余</span></span><br><span class="line">    scriptDom.remove();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><h5 id="（2）获取淘宝搜索关键字"><a href="#（2）获取淘宝搜索关键字" class="headerlink" title="（2）获取淘宝搜索关键字"></a>（2）获取淘宝搜索关键字</h5><h5 id="1-接口文档：（4个）"><a href="#1-接口文档：（4个）" class="headerlink" title="1. 接口文档：（4个）"></a>1. 接口文档：（4个）</h5><ul>
+<h5 id="跨域访问例子"><a href="#跨域访问例子" class="headerlink" title="跨域访问例子"></a>跨域访问例子</h5><h5 id="（1）访问指定服务器的数据"><a href="#（1）访问指定服务器的数据" class="headerlink" title="（1）访问指定服务器的数据"></a>（1）访问指定服务器的数据</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">"hi:"</span>+str);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 点击按钮时显示指定服务器的数据，服务器ip地址：192.168.43.149（注意：需要连同一个局域网，对方需要打开Apache）</span></span><br><span class="line">$(<span class="string">"#btn01"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//动态创建script标签</span></span><br><span class="line">    <span class="keyword">let</span> scriptDom = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    <span class="comment">// 跨域访问其他电脑的文件</span></span><br><span class="line">    scriptDom.src = <span class="string">'http://192.168.43.149/191027.txt/test.php?callback=fn1'</span>;</span><br><span class="line">    <span class="built_in">document</span>.body.append(scriptDom);</span><br><span class="line">    <span class="comment">// 点击完毕后删除标签，以防冗余</span></span><br><span class="line">    scriptDom.remove();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="（2）获取淘宝搜索关键字"><a href="#（2）获取淘宝搜索关键字" class="headerlink" title="（2）获取淘宝搜索关键字"></a>（2）获取淘宝搜索关键字</h5><h5 id="1-接口文档：（4个）"><a href="#1-接口文档：（4个）" class="headerlink" title="1. 接口文档：（4个）"></a>1. 接口文档：（4个）</h5><ul>
 <li><p>请求方式：<code>get</code></p>
 </li>
 <li><p>请求地址：</p>
@@ -491,11 +480,9 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用jquery</span></span><br><span class="line"><span class="comment">// 获取搜索文本框</span></span><br><span class="line"><span class="keyword">let</span> queryStr = $(<span class="string">"input"</span>);</span><br><span class="line"><span class="keyword">let</span> $ul =</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
 <hr>
-<ul>
-<li><h5 id="回调地狱：层层回调"><a href="#回调地狱：层层回调" class="headerlink" title="回调地狱：层层回调"></a>回调地狱：层层回调</h5><h5 id="使用Promise写法："><a href="#使用Promise写法：" class="headerlink" title="使用Promise写法："></a>使用Promise写法：</h5><blockquote>
+<h5 id="回调地狱：层层回调"><a href="#回调地狱：层层回调" class="headerlink" title="回调地狱：层层回调"></a>回调地狱：层层回调</h5><p>使用Promise写法：</p>
+<blockquote>
 <p><code>Promise</code>是ES6中新增的一个原生（js）的对象，和Date，Array是一样的</p>
 <p><code>Promise</code>对象是一个异步的对象，解决的是层层回调的问题</p>
 </blockquote>
@@ -515,10 +502,8 @@
 <ul>
 <li>用<code>promise</code>封装ajax</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
 
       
     </div>
@@ -650,7 +635,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-count">117</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -727,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#跨域"><span class="nav-number">1.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#同源策略"><span class="nav-number">2.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jsonp-json-with-padding"><span class="nav-number">3.</span> <span class="nav-text">jsonp(json with padding)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像"><span class="nav-number">4.</span> <span class="nav-text">面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面试题：jsonp是不是属于ajax？"><span class="nav-number">5.</span> <span class="nav-text">面试题：jsonp是不是属于ajax？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#跨域访问例子"><span class="nav-number">6.</span> <span class="nav-text">跨域访问例子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）访问指定服务器的数据"><span class="nav-number">7.</span> <span class="nav-text">（1）访问指定服务器的数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）获取淘宝搜索关键字"><span class="nav-number">8.</span> <span class="nav-text">（2）获取淘宝搜索关键字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口文档：（4个）"><span class="nav-number">9.</span> <span class="nav-text">1. 接口文档：（4个）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回调地狱：层层回调"><span class="nav-number">10.</span> <span class="nav-text">回调地狱：层层回调</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用Promise写法："><span class="nav-number">11.</span> <span class="nav-text">使用Promise写法：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#跨域"><span class="nav-number">1.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#同源策略"><span class="nav-number">2.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jsonp-json-with-padding"><span class="nav-number">3.</span> <span class="nav-text">jsonp(json with padding)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像"><span class="nav-number">4.</span> <span class="nav-text">面试题：jsonp和json的区别：两者没有一点联系，只是名字有点像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面试题：jsonp是不是属于ajax？"><span class="nav-number">5.</span> <span class="nav-text">面试题：jsonp是不是属于ajax？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#跨域访问例子"><span class="nav-number">6.</span> <span class="nav-text">跨域访问例子</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）访问指定服务器的数据"><span class="nav-number">7.</span> <span class="nav-text">（1）访问指定服务器的数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）获取淘宝搜索关键字"><span class="nav-number">8.</span> <span class="nav-text">（2）获取淘宝搜索关键字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-接口文档：（4个）"><span class="nav-number">9.</span> <span class="nav-text">1. 接口文档：（4个）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回调地狱：层层回调"><span class="nav-number">10.</span> <span class="nav-text">回调地狱：层层回调</span></a></li></ol></div>
             
 
           </div>
@@ -747,7 +732,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -761,7 +746,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">152.3k</span>
+    <span title="Site words total count">173.2k</span>
   
 </div>
 

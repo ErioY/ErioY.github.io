@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="notes,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ErioY" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="index.html  首页 mycar.html  我的购物车 myorder.html  我的订单 login.html  登录 register.html  注册 goodsInfo.html  商品详情页   重点强调了自己会写博客记录遇到的坑，避免再次犯错。 jsonp跨域12345678910111213//创建script标签var script=document.createE">
+<meta name="keywords" content="notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目遇到的一些基础性问题">
+<meta property="og:url" content="http://yoursite.com/2019/11/13/京东项目一些知识点/index.html">
+<meta property="og:site_name" content="ErioY">
+<meta property="og:description" content="index.html  首页 mycar.html  我的购物车 myorder.html  我的订单 login.html  登录 register.html  注册 goodsInfo.html  商品详情页   重点强调了自己会写博客记录遇到的坑，避免再次犯错。 jsonp跨域12345678910111213//创建script标签var script=document.createE">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-23T08:41:51.635Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目遇到的一些基础性问题">
+<meta name="twitter:description" content="index.html  首页 mycar.html  我的购物车 myorder.html  我的订单 login.html  登录 register.html  注册 goodsInfo.html  商品详情页   重点强调了自己会写博客记录遇到的坑，避免再次犯错。 jsonp跨域12345678910111213//创建script标签var script=document.createE">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/13/京东项目一些知识点/">
+
+
+
+
+
+  <title>项目遇到的一些基础性问题 | ErioY</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ErioY</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-history"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/13/京东项目一些知识点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Erio">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ErioY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">项目遇到的一些基础性问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-13T19:13:06+08:00">
+                2019-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/13/京东项目一些知识点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/13/京东项目一些知识点/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<ol>
+<li>index.html  首页</li>
+<li>mycar.html  我的购物车</li>
+<li>myorder.html  我的订单</li>
+<li>login.html  登录</li>
+<li>register.html  注册</li>
+<li>goodsInfo.html  商品详情页</li>
+</ol>
+</blockquote>
+<p><strong>重点强调了自己会写博客记录遇到的坑，避免再次犯错。</strong></p>
+<h4 id="jsonp跨域"><a href="#jsonp跨域" class="headerlink" title="jsonp跨域"></a>jsonp跨域</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建script标签</span></span><br><span class="line"><span class="keyword">var</span> script=<span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getData</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//数据请求回来会被触发的函数</span></span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//设置script的src属性，设置请求地址</span></span><br><span class="line">script.src=<span class="string">"http://localhost:3000?callback=getData"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//让script生效</span></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(script);</span><br></pre></td></tr></table></figure>
+
+<h4 id="关于箭头函数"><a href="#关于箭头函数" class="headerlink" title="关于箭头函数"></a>关于箭头函数</h4><p>我在写“我的订单”页面时，有一个特效，鼠标触摸到序号时会切换商品列表，这时用到了jquery的<code>hover()</code>事件，我用的是箭头函数，结果改变了<code>this</code>的指向，此时的<code>this</code>指向的是window，不再是该事件，所以总是达不到想要的效果</p>
+<h4 id="获取元素下标"><a href="#获取元素下标" class="headerlink" title="获取元素下标"></a>获取元素下标</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">this</span>).index();</span><br></pre></td></tr></table></figure>
+
+<h4 id="封装楼层导航"><a href="#封装楼层导航" class="headerlink" title="封装楼层导航"></a>封装楼层导航</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * 楼层导航</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> min_height = $(<span class="string">"#section-bottom"</span>).offset().top;</span><br><span class="line"><span class="keyword">let</span> $scroll = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 触发滚动事件</span></span><br><span class="line">$(<span class="built_in">window</span>).on(<span class="string">"scroll"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $scroll = $(<span class="keyword">this</span>).scrollTop();</span><br><span class="line">    <span class="comment">// 楼层导航的显示</span></span><br><span class="line">    <span class="keyword">if</span> ($scroll &gt;= min_height) &#123;</span><br><span class="line">        $(<span class="string">"#nav"</span>).show();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $(<span class="string">"#nav"</span>).hide();</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* click_ele：点击的元素</span></span><br><span class="line"><span class="comment">* to_ele：到达的元素</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">click_ev</span>(<span class="params">click_ele, to_ele</span>) </span>&#123;</span><br><span class="line">    click_ele.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// $(document).scrollTop();</span></span><br><span class="line">        to_ele.velocity(<span class="string">"scroll"</span>, &#123;</span><br><span class="line">            <span class="string">'duration'</span>: <span class="number">500</span>,</span><br><span class="line">            <span class="string">'offset'</span>: <span class="number">-30</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="淘宝搜索商品关键字提示"><a href="#淘宝搜索商品关键字提示" class="headerlink" title="淘宝搜索商品关键字提示"></a>淘宝搜索商品关键字提示</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  淘宝商品搜索关键字接口</span></span><br><span class="line"><span class="comment">*  1. 请求方式：get</span></span><br><span class="line"><span class="comment">*  2. 请求地址：https://suggest.taobao.com/sug?code=utf-8&amp;q=' + sVal + '&amp;_ksTS=1515120676355_323&amp;callback=t&amp;area=c2c&amp;bucketid=15; </span></span><br><span class="line"><span class="comment">*  请求参数：q:搜索的关键字；callback：回调函数</span></span><br><span class="line"><span class="comment">* 4. 返回数据的格式：</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">let</span> queryStr = $(<span class="string">"#searchTxt"</span>);</span><br><span class="line"><span class="keyword">let</span> $ul = $(<span class="string">"#search-list"</span>);</span><br><span class="line">queryStr.keyup(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> scriptDom = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    scriptDom.src = <span class="string">'https://suggest.taobao.com/sug?code=utf-8&amp;q='</span> + <span class="keyword">this</span>.value + <span class="string">'&amp;_ksTS=1515120676355_323&amp;callback=fn&amp;area=c2c&amp;bucketid=15'</span>;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(scriptDom);</span><br><span class="line">    scriptDom.remove();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// callback:回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// console.log(data);</span></span><br><span class="line">    <span class="keyword">let</span> htmlStr = <span class="string">""</span>;</span><br><span class="line">    data.result.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        htmlStr += <span class="string">`&lt;li&gt;&lt;a href=""&gt;<span class="subst">$&#123;item[<span class="number">0</span>]&#125;</span>&lt;/a&gt;&lt;/li&gt;`</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    $ul.html(htmlStr);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="闭包：要获取函数的局部变量，就要把嵌套的函数定义在变量的作用域链里，就是所谓的“闭包”。"><a href="#闭包：要获取函数的局部变量，就要把嵌套的函数定义在变量的作用域链里，就是所谓的“闭包”。" class="headerlink" title="闭包：要获取函数的局部变量，就要把嵌套的函数定义在变量的作用域链里，就是所谓的“闭包”。"></a>闭包：要获取函数的局部变量，就要把嵌套的函数定义在变量的作用域链里，就是所谓的<strong>“闭包”</strong>。</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a =<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = a();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 这时b就拿到了a函数中 的a的值</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="全选和取消全选"><a href="#全选和取消全选" class="headerlink" title="全选和取消全选"></a>全选和取消全选</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".selectAll"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"input[class='singleSelect']"</span>).prop(<span class="string">"checked"</span>, <span class="keyword">this</span>.checked);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="关于zoom-1（IE特有属性）"><a href="#关于zoom-1（IE特有属性）" class="headerlink" title="关于zoom:1（IE特有属性）"></a>关于zoom:1（IE特有属性）</h4><blockquote>
+<p>是IE浏览器的专有属性，可以设置或检索对象的缩放比例</p>
+<p>当设置了zoom的值之后，所设置的元素就会就会扩大或者缩小，高度宽度就会重新计算了，这里一旦改变zoom值时其实也会发生重新渲染，运用这个原理，也就解决了ie下子元素浮动时候父元素不随着自动扩大的问题。</p>
+<p>zoom:1能够比较神奇地解决ie下比较奇葩的bug，譬如外边距（margin）的重叠，譬如浮动的清除，譬如触发ie的 haslayout属性等等。</p>
+</blockquote>
+<h4 id="鼠标触碰到li时显示边框，但会抖动"><a href="#鼠标触碰到li时显示边框，但会抖动" class="headerlink" title="鼠标触碰到li时显示边框，但会抖动"></a>鼠标触碰到li时显示边框，但会抖动</h4><p>解决这个问题需要给li设置一个不显示的边框，提前占位</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">transparent</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="JS封装"><a href="#JS封装" class="headerlink" title="JS封装"></a>JS封装</h4><h5 id="1-轮播图封装"><a href="#1-轮播图封装" class="headerlink" title="1.轮播图封装"></a>1.轮播图封装</h5><ul>
+<li><p><strong>滑入滑出</strong>（花多长时间，让某个元素出，某个元素进）</p>
+<p>参数:</p>
+<p>outDom：出去的dom</p>
+<p>inDom:进来的dom</p>
+<p>endLeft：终点</p>
+<p>timeLong:时长</p>
+<p>返回值：无</p>
+</li>
+<li><p><strong>淡入淡出</strong>（花多长时间，让某个元素出，某个元素进）</p>
+<p>参数:</p>
+<p>outDom：出去的dom</p>
+<p>inDom:进来的dom</p>
+<p>timeLong:时长</p>
+<p>返回值：无</p>
+</li>
+</ul>
+<h5 id="2-ajax封装"><a href="#2-ajax封装" class="headerlink" title="2. ajax封装"></a>2. ajax封装</h5><p>​    功能：与后端交互</p>
+<p>​    参数：</p>
+<p>​    请求方式</p>
+<p>​    请求地址</p>
+<p>​    请求参数（前端发给后端）</p>
+<p>​    是否异步</p>
+<p>​    回调函数</p>
+<p>​    返回值：无</p>
+<h5 id="3-显示隐藏的地区"><a href="#3-显示隐藏的地区" class="headerlink" title="3. 显示隐藏的地区"></a>3. 显示隐藏的地区</h5><h5 id="4-清空搜索框"><a href="#4-清空搜索框" class="headerlink" title="4. 清空搜索框"></a>4. 清空搜索框</h5><h5 id="5-增加、减少商品数量"><a href="#5-增加、减少商品数量" class="headerlink" title="5. 增加、减少商品数量"></a>5. 增加、减少商品数量</h5><p> <em>*  increment:增加按钮</em></p>
+<p> <em>*  decrement：减少按钮</em></p>
+<p> <em>*  numinput：数字输入框</em></p>
+<p> <em>*  sumprice：商品总价（保留小数点后两位）</em></p>
+<p> <em>*  singleprice：商品单价</em></p>
+<p> <em>*  hasSelect：已选择商品的数量</em></p>
+<p> <em>*  disabled：类名，减到1时减少按钮不能变灰(需要写css样式)</em></p>
+<p> <em>*  secondSum: 第二个商品总价</em></p>
+<h5 id="6-点击或触摸i标签，i标签改变形状，同时打开或隐藏某个列表"><a href="#6-点击或触摸i标签，i标签改变形状，同时打开或隐藏某个列表" class="headerlink" title="6. 点击或触摸i标签，i标签改变形状，同时打开或隐藏某个列表"></a>6. <em>点击或触摸i标签，i标签改变形状，同时打开或隐藏某个列表</em></h5><p> <em>*  clickEle：要点击的元素</em></p>
+<p> <em>*  ev：事件（click、hover等）</em></p>
+<p> <em>*  originClass：标签原来的类名</em></p>
+<p> <em>*  nowClass：改变后的类名</em></p>
+<p> <em>*  opeEle：要改变状态的元素（隐藏或显示）</em></p>
+<hr>
+<h3 id="美团app首页"><a href="#美团app首页" class="headerlink" title="美团app首页"></a>美团app首页</h3><blockquote>
+<p>需要引入html5兼容性文件和自适应文件</p>
+<p>rem计算</p>
+</blockquote>
+<h4 id="rem基准值计算"><a href="#rem基准值计算" class="headerlink" title="rem基准值计算"></a>rem基准值计算</h4><p>​     iPhone6的屏幕大小是375px，所以<code>rem = window.innerWidth  / 10</code>，这样的话rem基准值就是37.5（iphone6的视觉稿）</p>
+<p>这里为什么要除以10呢，其实这个值是随便定义的，假如不除以10，根据我们算出来的基准值会偏大，这样在设置html的font-size时候会偏小，我们知道浏览器的font-size如果小于12px就显示不出效果了，在这里列举一下其他手机的</p>
+<p>iphone3gs: 320px / 10 = 32px</p>
+<p>iphone4/5: 320px  / 10 = 32px</p>
+<p>iphone6: 375px  / 10 =37.5px</p>
+<h4 id="使用flex布局实现块级元素在同一行并居中（弹性盒模型）"><a href="#使用flex布局实现块级元素在同一行并居中（弹性盒模型）" class="headerlink" title="使用flex布局实现块级元素在同一行并居中（弹性盒模型）"></a>使用flex布局实现块级元素在同一行并居中（弹性盒模型）</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">space-between</span>; <span class="comment">/**一左一右，为center时是水平居中**/</span></span><br><span class="line"><span class="selector-tag">align-items</span>: <span class="selector-tag">center</span>;  <span class="comment">/**垂直居中**/</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="设置viewport配合进行缩放"><a href="#设置viewport配合进行缩放" class="headerlink" title="设置viewport配合进行缩放"></a>设置viewport配合进行缩放</h4><blockquote>
+<p>通常在写移动端页面的时候，我们都会设置viewport，保证页面缩放没有问题</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="轮播图：下载swipper"><a href="#轮播图：下载swipper" class="headerlink" title="轮播图：下载swipper"></a>轮播图：下载swipper</h4><p><a href="https://www.swiper.com.cn/download/index.html" target="_blank" rel="noopener">swipper</a></p>
+<h4 id="flex-1-li之间有距离，铺开"><a href="#flex-1-li之间有距离，铺开" class="headerlink" title="flex: 1;      li之间有距离，铺开"></a>flex: 1;      li之间有距离，铺开</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/notes/" rel="tag"><i class="fa fa-tag"></i> notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/10/vue组件/" rel="next" title="vue组件">
+                <i class="fa fa-chevron-left"></i> vue组件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/23/js笔试题/" rel="prev" title="js笔试题">
+                js笔试题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Erio">
+            
+              <p class="site-author-name" itemprop="name">Erio</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">117</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ErioY" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://epochong.github.io" title="Boyfriend`s Blog" target="_blank">Boyfriend`s Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#jsonp跨域"><span class="nav-number">1.</span> <span class="nav-text">jsonp跨域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于箭头函数"><span class="nav-number">2.</span> <span class="nav-text">关于箭头函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取元素下标"><span class="nav-number">3.</span> <span class="nav-text">获取元素下标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#封装楼层导航"><span class="nav-number">4.</span> <span class="nav-text">封装楼层导航</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#淘宝搜索商品关键字提示"><span class="nav-number">5.</span> <span class="nav-text">淘宝搜索商品关键字提示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包：要获取函数的局部变量，就要把嵌套的函数定义在变量的作用域链里，就是所谓的“闭包”。"><span class="nav-number">6.</span> <span class="nav-text">闭包：要获取函数的局部变量，就要把嵌套的函数定义在变量的作用域链里，就是所谓的“闭包”。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全选和取消全选"><span class="nav-number">7.</span> <span class="nav-text">全选和取消全选</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于zoom-1（IE特有属性）"><span class="nav-number">8.</span> <span class="nav-text">关于zoom:1（IE特有属性）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#鼠标触碰到li时显示边框，但会抖动"><span class="nav-number">9.</span> <span class="nav-text">鼠标触碰到li时显示边框，但会抖动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS封装"><span class="nav-number">10.</span> <span class="nav-text">JS封装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-轮播图封装"><span class="nav-number">10.1.</span> <span class="nav-text">1.轮播图封装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-ajax封装"><span class="nav-number">10.2.</span> <span class="nav-text">2. ajax封装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-显示隐藏的地区"><span class="nav-number">10.3.</span> <span class="nav-text">3. 显示隐藏的地区</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-清空搜索框"><span class="nav-number">10.4.</span> <span class="nav-text">4. 清空搜索框</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-增加、减少商品数量"><span class="nav-number">10.5.</span> <span class="nav-text">5. 增加、减少商品数量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-点击或触摸i标签，i标签改变形状，同时打开或隐藏某个列表"><span class="nav-number">10.6.</span> <span class="nav-text">6. 点击或触摸i标签，i标签改变形状，同时打开或隐藏某个列表</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#美团app首页"><span class="nav-number"></span> <span class="nav-text">美团app首页</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rem基准值计算"><span class="nav-number">1.</span> <span class="nav-text">rem基准值计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用flex布局实现块级元素在同一行并居中（弹性盒模型）"><span class="nav-number">2.</span> <span class="nav-text">使用flex布局实现块级元素在同一行并居中（弹性盒模型）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置viewport配合进行缩放"><span class="nav-number">3.</span> <span class="nav-text">设置viewport配合进行缩放</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#轮播图：下载swipper"><span class="nav-number">4.</span> <span class="nav-text">轮播图：下载swipper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flex-1-li之间有距离，铺开"><span class="nav-number">5.</span> <span class="nav-text">flex: 1;      li之间有距离，铺开</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Erio</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">173.2k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/11/13/京东项目一些知识点/';
+          this.page.identifier = '2019/11/13/京东项目一些知识点/';
+          this.page.title = '项目遇到的一些基础性问题';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
+
