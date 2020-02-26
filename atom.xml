@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-12T09:47:14.556Z</updated>
+  <updated>2019-12-22T02:25:50.619Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,150 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>如何切换CTS回归测试模式</title>
-    <link href="http://yoursite.com/2020/02/12/%E5%A6%82%E4%BD%95%E5%88%87%E6%8D%A2CTS%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://yoursite.com/2020/02/12/如何切换CTS回归测试模式/</id>
-    <published>2020-02-12T09:46:44.000Z</published>
-    <updated>2020-02-12T09:47:14.556Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;CTS模式类型&quot;&gt;&lt;a href=&quot;#CTS模式类型&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>行覆盖率代码</title>
-    <link href="http://yoursite.com/2020/02/12/%E8%A1%8C%E8%A6%86%E7%9B%96%E7%8E%87%E4%BB%A3%E7%A0%81/"/>
-    <id>http://yoursite.com/2020/02/12/行覆盖率代码/</id>
-    <published>2020-02-12T09:43:19.000Z</published>
-    <updated>2020-02-12T09:47:33.502Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;使用行覆盖率的优点&quot;&gt;&lt;a href=&quot;#使用行覆盖率的优点&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CTS代码结构</title>
-    <link href="http://yoursite.com/2020/02/12/CTS%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/"/>
-    <id>http://yoursite.com/2020/02/12/CTS代码结构/</id>
-    <published>2020-02-12T09:40:47.000Z</published>
-    <updated>2020-02-12T09:41:34.923Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;代码根目录结构&quot;&gt;&lt;a href=&quot;#代码根目录结构&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CTS统计代码行覆盖率</title>
-    <link href="http://yoursite.com/2020/02/12/CTS%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E8%A1%8C%E8%A6%86%E7%9B%96%E7%8E%87/"/>
-    <id>http://yoursite.com/2020/02/12/CTS统计代码行覆盖率/</id>
-    <published>2020-02-12T09:30:39.000Z</published>
-    <updated>2020-02-12T09:40:00.106Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;前置条件&quot;&gt;&lt;a href=&quot;#前置条件&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue学习笔记</title>
-    <link href="http://yoursite.com/2020/02/12/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2020/02/12/Vue学习笔记/</id>
-    <published>2020-02-12T04:22:07.000Z</published>
-    <updated>2020-02-12T05:09:41.613Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-    
-      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实习面经</title>
-    <link href="http://yoursite.com/2019/12/22/%E5%AE%9E%E4%B9%A0%E9%9D%A2%E7%BB%8F/"/>
-    <id>http://yoursite.com/2019/12/22/实习面经/</id>
-    <published>2019-12-22T03:46:49.000Z</published>
-    <updated>2019-12-22T03:47:30.072Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;百度&quot;&gt;&lt;a href=&quot;#百度&quot; class=&quot;headerlink&quot; title=&quot;百度&quot;&gt;&lt;/a&gt;百度&lt;/h4&gt;&lt;h4 id=&quot;滴滴&quot;&gt;&lt;a href=&quot;#滴滴&quot; class=&quot;headerlink&quot; title=&quot;滴滴&quot;&gt;&lt;/a&gt;滴滴&lt;/h4&gt;&lt;h4
-        
-      
-    
-    </summary>
-    
-    
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
-    
-  </entry>
   
   <entry>
     <title>常见web攻击总结</title>
@@ -183,55 +39,6 @@
     
     
       <category term="web-security" scheme="http://yoursite.com/tags/web-security/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常见的面试题</title>
-    <link href="http://yoursite.com/2019/12/15/%E5%B8%B8%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>http://yoursite.com/2019/12/15/常见的面试题/</id>
-    <published>2019-12-14T16:37:47.000Z</published>
-    <updated>2019-12-26T06:41:48.232Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;你是如何学习前端的？&quot;&gt;&lt;a href=&quot;#你是如何学习前端的？&quot; class=&quot;headerlink&quot; title=&quot;你是如何学习前端的？&quot;&gt;&lt;/a&gt;你是如何学习前端的？&lt;/h3&gt;&lt;p&gt;​   
-        
-      
-    
-    </summary>
-    
-    
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js笔试题</title>
-    <link href="http://yoursite.com/2019/11/23/js%E7%AC%94%E8%AF%95%E9%A2%98/"/>
-    <id>http://yoursite.com/2019/11/23/js笔试题/</id>
-    <published>2019-11-23T07:34:51.000Z</published>
-    <updated>2019-12-14T16:40:08.181Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ul&gt;
-&lt;li&gt;&lt;h4 id=&quot;闭包&quot;&gt;&lt;a href=&quot;#闭包&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
     
   </entry>
   
@@ -287,32 +94,6 @@
     
     
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>html/css/js笔试题总结</title>
-    <link href="http://yoursite.com/2019/11/04/html-css%E7%AC%94%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    <id>http://yoursite.com/2019/11/04/html-css笔试题总结/</id>
-    <published>2019-11-04T11:49:11.000Z</published>
-    <updated>2019-12-14T16:40:21.669Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;ps：当时不太懂的都标注了三个&lt;font color=&quot;red&quot;&gt;*&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&quot;2019-11-04：&quot;&gt;&lt;a href=&quot;#2019-11-04：&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
     
   </entry>
   
@@ -505,6 +286,230 @@
     
     
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gulp压缩工具</title>
+    <link href="http://yoursite.com/2019/10/27/gulp%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7/"/>
+    <id>http://yoursite.com/2019/10/27/gulp压缩工具/</id>
+    <published>2019-10-27T07:31:13.000Z</published>
+    <updated>2019-12-17T04:14:40.797Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;gulp的理解&quot;&gt;&lt;a href=&quot;#gulp的理解&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jsonp</title>
+    <link href="http://yoursite.com/2019/10/27/jsonp/"/>
+    <id>http://yoursite.com/2019/10/27/jsonp/</id>
+    <published>2019-10-27T01:19:50.000Z</published>
+    <updated>2019-12-22T01:55:51.176Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;跨域&quot;&gt;&lt;a href=&quot;#跨域&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>事件防抖</title>
+    <link href="http://yoursite.com/2019/10/20/%E4%BA%8B%E4%BB%B6%E9%98%B2%E6%8A%96/"/>
+    <id>http://yoursite.com/2019/10/20/事件防抖/</id>
+    <published>2019-10-20T06:57:12.000Z</published>
+    <updated>2019-10-20T06:58:01.139Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="ajax" scheme="http://yoursite.com/tags/ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10常用键盘快捷键</title>
+    <link href="http://yoursite.com/2019/10/20/win10%E5%B8%B8%E7%94%A8%E9%94%AE%E7%9B%98%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://yoursite.com/2019/10/20/win10常用键盘快捷键/</id>
+    <published>2019-10-20T03:40:28.505Z</published>
+    <updated>2019-11-03T02:55:32.932Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;• Win + A：打开操作中心；&lt;/p&gt;
+&lt;h5 id=&quot;•-Win-B：将焦点转移到任务栏通知区域，之后你可以通过左右方向键选择项目，按回车打开；&quot;&gt;&lt;a href=&quot;#•-Win-B：将焦点转移到任务栏通知区域，之后你可以通过左右方向键选择项目，按回车打开；&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="notes" scheme="http://yoursite.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js面向对象</title>
+    <link href="http://yoursite.com/2019/10/19/js%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2019/10/19/js面向对象/</id>
+    <published>2019-10-19T06:16:38.000Z</published>
+    <updated>2019-10-19T08:39:41.270Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;轮播图&quot;&gt;&lt;a href=&quot;#轮播图&quot; class=&quot;headerlink&quot; title=&quot;轮播图&quot;&gt;&lt;/a&gt;轮播图&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>KNN-鸢尾花数据集</title>
+    <link href="http://yoursite.com/2019/10/12/KNN-%E9%B8%A2%E5%B0%BE%E8%8A%B1%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    <id>http://yoursite.com/2019/10/12/KNN-鸢尾花数据集/</id>
+    <published>2019-10-12T08:51:42.000Z</published>
+    <updated>2019-10-12T10:44:10.700Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;knn算法实现-鸢尾花数据集&lt;/font&gt;&lt;/center&gt;
+
+&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python机器学习" scheme="http://yoursite.com/tags/python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>knn算法</title>
+    <link href="http://yoursite.com/2019/10/05/KNN-%E7%94%B5%E5%BD%B1%E5%88%86%E7%B1%BB/"/>
+    <id>http://yoursite.com/2019/10/05/KNN-电影分类/</id>
+    <published>2019-10-05T02:54:56.000Z</published>
+    <updated>2019-10-20T02:33:49.775Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;题目名称&quot;&gt;&lt;a href=&quot;#题目名称&quot; class=&quot;headerlink&quot; title=&quot;题目名称&quot;&gt;&lt;/a&gt;题目名称&lt;/h4&gt;&lt;p&gt;knn算法 —— 电影分类&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python机器学习" scheme="http://yoursite.com/tags/python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax-3-Ajax的优缺点和跨域问题</title>
+    <link href="http://yoursite.com/2019/10/02/Ajax-3-Ajax%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9%E5%92%8C%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2019/10/02/Ajax-3-Ajax的优缺点和跨域问题/</id>
+    <published>2019-10-02T05:54:38.000Z</published>
+    <updated>2019-10-03T03:23:21.387Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;Ajax的优缺点和跨域问题&lt;/font&gt;&lt;/center&gt;
+- ####
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Ajax" scheme="http://yoursite.com/tags/Ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax-2-jQuery的ajax的属性和用法</title>
+    <link href="http://yoursite.com/2019/10/02/Ajax-2-jQuery%E7%9A%84ajax%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E7%94%A8%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/10/02/Ajax-2-jQuery的ajax的属性和用法/</id>
+    <published>2019-10-02T03:26:12.000Z</published>
+    <updated>2019-10-02T07:58:14.530Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font size=&quot;5&quot;&gt;jquery的ajax的属性和用法&lt;/font&gt;&lt;/center&gt;
+- ####
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Ajax" scheme="http://yoursite.com/tags/Ajax/"/>
     
   </entry>
   
