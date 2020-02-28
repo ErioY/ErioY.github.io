@@ -1991,7 +1991,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff8fe4;
+  background: #ffb639;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3151,6 +3151,9 @@ img:hover {
   .post-body {
     text-align: justify;
   }
+}
+body {
+  background: url("/images/bg.gif");
 }
 .post-body p a,
 .post-body li a {
