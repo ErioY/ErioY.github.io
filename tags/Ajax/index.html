@@ -150,7 +150,7 @@
 <meta name="keywords" content="Erio">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Erio·Yang">
-<meta property="og:url" content="http://yoursite.com/tags/ajax/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Ajax/index.html">
 <meta property="og:site_name" content="Erio·Yang">
 <meta property="og:description" content="但因热爱，愿迎万难。">
 <meta property="og:locale" content="zh-Hans">
@@ -186,13 +186,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/ajax/">
+  <link rel="canonical" href="http://yoursite.com/tags/Ajax/">
 
 
 
 
 
-  <title>标签: ajax | Erio·Yang</title>
+  <title>标签: Ajax | Erio·Yang</title>
   
 
 
@@ -354,7 +354,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>ajax<small>标签</small>
+        <h1>Ajax<small>标签</small>
         </h1>
       </div>
 
@@ -366,17 +366,69 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/10/20/事件防抖/" itemprop="url">
+            <a class="post-title-link" href="/2019/10/02/Ajax-3-Ajax的优缺点和跨域问题/" itemprop="url">
               
-                <span itemprop="name">事件防抖</span>
+                <span itemprop="name">Ajax-3-Ajax的优缺点和跨域问题</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-20T14:57:12+08:00" content="2019-10-20">
-          10-20
+        <time class="post-time" itemprop="dateCreated" datetime="2019-10-02T13:54:38+08:00" content="2019-10-02">
+          10-02
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2019/10/02/Ajax-2-jQuery的ajax的属性和用法/" itemprop="url">
+              
+                <span itemprop="name">Ajax-2-jQuery的ajax的属性和用法</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-10-02T11:26:12+08:00" content="2019-10-02">
+          10-02
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2019/10/02/Ajax-1-Ajax原理和封装/" itemprop="url">
+              
+                <span itemprop="name">Ajax-1-Ajax原理和封装</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-10-02T10:58:19+08:00" content="2019-10-02">
+          10-02
         </time>
       </div>
 
@@ -1074,65 +1126,6 @@ show_date_time();
 
           // remove loading animation
           $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-<!-- 自定义的js文件 -->
-<script type="text/javascript" src="/js/src/custom.js"></script>
-
-  <!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-shizuku"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
-</html>
-
-op-overlay").remove();
           $('body').css('overflow', '');
 
           proceedsearch();
